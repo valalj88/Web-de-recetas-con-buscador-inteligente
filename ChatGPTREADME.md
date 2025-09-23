@@ -5,6 +5,7 @@ ChatGPT Plus
 
 
 ChatGPT:
+
 Entiendo perfectamente: lo que necesitas no es “crear una IA desde cero”, sino integrar en tu web un modelo ya entrenado que puedas personalizar para generar recetas.
 Aquí tienes un plan claro paso a paso y varias opciones para que puedas elegir la que mejor se adapte a tu nivel y al tiempo que tengas:
 
