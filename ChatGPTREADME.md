@@ -1,6 +1,10 @@
+YO:
+
 Soy un estudiande de segundo año de ciclo de informatica y redes, necesito hacer una web pero con una IA implantada que me produzca recetas de cocina, el problema es que no tengo ni idea de crear una IA de cero, quiero q esta IA se me de ya preparada para entrenarla yo
 ChatGPT Plus
 
+
+ChatGPT:
 Entiendo perfectamente: lo que necesitas no es “crear una IA desde cero”, sino integrar en tu web un modelo ya entrenado que puedas personalizar para generar recetas.
 Aquí tienes un plan claro paso a paso y varias opciones para que puedas elegir la que mejor se adapte a tu nivel y al tiempo que tengas:
 
