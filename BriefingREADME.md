@@ -144,33 +144,73 @@ Para cada entidad identificada en el punto anterior, describe qué información 
 
 **Tabla: Ingredientes**
 
-ID ingrediente
- INT, PK
-Nombre
-VARCHAR 100
-Tipo
-VARCHAR 50
+<table>
+  <tr>
+    <th style="width: 200px;">ATRIBUTOS</th>
+    <th style="width: 100px;">TIPOS DE DATOS</th>
+  </tr>
+  <tr>
+    <td>ID Ingrediente</td>
+    <td>INT,PK</td>
+  </tr>
+  <tr>
+    <td>Nombre</td>
+    <td>VARCHAR 100</td>
+  </tr>
+  <tr>
+	<td>Tipo</td>
+	<td>VARCHAR 50</td>
+</table>
 
-Tabla: Receta_Ingrediente
+**Tabla: Receta_Ingrediente**
 
-ID Receta
- INT, FK
-ID Ingrediente
-INT FK
-Cantidad
-VARCHAR 50          EJ: “2 CUCHARADAS”
+<table>
+  <tr>
+    <th style="width: 200px;">ATRIBUTOS</th>
+    <th style="width: 100px;">TIPOS DE DATOS</th>
+  </tr>
+  <tr>
+    <td>ID Receta</td>
+    <td>INT,FK</td>
+  </tr>
+  <tr>
+    <td>ID Ingrediente</td>
+    <td>INT, FK</td>
+  </tr>
+  <tr>
+	<td>Cantidad</td>
+	<td>VARCHAR 50   EJ: "2 cucharadas"</td>
+</table>
 
-Comentarios
-ID comentario
-INT,PK
-ID receta
-INT,FK
-ID usuario
-INT,FK
-Texto
-TEXT
-Fecha
-DATETIME
+
+**Comentarios**
+
+<table>
+  <tr>
+    <th style="width: 200px;">ATRIBUTOS</th>
+    <th style="width: 100px;">TIPOS DE DATOS</th>
+  </tr>
+  <tr>
+    <td>ID Comentario</td>
+    <td>INT,PK</td>
+  </tr>
+  <tr>
+    <td>ID receta</td>
+    <td>INT, FK</td>
+  </tr>
+  <tr>
+	<td>ID Usuario</td>
+	<td>INT, FK</td>
+  </tr>
+  <tr>
+	<td>Texto</td>
+	<td>TEXT</td>
+  </tr>
+  <tr>
+	<td>Fecha</td></td>
+	<td>DATETIME</td>
+</table>
+
 
 Tabla: Valoraciones
 ID valoración
