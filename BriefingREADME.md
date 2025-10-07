@@ -17,7 +17,7 @@ todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una 
 "Información para almacenar en la base de datos de mi proyecto"     
 
 
-###1. Descripción general del proyecto web###
+##1. Descripción general del proyecto web
 **¿De qué trata tu web?**
 
 DelicIA’s es una plataforma de recetas de cocina que integra inteligencia artificial. Los usuarios ingresan ingredientes o preferencias (por ejemplo, “pollo y brócoli, cena ligera”) y la IA genera una receta personalizada con pasos, tiempos y consejos.
