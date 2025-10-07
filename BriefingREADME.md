@@ -77,12 +77,13 @@ Que cada usuario pueda marcar recetas como favoritas
 3. Datos que se deben guardar de cada entidad (atributos)
 
 Para cada entidad identificada en el punto anterior, describe qué información concreta se necesita guardar.
-Tabla: Usuarios
+
+**Tabla: Usuarios**
 
 <table>
   <tr>
-    <th style="width: 200px;">Columna 1</th>
-    <th style="width: 100px;">Columna 2</th>
+    <th style="width: 200px;">ATRIBUTOS</th>
+    <th style="width: 100px;">TIPOS DE DATOS</th>
   </tr>
   <tr>
     <td>ID Usuario</td>
