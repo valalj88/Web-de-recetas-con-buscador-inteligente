@@ -85,30 +85,25 @@ Tabla: Usuarios
     <th style="width: 100px;">Columna 2</th>
   </tr>
   <tr>
-    <td>Dato 1</td>
-    <td>Dato 2</td>
+    <td>ID Usuario</td>
+    <td>INT,PK,AUTO_INCREMENT</td>
   </tr>
   <tr>
-    <td>Dato 3</td>
-    <td>Dato 4</td>
+    <td>Nombre</td>
+    <td>VARCHAR 100</td>
   </tr>
+  <tr>
+	<td>Email</td>
+	<td>VARCHAR 150, ÚNICO</td>
+  </tr>
+  <tr>
+	<td>Contraseña Hash</td>
+	<td>VARCHAR 255</td>
+  </tr>
+  <tr>
+	<td>Fecha De Registro</td>
+	<td>DATETIME</td>
 </table>
-ID Usuario
- INT, PK, AUTO_INCREMENT
-Nombre
-VARCHAR 100
-Email
-VARCHAR 150, ÚNICO
-Contraseña Hash
-VARCHAR 255
-Fecha De Registro
-DATETIME
-
-
-
-
-
-
 
 Tabla: Recetas
 
