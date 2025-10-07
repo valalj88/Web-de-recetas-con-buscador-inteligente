@@ -13,11 +13,11 @@ Para poder desarrollar nuestro proyecto principalmente vamos a necesitar una pla
 página web, cosa que ambas ya las tenemos a la mano, la plantilla de la página web estamos decidiendo cuál nos gusta más y nos va ser más útil. También necesitamos organizar 
 todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una bibliografía, desarrollar bien el trello con la información bien puesta.
 
-##ESTRUCTURA DEL INFORME:##
+## ESTRUCTURA DEL INFORME:
 "Información para almacenar en la base de datos de mi proyecto"     
 
 
-##1. Descripción general del proyecto web
+## 1. Descripción general del proyecto web
 **¿De qué trata tu web?**
 
 DelicIA’s es una plataforma de recetas de cocina que integra inteligencia artificial. Los usuarios ingresan ingredientes o preferencias (por ejemplo, “pollo y brócoli, cena ligera”) y la IA genera una receta personalizada con pasos, tiempos y consejos.
