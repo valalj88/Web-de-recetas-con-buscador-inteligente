@@ -106,24 +106,43 @@ Para cada entidad identificada en el punto anterior, describe qué información 
 	<td>DATETIME</td>
 </table>
 
-Tabla: Recetas
+**Tabla: Recetas**
 
-ID receta
- INT, PK
-Título
-VARCHAR 150
-Descripción
-TEXT
-Pasos
-TEXT
-Imagen URL
-VARCHAR 255, opcional si se genera una imagen
-ID usuario
-INT, FK Usuario e id usuario 
-Fecha creación
-DATETIME
+<table>
+  <tr>
+    <th style="width: 200px;">ATRIBUTOS</th>
+    <th style="width: 100px;">TIPOS DE DATOS</th>
+  </tr>
+  <tr>
+    <td>ID Receta</td>
+    <td>INT,PK</td>
+  </tr>
+  <tr>
+    <td>Título</td>
+    <td>VARCHAR 150</td>
+  </tr>
+  <tr>
+	<td>Descripción</td>
+	<td>TEXT</td>
+  </tr>
+  <tr>
+	<td>Pasos</td>
+	<td>TEXT</td>
+  </tr>
+  <tr>
+	<td>Imagen URL</td>
+	<td>VARCHAR 255, opcional si se genera una imagen.</td>
+  </tr>
+  <tr>
+	<td>Id Usuario</td>
+	<td>INT, FK</td>
+  </tr>
+  <tr>
+	<td>Fecha De Creación</td>
+	<td>DATETIME</td>
+</table>
 
-Tabla: Ingredientes
+**Tabla: Ingredientes**
 
 ID ingrediente
  INT, PK
