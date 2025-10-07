@@ -13,70 +13,58 @@ Para poder desarrollar nuestro proyecto principalmente vamos a necesitar una pla
 página web, cosa que ambas ya las tenemos a la mano, la plantilla de la página web estamos decidiendo cuál nos gusta más y nos va ser más útil. También necesitamos organizar 
 todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una bibliografía, desarrollar bien el trello con la información bien puesta.
 
- ESTRUCTURA DEL INFORME:
+##ESTRUCTURA DEL INFORME:##
 "Información para almacenar en la base de datos de mi proyecto"     
 
 
-1. Descripción general del proyecto web
-¿De qué trata tu web?
-
+###1. Descripción general del proyecto web###
+**¿De qué trata tu web?**
 
 DelicIA’s es una plataforma de recetas de cocina que integra inteligencia artificial. Los usuarios ingresan ingredientes o preferencias (por ejemplo, “pollo y brócoli, cena ligera”) y la IA genera una receta personalizada con pasos, tiempos y consejos.
 
 
-¿Qué funcionalidades ofrecerá a los usuarios?
+**¿Qué funcionalidades ofrecerá a los usuarios?**
+
+- Los usuarios podrán acceder al registro o inicio de sesión, 
+- Búsqueda de recetas generadas por una IA, 
+- Almacenar recetas favoritas y las que te gusten, 
+- Poner reseñas de las recetas, sugerir ingredientes, (vegano, sin gluten, etc.), 
+- Opción de generar imágenes del plato (IA de imágenes), 
+- Búsqueda de recetas por filtros.
 
 
-Los usuarios podrán acceder al registro o inicio de sesión, 
-Búsqueda de recetas generadas por una IA, 
-Almacenar recetas favoritas y las que te gusten, 
-Poner reseñas de las recetas, sugerir ingredientes, (vegano, sin gluten, etc.), 
-Opción de generar imágenes del plato (IA de imágenes), 
-Búsqueda de recetas por filtros.
-
-
-2. Identificación de entidades principales
+###2. Identificación de entidades principales###
 ¿Qué elementos importantes hay en tu web que necesitan almacenarse?
-
 
 Usuarios, recetas, ingredientes, comentarios, valoraciones, favoritos.
 
 
-¿Qué tema de información almacena? -> Esto nos dará el nombre de la Tabla.
+**¿Qué tema de información almacena? -> Esto nos dará el nombre de la Tabla.**
 	
-Los datos de cada persona registrada 
-Información de cada receta generada
-Lista de ingredientes. 
-Opiniones de los usuarios.
-Puntuaciones.
-Relación usuario receta.
+- Los datos de cada persona registrada 
+- Información de cada receta generada
+- Lista de ingredientes. 
+- Opiniones de los usuarios.
+- Puntuaciones.
+- Relación usuario receta.
+
 	
+**¿Por qué necesitas guardarla en la base de datos? -> Esto nos ayudará a entender si es necesario guardar esta información o no.**
+
+- Control de acceso
+- Personalización de recetas
+- Historial de la web
+- Guardar las recetas para consultas posteriores y permitir que otros usuarios las vean
+- Estandarizar ingredientes para búsquedas y filtrados
+- Permitir feedback y participación en cada receta 
+- Calificar recetas y mostrar ranking
+- Que cada usuario pueda marcar recetas como favoritas
 
 
-
-
-
-
-
-
-¿Por qué necesitas guardarla en la base de datos? -> Esto nos ayudará a entender si es necesario guardar esta información o no.
-
-
-Control de acceso
-Personalización de recetas
-Historial de la web
-Guardar las recetas para consultas posteriores y permitir que otros usuarios las vean
-Estandarizar ingredientes para búsquedas y filtrados
-Permitir feedback y participación en cada receta 
-Calificar recetas y mostrar ranking
-Que cada usuario pueda marcar recetas como favoritas
-
-
-
-
-3. Datos que se deben guardar de cada entidad (atributos)
+###3. Datos que se deben guardar de cada entidad (atributos)###
 
 Para cada entidad identificada en el punto anterior, describe qué información concreta se necesita guardar.
+
 
 **Tabla: Usuarios**
 
@@ -212,32 +200,60 @@ Para cada entidad identificada en el punto anterior, describe qué información 
 </table>
 
 
-Tabla: Valoraciones
-ID valoración
-INT, PK
-ID receta
-INT, FK
-ID usuario
-INT, FK
-Puntuación
-TINYNT - 1 a 5
+**Tabla: Valoraciones**
 
-Favoritos
+<table>
+  <tr>
+    <th style="width: 200px;">ATRIBUTOS</th>
+    <th style="width: 100px;">TIPOS DE DATOS</th>
+  </tr>
+  <tr>
+    <td>ID Valoración</td>
+    <td>INT,PK</td>
+  </tr>
+  <tr>
+    <td>ID receta</td>
+    <td>INT, FK</td>
+  </tr>
+  <tr>
+	<td>ID Usuario</td>
+	<td>INT, FK</td>
+  </tr>
+  <tr>
+	<td>Puntuación</td>
+	<td>TINYNT - 1 A 5</td>
+</table>
 
-ID favorito
-INT, PK
-ID usuario
-INT, FK
-ID receta
-INT, FK
-Fecha guardado
-DATETIME
+*FAVORITOS**
+<table>
+  <tr>
+    <th style="width: 200px;">ATRIBUTOS</th>
+    <th style="width: 100px;">TIPOS DE DATOS</th>
+  </tr>
+  <tr>
+    <td>ID Favorito</td>
+    <td>INT,PK</td>
+  </tr>
+  <tr>
+    <td>ID receta</td>
+    <td>INT, FK</td>
+  </tr>
+  <tr>
+	<td>ID Usuario</td>
+	<td>INT, FK</td>
+  </tr>
+  <tr>
+	<td>Texto</td>
+	<td>TEXT</td>
+  </tr>
+  <tr>
+	<td>Fecha Guardado</td></td>
+	<td>DATETIME</td>
+</table>
 
 
-
-4. Relaciones entre las entidades
-¿Cómo se relacionan unas entidades con otras?
-
+###4. Relaciones entre las entidades###
+**¿Cómo se relacionan unas entidades con otras?**
 
 Usuario – Receta: 
 Un usuario puede crear muchas recetas, pero cada receta pertenece a un solo usuario.
@@ -259,19 +275,23 @@ Usuario – Favoritos – Receta:
 Un usuario puede tener muchas recetas favoritas, y una receta puede ser favorita de muchos usuarios.
 
 
+###5. Ejemplo de datos###
 
+**Usuario**
 
-5. Ejemplo de datos 
-
-Usuario
-ID_usuario
-Nombre 
-Gmail
-Registro
-1
-Hector Abad
-Hector555@gmail.com
-30-09-2025
+<table>
+  <tr>
+    <th style="width: 200px;">ID_USUARIO</th>
+    <th style="width: 100px;">NOMBRE</th>
+    <th style="width: 100px;">GMAIL</th>
+    <th style="width: 100px;">REGISTRO</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Hector Abad</td>
+    <td>Hector555@gmail.com</td>
+    <td>30-09-2025</td>
+</table>
 
 Recetas
 ID_receta
