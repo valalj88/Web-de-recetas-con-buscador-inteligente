@@ -17,7 +17,7 @@ todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una 
 "Información para almacenar en la base de datos de mi proyecto"     
 
 
-## 1. Descripción general del proyecto web
+### 1. Descripción general del proyecto web
 **¿De qué trata tu web?**
 
 DelicIA’s es una plataforma de recetas de cocina que integra inteligencia artificial. Los usuarios ingresan ingredientes o preferencias (por ejemplo, “pollo y brócoli, cena ligera”) y la IA genera una receta personalizada con pasos, tiempos y consejos.
@@ -33,7 +33,7 @@ DelicIA’s es una plataforma de recetas de cocina que integra inteligencia arti
 - Búsqueda de recetas por filtros.
 
 
-###2. Identificación de entidades principales###
+### 2. Identificación de entidades principales###
 ¿Qué elementos importantes hay en tu web que necesitan almacenarse?
 
 Usuarios, recetas, ingredientes, comentarios, valoraciones, favoritos.
@@ -61,7 +61,7 @@ Usuarios, recetas, ingredientes, comentarios, valoraciones, favoritos.
 - Que cada usuario pueda marcar recetas como favoritas
 
 
-###3. Datos que se deben guardar de cada entidad (atributos)###
+### 3. Datos que se deben guardar de cada entidad (atributos)
 
 Para cada entidad identificada en el punto anterior, describe qué información concreta se necesita guardar.
 
@@ -252,7 +252,7 @@ Para cada entidad identificada en el punto anterior, describe qué información 
 </table>
 
 
-###4. Relaciones entre las entidades###
+### 4. Relaciones entre las entidades
 **¿Cómo se relacionan unas entidades con otras?**
 
 Usuario – Receta: 
@@ -275,9 +275,9 @@ Usuario – Favoritos – Receta:
 Un usuario puede tener muchas recetas favoritas, y una receta puede ser favorita de muchos usuarios.
 
 
-###5. Ejemplo de datos###
+### 5. Ejemplo de datos
 
-**Usuario**
+**USUARIO**
 
 <table>
   <tr>
@@ -293,6 +293,23 @@ Un usuario puede tener muchas recetas favoritas, y una receta puede ser favorita
     <td>30-09-2025</td>
 </table>
 
+**RECETAS**
+<table>
+  <tr>
+    <th style="width: 200px;">ID_RECETA</th>
+    <th style="width: 100px;">NOMBRE RECETA</th>
+    <th style="width: 100px;">DESCRIPCIÓN</th>
+    <th style="width: 100px;">PASOS</th>
+    <th style="width: 100px;">ID_USUARIO</th>
+	<th style="width: 100px;">FECHA CREACIÓN</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Macarrones</td>
+    <td>Cocina Rápida</td>
+    <td>1. Hervir los macarrones, 2. escurrirlos</td>
+	<td>1</td>
+	<td>30-09-2025</td>
 Recetas
 ID_receta
 Nombre receta
