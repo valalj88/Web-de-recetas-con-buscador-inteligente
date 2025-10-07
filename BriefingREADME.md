@@ -79,6 +79,20 @@ Que cada usuario pueda marcar recetas como favoritas
 Para cada entidad identificada en el punto anterior, describe qué información concreta se necesita guardar.
 Tabla: Usuarios
 
+<table>
+  <tr>
+    <th style="width: 200px;">Columna 1</th>
+    <th style="width: 100px;">Columna 2</th>
+  </tr>
+  <tr>
+    <td>Dato 1</td>
+    <td>Dato 2</td>
+  </tr>
+  <tr>
+    <td>Dato 3</td>
+    <td>Dato 4</td>
+  </tr>
+</table>
 ID Usuario
  INT, PK, AUTO_INCREMENT
 Nombre
