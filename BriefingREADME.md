@@ -310,74 +310,82 @@ Un usuario puede tener muchas recetas favoritas, y una receta puede ser favorita
     <td>1. Hervir los macarrones, 2. escurrirlos</td>
 	<td>1</td>
 	<td>30-09-2025</td>
-Recetas
-ID_receta
-Nombre receta
-Descripción
-Pasos
-ID_usuario
-Fecha_creacion
-1
-Macarrones
-Cocina rápida
-1.hervir los macarrones 
-2. escurrirlos
-1
-30-09-2025
+</table>
 
-Ingredientes
-Id Ingrediente 
-Nombre 
-Tipo
-1
-Macarrones
-Pasta
-2
-Tomate
-Salsa
+**Ingredientes**
+<table>
+  <tr>
+    <th style="width: 200px;">ID_INGREDIENTE</th>
+    <th style="width: 100px;">NOMBRE</th>
+    <th style="width: 100px;">TIPO</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Macarrones</td>
+    <td>Pasta</td>
+  </tr>
+  <tr>
+    <td>2</td>
+	<td>Tomate</td>
+	<td>Salsa</td>
+</table>
 
-Cantidad
-Id receta
-id ingrediente 
-Cantidad
-1
-1
-200g
-1
-2
-10g
+**CANTIDAD**
+<table>
+  <tr>
+    <th style="width: 200px;">ID_RECETA</th>
+    <th style="width: 100px;">ID_INGREDIENTE</th>
+    <th style="width: 100px;">CANTIDAD</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>200G</td>
+  </tr>
+  <tr>
+    <td>1</td>
+	<td>2</td>
+	<td>10G</td>
+</table>
+
+**COMENTARIOS**
+<table>
+  <tr>
+    <th style="width: 200px;">ID_COMENTARIO</th>
+    <th style="width: 100px;">ID_RECETA</th>
+    <th style="width: 100px;">ID_USUARIO</th>
+	<th style="width: 100px;">TEXTO</th>
+    <th style="width: 100px;">FECHA</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+	<td>Rico Y Rápido</td>
+	<td>30-09-2025</td>
+</table>
+
+**VALORACIONES**
+<table>
+  <tr>
+    <th style="width: 200px;">ID_VALORACIÓN</th>
+    <th style="width: 100px;">ID_RECETA</th>
+    <th style="width: 100px;">ID_USUARIO</th>
+	<th style="width: 100px;">PUNTUACIÓN</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+	<td>5</td>
+</table>
 
 
-Comentarios
-Id Comentario
-Id Receta
-Id Usuario
-Texto
-Fecha
-1
-1
-1
-Rico y rapido
-30-09-2025
+### 6. Reflexiones, dificultades y dudas que tienes sobre la base de datos
 
-Valoraciones
-ID Valoración
-ID Receta 
-ID Usuario
-Puntuación
-1
-1
-1
-5
-
-
-
-6. Reflexiones, dificultades y dudas que tienes sobre la base de datos
-
-
-Decisión sobre recetas IA:
+**Decisión sobre recetas IA:**
  Guardar la receta generada para no perder resultados buenos, en vez de generarla en vivo cada vez.
-Imágenes:
+**Imágenes:**
  Mejor almacenar sólo la URL en un servidor, no el BLOB en la base de datos.
-Prompt:
+**Prompt:**
  Conviene guardar el prompt exacto para posibles reentrenamientos y análisis futuros.
