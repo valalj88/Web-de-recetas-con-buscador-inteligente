@@ -1,7 +1,7 @@
 # DelicIA’S
 
 
-## Introducción
+## 2. Introducción
 <details>
   <summary>Haz clic aquí para ver más</summary>
 	<br>
@@ -18,6 +18,123 @@ Para poder desarrollar nuestro proyecto principalmente vamos a necesitar una pla
 página web, cosa que ambas ya las tenemos a la mano, la plantilla de la página web estamos decidiendo cuál nos gusta más y nos va ser más útil. También necesitamos organizar 
 todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una bibliografía, desarrollar bien el trello con la información bien puesta.
 </details>
+
+
+## 3. Briefing de ideas
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic.
+</details>
+
+
+## 4. Arquitectura del software
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic.
+</details>
+
+## 5. Tecnologías a utilizar
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic.
+</details>
+
+## 6. Red
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic
+
+###  a. Diagrama De La Red
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic.
+</details>
+
+### b. Mapa Físico
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic.
+</details>
+
+### c. Mapa Lógico
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic.
+</details>
+</details>
+
+## 7. Web
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic
+
+### a. Diseño
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic.
+</details>
+
+### b. Mockup
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic.
+</details>
+
+### c. Mapa De Navegabilidad
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic.
+</details>
+</details>
+
+## 8. Servicios
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic
+
+### a. DNS
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic.
+</details>
+
+### b. DHCP
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic.
+</details>
+
+### c. Apache
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic.
+</details>
+
+### d. Firewall
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic.
+</details>
+
+### e. Copias De Seguridad
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic.
+</details>
+</details>
+
+## 9. Conclusiones
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic.
+</details>
+
+## 10. Bibliografia
+<details>
+  <summary>Haz clic aquí</summary>
+  Contenido oculto que se despliega al hacer clic.
+</details>
+
 
 ## Estructura Del Informe
 "Información para almacenar en la base de datos de mi proyecto"     
