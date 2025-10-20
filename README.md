@@ -7,9 +7,8 @@
 
 ---
 
-## 2. Introducción
 <details>
-  <summary>Haz clic aquí para ver más</summary>
+  <summary>Introducción</summary>
 	<br>
 Principalmente nosotros teníamos un par de ideas, entre ellas estaba hacer una página web que sirviera para estudiar los diferentes tipos de carnets de conducir pero hablando con los 
 profesores y valorando nuestras ideas vimos que teníamos un alto porcentaje de que a mediados del proyecto este se nos pudiera cancelar por culpa de permisos que teniamos que solicitar de la DGT cosa que nosotros no podíamos
@@ -27,148 +26,130 @@ todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una 
 
 ---
 
-## 3. Briefing de ideas
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>Briefing de ideas</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 
 ---
 
-## 4. Arquitectura del software
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>Arquitectura del software</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 
 ---
 
-## 5. Tecnologías a utilizar
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>Tecnologías a utilizar</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 
 ---
 
-## 6. Red
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>Red</summary>
   Contenido oculto que se despliega al hacer clic
 
 ---
 
-###  a. Diagrama De La Red
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>Diagrama De La Red</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 
 ---
 
-### b. Mapa Físico
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>Mapa Físico</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 
 ---
 
-### c. Mapa Lógico
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>Mapa Lógico</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 </details>
 
 ---
 
-## 7. Web
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>Web</summary>
   Contenido oculto que se despliega al hacer clic
 
 ---
 
-### a. Diseño
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>a. Diseño</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 
 ---
 
-### b. Mockup
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>b. Mockup</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 
 ---
 
-### c. Mapa De Navegabilidad
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>c. Mapa De Navegabilidad</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 </details>
 
 ---
 
-## 8. Servicios
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>Servicios</summary>
   Contenido oculto que se despliega al hacer clic
 
 
-### a. DNS
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>a. DNS</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 
 
-### b. DHCP
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>b. DHCP</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 
 
-### c. Apache
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>c. Apache</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 
 
-### d. Firewall
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>d. Firewall</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 
 
 ### e. Copias De Seguridad
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>e. Copias De Seguridad</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 </details>
 
 ---
 
-## 9. Conclusiones
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>Conclusiones</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 
 ---
 
-## 10. Bibliografia
 <details>
-  <summary>Haz clic aquí</summary>
+  <summary>Bibliografia</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 
