@@ -3,6 +3,8 @@
 # DelicIA’S
 
 <img >
+</div>
+
 ## 2. Introducción
 <details>
   <summary>Haz clic aquí para ver más</summary>
