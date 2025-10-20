@@ -2,7 +2,7 @@
 
 # DelicIA’S
 
-
+<img >
 ## 2. Introducción
 <details>
   <summary>Haz clic aquí para ver más</summary>
