@@ -23,6 +23,7 @@ página web, cosa que ambas ya las tenemos a la mano, la plantilla de la página
 todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una bibliografía, desarrollar bien el trello con la información bien puesta.
 </details>
 
+---
 
 ## 3. Briefing de ideas
 <details>
