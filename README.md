@@ -2,7 +2,7 @@
 
 # DelicIA’S
 
-<img Logo.png>
+<Logo.png>
 </div>
 
 ## 2. Introducción
