@@ -5,6 +5,8 @@
 <Logo.png>
 </div>
 
+---
+
 ## 2. Introducción
 <details>
   <summary>Haz clic aquí para ver más</summary>
@@ -31,6 +33,7 @@ todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una 
   Contenido oculto que se despliega al hacer clic.
 </details>
 
+---
 
 ## 4. Arquitectura del software
 <details>
@@ -38,16 +41,22 @@ todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una 
   Contenido oculto que se despliega al hacer clic.
 </details>
 
+---
+
 ## 5. Tecnologías a utilizar
 <details>
   <summary>Haz clic aquí</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
 
+---
+
 ## 6. Red
 <details>
   <summary>Haz clic aquí</summary>
   Contenido oculto que se despliega al hacer clic
+
+---
 
 ###  a. Diagrama De La Red
 <details>
@@ -55,11 +64,15 @@ todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una 
   Contenido oculto que se despliega al hacer clic.
 </details>
 
+---
+
 ### b. Mapa Físico
 <details>
   <summary>Haz clic aquí</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
+
+---
 
 ### c. Mapa Lógico
 <details>
@@ -68,10 +81,14 @@ todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una 
 </details>
 </details>
 
+---
+
 ## 7. Web
 <details>
   <summary>Haz clic aquí</summary>
   Contenido oculto que se despliega al hacer clic
+
+---
 
 ### a. Diseño
 <details>
@@ -79,11 +96,15 @@ todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una 
   Contenido oculto que se despliega al hacer clic.
 </details>
 
+---
+
 ### b. Mockup
 <details>
   <summary>Haz clic aquí</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
+
+---
 
 ### c. Mapa De Navegabilidad
 <details>
@@ -92,10 +113,13 @@ todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una 
 </details>
 </details>
 
+---
+
 ## 8. Servicios
 <details>
   <summary>Haz clic aquí</summary>
   Contenido oculto que se despliega al hacer clic
+
 
 ### a. DNS
 <details>
@@ -103,11 +127,13 @@ todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una 
   Contenido oculto que se despliega al hacer clic.
 </details>
 
+
 ### b. DHCP
 <details>
   <summary>Haz clic aquí</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
+
 
 ### c. Apache
 <details>
@@ -115,11 +141,13 @@ todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una 
   Contenido oculto que se despliega al hacer clic.
 </details>
 
+
 ### d. Firewall
 <details>
   <summary>Haz clic aquí</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
+
 
 ### e. Copias De Seguridad
 <details>
@@ -128,11 +156,15 @@ todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una 
 </details>
 </details>
 
+---
+
 ## 9. Conclusiones
 <details>
   <summary>Haz clic aquí</summary>
   Contenido oculto que se despliega al hacer clic.
 </details>
+
+---
 
 ## 10. Bibliografia
 <details>
