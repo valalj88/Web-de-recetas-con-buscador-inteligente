@@ -11,177 +11,43 @@
 <details>
   <summary>Introducción</summary>
 	<br>
-Principalmente nosotros teníamos un par de ideas, entre ellas estaba hacer una página web que sirviera para estudiar los diferentes tipos de carnets de conducir pero hablando con los 
-profesores y valorando nuestras ideas vimos que teníamos un alto porcentaje de que a mediados del proyecto este se nos pudiera cancelar por culpa de permisos que teniamos que solicitar de la DGT cosa que nosotros no podíamos
-hacer nada, entonces fuimos a algo más difícil pero que nos gusta más ya que la idea es más innovadora, queríamos hacer una IA desde cero y entrenarla para hacer recetas, pero al final
-hemos decidido coger una Ia ya hecha y entrenarla porque hacerla desde cero se nos complica y no tenemos los conocimientos suficientes.
+DelicIA’s es una plataforma de recetas de cocina que integra inteligencia artificial. Los usuarios ingresan ingredientes o preferencias (por ejemplo, “pollo y brócoli, cena ligera”) y la IA genera una receta personalizada con pasos, tiempos y consejos.
 
-Nuestro objetivo en este proyecto es desarollar nuestros conocimientos sobre la IA  y las WEBS ya que nos da curiosidad porque las usamos casi diariamente, también por así decirlo nos hace ilusión saber 
-que somos capaces de hacer algo así y si en un futuro puede ser útil para la gente mejor, en un principio nos lo tomamos como un proyecto para estudiar pero estaría bien 
-ver hasta dónde podemos llegar desarrollando nuestra idea.
-
-Para poder desarrollar nuestro proyecto principalmente vamos a necesitar una plantilla de una IA para poderla entrenar para lo que querramos que responda y con que lenguaje y también una plantilla de una 
-página web, cosa que ambas ya las tenemos a la mano, la plantilla de la página web estamos decidiendo cuál nos gusta más y nos va ser más útil. También necesitamos organizar 
-todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una bibliografía, desarrollar bien el trello con la información bien puesta.
+Nuestro objetivo en este proyecto es desarrollar nuestros conocimientos sobre la IA y las WEBs ya que nos da curiosidad porque las usamos casi diariamente. También nos hace ilusión saber que somos capaces de hacer algo así y si en un futuro puede ser útil para la gente mejor, en un principio nos lo tomamos como un proyecto para estudiar pero estaría bien ver hasta dónde podemos llegar desarrollando nuestra idea.
 </details>
 
 ---
 
 <details>
   <summary>Briefing de ideas</summary>
-  Contenido oculto que se despliega al hacer clic.
+	<br>
+  Principalmente nosotros teníamos un par de ideas, entre ellas estaba hacer una página web que sirviera para estudiar los diferentes tipos de carnets de conducir pero hablando con los profesores y valorando nuestras ideas vimos que teníamos un alto porcentaje de que a mediados del proyecto este se nos pudiera cancelar por culpa de permisos que teniamos que solicitar de la DGT cosa que nosotros no podíamos hacer nada, entonces fuimos a algo más difícil pero que nos gusta más ya que la idea es más innovadora, queríamos hacer una IA desde cero y entrenarla para hacer recetas, pero al final hemos decidido coger una Ia ya hecha y entrenarla porque hacerla desde cero se nos complica y no tenemos los conocimientos suficientes.
+
+Para poder desarrollar nuestro proyecto principalmente vamos a necesitar una plantilla de una IA para poderla entrenar para lo que querramos que responda y con que lenguaje y también una plantilla de una página web, cosa que ambas ya las tenemos a la mano, la plantilla de la página web estamos decidiendo cuál nos gusta más y nos va ser más útil. También necesitamos organizar todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una bibliografía, desarrollar bien el trello con la información bien puesta.
 </details>
 
 ---
 
 <details>
   <summary>Arquitectura del software</summary>
-  Contenido oculto que se despliega al hacer clic.
-</details>
-
----
-
+	<br>
 <details>
-  <summary>Tecnologías a utilizar</summary>
-  Contenido oculto que se despliega al hacer clic.
-</details>
-
----
-
-<details>
-  <summary>Red</summary>
-  Contenido oculto que se despliega al hacer clic
-
----
-
-<details>
-  <summary>Diagrama De La Red</summary>
-  Contenido oculto que se despliega al hacer clic.
-</details>
-
----
-
-<details>
-  <summary>Mapa Físico</summary>
-  Contenido oculto que se despliega al hacer clic.
-</details>
-
----
-
-<details>
-  <summary>Mapa Lógico</summary>
-  Contenido oculto que se despliega al hacer clic.
-</details>
-</details>
-
----
-
-<details>
-  <summary>Web</summary>
-  Contenido oculto que se despliega al hacer clic
-
----
-
-<details>
-  <summary>a. Diseño</summary>
-  Contenido oculto que se despliega al hacer clic.
-</details>
-
----
-
-<details>
-  <summary>b. Mockup</summary>
-  Contenido oculto que se despliega al hacer clic.
-</details>
-
----
-
-<details>
-  <summary>c. Mapa De Navegabilidad</summary>
-  Contenido oculto que se despliega al hacer clic.
-</details>
-</details>
-
----
-
-<details>
-  <summary>Servicios</summary>
-  Contenido oculto que se despliega al hacer clic
-
-
-<details>
-  <summary>a. DNS</summary>
-  Contenido oculto que se despliega al hacer clic.
-</details>
-
-
-<details>
-  <summary>b. DHCP</summary>
-  Contenido oculto que se despliega al hacer clic.
-</details>
-
-
-<details>
-  <summary>c. Apache</summary>
-  Contenido oculto que se despliega al hacer clic.
-</details>
-
-
-<details>
-  <summary>d. Firewall</summary>
-  Contenido oculto que se despliega al hacer clic.
-</details>
-
-
-### e. Copias De Seguridad
-<details>
-  <summary>e. Copias De Seguridad</summary>
-  Contenido oculto que se despliega al hacer clic.
-</details>
-</details>
-
----
-
-<details>
-  <summary>Conclusiones</summary>
-  Contenido oculto que se despliega al hacer clic.
-</details>
-
----
-
-<details>
-  <summary>Bibliografia</summary>
-  Contenido oculto que se despliega al hacer clic.
-</details>
-
-
-## Estructura Del Informe
-"Información para almacenar en la base de datos de mi proyecto"     
-
-
-### 1. Descripción general del proyecto web
-**¿De qué trata tu web?**
-
-DelicIA’s es una plataforma de recetas de cocina que integra inteligencia artificial. Los usuarios ingresan ingredientes o preferencias (por ejemplo, “pollo y brócoli, cena ligera”) y la IA genera una receta personalizada con pasos, tiempos y consejos.
-
-
+	<summary>Estudio De La Base De Datos</summary>
+	<br>
+    <br>
+	
 **¿Qué funcionalidades ofrecerá a los usuarios?**
-
+	
 - Los usuarios podrán acceder al registro o inicio de sesión, 
 - Búsqueda de recetas generadas por una IA, 
 - Almacenar recetas favoritas y las que te gusten, 
 - Poner reseñas de las recetas, sugerir ingredientes, (vegano, sin gluten, etc.), 
 - Opción de generar imágenes del plato (IA de imágenes), 
 - Búsqueda de recetas por filtros.
-
-
-### 2. Identificación de entidades principales###
-¿Qué elementos importantes hay en tu web que necesitan almacenarse?
-
-Usuarios, recetas, ingredientes, comentarios, valoraciones, favoritos.
-
-
-**¿Qué tema de información almacena? -> Esto nos dará el nombre de la Tabla.**
+  <br>
+  <br>
+  
+**¿Qué tema de información almacena?**
 	
 - Los datos de cada persona registrada 
 - Información de cada receta generada
@@ -189,9 +55,10 @@ Usuarios, recetas, ingredientes, comentarios, valoraciones, favoritos.
 - Opiniones de los usuarios.
 - Puntuaciones.
 - Relación usuario receta.
+  <br>
+  <br>
 
-	
-**¿Por qué necesitas guardarla en la base de datos? -> Esto nos ayudará a entender si es necesario guardar esta información o no.**
+**¿Por qué necesitas guardarla en la base de datos?**
 
 - Control de acceso
 - Personalización de recetas
@@ -202,13 +69,15 @@ Usuarios, recetas, ingredientes, comentarios, valoraciones, favoritos.
 - Calificar recetas y mostrar ranking
 - Que cada usuario pueda marcar recetas como favoritas
 
+<br>
 
-### 3. Datos que se deben guardar de cada entidad (atributos)
+### DATOS QUE ALMACENA CADA ENTIDAD
 
-Para cada entidad identificada en el punto anterior, describe qué información concreta se necesita guardar.
-
+<br>
 
 **Tabla: Usuarios**
+
+Esta tabla “Usuarios” almacena la información básica de los usuarios de un sistema, donde cada usuario tiene un ID único, nombre, email único, contraseña en formato hash y la fecha en que se registró.
 
 <table>
   <tr>
@@ -235,9 +104,13 @@ Para cada entidad identificada en el punto anterior, describe qué información 
 	<td>Fecha De Registro</td>
 	<td>DATETIME</td>
 </table>
+<br>
+<br>
 
 **Tabla: Recetas**
+<br>
 
+Esta Tabla guarda las recetas con título, descripción, pasos, imagen opcional, usuario que la creó y fecha de creación.
 <table>
   <tr>
     <th style="width: 200px;">ATRIBUTOS</th>
@@ -271,8 +144,13 @@ Para cada entidad identificada en el punto anterior, describe qué información 
 	<td>Fecha De Creación</td>
 	<td>DATETIME</td>
 </table>
+<br>
+<br>
 
 **Tabla: Ingredientes**
+
+<br>
+Contiene los ingredientes disponibles, con nombre y tipo.
 
 <table>
   <tr>
@@ -291,8 +169,13 @@ Para cada entidad identificada en el punto anterior, describe qué información 
 	<td>Tipo</td>
 	<td>VARCHAR 50</td>
 </table>
+<br>
+<br>
 
 **Tabla: Receta_Ingrediente**
+
+<br>
+Relaciona recetas con sus ingredientes y la cantidad necesaria de cada uno.
 
 <table>
   <tr>
@@ -528,6 +411,89 @@ Un usuario puede tener muchas recetas favoritas, y una receta puede ser favorita
 **Decisión sobre recetas IA:**
  Guardar la receta generada para no perder resultados buenos, en vez de generarla en vivo cada vez.
 **Imágenes:**
- Mejor almacenar sólo la URL en un servidor, no el BLOB en la base de datos.
-**Prompt:**
- Conviene guardar el prompt exacto para posibles reentrenamientos y análisis futuros.
+
+Explicación 
+Tabla correspondiente
+  
+</details>
+</details>
+
+---
+
+<details>
+  <summary>Tecnologías a utilizar</summary>
+</details>
+
+---
+
+<details>
+  <summary>Red</summary>
+  <br>
+<details>
+  <summary>Diagrama De La Red</summary>
+</details>
+<br>
+<details>
+  <summary>Mapa Físico</summary>
+</details>
+<br>
+<details>
+  <summary>Mapa Lógico</summary>
+</details>
+</details>
+
+---
+
+<details>
+  <summary>Web</summary>
+<br>
+<details>
+  <summary>a. Diseño</summary>
+</details>
+<br>
+<details>
+  <summary>b. Mockup</summary>
+</details>
+<br>
+<details>
+  <summary>c. Mapa De Navegabilidad</summary>
+</details>
+</details>
+
+---
+
+<details>
+  <summary>Servicios</summary>
+<br>
+<details>
+  <summary>a. DNS</summary>
+</details>
+<br>
+<details>
+  <summary>b. DHCP</summary>
+</details>
+<br>
+<details>
+  <summary>c. Apache</summary>
+</details>
+<br>
+<details>
+  <summary>d. Firewall</summary>
+</details>
+<br>
+<details>
+  <summary>e. Copias De Seguridad</summary>
+</details>
+</details>
+
+---
+
+<details>
+  <summary>Conclusiones</summary>
+</details>
+
+---
+
+<details>
+  <summary>Bibliografia</summary>
+</details>
