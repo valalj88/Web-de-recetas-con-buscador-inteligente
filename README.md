@@ -2,7 +2,8 @@
 
 # DelicIA’S
 
-<Logo.png>
+<img src="Logo.png" alt="Example Image" width="300" height="500">
+
 </div>
 
 ---
