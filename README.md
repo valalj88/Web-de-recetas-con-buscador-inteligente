@@ -453,7 +453,7 @@ Tabla correspondiente
 <br>
 <details>
   <summary>b. Mockup</summary>
-	<a href="#">Mockup DelicIA's </a>
+	<a href="Mockup_DelicIAs.pdf">Mockup DelicIA's </a>
 </details>
 <br>
 <details>
