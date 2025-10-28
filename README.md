@@ -453,7 +453,7 @@ Tabla correspondiente
 <br>
 <details>
   <summary>b. Mockup</summary>
-	<a href= "<img width="1134" height="637" alt="image" src="https://github.com/user-attachments/assets/d7e63158-f1d8-4675-b286-565e8126a275" />Mockup DelicIA's </a>
+	<a href="#">Mockup DelicIA's </a>
 </details>
 <br>
 <details>
