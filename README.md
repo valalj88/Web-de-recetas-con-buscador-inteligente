@@ -468,7 +468,7 @@ Platos destacados pondremos los platos que más destaquen los usuarios, basándo
 Favoritos está solo funcionara si te registras ya que si no lo haces no se te guardara, podrás guardarlas para otro dia que te apetezca esa receta aquí pondremos también la duración aproximada de cuánto tarda la receta.
 
 
-	<a href="Mockup_DelicIAs.pdf">Mockup DelicIA's </a>
+<a href="Mockup_DelicIAs.pdf">Mockup DelicIA's </a>
 </details>
 <br>
 <details>
