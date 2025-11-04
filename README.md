@@ -497,11 +497,17 @@ Tabla correspondiente
   <summary>Bibliografia</summary>
 	<br>
 	<a href="https://www.youtube.com/watch?v=44ziZ12rJwU">¿Como usar GitHub? </a>
+	<br>
 	<a href="https://www.llama.com/llama-downloads/">API Meta Llama (IA) </a>
+	<br>
 	<a href="https://v2.auth.mistral.ai/login?flow=9a02f924-90cd-4698-b4ef-059d93d6ef3a"> API Mistral (IA) </a>
+	<br>
 	<a href="https://www.youtube.com/watch?v=SmNsfs1x92Y"> ¿Como crear carrusel? <a/>
+	<br>
 	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-block-color"> Referencia para comandos HTML/CSS/JAVAScript </a>
+	<br>
 	<a href="https://icons.getbootstrap.com/?q=login"> Logos Bootstrap </a>
+	<br>
 	<a href="https://kinsta.com/es/blog/contorno-texto-css/"> Comandos CSS </a>
 	<a href="https://startbootstrap.com/themes#google_vignette"> Plantillas Webs </a>
 
