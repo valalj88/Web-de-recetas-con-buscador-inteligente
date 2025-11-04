@@ -38,19 +38,19 @@ Para poder desarrollar nuestro proyecto principalmente vamos a necesitar una pla
 	
 **¿Qué funcionalidades ofrecerá a los usuarios?**
 	
-- Los usuarios podrán acceder al registro o inicio de sesión, 
-- Búsqueda de recetas generadas por una IA, 
-- Almacenar recetas favoritas y las que te gusten, 
-- Poner reseñas de las recetas, sugerir ingredientes, (vegano, sin gluten, etc.), 
-- Opción de generar imágenes del plato (IA de imágenes), 
+- Los usuarios podrán acceder al registro o inicio de sesión.
+- Búsqueda de recetas generadas por una IA.
+- Almacenar recetas favoritas y las que te gusten.
+- Poner reseñas de las recetas, sugerir ingredientes, (vegano, sin gluten, etc.). 
+- Opción de generar imágenes del plato (IA de imágenes).
 - Búsqueda de recetas por filtros.
   <br>
   <br>
   
 **¿Qué tema de información almacena?**
 	
-- Los datos de cada persona registrada 
-- Información de cada receta generada
+- Los datos de cada persona registrada.
+- Información de cada receta generada.
 - Lista de ingredientes. 
 - Opiniones de los usuarios.
 - Puntuaciones.
@@ -60,14 +60,14 @@ Para poder desarrollar nuestro proyecto principalmente vamos a necesitar una pla
 
 **¿Por qué necesitas guardarla en la base de datos?**
 
-- Control de acceso
-- Personalización de recetas
+- Control de acceso.
+- Personalización de recetas.
 - Historial de la web
-- Guardar las recetas para consultas posteriores y permitir que otros usuarios las vean
-- Estandarizar ingredientes para búsquedas y filtrados
-- Permitir feedback y participación en cada receta 
-- Calificar recetas y mostrar ranking
-- Que cada usuario pueda marcar recetas como favoritas
+- Guardar las recetas para consultas posteriores y permitir que otros usuarios las vean.
+- Estandarizar ingredientes para búsquedas y filtrados.
+- Permitir feedback y participación en cada receta.
+- Calificar recetas y mostrar ranking.
+- Que cada usuario pueda marcar recetas como favoritas.
 
 <br>
 
