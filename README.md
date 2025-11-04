@@ -495,4 +495,16 @@ Tabla correspondiente
 
 <details>
   <summary>Bibliografia</summary>
+	<br>
+	<a href="https://www.youtube.com/watch?v=44ziZ12rJwU">¿Como usar GitHub? </a>
+	<https://www.llama.com/llama-downloads/ 
+	<https://v2.auth.mistral.ai/login?flow=9a02f924-90cd-4698-b4ef-059d93d6ef3a (api)
+	<https://www.youtube.com/watch?v=SmNsfs1x92Y
+	<https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-block-color
+	<https://icons.getbootstrap.com/?q=login
+	<https://kinsta.com/es/blog/contorno-texto-css/
+	<https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/backdrop-filter
+
+<a href="Mockup_DelicIAs.pdf">Mockup DelicIA's </a>
+
 </details>
