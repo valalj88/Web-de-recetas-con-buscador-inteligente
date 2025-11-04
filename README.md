@@ -447,12 +447,7 @@ Tabla correspondiente
 <br>
 <details>
   <summary>a. Diseño</summary>
-</details>
 <br>
-<details>
-  <summary>b. Mockup</summary>
-	<h2> Porque este diseño y explicacion interfaz</h2>
-	<br>
 Nuestra pagina web la fuimos montando poco a poco a nuestro gusto y algo que teniamos claro era que no queriamos que fuera como todas por eso pusimos un color reslatante como es el amarillo con una imagen difuminada de la tematica de nuestra pagina web, decidimos difuminarla para que no sea en lo primero que te fijas al entrar, queremos que te fijes en el cuadro amarillo que te indica el porque de nuestra pagina que lo que buscamos es que aprendan a cocinar con nosotros.
 
 Nuestra página web está diseñada para ir scroleando hacia abajo y que salga información por lo cual arriba hemos creado los apartados pero si tu le das te lleva directamente pero si vas bajando con el ratón también.
@@ -466,8 +461,10 @@ Valoraciones aquí podremos las valoraciones de recetas que iremos poniendo y ac
 Platos destacados pondremos los platos que más destaquen los usuarios, basándose en la cantidad de gente que le de a guardar recetas o las valoraciones que pongan de esa receta.
 
 Favoritos está solo funcionara si te registras ya que si no lo haces no se te guardara, podrás guardarlas para otro dia que te apetezca esa receta aquí pondremos también la duración aproximada de cuánto tarda la receta.
-
-
+</details>
+<br>
+<details>
+  <summary>b. Mockup</summary>
 <a href="Mockup_DelicIAs.pdf">Mockup DelicIA's </a>
 </details>
 <br>
