@@ -505,6 +505,5 @@ Tabla correspondiente
 	<https://kinsta.com/es/blog/contorno-texto-css/
 	<https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/backdrop-filter
 
-<a href="Mockup_DelicIAs.pdf">Mockup DelicIA's </a>
 
 </details>
