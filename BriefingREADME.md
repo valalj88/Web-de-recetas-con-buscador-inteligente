@@ -136,7 +136,7 @@ todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una 
 </details>
 
 
-## Estructura Del Informe
+## Estructura de el Informe
 "Información para almacenar en la base de datos de mi proyecto"     
 
 
