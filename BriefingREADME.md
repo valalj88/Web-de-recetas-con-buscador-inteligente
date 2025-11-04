@@ -10,7 +10,7 @@ profesores y valorando nuestras ideas vimos que teníamos un alto porcentaje de 
 hacer nada, entonces fuimos a algo más difícil pero que nos gusta más ya que la idea es más innovadora, queríamos hacer una IA desde cero y entrenarla para hacer recetas, pero al final
 hemos decidido coger una Ia ya hecha y entrenarla porque hacerla desde cero se nos complica y no tenemos los conocimientos suficientes.
 
-Nuestro objetivo en este proyecto es desarollar nuestros conocimientos sobre la IA  y las WEBS ya que nos da curiosidad porque las usamos casi diariamente, también por así decirlo nos hace ilusión saber 
+Nuestro objetivo en este proyecto es desarrollar nuestros conocimientos sobre la IA  y las WEBS ya que nos da curiosidad porque las usamos casi diariamente, también por así decirlo nos hace ilusión saber 
 que somos capaces de hacer algo así y si en un futuro puede ser útil para la gente mejor, en un principio nos lo tomamos como un proyecto para estudiar pero estaría bien 
 ver hasta dónde podemos llegar desarrollando nuestra idea.
 
