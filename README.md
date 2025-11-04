@@ -149,7 +149,6 @@ Esta Tabla guarda las recetas con título, descripción, pasos, imagen opcional,
 
 **Tabla: Ingredientes**
 
-<br>
 Contiene los ingredientes disponibles, con nombre y tipo.
 
 <table>
@@ -174,7 +173,6 @@ Contiene los ingredientes disponibles, con nombre y tipo.
 
 **Tabla: Receta_Ingrediente**
 
-<br>
 Relaciona recetas con sus ingredientes y la cantidad necesaria de cada uno.
 
 <table>
@@ -337,7 +335,7 @@ Un usuario puede tener muchas recetas favoritas, y una receta puede ser favorita
 	<td>30-09-2025</td>
 </table>
 
-**Ingredientes**
+**INGREDIENTES**
 <table>
   <tr>
     <th style="width: 200px;">ID_INGREDIENTE</th>
