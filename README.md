@@ -448,13 +448,15 @@ Tabla correspondiente
 <details>
   <summary>a. Diseño</summary>
 <br>
-Nuestra página web la fuimos montando poco a poco a nuestro gusto y algo que teniamos claro era que no queriamos que fuera como todas por eso pusimos un color resaltante como es el amarillo con una imagen difuminada de la temática de nuestra página web, decidimos difuminarla para que no sea en lo primero que te fijas al entrar, queremos que te fijes en el cuadro amarillo que te indica el por qué de nuestra página que lo que buscamos es que aprendan a cocinar con nosotros.
+En esta sección vamos a ir recorriendo todo el menú principal de nuestra web explicando los detalles y usos de cada apartado.
+	
+En temas de colores, tipografía .... nuestra página web la fuimos montando poco a poco a nuestro gusto y algo que teniamos claro era que no queriamos que fuera como todas por eso pusimos un color resaltante como es el amarillo con una imagen difuminada de la temática de nuestra página web, decidimos difuminarla para que no sea en lo primero que te fijas al entrar, queremos que te fijes en el cuadro amarillo que te indica el por qué de nuestra página que lo que buscamos es que aprendan a cocinar con nosotros.
 
-Nuestra página web está diseñada para ir scroleando hacia abajo y que salga información por lo cual arriba hemos creado los apartados pero si le das te lleva directamente, pero si vas bajando con el ratón también.
+Nuestra página web está diseñada para ir "escroleando" hacia abajo y que salga información por lo cual arriba hemos creado los apartados pero si le das te lleva directamente, pero si vas bajando con el ratón también.
 
-Si le damos a Logo nos llevará a la pestaña inicial ya que así los usuarios no tienen que complicarse subiendo manualmente, los botones de login te mandarán a una screen diferente que te pedirá depende el caso si es inicio de sesión el usuario o email y la contraseña y podrás darle a la casilla para que la próxima vez no te pida esto y te la guarde, en esta interfaz también podrás recuperar tu contraseña o ir a registrarse si no tienes cuenta.
+ESi le damos a Logo nos llevará a la pestaña inicial ya que así los usuarios no tienen que complicarse subiendo manualmente, los botones de login te mandarán a una screen diferente que te pedirá depende el caso si es inicio de sesión el usuario o email y la contraseña y podrás darle a la casilla para que la próxima vez no te pida esto y te la guarde, en esta interfaz también podrás recuperar tu contraseña o ir a registrarse si no tienes cuenta.
 
-En la sección de "fotos recetas" pondremos fotos de usuarios que hayan usado nuestra ayuda y nos mencionen en algunas fotos pondremos el efecto hover con una explicación breve del plato y quien lo ha hecho.
+En el apartado del menú de <strong>fotos recetas</strong> pondremos fotos de usuarios que hayan usado nuestra ayuda y nos mencionen en algunas fotos pondremos el efecto hover con una explicación breve del plato y quien lo ha hecho.
 
 En la sección de "Valoraciones" aquí podremos las valoraciones de recetas que iremos poniendo y actualizaremos mensualmente, además en valoraciones podremos entrar y ver algunas de las valoraciones que pongan nuestros usuarios para poner alguna valoración tendras que estar logueado.
 
