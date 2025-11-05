@@ -461,6 +461,7 @@ Valoraciones aquí podremos las valoraciones de recetas que iremos poniendo y ac
 Platos destacados pondremos los platos que más destaquen los usuarios, basándose en la cantidad de gente que le de a guardar recetas o las valoraciones que pongan de esa receta.
 
 Favoritos está solo funcionara si te registras ya que si no lo haces no se te guardara, podrás guardarlas para otro dia que te apetezca esa receta aquí pondremos también la duración aproximada de cuánto tarda la receta.
+En otros habra varias categorias que al entrar te salderan recetas con esas caracteristiccas hemos legido un color gris para que sea diferente a la pagina web y al ponerse encima de una categoria hemos puesto un pop para que sea mas interactivo.
 </details>
 <br>
 <details>
