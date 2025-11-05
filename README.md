@@ -448,20 +448,21 @@ Tabla correspondiente
 <details>
   <summary>a. Diseño</summary>
 <br>
-Nuestra pagina web la fuimos montando poco a poco a nuestro gusto y algo que teniamos claro era que no queriamos que fuera como todas por eso pusimos un color reslatante como es el amarillo con una imagen difuminada de la tematica de nuestra pagina web, decidimos difuminarla para que no sea en lo primero que te fijas al entrar, queremos que te fijes en el cuadro amarillo que te indica el porque de nuestra pagina que lo que buscamos es que aprendan a cocinar con nosotros.
+Nuestra página web la fuimos montando poco a poco a nuestro gusto y algo que teniamos claro era que no queriamos que fuera como todas por eso pusimos un color resaltante como es el amarillo con una imagen difuminada de la temática de nuestra página web, decidimos difuminarla para que no sea en lo primero que te fijas al entrar, queremos que te fijes en el cuadro amarillo que te indica el por qué de nuestra página que lo que buscamos es que aprendan a cocinar con nosotros.
 
-Nuestra página web está diseñada para ir scroleando hacia abajo y que salga información por lo cual arriba hemos creado los apartados pero si tu le das te lleva directamente pero si vas bajando con el ratón también.
+Nuestra página web está diseñada para ir scroleando hacia abajo y que salga información por lo cual arriba hemos creado los apartados pero si le das te lleva directamente, pero si vas bajando con el ratón también.
 
-Si le damos a Logo nos llevará a la pestaña inicial ya que así los usuarios no tienen que complicarse subiendo manualmente, los botones de login te mandaran a una screen diferente que te pedirá depende el caso si es inicio de sesión el usuario o email y la contraseña y podrás darle a la casilla para que la próxima vez no te pida esto y te la guarde, en esta interfaz también podrás recuperar tu contraseña o ir a registrarse si no tienes cuenta.
+Si le damos a Logo nos llevará a la pestaña inicial ya que así los usuarios no tienen que complicarse subiendo manualmente, los botones de login te mandarán a una screen diferente que te pedirá depende el caso si es inicio de sesión el usuario o email y la contraseña y podrás darle a la casilla para que la próxima vez no te pida esto y te la guarde, en esta interfaz también podrás recuperar tu contraseña o ir a registrarse si no tienes cuenta.
 
-En fotos recetas pondremos fotos de usuarios que hayan usado nuestra ayuda y nos mencionen en algunas fotos pondremos el efecto hover con una explicación breve del plato y quien lo ha hecho.
+En la sección de "fotos recetas" pondremos fotos de usuarios que hayan usado nuestra ayuda y nos mencionen en algunas fotos pondremos el efecto hover con una explicación breve del plato y quien lo ha hecho.
 
-Valoraciones aquí podremos las valoraciones de recetas que iremos poniendo y actualizaremos mensualmente.
+En la sección de "Valoraciones" aquí podremos las valoraciones de recetas que iremos poniendo y actualizaremos mensualmente, además en valoraciones podremos entrar y ver algunas de las valoraciones que pongan nuestros usuarios para poner alguna valoración tendras que estar logueado.
 
-Platos destacados pondremos los platos que más destaquen los usuarios, basándose en la cantidad de gente que le de a guardar recetas o las valoraciones que pongan de esa receta.
+En la sección de "Platos destacados" pondremos los platos que más destaquen los usuarios, basándose en la cantidad de gente que le de a guardar recetas o las valoraciones que pongan de esa receta.
 
-Favoritos está solo funcionara si te registras ya que si no lo haces no se te guardara, podrás guardarlas para otro dia que te apetezca esa receta aquí pondremos también la duración aproximada de cuánto tarda la receta.
-En otros habra varias categorias que al entrar te salderan recetas con esas caracteristiccas hemos legido un color gris para que sea diferente a la pagina web y al ponerse encima de una categoria hemos puesto un pop para que sea mas interactivo.
+En la sección de "Favoritos" está solo funcionara si te registras ya que si no lo haces no se te guardara, podrás guardarlas para otro dia que te apetezca esa receta aquí pondremos también la duración aproximada de cuánto tarda la receta.
+
+En la seccion de "otros" habra varias categorias que al entrar te salderan recetas con esas caracteristiccas hemos legido un color gris para que sea diferente a la pagina web y al ponerse encima de una categoria hemos puesto un pop para que sea mas interactivo.
 </details>
 <br>
 <details>
