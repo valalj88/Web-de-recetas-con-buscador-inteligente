@@ -469,7 +469,10 @@ En la seccion de "otros" habra varias categorias que al entrar te salderan recet
 <br>
 <details>
   <summary>b. Mockup</summary>
-<a href="Mockup_DelicIAs.pdf">Mockup DelicIA's </a>
+<a href="IMG1 MockupDelicIA's.pdf">Mockup DelicIA's </a>
+	
+<br>
+<img src="IMG1 MockupDelicIA's.pdf" alt="Example Image" width="300" height="500">
 </details>
 <br>
 <details>
