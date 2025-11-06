@@ -470,7 +470,7 @@ En la seccion de "otros" habra varias categorias que al entrar te salderan recet
 <details>
   <summary>b. Mockup</summary>
 <p align="center">
-<img src="img1-1.png" alt="Página Tareas" width="700">
+<img src="img1.png" alt="Página Tareas" width="700">
 </p> 
 </details>
 <br>
