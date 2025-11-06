@@ -473,7 +473,7 @@ En la seccion de "otros" habra varias categorias que al entrar te salderan recet
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/Captura%20de%20pantalla%202025-11-06%20102417.png" alt="Página Tareas" width="700">
 </p>
 <p align="center">
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/Captura%20de%20pantalla%202025-11-06%20102417.png" alt="Página Tareas" width="700">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img2.png" alt="Página Tareas" width="700">
 </p>
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/Captura%20de%20pantalla%202025-11-06%20102417.png" alt="Página Tareas" width="700">
