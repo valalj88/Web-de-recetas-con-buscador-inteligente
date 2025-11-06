@@ -470,13 +470,28 @@ En la seccion de "otros" habra varias categorias que al entrar te salderan recet
 <details>
   <summary>b. Mockup</summary>
 <p align="center">
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/Captura%20de%20pantalla%202025-11-06%20102417.png" alt="Página Tareas" width="700">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img1.png" alt="Página Tareas" width="700">
 </p>
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img2.png" alt="Página Tareas" width="700">
 </p>
 <p align="center">
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/Captura%20de%20pantalla%202025-11-06%20102417.png" alt="Página Tareas" width="700">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img3.png" alt="Página Tareas" width="700">
+</p>
+<p align="center">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img4.png" alt="Página Tareas" width="700">
+</p>
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img5.png" alt="Página Tareas" width="700">
+</p>
+<p align="center">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img6.png" alt="Página Tareas" width="700">
+</p>
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img7.png" alt="Página Tareas" width="700">
+</p>
+<p align="center">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img8.png" alt="Página Tareas" width="700">
+</p>
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img9.png" alt="Página Tareas" width="700">
 </p>
 </details>
 <br>
