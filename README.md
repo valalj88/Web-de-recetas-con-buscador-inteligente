@@ -469,6 +469,7 @@ En la seccion de "otros" habra varias categorias que al entrar te salderan recet
 <br>
 <details>
   <summary>b. Mockup</summary>
+<br>
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img1.png" alt="Página Tareas" width="700">
 </p>
