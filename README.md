@@ -454,21 +454,36 @@ La web utiliza una paleta cálida y alegre, pensada para despertar el apetito y 
 
 <table>
   <tr>
-    <th style="width: 200px;">ID_USUARIO</th>
-    <th style="width: 100px;">NOMBRE</th>
-    <th style="width: 100px;">GMAIL</th>
-    <th style="width: 100px;">REGISTRO</th>
+    <th style="width: 200px;">Color</th>
+    <th style="width: 100px;">Código</th>
+    <th style="width: 100px;">Uso Principal</th>
+    <th style="width: 100px;">Significado</th>
   </tr>
   <tr>
-    <td>1</td>
-    <td>Hector Abad</td>
-    <td>Hector555@gmail.com</td>
-    <td>30-09-2025</td>
+    <td>🟨 Amarillo claro</td>
+    <td>#FEE070</td>
+    <td>Fondo principal y cabecera</td>
+    <td>Representa energía, optimismo y apetito. Es el color protagonista y da identidad a la web.</td>
   <tr>
-	<td>
-	<td>
-	<td>
-	<td>	
+	<td>⚫ Negro
+	<td>#000000
+	<td>Texto y bordes
+	<td>Aporta contraste, claridad y elegancia, facilitando la lectura.
+  <tr>
+	<td>⚪ Blanco
+	<td>#FFFFFF
+	<td>Fondo de secciones y tarjetas
+	<td>Da equilibrio, limpieza visual y resalta las imágenes de los platos.
+  <tr>
+	<td>🟦 Azul medio
+	<td>#3A8DFF (aprox.)
+	<td>Botones de login y registro
+	<td>Transmite confianza y profesionalidad, creando contraste con el amarillo.
+  <tr>
+	<td>🟫 Gris claro
+	<td>#D9D9D9
+	<td>Botones de categorías (“Otros”)
+	<td>Neutraliza el conjunto, ayudando al equilibrio visual.
 </table>
 </details>
 <br>
