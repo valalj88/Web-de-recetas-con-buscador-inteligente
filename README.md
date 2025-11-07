@@ -494,10 +494,13 @@ El amarillo dominante crea una atmósfera cálida y apetecible, ideal para una w
 La paleta en conjunto comunica alegría, frescura y cercanía, haciendo que el usuario se sienta cómodo mientras explora las recetas.
 </details>
 <br>
+<br>
 
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/paletadecolores.png" alt="Página Tareas" width="700">
 </p>
+
+<br>
 <br>
 
 <details>
