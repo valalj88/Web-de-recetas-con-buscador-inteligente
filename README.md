@@ -505,22 +505,37 @@ El objetivo de esta página es mostrar a los usuarios recetas que han hecho otro
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img5.png" alt="Página Tareas" width="700">
 </p>
+Aquí los usuarios pueden ver las fotos de las recetas, conocer su valoración y acceder a los comentarios con el botón “Ver Opiniones”, que destaca en amarillo con texto negro. Cada plato muestra una puntuación dentro de un recuadro con una estrella, lo que permite comparar fácilmente cuál es más popular. El diseño es claro, con imágenes grandes y bien ordenadas, lo que facilita explorar y decidir qué receta probar, valorar o guardar como favorita. En conjunto, la estética sigue siendo coherente, moderna y muy visual, invitando a participar y disfrutar del contenido gastronómico.
+<br>
+<br>
 
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img6.png" alt="Página Tareas" width="700">
 </p>
+Esta página de DeliciA’s mantiene los mismos colores que las anteriores, con el fondo amarillo que da coherencia y un aire alegre. Aquí se muestran los platos destacados, una selección de recetas populares por su sabor y facilidad. El título y el texto de introducción explican de forma clara el propósito de la sección, invitando al usuario a descubrir opciones sencillas y deliciosas. Cada imagen de plato está acompañada por un botón amarillo con el texto “Ver Receta”, que resalta e invita a hacer clic. El diseño es limpio, con las imágenes bien distribuidas y centradas, lo que facilita la navegación y mantiene la estética moderna, ordenada y apetecible que caracteriza toda la web.
+<br>
+<br>
 
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img7.png" alt="Página Tareas" width="700">
 </p>
+Aquí el usuario encuentra las recetas, presentadas con una foto atractiva, el nombre del plato y el tiempo de preparación. Cada tarjeta permite acceder al detalle de la receta, donde se pueden ver los ingredientes, los pasos, la descripción y las reseñas. En la parte superior hay una barra de búsqueda manual y un botón de filtros a la derecha, pensados para encontrar más recetas de forma rápida y personalizada. En conjunto, la página es práctica, clara y visualmente agradable, ideal para explorar y organizar las recetas guardadas.
+<br>
+<br>
 
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img8.png" alt="Página Tareas" width="700">
 </p>
+En este apartado, el usuario puede ver todos sus platos guardados como favoritos, con una presentación cuidada que muestra la imagen del plato, su nombre y el tiempo estimado de preparación. Cada receta se puede abrir para consultar su descripción, ingredientes, pasos y opiniones de otros usuarios. En la parte superior, una barra de búsqueda y un botón de filtros facilitan encontrar recetas concretas o clasificarlas según preferencia. Todo el conjunto transmite organización, facilidad de uso y una estética atractiva que invita a seguir explorando nuevas recetas.
+<br>
+<br>
 
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img9.png" alt="Página Tareas" width="700">
 </p>
+En esta página, el usuario puede explorar otras categorías de recetas, como platos veganos, saludables, de horno, platos de cuchara o postres, lo que facilita encontrar exactamente el tipo de receta que busca. Cada categoría está representada por un botón gris con bordes redondeados y texto negro, lo que da una apariencia limpia y fácil de leer. La organización en filas y columnas hace que la navegación sea rápida e intuitiva, manteniendo la estética clara, práctica y coherente con el resto de la web.
+<br>
+<br>
 
 </details>
 <br>
