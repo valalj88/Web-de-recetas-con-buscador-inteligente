@@ -448,7 +448,8 @@ Tabla correspondiente
 <details>
   <summary>a. Teoría Del Color DelicIA's</summary>
 <br>
-🎨 Teoría del color de la web DeliciA’s
+	
+## 🎨 Teoría del color de la web DeliciA’s
 
 La web utiliza una paleta cálida y alegre, pensada para despertar el apetito y transmitir una sensación acogedora y cercana. Los tonos principales están inspirados en el mundo de la cocina y los ingredientes frescos, generando una experiencia visual agradable y coherente.
 
@@ -485,6 +486,12 @@ La web utiliza una paleta cálida y alegre, pensada para despertar el apetito y 
 	<td>Botones de categorías (“Otros”)
 	<td>Neutraliza el conjunto, ayudando al equilibrio visual.
 </table>
+
+## Análisis general
+
+El amarillo dominante crea una atmósfera cálida y apetecible, ideal para una web de cocina. Su combinación con el negro mejora la legibilidad y añade un toque moderno. El blanco y los tonos grises sirven para dar respiro visual, mientras que los detalles en azul rompen la monotonía y guían la atención hacia acciones importantes como iniciar sesión o registrarse.
+
+La paleta en conjunto comunica alegría, frescura y cercanía, haciendo que el usuario se sienta cómodo mientras explora las recetas.
 </details>
 <br>
 <details>
