@@ -497,7 +497,10 @@ La página del apartado de Registro es practicamente la misma que la de Inicio d
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img4.png" alt="Página Tareas" width="700">
 </p>
-
+La web de DeliciA’s mantiene los mismos colores que las páginas anteriores, con un fondo amarillo que transmite alegría y energía, creando una imagen coherente y atractiva. El diseño es limpio y resaltan las fotos de los platos, que son el centro visual. En la parte superior, el menú permite acceder fácilmente a recetas, valoraciones o favoritos, mientras que los botones azules de inicio de sesión y registro destacan por su contraste, estos botónes se mantienen para dejar clara la idea de que estas son las pocas cosas que puedes hacer en la web sin iniciar sesión. Las imágenes de comida tienen un efecto al pasar el ratón que muestra el nombre del plato e invita a descubrir más. En conjunto, la web se ve ordenada, cálida y apetecible, perfecta para una página de cocina moderna y fácil de usar.
+El objetivo de esta página es mostrar a los usuarios recetas que han hecho otros usuarios o la propia Inteligencia Artificial, con la finalidad de que algún plato agrade a nuestro usuario.
+<br>
+<br>
 
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img5.png" alt="Página Tareas" width="700">
