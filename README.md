@@ -500,9 +500,8 @@ La paleta en conjunto comunica alegría, frescura y cercanía, haciendo que el u
 </p>
 
 <br>
-<br>
 </details>
-
+<br>
 <details>
   <summary>b. Diseño y Mockup</summary>
 <br>
