@@ -446,29 +446,34 @@ Tabla correspondiente
   <summary>Web</summary>
 <br>
 <details>
-  <summary>a. Diseño</summary>
+  <summary>a. Teoría Del Color DelicIA's</summary>
 <br>
-En esta sección vamos a ir recorriendo todo el menú principal de nuestra web explicando los detalles y usos de cada apartado.
-	
-En temas de colores, tipografía .... nuestra página web la fuimos montando poco a poco a nuestro gusto y algo que teniamos claro era que no queriamos que fuera como todas por eso pusimos un color resaltante como es el amarillo con una imagen difuminada de la temática de nuestra página web, decidimos difuminarla para que no sea en lo primero que te fijas al entrar, queremos que te fijes en el cuadro amarillo que te indica el por qué de nuestra página que lo que buscamos es que aprendan a cocinar con nosotros.
+🎨 Teoría del color de la web DeliciA’s
 
-Nuestra página web está diseñada para ir "escroleando" hacia abajo y que salga información por lo cual arriba hemos creado los apartados pero si le das te lleva directamente, pero si vas bajando con el ratón también.
+La web utiliza una paleta cálida y alegre, pensada para despertar el apetito y transmitir una sensación acogedora y cercana. Los tonos principales están inspirados en el mundo de la cocina y los ingredientes frescos, generando una experiencia visual agradable y coherente.
 
-ESi le damos a Logo nos llevará a la pestaña inicial ya que así los usuarios no tienen que complicarse subiendo manualmente, los botones de login te mandarán a una screen diferente que te pedirá depende el caso si es inicio de sesión el usuario o email y la contraseña y podrás darle a la casilla para que la próxima vez no te pida esto y te la guarde, en esta interfaz también podrás recuperar tu contraseña o ir a registrarse si no tienes cuenta.
-
-En el apartado del menú de <strong>fotos recetas</strong> pondremos fotos de usuarios que hayan usado nuestra ayuda y nos mencionen en algunas fotos pondremos el efecto hover con una explicación breve del plato y quien lo ha hecho.
-
-En la sección de "Valoraciones" aquí podremos las valoraciones de recetas que iremos poniendo y actualizaremos mensualmente, además en valoraciones podremos entrar y ver algunas de las valoraciones que pongan nuestros usuarios para poner alguna valoración tendras que estar logueado.
-
-En la sección de "Platos destacados" pondremos los platos que más destaquen los usuarios, basándose en la cantidad de gente que le de a guardar recetas o las valoraciones que pongan de esa receta.
-
-En la sección de "Favoritos" está solo funcionara si te registras ya que si no lo haces no se te guardara, podrás guardarlas para otro dia que te apetezca esa receta aquí pondremos también la duración aproximada de cuánto tarda la receta.
-
-En la seccion de "otros" habra varias categorias que al entrar te salderan recetas con esas caracteristiccas hemos legido un color gris para que sea diferente a la pagina web y al ponerse encima de una categoria hemos puesto un pop para que sea mas interactivo.
+<table>
+  <tr>
+    <th style="width: 200px;">ID_USUARIO</th>
+    <th style="width: 100px;">NOMBRE</th>
+    <th style="width: 100px;">GMAIL</th>
+    <th style="width: 100px;">REGISTRO</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Hector Abad</td>
+    <td>Hector555@gmail.com</td>
+    <td>30-09-2025</td>
+  <tr>
+	<td>
+	<td>
+	<td>
+	<td>	
+</table>
 </details>
 <br>
 <details>
-  <summary>b. Mockup</summary>
+  <summary>b. Diseño y Mockup</summary>
 <br>
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img1.png" alt="Página Tareas" width="700">
