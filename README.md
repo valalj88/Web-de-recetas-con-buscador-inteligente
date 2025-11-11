@@ -576,6 +576,9 @@ En esta página, el usuario puede explorar otras categorías de recetas, como pl
 <br>
 <details>
   <summary>c. Mapa De Navegabilidad</summary>
+	<p align="center">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img9.png" alt="Página Tareas" width="700">
+</p>
 </details>
 </details>
 
