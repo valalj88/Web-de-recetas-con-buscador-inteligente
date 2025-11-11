@@ -479,7 +479,7 @@ La web utiliza una paleta cálida y alegre, pensada para despertar el apetito y 
     <td>🟨 Amarillo claro</td>
     <td>#FEE070</td>
     <td>Fondo principal y cabecera</td>
-    <td>Representa energía, optimismo y apetito. Es el color protagonista y da identidad a la web.</td>
+    <td>Representa energía y apetito. Es el color protagonista y da identidad a la web.</td>
   <tr>
 	<td>⚫ Negro
 	<td>#000000
@@ -489,7 +489,7 @@ La web utiliza una paleta cálida y alegre, pensada para despertar el apetito y 
 	<td>⚪ Blanco
 	<td>#FFFFFF
 	<td>Fondo de secciones y tarjetas
-	<td>Da equilibrio, limpieza visual y resalta las imágenes de los platos.
+	<td>Da equilibrio a la web, limpieza visual y resalta las imágenes de los platos.
   <tr>
 	<td>🟦 Azul medio
 	<td>#3A8DFF (aprox.)
@@ -504,9 +504,9 @@ La web utiliza una paleta cálida y alegre, pensada para despertar el apetito y 
 
 ## Análisis general
 
-El amarillo dominante crea una ambiente cálido, ideal para una web de cocina. Su combinación con el negro mejora la legibilidad y añade un toque moderno. El blanco y los tonos grises sirven para dar respiro visual, mientras que los detalles en azul rompen la monotonía y guían la atención hacia acciones importantes como iniciar sesión o registrarse.
+El color amarillo crea una ambiente cálido, ideal para una web de cocina. La combinación que hemos usado con el negro mejora la legibilidad y añade un toque moderno. El blanco y los tonos grises sirven para dar respiro visual, mientras que los detalles en azul rompen la monotonía y guían la atención hacia acciones importantes como iniciar sesión o registrarse.
 
-La paleta en conjunto comunica alegría, frescura y cercanía, haciendo que el usuario se sienta cómodo mientras explora las recetas.
+La paleta en conjunto comunica alegría, hemos intentado usar los colores para hacer que el usuario se sienta cómodo mientras explora las recetas.
 <br>
 <br>
 
