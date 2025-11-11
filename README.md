@@ -489,7 +489,7 @@ La web utiliza una paleta cálida y alegre, pensada para despertar el apetito y 
 
 ## Análisis general
 
-El amarillo dominante crea una atmósfera cálida y apetecible, ideal para una web de cocina. Su combinación con el negro mejora la legibilidad y añade un toque moderno. El blanco y los tonos grises sirven para dar respiro visual, mientras que los detalles en azul rompen la monotonía y guían la atención hacia acciones importantes como iniciar sesión o registrarse.
+El amarillo dominante crea una ambiente cálido, ideal para una web de cocina. Su combinación con el negro mejora la legibilidad y añade un toque moderno. El blanco y los tonos grises sirven para dar respiro visual, mientras que los detalles en azul rompen la monotonía y guían la atención hacia acciones importantes como iniciar sesión o registrarse.
 
 La paleta en conjunto comunica alegría, frescura y cercanía, haciendo que el usuario se sienta cómodo mientras explora las recetas.
 <br>
@@ -579,6 +579,7 @@ En esta página, el usuario puede explorar otras categorías de recetas, como pl
 	<p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/MapaNavegabilidad.png" alt="Página Tareas" width="700">
 </p>
+[Mapa De Navegabilidad Figma](https://www.figma.com/design/upHGaQZQPooRiEkaitpQMz/Sin-t%C3%ADtulo?node-id=0-1&p=f&t=nfCwLF66udVG8ufu-0)
 </details>
 </details>
 
