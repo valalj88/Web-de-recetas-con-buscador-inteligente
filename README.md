@@ -533,36 +533,37 @@ La página principal de DelicIA’s da una bienvenida cálida y moderna al usuar
 </p>
 <br>
 
-Esta pantalla de inicio de sesión mantiene la estética general de DelicIA’s, con el fondo de comida saludable y el color amarillo que se conserva en todas las páginas de la web para dar coherencia. En el centro, un recuadro redondeado destaca sobre el fondo, creando un espacio limpio y visualmente agradable donde se observa claramente que és el inicio de sesión del usuario, unos botones en los que ingresar el correo y la contraseña. Los iconos dentro de los campos hacen más intuitiva la experiencia, y el botón gris de “Iniciar sesión” junto con la opción de acceder con Google ofrecen una entrada rápida y moderna. En la parte inferior, los enlaces para recuperar la contraseña o registrarse están bien ubicados para guiar al usuario según su necesidad. En conjunto, esta página mantiene un diseño simple, funcional y coherente con la identidad visual de DelicIA’s.
+Esta pantalla de inicio de sesión mantiene la estética general de DelicIA’s, con el fondo de comida saludable y el color amarillo que se conserva en todas las páginas de la web para darle coherencia. En el centro, un recuadro redondeado destaca sobre el fondo, creando un espacio limpio y visualmente agradable donde se observa claramente que és el inicio de sesión del usuario, unos botones en los que ingresar el correo y la contraseña. Los iconos dentro de los campos, y el botón gris de “Iniciar sesión” junto con la opción de acceder con Google ofrecen una entrada rápida y moderna. En la parte inferior, los enlaces para recuperar la contraseña o registrarse están bien ubicados para guiar al usuario según su necesidad. En conjunto, esta página mantiene un diseño simple, funcional y coherente con la identidad visual de DelicIA’s.
 <br>
 <br>
 
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img3.png" alt="Página Tareas" width="700">
 </p>
-La página del apartado de Registro es practicamente la misma que la de Inicio de sesión. Los campos para ingresar usuario, contraseña y confirmación están acompañados de iconos que hacen más intuitivo el proceso. El botón gris de “Registrarse” es claro y accesible, y la opción de registro con Google agiliza el acceso para los usuarios. Al final, el enlace “¿Ya tienes cuenta? Iniciar sesión” ofrece una navegación fluida entre las dos pantallas principales. En conjunto, esta página mantiene la misma calidez y simplicidad que caracteriza a toda la web, transmitiendo continuidad visual.
+La página del apartado de Registro es practicamente la misma que la de Inicio de sesión. Los campos para ingresar usuario, contraseña y confirmación están acompañados de iconos que hacen más intuitivo el proceso. El botón gris de “Registrarse” es claro y accesible, y la opción de registro con Google agiliza el acceso para los usuarios. Al final, el enlace “¿Ya tienes cuenta? Iniciar sesión” ofrece una navegación fluida entre las dos pantallas principales. En conjunto, esta página mantiene la misma calidez y simplicidad que caracteriza a toda la web.
 <br>
 <br>
 
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img4.png" alt="Página Tareas" width="700">
 </p>
-La web de DeliciA’s mantiene los mismos colores que las páginas anteriores, con un fondo amarillo que transmite alegría y energía, creando una imagen coherente y atractiva. El diseño es limpio y resaltan las fotos de los platos, que son el centro visual. En la parte superior, el menú permite acceder fácilmente a recetas, valoraciones o favoritos, mientras que los botones azules de inicio de sesión y registro destacan por su contraste, estos botónes se mantienen para dejar clara la idea de que estas son las pocas cosas que puedes hacer en la web sin iniciar sesión. Las imágenes de comida tienen un efecto al pasar el ratón que muestra el nombre del plato e invita a descubrir más. En conjunto, la web se ve ordenada, cálida y apetecible, perfecta para una página de cocina moderna y fácil de usar.
-El objetivo de esta página es mostrar a los usuarios recetas que han hecho otros usuarios o la propia Inteligencia Artificial, con la finalidad de que algún plato agrade a nuestro usuario.
+La página web de DeliciA’s usa los mismos colores que las anteriores, con un fondo amarillo que da sensación de alegría y energía, haciendo que todo se vea coherente y atractivo. El diseño es sencillo, y lo que más llama la atención son las fotos de los platos, que son el centro de la página.En la parte de arriba hay un menú que permite entrar fácilmente a las recetas, valoraciones o favoritos. Los botones azules para iniciar sesión y registrarse se notan mucho por el contraste, y se mantienen para mostrar que esas son las pocas cosas
+que se pueden hacer sin iniciar sesión. Las imágenes de comida tienen un efecto que, al pasar el ratón por encima, muestra el nombre del plato e invita a saber más.
+En general, la web se ve ordenada, cálida y apetecible, perfecta para una página de cocina moderna y fácil de usar. El objetivo de esta página es mostrar recetas creadas por otros usuarios o por la Inteligencia Artificial, con la idea de que alguna receta le guste al usuario.
 <br>
 <br>
 
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img5.png" alt="Página Tareas" width="700">
 </p>
-Aquí los usuarios pueden ver las fotos de las recetas, conocer su valoración y acceder a los comentarios con el botón “Ver Opiniones”, que destaca en amarillo con texto negro. Cada plato muestra una puntuación dentro de un recuadro con una estrella, lo que permite comparar fácilmente cuál es más popular. El diseño es claro, con imágenes grandes y bien ordenadas, lo que facilita explorar y decidir qué receta probar, valorar o guardar como favorita. En conjunto, la estética sigue siendo coherente, moderna y muy visual, invitando a participar y disfrutar del contenido gastronómico.
+En esta parte de la web, los usuarios pueden ver las fotos de las recetas, su valoración y los comentarios, a los que se accede con el botón “Ver Opiniones”, que es amarillo con letras negras. Cada plato muestra una puntuación dentro de un recuadro con una estrella, lo que permite comparar fácilmente cuál es el más popular. El diseño es sencillo y ordenado, con imágenes grandes que facilitan explorar, elegir una receta, valorarla o guardarla como favorita. En general, la página mantiene un estilo moderno, visual y coherente, que invita a participar y disfrutar del contenido de cocina.
 <br>
 <br>
 
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img6.png" alt="Página Tareas" width="700">
 </p>
-Esta página de DeliciA’s mantiene los mismos colores que las anteriores, con el fondo amarillo que da coherencia y un aire alegre. Aquí se muestran los platos destacados, una selección de recetas populares por su sabor y facilidad. El título y el texto de introducción explican de forma clara el propósito de la sección, invitando al usuario a descubrir opciones sencillas y deliciosas. Cada imagen de plato está acompañada por un botón amarillo con el texto “Ver Receta”, que resalta e invita a hacer clic. El diseño es limpio, con las imágenes bien distribuidas y centradas, lo que facilita la navegación y mantiene la estética moderna, ordenada y apetecible que caracteriza toda la web.
+Esta página de DeliciA’s usa los mismos colores que las anteriores, con un fondo amarillo que mantiene la coherencia y da una sensación alegre. Aquí se muestran los platos más destacados, una selección de recetas populares por su buen sabor y por ser fáciles de preparar. El título y el texto de introducción explican claramente el propósito de la sección, animando al usuario a descubrir opciones sencillas y deliciosas. Cada imagen de plato tiene un botón amarillo con el texto “Ver Receta”, que destaca e invita a hacer clic. El diseño es limpio y ordenado, con las imágenes bien colocadas y centradas, lo que hace que la navegación sea fácil y mantiene el estilo moderno, atractivo y apetecible de toda la web.
 <br>
 <br>
 
@@ -576,7 +577,7 @@ Aquí el usuario encuentra las recetas, presentadas con una foto atractiva, el n
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img8.png" alt="Página Tareas" width="700">
 </p>
-En este apartado, el usuario puede ver todos sus platos guardados como favoritos, con una presentación cuidada que muestra la imagen del plato, su nombre y el tiempo estimado de preparación. Cada receta se puede abrir para consultar su descripción, ingredientes, pasos y opiniones de otros usuarios. En la parte superior, una barra de búsqueda y un botón de filtros facilitan encontrar recetas concretas o clasificarlas según preferencia. Todo el conjunto transmite organización, facilidad de uso y una estética atractiva que invita a seguir explorando nuevas recetas.
+En este apartado, el usuario puede ver todos los platos que ha guardado como favoritos, con una presentación ordenada que muestra la imagen del plato, su nombre y el tiempo estimado de preparación. Cada receta se puede abrir para ver su descripción, los ingredientes, los pasos y las opiniones de otros usuarios. En la parte superior, hay una barra de búsqueda y un botón de filtros que ayudan a encontrar recetas específicas o a clasificarlas según las preferencias del usuario. En conjunto, la página transmite orden, facilidad de uso y una estética atractiva que invita a seguir explorando nuevas recetas.
 <br>
 <br>
 
