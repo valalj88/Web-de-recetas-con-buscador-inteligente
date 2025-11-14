@@ -448,33 +448,39 @@ Tabla correspondiente
 <details>
   <summary>Tecnologías a utilizar</summary>
 <br>
-<t1><strong>Seguridad y Conectividad</strong></t1>
-<br>
-Esta parte es la "puerta de entrada" y el control de la red, asegurando que solo pase lo que debe pasar:
-pfSense (El Firewall Fuerte):
- Es el router y el firewall principal. Vigila todo el tráfico que viene de Internet y decide qué entra a nuestra red interna. Ofrece protección perimetral, hace la traducción de direcciones (NAT) y permite crear túneles seguros (VPN).
-<br>
-Cloudflare (El Gestor Externo de Tráfico):
-Gestiona el DNS (para que el nombre delicias.tallerdekirby.es se traduzca a una IP), actúa como CDN (hace que la web cargue más rápido) y nos protege de ataques grandes de denegación de servicio (DDoS).
-DHCP (El Asignador de IPs Automático):
-¿Qué hace? Reparte las direcciones IP automáticamente a todos los dispositivos de la red. Esto evita errores de configuración manual.
- Servicios Web y Servidores
-<br>
-Estos son los equipos que hacen que la web funcione y guardan los datos:
-Servidor Web (Apache con PHP/HTML/CSS):
-Apache se encarga de servir las páginas.
-PHP ejecuta la lógica dinámica 
-<br>
-HTML/CSS son el esqueleto y el diseño de la web.
-Servidor de Base de Datos (MySQL):
-Es el "archivador" central. Guarda todos los datos dinámicos de la web.
-<br>
-TrueNAS :
-Es un servidor NAS . Su función es proporcionar una solución centralizada de almacenamiento para backups y archivos importantes.
-<br>
-Pi-hole :
-Funciona como un servidor DNS interno que tiene una lista negra. Su objetivo es bloquear toda la publicidad y rastreadores antes de que lleguen a los dispositivos, mejorando la velocidad y la privacidad de la navegación.
+	
+## Seguridad y Conectividad
 
+### pfSense:
+
+ Es el router y el firewall principal. Vigila todo el tráfico que viene de Internet y decide qué entra a nuestra red interna. Ofrece protección perimetral, hace la traducción de direcciones (NAT) y permite crear túneles seguros (VPN).
+
+### Cloudflare:
+
+Gestiona el DNS (para que el nombre delicias.tallerdekirby.es se traduzca a una IP), actúa como CDN (hace que la web cargue más rápido) y nos protege de ataques grandes de denegación de servicio (DDoS).
+
+### DHCP:
+**¿Qué hace?** Reparte las direcciones IP automáticamente a todos los dispositivos de la red. Esto evita errores de configuración manual.
+  <br>
+## Servicios Web y Servidores
+<br> 
+Estos son los equipos que hacen que la web funcione y guardan los datos:
+
+### Servidor Web (Apache con PHP/HTML/CSS):
+- Apache se encarga de servir las páginas.
+- PHP ejecuta la lógica dinámica 
+- HTML/CSS son el esqueleto y el diseño de la web.
+
+### Servidor de Base de Datos (MySQL):
+- Es el "archivador" central. Guarda todos los datos dinámicos de la web.
+
+### TrueNAS:
+- Es un servidor NAS . Su función es proporcionar una solución centralizada de almacenamiento para backups y archivos importantes.
+
+### Pi-hole:
+- Funciona como un servidor DNS interno que tiene una lista negra. Su objetivo es bloquear toda la publicidad y rastreadores antes de que lleguen a los dispositivos, mejorando la velocidad y la privacidad de la navegación.
+
+[Tecnologias A Utilizar](https://docs.google.com/spreadsheets/d/1jvCkxkATXNUpnb44VIDi7ZuNaSH9dxMkMCZxkB0eU-Q/edit?usp=sharing)
 </details>
 
 ---
