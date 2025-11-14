@@ -445,8 +445,10 @@ Tabla correspondiente
 <details>
   <summary>Diagrama De La Red</summary>
 	<br>
+Un diagrama de red es un dibujo que muestra cómo están conectadas todas las partes de un proyecto, como tareas, actividades y el orden en que deben hacerse. Es importante porque ayuda a ver claramente qué depende de qué, permite organizar mejor el trabajo, identificar posibles retrasos y planificar el tiempo de manera más realista. Con este diagrama es más fácil entender el proyecto completo y tomar decisiones para que todo avance sin problemas.
+	<br>
 <p align="center">
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Organigrama.png" alt="Página Tareas" width="700">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Organigrama.png" alt="Página Tareas" width="1000">
 </p>
 
 </details>
