@@ -274,7 +274,7 @@ Relaciona recetas con sus ingredientes y la cantidad necesaria de cada uno.
 	<td>INT(1)</td>
 </table>
 
-*FAVORITOS**
+**FAVORITOS**
 <table>
   <tr>
     <th style="width: 200px;">ATRIBUTOS</th>
@@ -448,7 +448,33 @@ Tabla correspondiente
 <details>
   <summary>Tecnologías a utilizar</summary>
 <br>
-En nuestro proyecto hemos diseñado una infraestructura para alojar una página web con inteligencia artificial. Usamos Cloudflare para proteger y acelerar el acceso desde Internet, y pfSense como firewall para garantizar la seguridad de la red interna. DHCP y DNS nos permiten gestionar automáticamente las direcciones IP y la resolución de nombres dentro de la red. El servidor web, basado en Apache, PHP, HTML y CSS, se encarga de mostrar la página y procesar la lógica, mientras que MySQL junto con phpMyAdmin gestionan la base de datos donde almacenamos los datos del sitio y de la IA. Además, utilizamos TrueNAS para el almacenamiento en red, facilitando copias de seguridad y la gestión de archivos pesados. Esta arquitectura modular y segura nos permite integrar y controlar eficazmente la inteligencia artificial en nuestra página web.
+<t1><strong>Seguridad y Conectividad</strong></t1>
+<br>
+Esta parte es la "puerta de entrada" y el control de la red, asegurando que solo pase lo que debe pasar:
+pfSense (El Firewall Fuerte):
+ Es el router y el firewall principal. Vigila todo el tráfico que viene de Internet y decide qué entra a nuestra red interna. Ofrece protección perimetral, hace la traducción de direcciones (NAT) y permite crear túneles seguros (VPN).
+<br>
+Cloudflare (El Gestor Externo de Tráfico):
+Gestiona el DNS (para que el nombre delicias.tallerdekirby.es se traduzca a una IP), actúa como CDN (hace que la web cargue más rápido) y nos protege de ataques grandes de denegación de servicio (DDoS).
+DHCP (El Asignador de IPs Automático):
+¿Qué hace? Reparte las direcciones IP automáticamente a todos los dispositivos de la red. Esto evita errores de configuración manual.
+ Servicios Web y Servidores
+<br>
+Estos son los equipos que hacen que la web funcione y guardan los datos:
+Servidor Web (Apache con PHP/HTML/CSS):
+Apache se encarga de servir las páginas.
+PHP ejecuta la lógica dinámica 
+<br>
+HTML/CSS son el esqueleto y el diseño de la web.
+Servidor de Base de Datos (MySQL):
+Es el "archivador" central. Guarda todos los datos dinámicos de la web.
+<br>
+TrueNAS :
+Es un servidor NAS . Su función es proporcionar una solución centralizada de almacenamiento para backups y archivos importantes.
+<br>
+Pi-hole :
+Funciona como un servidor DNS interno que tiene una lista negra. Su objetivo es bloquear toda la publicidad y rastreadores antes de que lleguen a los dispositivos, mejorando la velocidad y la privacidad de la navegación.
+
 </details>
 
 ---
