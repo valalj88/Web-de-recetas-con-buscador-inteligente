@@ -309,7 +309,7 @@ Receta – Valoraciones :
 Cada receta puede recibir muchas valoraciones, pero cada valoración pertenece a una sola receta.
 
 
-Usuario – Favoritos – Receta: 
+Favoritos: Recetas_fav_Usuarios: 
 Un usuario puede tener muchas recetas favoritas, y una receta puede ser favorita de muchos usuarios.
 
 
