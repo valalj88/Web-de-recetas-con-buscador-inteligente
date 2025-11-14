@@ -636,10 +636,14 @@ Apache es un programa que funciona como servidor web, se encarga de entregar las
 <br>
 <details>
   <summary>d. Firewall</summary>
+<br>
+Un firewall es un sistema que controla qué tráfico puede entrar o salir de una red, actuando como una especie de “muro de seguridad” que bloquea accesos no autorizados. Es útil para un proyecto porque protege los equipos y datos de ataques, virus y conexiones sospechosas, asegurando que solo pasen las comunicaciones permitidas. Gracias al firewall, el proyecto funciona de forma más segura y estable.
 </details>
 <br>
 <details>
   <summary>e. Copias De Seguridad</summary>
+<br>
+Las copias de seguridad son duplicados de los archivos y datos importantes que se guardan en otro lugar para no perderlos si ocurre un fallo, un borrado accidental o un ataque informático. Son útiles para un proyecto porque garantizan que, pase lo que pase, siempre podrás recuperar la información necesaria y continuar trabajando sin perder tiempo ni contenido.
 </details>
 </details>
 
