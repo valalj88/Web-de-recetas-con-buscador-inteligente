@@ -26,19 +26,19 @@ Nuestro objetivo en este proyecto es desarrollar nuestros conocimientos sobre la
 Para poder desarrollar nuestro proyecto principalmente vamos a necesitar una plantilla de una IA para poderla entrenar para lo que querramos que responda y con que lenguaje y también una plantilla de una página web, cosa que ambas ya las tenemos a la mano, la plantilla de la página web estamos decidiendo cuál nos gusta más y nos va ser más útil. También necesitamos organizar todo de una manera adecuada para no liarnos, esto lo conseguiremos haciendo una bibliografía, desarrollar bien el trello con la información bien puesta.
 
 - Desarrollar una web funcional y atractiva con una interfaz moderna y adaptable.
-<br>
+  
 - Implementar un sistema de registro y autenticación de usuarios
-<br>
+
 - Permitir la publicación, valoración y almacenamiento de recetas
-<br>
+
 - Crear una sección de “favoritos” y otra de “recetas destacadas”.
-<br>
+
 - Integrar una IA funcional o simulada que interactúe con el usuario y recomiende recetas.
-<br>
+
 - Diseñar una arquitectura cliente-servidor estable con base de datos relacional.
-<br>
+
 - Documentar el proyecto en GitHub.   
-<br>
+
 </details>
 
 ---
