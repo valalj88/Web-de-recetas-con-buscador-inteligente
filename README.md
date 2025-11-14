@@ -447,6 +447,8 @@ Tabla correspondiente
 
 <details>
   <summary>Tecnologías a utilizar</summary>
+<br>
+En nuestro proyecto hemos diseñado una infraestructura para alojar una página web con inteligencia artificial. Usamos Cloudflare para proteger y acelerar el acceso desde Internet, y pfSense como firewall para garantizar la seguridad de la red interna. DHCP y DNS nos permiten gestionar automáticamente las direcciones IP y la resolución de nombres dentro de la red. El servidor web, basado en Apache, PHP, HTML y CSS, se encarga de mostrar la página y procesar la lógica, mientras que MySQL junto con phpMyAdmin gestionan la base de datos donde almacenamos los datos del sitio y de la IA. Además, utilizamos TrueNAS para el almacenamiento en red, facilitando copias de seguridad y la gestión de archivos pesados. Esta arquitectura modular y segura nos permite integrar y controlar eficazmente la inteligencia artificial en nuestra página web.
 </details>
 
 ---
