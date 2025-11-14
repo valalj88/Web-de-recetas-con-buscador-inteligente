@@ -259,7 +259,7 @@ Relaciona recetas con sus ingredientes y la cantidad necesaria de cada uno.
   </tr>
   <tr>
 	<td>Puntuación</td>
-	<td>TINYNT - 1 A 5</td>
+	<td>INT(1)</td>
 </table>
 
 *FAVORITOS**
