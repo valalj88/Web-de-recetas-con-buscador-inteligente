@@ -444,8 +444,8 @@ Tabla correspondiente
   <br>
 <details>
   <summary>Diagrama De La Red</summary>
-	
-  <p align="center">
+	<br>
+<p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/Organigrama.png" alt="Página Tareas" width="700">
 </p>
 
