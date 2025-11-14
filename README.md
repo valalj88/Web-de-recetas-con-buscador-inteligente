@@ -655,11 +655,12 @@ Un mapa de navegabilidad es un dibujo que muestra cómo se conectan entre sí la
 [Mapa De Navegabilidad Figma](https://www.figma.com/design/upHGaQZQPooRiEkaitpQMz/Sin-t%C3%ADtulo?node-id=0-1&p=f&t=nfCwLF66udVG8ufu-0)
 	
 </details>
-
+<br>
 <details>
   <summary>d. BackEnd</summary>
 
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/DataBaseEntidadRelacion.png" alt="Página Tareas" width="1200">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/DataBaseRelacional.png" alt="Página Tareas" width="1200">
 
 </details>
 </details>
