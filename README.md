@@ -444,6 +444,8 @@ Tabla correspondiente
   <br>
 <details>
   <summary>Diagrama De La Red</summary>
+  <img src=
+
 </details>
 <br>
 <details>
