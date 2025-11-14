@@ -47,7 +47,7 @@ Para poder desarrollar nuestro proyecto principalmente vamos a necesitar una pla
   <summary>Arquitectura del software</summary>
 	<br>
 <details>
-	<br>
+	
 	<summary>Diagrama De Gantt</summary>
 	<br>
 Un diseño de Gantt es una tabla o gráfico que muestra las tareas de un proyecto colocadas en una línea de tiempo, indicando cuándo empiezan, cuándo terminan y cuánto duran. Es útil para un proyecto porque permite ver de forma clara la planificación, organizar el trabajo por fases, detectar retrasos y controlar el avance. Gracias al diagrama de Gantt, es más fácil gestionar el proyecto y asegurarse de que todo se haga a tiempo.
