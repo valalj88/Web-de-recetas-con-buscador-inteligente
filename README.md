@@ -571,45 +571,41 @@ Un diagrama de red es un dibujo que muestra cómo están conectadas todas las pa
 <br>
 	
 ## 1_ Organización del proyecto
-
-### - 1.1 
+ 
 **Creación y configuración del tablero de Trello con las primeras tarjetas.**
 <br>
 Hemos creado la estructura inicial de gestión del proyecto.
 <br>
 
-### - 1.2
 **Creación del repositorio en GitHub y organización de carpetas.**
 <br>
 Se ha preparado el entorno de trabajo colaborativo.
 <br>
 
-### - 1.3
 **Redacción del listado de funcionalidades principales del proyecto.**
 <br>
 Se han definido los objetivos generales de la aplicación.
+<br>
 
 ## 2_ Lluvia de ideas
 
-### - 2.1
 **Propuesta inicial de funcionalidades y estructura general.**
 <br>
 Se han recopilado las primeras ideas del proyecto, y hemos investigado cual sería la más efectiva.
+<br>
 
-### - 2.2
 **Clasificación y priorización de las ideas más relevantes.**
 <br>
 Se ha organizado la información en categorías según prioridad.
+<br>
 
 ## 3_ Mapa de navegabilidad
 
-### - 3.1
 **Creación del esquema visual con las secciones principales del sitio.**
 <br>
 Se ha diseñado el recorrido principal del usuario.
 <br>
 
-### - 3.2
 **Revisión y ajuste del mapa de navegabilidad según las ideas definidas.**
 <br>
 Se ha validado la estructura general del sitio web.
@@ -617,57 +613,101 @@ Se ha validado la estructura general del sitio web.
 
 ## 4_ Diseño inicial de la web
 
-### - 4.1
 **Diseño del primer boceto visual de la página principal.**
 <br>
 Se ha elaborado un prototipo básico de la interfaz.
 <br>
 
-### - 4.2
 **Aportación de ideas sobre colores, estructura y disposición de elementos.**
+<br> 
+Se ha colaborado en la definición del estilo visual.
 <br>
- Se ha colaborado en la definición del estilo visual.
- <br>
 
 ## 5_ Preparación de la siguiente fase
 
-### - 5.1
+### - Trello
 **Revisión de materiales y tareas en Trello.**
 <br>
 Se ha organizado el trabajo pendiente para la próxima etapa.
 <br>
 
-### - 5.2
+### - Login/Register
 **Planificación de la funcionalidad de Login, Registro y Recuperación de contraseña.**
 Se planificará la estructura y las pantallas necesarias para el sistema de autenticación (login, registro y recuperar contraseña), definiendo su integración en la web.
 
-### - 5.3
+### - Botones De La Web
 **Preparación de los botones principales del sistema.**
+<br>
 Se diseñarán y añadirán los botones para acceder al Login, Registro y Recuperación de contraseña, organizándolos dentro de la navegación del sitio.
+<br>
 
-### - 5.4 Desarrollo Backend en PHP
+### - Desarrollo Backend en PHP
 
-#### · 5.4.1
 **Desarrollo del formulario y lógica de registro en PHP.**
 <br>
 Se creará un formulario para que el usuario pueda introducir su contraseña y demás datos, y se programará la validación e inserción en la base de datos.
 <br>
 
-#### · 5.4.2
 **Implementación del sistema de seguridad mediante HASH.**
 <br>
 Se aplicará un sistema de cifrado utilizando password_hash() en PHP para proteger las contraseñas cuando sean almacenadas.
 <br>
 
-### 5.5 Sistema de Recuperación de Contraseña
-#### 5.5.1
+### - Sistema de Recuperación de Contraseña
 **Diseño del proceso de recuperación de contraseña.**
 <br>
 Se definirá el flujo necesario para recuperar la contraseña: petición del correo, verificación y formulario para la nueva clave.
-#### 5.5.2
 **Programación de la recuperación y restablecimiento en PHP.**
 <br>
 Se programará el sistema que permita al usuario restablecer su contraseña, incluyendo el re-cifrado con "password_hash()"
+<br>
+
+## 6_ Instalación y Configuración del Servidor Web en Debian
+
+**Preparación del entorno con sistema operativo Debian.**
+<br>
+Se realizará la instalación inicial del sistema operativo Debian y la configuración básica necesaria para alojar el servidor web.
+<br>
+
+## 7_ Instalación y Configuración de Apache
+
+- **Instalación del servidor Apache.**
+Se instalará y configurará Apache en Debian para permitir la ejecución de páginas web y archivos PHP.
+<br>
+
+- **Integración de Apache con PHP.**
+Se configurará Apache para que interprete correctamente los archivos PHP y se validará su funcionamiento mediante pruebas básicas de acceso al servidor.
+<br>
+
+## 8_ Creación de la Estructura Básica de la Página Web
+**Creación del archivo HTML base.**
+<br>
+Se generará un archivo HTML inicial que definirá la estructura y el contenido principal que verán los usuarios al entrar en la página.
+<br>
+
+## 9_ Implementación del Campo de Consulta del Usuario
+**Añadir un campo de texto para consultas.**
+<br>
+Se agregará un cuadro de texto (input o textarea) para que el usuario pueda escribir su consulta, como ingredientes o el tipo de receta que desea obtener.
+<br>
+
+## 10_ Creación del Botón para Enviar la Consulta
+**Incorporación del botón de envío.**
+<br>
+Se implementará un botón que permitirá al usuario enviar la información escrita, enviando la consulta al sistema para que la IA pueda procesarla.
+<br>
+
+## 11_ Integración con la IA para Generar Respuestas
+**Conexión del formulario con la IA entrenada.**
+<br>
+Se configurará el sistema para que, una vez enviada la consulta, la IA procese el texto introducido por el usuario y genere automáticamente una receta basada en su prompt.
+<br>
+
+## 12_ Acceso a los Menús y Secciones de la Web
+**Diseño de los accesos a las categorías de la web.**
+<br>
+Se añadirán enlaces o botones en la página principal para acceder a diferentes categorías como valoraciones, fotos de recetas, platos destacados, etc.
+<br>
 </details>
 
 ---
