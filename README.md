@@ -61,11 +61,59 @@ Un diseño de Gantt es una tabla o gráfico que muestra las tareas de un proyect
 [Diagrama de Gantt DelicIA's](https://docs.google.com/spreadsheets/d/1v8SxtipMUR5VIm4CUHCaQV0vc51-1jquD_x6YIupjv8/edit?usp=sharing)
 	
 </details>
+<br>
 <details>
 <summary>Funcionalidades A Considerar</summary>
 <br>
-	
+<table>
+  <tr>
+    <th style="width: 200px;">ID</th>
+    <th style="width: 100px;">Prioridad</th>
+	<th style="width: 200px;">Objetivo</th>
+    <th style="width: 100px;">FUNCIONALIDAD</th>
+	<th style="width: 100px;">ESTADO</th>
+  </tr>
+  <tr>
+    <td>ID0</td>
+    <td>Alta</td>
+	<td>Login/Register</td>
+    <td>INT,PK</td>
+    <td>INT,PK</td>
+  </tr>
+  <tr>
+    <td>ID1</td>
+    <td>Alta</td>
+	<td>API Visualizar Recetas</td>
+    <td>INT,PK</td>
+    <td>INT,PK</td>
+  </tr>
+  <tr>
+    <td>ID2</td>
+    <td>Media</td>
+	<td>Favoritos
+  <tr>
+    <td>ID3</td>
+    <td>Alta</td>
+	<td>ID Receta</td>
+    <td>INT,PK</td>
+    <td>INT,PK</td>
+  </tr>
+  <tr>
+    <td>ID4</td>
+    <td>Media</td>
+	<td>ID Receta</td>
+    <td>INT,PK</td>
+    <td>INT,PK</td>
+  </tr>
+  <tr>
+    <td>ID5</td>
+    <td>Alta</td>
+	<td>ID Receta</td>
+    <td>INT,PK</td>
+    <td>INT,PK</td>
+</table>
 </details>
+<br>
 <details>
 	<summary>Estudio De La Base De Datos</summary>	
 	<br>
