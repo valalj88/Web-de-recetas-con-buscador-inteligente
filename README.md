@@ -460,10 +460,10 @@ Tabla correspondiente
 
 ### Cloudflare:
 
-Gestiona el DNS (para que el nombre delicias.tallerdekirby.es se traduzca a una IP), actúa como CDN (hace que la web cargue más rápido) y nos protege de ataques grandes de denegación de servicio (DDoS).
+Gestiona el DNS para que el nombre delicias.tallerdekirby.es se traduzca a una IP, actúa como CDN hace que la web cargue más rápido y nos protege de ataques grandes de denegación de servicio DDoS.
 
 ### DHCP:
-**¿Qué hace?** Reparte las direcciones IP automáticamente a todos los dispositivos de la red. Esto evita errores de configuración manual.
+El DHCP reparte las direcciones IP automáticamente a todos los dispositivos de la red. Esto evita errores de configuración manual.
   <br>
 ## Servicios Web y Servidores
 <br> 
@@ -475,7 +475,7 @@ Estos son los equipos que hacen que la web funcione y guardan los datos:
 - HTML/CSS son el esqueleto y el diseño de la web.
 
 ### Servidor de Base de Datos (MySQL):
-- Es el "archivador" central. Guarda todos los datos dinámicos de la web.
+- Es el archivador central. Guarda todos los datos dinámicos de la web.
 
 ### TrueNAS:
 - Es un servidor NAS . Su función es proporcionar una solución centralizada de almacenamiento para backups y archivos importantes.
