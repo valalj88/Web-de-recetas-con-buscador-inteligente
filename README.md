@@ -77,40 +77,42 @@ Un diseño de Gantt es una tabla o gráfico que muestra las tareas de un proyect
     <td>ID0</td>
     <td>Alta</td>
 	<td>Login/Register</td>
-    <td>INT,PK</td>
-    <td>INT,PK</td>
+    <td>Permite crear una cuenta, iniciar sesión y guardar datos del usuario.</td>
+    <td>Pendiente</td>
   </tr>
   <tr>
     <td>ID1</td>
     <td>Alta</td>
 	<td>API Visualizar Recetas</td>
-    <td>INT,PK</td>
-    <td>INT,PK</td>
+    <td>Muestra recetas con imagen, nombre, valoración y categoría.</td>
+    <td>Pendiente</td>
   </tr>
   <tr>
     <td>ID2</td>
     <td>Media</td>
-	<td>Favoritos
+	<td>Favoritos</td>
+	<td>Permite marcar recetas como favoritas y acceder rápidamente a ellas.</td>
+    <td>Pendiente</td>
   <tr>
     <td>ID3</td>
     <td>Alta</td>
-	<td>ID Receta</td>
-    <td>INT,PK</td>
-    <td>INT,PK</td>
+	<td>Valoraciones</td>
+    <td>Sistema para puntuar recetas y dejar reseñas visibles a otros usuarios.</td>
+    <td>Pendiente</td>
   </tr>
   <tr>
     <td>ID4</td>
     <td>Media</td>
-	<td>ID Receta</td>
-    <td>INT,PK</td>
-    <td>INT,PK</td>
+	<td>Recetas Destacadas</td>
+    <td>Muestra recetas más populares, fáciles o mejor valoradas con breve descripción.</td>
+    <td>Pendiente</td>
   </tr>
   <tr>
     <td>ID5</td>
     <td>Alta</td>
-	<td>ID Receta</td>
-    <td>INT,PK</td>
-    <td>INT,PK</td>
+	<td>Inteligencia Artificial</td>
+    <td>Asistente virtual que recomienda recetas según gustos o ingredientes disponibles.</td>
+    <td>Pendiente</td>
 </table>
 </details>
 <br>
