@@ -514,6 +514,112 @@ Un diagrama de red es un dibujo que muestra cómo están conectadas todas las pa
 ---
 
 <details>
+  <summary>Tareas</summary>
+<br>
+	
+## 1_ Organización del proyecto
+
+### - 1.1 
+**Creación y configuración del tablero de Trello con las primeras tarjetas.**
+<br>
+Hemos creado la estructura inicial de gestión del proyecto.
+<br>
+
+### - 1.2
+**Creación del repositorio en GitHub y organización de carpetas.**
+<br>
+Se ha preparado el entorno de trabajo colaborativo.
+<br>
+
+### - 1.3
+**Redacción del listado de funcionalidades principales del proyecto.**
+<br>
+Se han definido los objetivos generales de la aplicación.
+
+## 2_ Lluvia de ideas
+
+### - 2.1
+**Propuesta inicial de funcionalidades y estructura general.**
+<br>
+Se han recopilado las primeras ideas del proyecto, y hemos investigado cual sería la más efectiva.
+
+### - 2.2
+**Clasificación y priorización de las ideas más relevantes.**
+<br>
+Se ha organizado la información en categorías según prioridad.
+
+## 3_ Mapa de navegabilidad
+
+### - 3.1
+**Creación del esquema visual con las secciones principales del sitio.**
+<br>
+Se ha diseñado el recorrido principal del usuario.
+<br>
+
+### - 3.2
+**Revisión y ajuste del mapa de navegabilidad según las ideas definidas.**
+<br>
+Se ha validado la estructura general del sitio web.
+<br>
+
+## 4_ Diseño inicial de la web
+
+### - 4.1
+**Diseño del primer boceto visual de la página principal.**
+<br>
+Se ha elaborado un prototipo básico de la interfaz.
+<br>
+
+### - 4.2
+**Aportación de ideas sobre colores, estructura y disposición de elementos.**
+<br>
+ Se ha colaborado en la definición del estilo visual.
+ <br>
+
+## 5_ Preparación de la siguiente fase
+
+### - 5.1
+**Revisión de materiales y tareas en Trello.**
+<br>
+Se ha organizado el trabajo pendiente para la próxima etapa.
+<br>
+
+### - 5.2
+**Planificación de la funcionalidad de Login, Registro y Recuperación de contraseña.**
+Se planificará la estructura y las pantallas necesarias para el sistema de autenticación (login, registro y recuperar contraseña), definiendo su integración en la web.
+
+### - 5.3
+**Preparación de los botones principales del sistema.**
+Se diseñarán y añadirán los botones para acceder al Login, Registro y Recuperación de contraseña, organizándolos dentro de la navegación del sitio.
+
+### - 5.4 Desarrollo Backend en PHP
+
+#### · 5.4.1
+**Desarrollo del formulario y lógica de registro en PHP.**
+<br>
+Se creará un formulario para que el usuario pueda introducir su contraseña y demás datos, y se programará la validación e inserción en la base de datos.
+<br>
+
+#### · 5.4.2
+**Implementación del sistema de seguridad mediante HASH.**
+<br>
+Se aplicará un sistema de cifrado utilizando password_hash() en PHP para proteger las contraseñas cuando sean almacenadas.
+<br>
+
+### 5.5 Sistema de Recuperación de Contraseña
+#### 5.5.1
+**Diseño del proceso de recuperación de contraseña.**
+<br>
+Se definirá el flujo necesario para recuperar la contraseña: petición del correo, verificación y formulario para la nueva clave.
+#### 5.5.2
+**Programación de la recuperación y restablecimiento en PHP.**
+<br>
+Se programará el sistema que permita al usuario restablecer su contraseña, incluyendo el re-cifrado con "password_hash()"
+</details>
+
+---
+
+<details>
   <summary>Web</summary>
 <br>
 <details>
