@@ -62,6 +62,11 @@ Un diseño de Gantt es una tabla o gráfico que muestra las tareas de un proyect
 	
 </details>
 <details>
+<summary>Funcionalidades A Considerar</summary>
+<br>
+	
+</details>
+<details>
 	<summary>Estudio De La Base De Datos</summary>	
 	<br>
     <br>
