@@ -2,11 +2,8 @@
 
 <img src="Logo.png" alt="Example Image" width="300" height="500">
 
-<p align="center">
-  <a href=https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/ImagenPanoramciaGithub.jpg>
-    <img src="assets/banner.png" width="800" />
-  </a>
-</p>
+![Banner](https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/ImagenPanoramicaGithub.jpg)
+
 
 
 </div>
