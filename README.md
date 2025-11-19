@@ -504,7 +504,7 @@ Tabla correspondiente
 ---
 
 <details>
-  <summary>💻 Tecnologías a utilizar</summary>
+  <summary>🔧 Tecnologías a utilizar</summary>
 <br>
 	
 ## Seguridad y Conectividad
