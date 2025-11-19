@@ -2,7 +2,7 @@
 
 <img src="Logo.png" alt="Example Image" width="300" height="500">
 
-![Banner](https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/ImagenPanoramicaGithub.jpg)
+![Banner](https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/ImagenPanoramica.jpg)
 </div>
 
 ---
