@@ -19,7 +19,7 @@ Nuestro objetivo en este proyecto es desarrollar nuestros conocimientos sobre la
 ---
 
 <details>
-  <summary>Briefing de ideas</summary>
+  <summary>💡Briefing de ideas</summary>
 	<br>
   Principalmente nosotros teníamos un par de ideas, entre ellas estaba hacer una página web que sirviera para estudiar los diferentes tipos de carnets de conducir pero hablando con los profesores y valorando nuestras ideas vimos que teníamos un alto porcentaje de que a mediados del proyecto este se nos pudiera cancelar por culpa de permisos que teniamos que solicitar de la DGT cosa que nosotros no podíamos hacer nada, entonces fuimos a algo más difícil pero que nos gusta más ya que la idea es más innovadora, queríamos hacer una IA desde cero y entrenarla para hacer recetas, pero al final hemos decidido coger una Ia ya hecha y entrenarla porque hacerla desde cero se nos complica y no tenemos los conocimientos suficientes.
 
@@ -44,7 +44,7 @@ Para poder desarrollar nuestro proyecto principalmente vamos a necesitar una pla
 ---
 
 <details>
-  <summary>Arquitectura del software</summary>
+  <summary>🧱 Arquitectura del software</summary>
 	<br>
 <details>
 	
@@ -504,7 +504,7 @@ Tabla correspondiente
 ---
 
 <details>
-  <summary>Tecnologías a utilizar</summary>
+  <summary>💻 Tecnologías a utilizar</summary>
 <br>
 	
 ## Seguridad y Conectividad
@@ -544,7 +544,7 @@ Estos son los equipos que hacen que la web funcione y guardan los datos:
 ---
 
 <details>
-  <summary>Red</summary>
+  <summary>🌐 Red</summary>
   <br>
 <details>
   <summary>Diagrama De La Red</summary>
@@ -569,7 +569,7 @@ Un diagrama de red es un dibujo que muestra cómo están conectadas todas las pa
 ---
 
 <details>
-  <summary>Tareas</summary>
+  <summary>📋 Tareas</summary>
 <br>
 	
 ## 1_ Organización del proyecto
@@ -715,7 +715,7 @@ Se añadirán enlaces o botones en la página principal para acceder a diferente
 ---
 
 <details>
-  <summary>Web</summary>
+  <summary>🖥️ Web</summary>
 <br>
 <details>
   <summary>a. Teoría Del Color DelicIA's</summary>
@@ -875,7 +875,7 @@ Un mapa de navegabilidad es un dibujo que muestra cómo se conectan entre sí la
 ---
 
 <details>
-  <summary>Servicios</summary>
+  <summary>⚙️ Servicios</summary>
 <br>
 <details>
   <summary>a. DNS</summary>
@@ -911,13 +911,13 @@ Las copias de seguridad son duplicados de los archivos y datos importantes que s
 ---
 
 <details>
-  <summary>Conclusiones</summary>
+  <summary>📄 Conclusiones</summary>
 </details>
 
 ---
 
 <details>
-  <summary>Bibliografia</summary>
+  <summary>📖 Bibliografia</summary>
 	<br>
 	<a href="https://www.youtube.com/watch?v=44ziZ12rJwU">¿Como usar GitHub? </a>
 	<br>
