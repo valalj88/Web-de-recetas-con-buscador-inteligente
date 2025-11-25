@@ -546,8 +546,9 @@ Estos son los equipos que hacen que la web funcione y guardan los datos:
 
 <details>
 	<summary>Tecnologias y apps a utilizar</summary>
+	<br>
 	
-	<table>
+<table>
   <tr>
     <th style="width: 200px;">Componente del sistema</th>
     <th style="width: 100px;">Tecnología / Framework</th>
@@ -558,29 +559,76 @@ Estos son los equipos que hacen que la web funcione y guardan los datos:
   <tr>
     <td>Frontend (Interfaz de usuario)</td>
     <td>HTML5 + CSS3</td>
-	<td>---</td>
-    <td>---</td>
+	<td>-</td>
+    <td>-</td>
     <td>Construye la interfaz visual del sitio web. Permite mostrar recetas, realizar búsquedas, filtrar por ingredientes y visualizar resultados generados por la IA.</td>
   </tr>
   <tr>
     <td>Backend (Lógica de negocio)</td>
     <td>PHP</td>
 	<td>8.4</td>
-    <td>---</td>
+    <td>-</td>
     <td>Procesa formularios, gestiona usuarios, autentificación, conexión a la base de datos y llamadas a la IA. Implementa la lógica REST del proyecto.</td>
   </tr>
   <tr>
-    <td>Herramienta de gestión BD</td>
-    <td>phpMyAdmin</td>
+    <td>Servidor Web</td>
+    <td>Apache</td>
 	<td>2.4.65</td>
 	<td>80 / 443</td>
     <td>Servidor HTTP/HTTPS que atiende las peticiones del cliente. Ejecuta PHP y sirve los recursos del frontend.</td>
+  </tr>
   <tr>
-    <td>ID3</td>
-    <td>Alta</td>
-	<td>Valoraciones</td>
-    <td>Sistema para puntuar recetas y dejar reseñas visibles a otros usuarios.</td>
-    <td>Pendiente</td>
+    <td>Base de Datos</td>
+    <td>MySQL</td>
+	<td>8.4</td>
+    <td>3306</td>
+    <td>Gestiona la información del sistema: usuarios, contraseñas cifradas, recetas, valoraciones, ingredientes y datos relacionales.</td>
+  </tr>
+   <tr>
+    <td>Herramienta de gestión BD</td>
+    <td>phpMyAdmin</td>
+	<td>5.2.3</td>
+    <td>80 / 443</td>
+    <td>Interfaz web para administrar MySQL: creación de tablas, carga de datos, consultas SQL, permisos y mantenimiento.</td>
+  </tr>
+  <tr>
+    <td>Servicios de APIs</td>
+    <td>https://www.mrcook.app/es/business/api</td>
+	<td>-</td>
+	<td>-</td>
+    <td>API externa REST utilizada para funcionalidades avanzadas como recomendación o análisis automático.</td>
+   </tr>
+   <tr>
+    <td>IA (motor de recomendaciones)</td>
+    <td>Python + FastAPI + modelo GPT</td>
+	<td>Python 3.12</td>
+    <td>8000</td>
+    <td>Microservicio de IA que recibe la consulta del usuario y genera respuestas o recetas personalizadas. FastAPI gestiona el endpoint.</td>
+   </tr>
+   <tr>
+    <td>Dominio</td>
+    <td>deliciastallerdekirby.es</td>
+	<td>-</td>
+    <td>-</td>
+    <td>Dominio principal del sitio. Se configurará con certificado SSL (Let’s Encrypt) para navegación segura HTTPS.</td>
+  </tr>
+  <tr>
+    <td>Sistema Operativo del Servidor</td>
+    <td>Ubuntu Server LTS</td>
+	<td>24.04 LTS</td>
+	<td>-</td>
+    <td>SO estable y muy usado en entornos de producción. Optmizado para servidores web, bases de datos y microservicios.</td>
+   </tr>
+   <tr>
+    <td>Hardware del Servidor (VPS)</td>
+    <td>DigitalOcean / AWS EC2</td>
+	<td>-</td>
+    <td>-</td>
+    <td>Configuración recomendada: 4 vCPU / 8 GB RAM / 100 GB SSD / 1 Gbps. Suficiente para manejar tráfico medio, IA y BD.</td>
+   </tr>
+</table>
+
+</details>
 </details>
 
 ---
