@@ -507,6 +507,9 @@ Tabla correspondiente
   <summary>🔧 Tecnologías a utilizar</summary>
 <br>
 	
+<details>
+  <summary> Servicios y tecnologias implementadas</summary>
+	  
 ## Seguridad y Conectividad
 
 ### pfSense:
@@ -539,6 +542,45 @@ Estos son los equipos que hacen que la web funcione y guardan los datos:
 - Funciona como un servidor DNS interno que tiene una lista negra. Su objetivo es bloquear toda la publicidad y rastreadores antes de que lleguen a los dispositivos, mejorando la velocidad y la privacidad de la navegación.
 
 [Tecnologias A Utilizar](https://docs.google.com/spreadsheets/d/1jvCkxkATXNUpnb44VIDi7ZuNaSH9dxMkMCZxkB0eU-Q/edit?usp=sharing)
+</details>
+
+<details>
+	<summary>Tecnologias y apps a utilizar</summary>
+	
+	<table>
+  <tr>
+    <th style="width: 200px;">Componente del sistema</th>
+    <th style="width: 100px;">Tecnología / Framework</th>
+	<th style="width: 200px;">Versión</th>
+    <th style="width: 100px;">Puerto</th>
+	<th style="width: 100px;">Descripción de uso o requisitos</th>
+  </tr>
+  <tr>
+    <td>Frontend (Interfaz de usuario)</td>
+    <td>HTML5 + CSS3</td>
+	<td>---</td>
+    <td>---</td>
+    <td>Construye la interfaz visual del sitio web. Permite mostrar recetas, realizar búsquedas, filtrar por ingredientes y visualizar resultados generados por la IA.</td>
+  </tr>
+  <tr>
+    <td>Backend (Lógica de negocio)</td>
+    <td>PHP</td>
+	<td>8.4</td>
+    <td>---</td>
+    <td>Procesa formularios, gestiona usuarios, autentificación, conexión a la base de datos y llamadas a la IA. Implementa la lógica REST del proyecto.</td>
+  </tr>
+  <tr>
+    <td>Herramienta de gestión BD</td>
+    <td>phpMyAdmin</td>
+	<td>2.4.65</td>
+	<td>80 / 443</td>
+    <td>Servidor HTTP/HTTPS que atiende las peticiones del cliente. Ejecuta PHP y sirve los recursos del frontend.</td>
+  <tr>
+    <td>ID3</td>
+    <td>Alta</td>
+	<td>Valoraciones</td>
+    <td>Sistema para puntuar recetas y dejar reseñas visibles a otros usuarios.</td>
+    <td>Pendiente</td>
 </details>
 
 ---
