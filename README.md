@@ -906,9 +906,11 @@ Un mapa de navegabilidad es un dibujo que muestra cómo se conectan entre sí la
   <summary>d. BackEnd</summary>
 	
 ## Antes
+La base de datos presentaba las entidades principales (usuarios, recetas, ingredientes, comentarios, valoraciones y favoritos) conectadas entre sí, pero sin una estandarización clara en los nombres, tipos de datos ni tablas intermedias bien definidas.
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/DataBaseEntidadRelacion.png" alt="Página Tareas" width="700">
 
 ## Después
+Antes teníamos un modelo más básico y poco organizado. Después lo reestructuramos para que fuera más claro, ordenado y coherente, ajustando relaciones, estandarizando la información y dejando una base más limpia y mejor organizada en MySql.
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/DataBaseRelacional.png" alt="Página Tareas" width="700">
 
 </details>
