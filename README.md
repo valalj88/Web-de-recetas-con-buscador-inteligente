@@ -1036,7 +1036,14 @@ Las copias de seguridad son duplicados de los archivos y datos importantes que s
 	<summary>Arduino</summary>
 <br>
 
+<div align="center">
+	
 ![Banner](https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/BannerArduino.webp)
+	
+</div>
+
+<br>
+
 **¿Que es arduino?**
 <br>
 	Es una plataforma de hardware y software libre usada para crear proyectos electrónicos de forma fácil para principiantes y expertos.
