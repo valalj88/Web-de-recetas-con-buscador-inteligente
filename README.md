@@ -1026,7 +1026,140 @@ Las copias de seguridad son duplicados de los archivos y datos importantes que s
 	<a href="https://kinsta.com/es/blog/contorno-texto-css/"> Comandos CSS </a>
 	<br>
 	<a href="https://startbootstrap.com/themes#google_vignette"> Plantillas Webs </a>
-	
 
+
+</details>
+
+ ---
+ 
+<details>
+	<summary>Arduino</summary>
+<br>
+
+**¿Que es arduino?**
+<br>
+	Es una plataforma de hardware y software libre usada para crear proyectos electrónicos de forma fácil para principiantes y expertos.
+<br>
+
+**¿Cuáles son sus características más importantes?**
+<br>
+	Arduino destaca por ser una plataforma de código abierto, fácil de usar, con su propio entorno de programación (IDE) y una amplia comunidad que brinda soporte.
+
+**¿Cuál es el origen de Arduino?**
+<br>
+	Arduino fue creado en 2005 en el Instituto IVREA, en Italia, como una herramienta para estudiantes de diseño sin conocimientos técnicos en electrónica y programación. Sus fundadores son: Massimo Banzi, David Cuartielles, Tom Igoe, Gianluca Martino y David Mellis 		desarrollaron Arduino como una plataforma de hardware libre y de bajo costo, con el objetivo de facilitar la creación de proyectos interactivos.
+<br>
+	El nombre "Arduino" proviene de un bar en Ivrea frecuentado por los fundadores, que también toma el nombre de un rey italiano.
+	
+**¿Qué modelos de Arduino hay? Haz una tabla donde especifiques para cada modelo: microcontrolador, voltaje, pines digitales, entradas analógicas, memoria, reloj.**
+<br>
+
+<table>
+  <tr>
+    <th>Modelo</th>
+    <th>Microcontrolador</th>
+    <th>Voltaje de operación</th>
+    <th>Pines digitales</th>
+    <th>Entradas analógicas</th>
+    <th>Memoria Flash</th>
+    <th>Frecuencia de reloj</th>
+  </tr>
+
+  <tr>
+    <td>Arduino Uno R3</td>
+    <td>ATmega328P</td>
+    <td>5V</td>
+    <td>14</td>
+    <td>6</td>
+    <td>32 KB</td>
+    <td>16 MHz</td>
+  </tr>
+
+  <tr>
+    <td>Arduino Mega 2560</td>
+    <td>ATmega2560</td>
+    <td>5V</td>
+    <td>54</td>
+    <td>16</td>
+    <td>256 KB</td>
+    <td>16 MHz</td>
+  </tr>
+
+  <tr>
+    <td>Arduino Nano</td>
+    <td>ATmega328P</td>
+    <td>5V</td>
+    <td>22</td>
+    <td>8</td>
+    <td>32 KB</td>
+    <td>16 MHz</td>
+  </tr>
+
+  <tr>
+    <td>Arduino Leonardo</td>
+    <td>ATmega32u4</td>
+    <td>5V</td>
+    <td>20</td>
+    <td>12</td>
+    <td>32 KB</td>
+    <td>16 MHz</td>
+  </tr>
+
+  <tr>
+    <td>Arduino Due</td>
+    <td>AT91SAM3X8E (ARM Cortex-M3)</td>
+    <td>3.3V</td>
+    <td>54</td>
+    <td>12</td>
+    <td>512 KB</td>
+    <td>84 MHz</td>
+  </tr>
+
+  <tr>
+    <td>Arduino Micro</td>
+    <td>ATmega32u4</td>
+    <td>5V</td>
+    <td>20</td>
+    <td>12</td>
+    <td>32 KB</td>
+    <td>16 MHz</td>
+  </tr>
+
+  <tr>
+    <td>Arduino MKR1000</td>
+    <td>SAMD21 Cortex-M0+</td>
+    <td>3.3V</td>
+    <td>8</td>
+    <td>7</td>
+    <td>256 KB</td>
+    <td>48 MHz</td>
+  </tr>
+
+  <tr>
+    <td>Arduino Nano 33 IoT</td>
+    <td>SAMD21 Cortex-M0+</td>
+    <td>3.3V</td>
+    <td>14</td>
+    <td>8</td>
+    <td>256 KB</td>
+    <td>48 MHz</td>
+  </tr>
+</table>
+
+**2.5 ¿Para qué sirve un Arduino?**
+
+La principal utilidad que se le da a un arduino es la automatización que esto sirve para controlar las luces por ejemplo de una casa, sensores, motores etc.. que esto puede hacer que podamos abrir una puerta de un parking de un garaje con un mando pero también se les puede dar otras funciones como para el aprendizaje básico de de la programación o en un nivel mas avanzado tambien lo podriamos utilizar en el área de IoT que lo que podemos hacer con esto es recoger los datos de los sensores de los arduino y mandarlos a la nube.
+
+En resumen esta tecnología cada vez está creciendo más gracias a la integración que está teniendo en diferentes ámbitos ya que si nos paramos a pensar estamos rodeados de esta tecnología.
+
+**2.6 ¿Qué lenguaje utiliza?**
+
+Arduino usa un lenguaje C/C++, pero adaptado para que sea más fácil de entender y usar ya que esto muchas veces se utiliza para el aprendizaje o para gente que está empezando a programar. Se usa principalmente en el entorno llamado Arduino IDE, donde escribes y juntas la información envías el código a la placa.
+
+Este lenguaje solo permite controlar un par de objetos básicos como: Luces Leds,Rgb, Motores servos o DC,Sensores de temperatura,humedad o ultrasonido, Pantallas Lcd o Oled y por ultimo para comunicaciones como Bluetooth, Wi-fi etc….
+
+**2.7 ¿Qué es el Arduino IDE?**
+
+Es el programa que usas en el ordenador para escribir, compilar y cargar código en una placa Arduino y este software es totalmente gratuito.
 
 </details>
