@@ -2,6 +2,7 @@
 
 <img src="Logo.png" alt="Example Image" width="300" height="500">
 
+**Ana botieso**
 ![Banner](https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/ImagenPanoramica.png)
 
 </div>
@@ -1036,11 +1037,9 @@ Las copias de seguridad son duplicados de los archivos y datos importantes que s
 	<summary>Arduino</summary>
 <br>
 
-<div align="center">
-	
-![Banner](https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/BannerArduino.webp)
-	
-</div>
+<p align="center">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/BannerArduino.jpg" alt="Mi banner" width="800" height="200">
+  </p>
 
 <br>
 
@@ -1154,20 +1153,22 @@ Las copias de seguridad son duplicados de los archivos y datos importantes que s
   </tr>
 </table>
 
-**2.5 ¿Para qué sirve un Arduino?**
+**¿Para qué sirve un Arduino?**
 
 La principal utilidad que se le da a un arduino es la automatización que esto sirve para controlar las luces por ejemplo de una casa, sensores, motores etc.. que esto puede hacer que podamos abrir una puerta de un parking de un garaje con un mando pero también se les puede dar otras funciones como para el aprendizaje básico de de la programación o en un nivel mas avanzado tambien lo podriamos utilizar en el área de IoT que lo que podemos hacer con esto es recoger los datos de los sensores de los arduino y mandarlos a la nube.
 
 En resumen esta tecnología cada vez está creciendo más gracias a la integración que está teniendo en diferentes ámbitos ya que si nos paramos a pensar estamos rodeados de esta tecnología.
 
-**2.6 ¿Qué lenguaje utiliza?**
+**¿Qué lenguaje utiliza?**
 
 Arduino usa un lenguaje C/C++, pero adaptado para que sea más fácil de entender y usar ya que esto muchas veces se utiliza para el aprendizaje o para gente que está empezando a programar. Se usa principalmente en el entorno llamado Arduino IDE, donde escribes y juntas la información envías el código a la placa.
 
 Este lenguaje solo permite controlar un par de objetos básicos como: Luces Leds,Rgb, Motores servos o DC,Sensores de temperatura,humedad o ultrasonido, Pantallas Lcd o Oled y por ultimo para comunicaciones como Bluetooth, Wi-fi etc….
 
-**2.7 ¿Qué es el Arduino IDE?**
+**¿Qué es el Arduino IDE?**
 
 Es el programa que usas en el ordenador para escribir, compilar y cargar código en una placa Arduino y este software es totalmente gratuito.
 
 </details>
+
+**Ana Botieso**
