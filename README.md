@@ -1177,32 +1177,59 @@ Es el programa que usas en el ordenador para escribir, compilar y cargar código
 <details>
 <summary>Actividad_1</summary>
 <br>
-	
-(1) Objetivo de la práctica
+
+## Blink
+**(1) Objetivo de la práctica**
 
 En una placa de arduino ESP32 tenemos que conseguir que un led parpadee constantemente .
 
-(2) Material y explicacion de cada componente
+**(2) Material y explicacion de cada componente**
 - Un led
 - Dos Jumpers
 - Una Resistencia 
 
-(3) Esquema del circuito como se muestra mas abajo
+**(3) Esquema del circuito como se muestra mas abajo**
 
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/CircuitoA1.png" alt="Página Tareas" width="700">
 
-(4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo
+**(4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
 
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/CodigoA1.png" width="700">
 
-(5) Video de la practica
+**(5) Video de la practica**
 
 ![video](https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/VideoA1.MOV" width="700")
 
 
-(6) Imagen para la entrada del blog o proyecto
+**(6) Imagen para la entrada del blog o proyecto**
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img9.png" alt="Página Tareas" width="700">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/FotoA1.png">
+
+## SEMÁFORO
+
+**(1) Objetivo de la práctica**
+
+En una placa de arduino ESP32 tenemos que conseguir tres leds de color verde,amarillo,rojo se encinedan a timepos diferestes recrando un semaforo.
+
+**(2) Material y explicación de cada componente**
+- 3 Jumpers
+- 3 Resistencias
+- 3 Leds
+
+**(3) Esquema del circuito como se muestra mas abajo**
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/FotoA1.png">
+
+**(4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/FotoA1.png">
+
+**(5) Video de la practica**
+
+video
+
+**(6) Imagen para la entrada del blog o proyecto**
+
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/FotoA1.png">
+
 
 </details>
 </details>
