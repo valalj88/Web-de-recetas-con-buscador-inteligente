@@ -1036,7 +1036,8 @@ Las copias de seguridad son duplicados de los archivos y datos importantes que s
 <details>
 	<summary>Arduino</summary>
 <br>
-
+<details>
+	<summary>Introducción Arduino</summary>
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/BannerArduino.jpg" alt="Mi banner" width="800" height="200">
   </p>
@@ -1171,4 +1172,34 @@ Es el programa que usas en el ordenador para escribir, compilar y cargar código
 
 </details>
 
-**Ana Botieso**
+<details>
+<summary>Actividades</summary>
+<br>
+<details>
+<summary>Actividad_1</summary>
+
+(1) Objetivo de la práctica
+En una placa de arduino ESP32 tenemos que conseguir que un led parpadee constantemente .
+
+(2) Material y explicacion de cada componente
+- Un led
+- Dos Jumpers
+- Una Resistencia 
+
+(3) Esquema del circuito como se muestra mas abajo
+
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img9.png" alt="Página Tareas" width="700">
+
+(4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo
+
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img9.png" alt="Página Tareas" width="700">
+
+(5) Video de la practica
+
+(6) Imagen para la entrada del blog o proyecto
+
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img9.png" alt="Página Tareas" width="700">
+
+</details>
+</details>
+
