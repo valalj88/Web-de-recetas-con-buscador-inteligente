@@ -2,7 +2,6 @@
 
 <img src="Logo.png" alt="Example Image" width="300" height="500">
 
-**Ana botieso**
 ![Banner](https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/ImagenPanoramica.png)
 
 </div>
