@@ -1177,7 +1177,7 @@ Es el programa que usas en el ordenador para escribir, compilar y cargar código
 <br>
 <details>
 <summary>Actividad_1</summary>
-
+<br>
 (1) Objetivo de la práctica
 En una placa de arduino ESP32 tenemos que conseguir que un led parpadee constantemente .
 
