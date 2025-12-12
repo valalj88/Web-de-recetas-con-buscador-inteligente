@@ -1187,7 +1187,7 @@ En una placa de arduino ESP32 tenemos que conseguir que un led parpadee constant
 
 (3) Esquema del circuito como se muestra mas abajo
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/CircuitoA1.png" alt="Página Tareas" width="700">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/CircuitoA1.png" alt="Página Tareas" width="700">
 
 (4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo
 
