@@ -1177,7 +1177,9 @@ Es el programa que usas en el ordenador para escribir, compilar y cargar código
 <details>
 <summary>Actividad_1</summary>
 <br>
+	
 (1) Objetivo de la práctica
+
 En una placa de arduino ESP32 tenemos que conseguir que un led parpadee constantemente .
 
 (2) Material y explicacion de cada componente
@@ -1191,9 +1193,12 @@ En una placa de arduino ESP32 tenemos que conseguir que un led parpadee constant
 
 (4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Mockup%20DelicIA's/img9.png" alt="Página Tareas" width="700">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/CodigoA1.png" width="700">
 
 (5) Video de la practica
+
+![video](https://img.youtube.com/vi/ID_DEL_VIDEO/0.jpg)
+
 
 (6) Imagen para la entrada del blog o proyecto
 
