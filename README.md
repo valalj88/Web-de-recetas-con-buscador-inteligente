@@ -1200,7 +1200,7 @@ En una placa de arduino ESP32 tenemos que conseguir que un led parpadee constant
 
 ![video](https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/VideoA1.MOV" width="700")
 
-https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/IMG_1541.mp4
+https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/VideoA1Semaforo.mp4
 
 **(6) Imagen para la entrada del blog o proyecto**
 
