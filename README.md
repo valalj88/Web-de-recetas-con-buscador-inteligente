@@ -1198,15 +1198,7 @@ En una placa de arduino ESP32 tenemos que conseguir que un led parpadee constant
 
 **(5) Video de la practica**
 
-![video](https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/VideoA1.MOV" width="700")
-
-https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/VideoA1Semaforo.mp4
-
-
-
-https://github.com/user-attachments/assets/538067ba-0d4c-48e9-9b46-a3c60f5a5765
-
-
+https://github.com/user-attachments/assets/66268bca-320a-4598-8e20-6374dae1f2a2
 
 
 **(6) Imagen para la entrada del blog o proyecto**
@@ -1234,8 +1226,7 @@ En una placa de arduino ESP32 tenemos que conseguir tres leds de color verde,ama
 
 **(5) Video de la practica**
 
-video
-
+https://github.com/user-attachments/assets/538067ba-0d4c-48e9-9b46-a3c60f5a5765
 
 **(6) Imagen para la entrada del blog o proyecto**
 
