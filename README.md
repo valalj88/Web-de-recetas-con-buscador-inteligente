@@ -1226,9 +1226,10 @@ En una placa de arduino ESP32 tenemos que conseguir tres leds de color verde,ama
 
 video
 
+
 **(6) Imagen para la entrada del blog o proyecto**
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/FotoA1Semaforo.jpg">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/FotoA1Semaforo.png">
 
 
 </details>
