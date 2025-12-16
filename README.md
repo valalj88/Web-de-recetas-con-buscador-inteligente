@@ -1190,11 +1190,11 @@ En una placa de arduino ESP32 tenemos que conseguir que un led parpadee constant
 
 **(3) Esquema del circuito como se muestra mas abajo**
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/CircuitoA1.png" alt="Página Tareas" width="700">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/%20CircuitoA1.png" alt="Página Tareas" width="700">
 
 **(4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/CodigoA1.png" width="700">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/CodigoA1.png" width="700">
 
 **(5) Video de la practica**
 
@@ -1203,7 +1203,7 @@ En una placa de arduino ESP32 tenemos que conseguir que un led parpadee constant
 
 **(6) Imagen para la entrada del blog o proyecto**
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/FotoA1.png">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/FotoA1.png">
 
 ## SEMÁFORO
 
@@ -1217,10 +1217,10 @@ En una placa de arduino ESP32 tenemos que conseguir tres leds de color verde,ama
 - 3 Leds
 
 **(3) Esquema del circuito como se muestra mas abajo**
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/CircuitoA1Semaforo.png">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/CircuitoA1Semaforo.png">
 
 **(4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/FotoA1.png">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/FotoA1.png">
 
 **(5) Video de la practica**
 
@@ -1228,7 +1228,7 @@ video
 
 **(6) Imagen para la entrada del blog o proyecto**
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/FotoA1Semaforo.jpg">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/FotoA1Semaforo.jpg">
 
 
 </details>
