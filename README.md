@@ -1232,7 +1232,12 @@ https://github.com/user-attachments/assets/538067ba-0d4c-48e9-9b46-a3c60f5a5765
 **(6) Imagen para la entrada del blog o proyecto**
 
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/FotoA1Semaforo.png" alt="Página Tareas" width="700">
+</details>
 
+<details>
+<summary>Actividad_2</summary>
+<br>
+	
 ## A2-led+button
 
 **(1) Objetivo de la práctica**
@@ -1247,18 +1252,63 @@ En una placa de arduino ESP32 tenemos que conseguir que al pulsar el boton se en
 
 **(3) Esquema del circuito como se muestra mas abajo**
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/CircuitoA1Semaforo.png" alt="Página Tareas" width="700">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/2/CircuitoA2LedButton.png" alt="Página Tareas" width="700">
 
 **(4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/CodigoA1Semaforo.png" alt="Página Tareas" width="400">
+Boton Parte 1:
+
+#define PIN_LED    2
+#define PIN_BUTTON 13
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin PIN_LED as an output.
+  pinMode(PIN_LED, OUTPUT);
+  pinMode(PIN_BUTTON, INPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  if (digitalRead(PIN_BUTTON) == LOW) {
+    digitalWrite(PIN_LED,HIGH);
+  }else{
+    digitalWrite(PIN_LED,LOW);
+  }
+}
+
+Lampara parte 2:
+
+#define PIN_LED    2
+#define PIN_BUTTON 13
+
+bool ledState = LOW;          // Estado actual del LED
+bool lastButtonState = HIGH;  // Estado anterior del botón
+
+void setup() {
+  pinMode(PIN_LED, OUTPUT);
+  pinMode(PIN_BUTTON, INPUT);
+}
+
+void loop() {
+  bool buttonState = digitalRead(PIN_BUTTON);
+
+  // Detecta la pulsación (cuando pasa de HIGH a LOW)
+  if (lastButtonState == HIGH && buttonState == LOW) {
+    ledState = !ledState;              // Cambia el estado del LED
+    digitalWrite(PIN_LED, ledState);
+    delay(200);                        // Anti-rebote simple
+  }
+
+  lastButtonState = buttonState;
+}
+--
 
 **(5) Video de la practica**
 https://github.com/user-attachments/assets/284d87e3-51cc-4833-aa10-a21d4093001c
 
 **(6) Imagen para la entrada del blog o proyecto**
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/FotoA1Semaforo.png" alt="Página Tareas" width="700">
+<img src=
 
 </details>
 </details>
