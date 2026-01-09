@@ -1242,7 +1242,7 @@ https://github.com/user-attachments/assets/538067ba-0d4c-48e9-9b46-a3c60f5a5765
 
 **(1) Objetivo de la práctica**
 
-En una placa de arduino ESP32 tenemos que conseguir que al pulsar el boton se encienda el led.
+En una placa de arduino ESP32 tenemos que conseguir que al pulsar el boton se encienda el led y se apague cuando soltemos en la primera parte y en la segunda tiene que hacer función de lámpara, cuando pulsemos se enciende y tendremos que volver a pulsar para que se apague.
 
 **(2) Material y explicación de cada componente**
 - 4 Jumpers
@@ -1260,14 +1260,11 @@ Boton Parte 1:
 
 #define PIN_LED    2
 #define PIN_BUTTON 13
-// the setup function runs once when you press reset or power the board
 void setup() {
-  // initialize digital pin PIN_LED as an output.
   pinMode(PIN_LED, OUTPUT);
   pinMode(PIN_BUTTON, INPUT);
 }
 
-// the loop function runs over and over again forever
 void loop() {
   if (digitalRead(PIN_BUTTON) == LOW) {
     digitalWrite(PIN_LED,HIGH);
@@ -1292,14 +1289,14 @@ void setup() {
 void loop() {
   bool buttonState = digitalRead(PIN_BUTTON);
 
-  // Detecta la pulsación (cuando pasa de HIGH a LOW)
   if (lastButtonState == HIGH && buttonState == LOW) {
     ledState = !ledState;              // Cambia el estado del LED
     digitalWrite(PIN_LED, ledState);
     delay(200);                        // Anti-rebote simple
   }
 
-  lastButtonState = buttonState;
+lastButtonState = buttonState
+
 }
 --
 
