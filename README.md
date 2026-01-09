@@ -1205,16 +1205,17 @@ https://github.com/user-attachments/assets/66268bca-320a-4598-8e20-6374dae1f2a2
 
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/FotoA1.png" alt="Página Tareas" width="700">
 
-## SEMÁFORO
+## A2-led+button
 
 **(1) Objetivo de la práctica**
 
-En una placa de arduino ESP32 tenemos que conseguir tres leds de color verde,amarillo,rojo se encinedan a timepos diferestes recrando un semaforo.
+En una placa de arduino ESP32 tenemos que conseguir que al puslar el boton se encienda el led.
 
 **(2) Material y explicación de cada componente**
-- 3 Jumpers
+- 4 Jumpers
 - 3 Resistencias
-- 3 Leds
+- 1 Leds
+- 1 Botón
 
 **(3) Esquema del circuito como se muestra mas abajo**
 
