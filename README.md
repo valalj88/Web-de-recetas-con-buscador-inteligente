@@ -1252,11 +1252,11 @@ En una placa de arduino ESP32 tenemos que conseguir que al pulsar el boton se en
 
 **(3) Esquema del circuito como se muestra mas abajo**
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/2/CircuitoA2LedButton.png" alt="Página Tareas" width="700">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/2/image.png" alt="Página Tareas" width="700">
 
 **(4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
 
-Boton Parte 1:
+**Boton Parte 1:**
 
 #define PIN_LED    2
 #define PIN_BUTTON 13
@@ -1273,7 +1273,7 @@ void loop() {
   }
 }
 
-Lampara parte 2:
+**Lampara parte 2:**
 
 #define PIN_LED    2
 #define PIN_BUTTON 13
@@ -1301,6 +1301,7 @@ lastButtonState = buttonState
 --
 
 **(5) Video de la practica**
+
 https://github.com/user-attachments/assets/284d87e3-51cc-4833-aa10-a21d4093001c
 
 **(6) Imagen para la entrada del blog o proyecto**
