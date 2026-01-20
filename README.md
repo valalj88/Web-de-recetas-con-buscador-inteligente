@@ -973,14 +973,16 @@ Antes teníamos un modelo más básico y poco organizado. Después lo reestructu
   <summary>a. DNS</summary>
 <br>
 El DNS es un servicio que se encarga de traducir los nombres de las páginas web, como ejemplo.com, a direcciones numéricas que los ordenadores entienden. Es útil para un proyecto porque permite que los usuarios accedan fácilmente a tu página o aplicación usando un nombre sencillo en lugar de una dirección difícil de recordar. Gracias al DNS, el acceso es más rápido, más claro y más profesional.
-
+<br>
+<br>
+	
 <details>
 	
   <summary>Pi-hole</summary>
 	
 ## Pi-hole
 
-Para empezar a realizar la instalación de nuestro pi-hole en ubuntu deberemos tener un ubuntu server instalado previamente.
+Para empezar a realizar la instalación de nuestro **pi-hole** en ubuntu deberemos tener un ubuntu server instalado previamente.
 
 Si ya esta instalado empezaremos a introducir comandos.
 
@@ -994,7 +996,7 @@ Directiva routes en lugar de gateway4
 Las versiones actuales desaconsejan el uso de la directiva gateway4. En su lugar se aconseja el uso de la directiva routes que permite añadir la ruta por defecto o cualquier otra ruta.
 En este caso, la configuración anterior podría ser:
 
-SSSSSSSSSSS
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/FotoA1.png" alt="Página Tareas" width="700">
 
 Cuando se haya editado de configuración de Netplan se puede:
 Utilizar el comando netplan apply para aplicar la configuración. Si se detecta algún error en el fichero se indicará.
@@ -1012,6 +1014,17 @@ Durante el inicio del instalación skypeamos todo hasta llegar a la interfaz de 
 En este paso tuvimos problemas ya que al poner la ip ponemos una cualquiera y no la ip del aula.
 
 En el siguiente paso se eligió el servidor DNS externo que Pi-hole utilizaría para resolver las consultas que no se bloquean. En este caso se seleccionó Google, que utiliza las direcciones 8.8.8.8 ya que es un servidor DNS muy conocido y fiable una vez hecho esto durante la instalación se generó una contraseña para el acceso de administrador, la cual se guardó porque es necesaria para entrar al panel de control.
+
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/FotoA1.png" alt="Página Tareas" width="700">
+
+<br>
+
+En este paso hemos configurado dentro de Pi-hole el DHCP, con la maquina encendida en la que hemos hecho la instalación de Pi-hole hemos mirado la ip que tenia esa maquina y hemos ido a google en nuestro PC y hemos puesto e este caso en el buscador 192.168.135.36/admin ahi se nos a abierto la interfaz de Pi-hole y hemos establecido una contraseña desde el cmd de  la máquina virtual.
+
+Una vez hecho esto nos a dejado entrar y hemos configurado el DHCP con el Rango de ips del 192.168.1.100 hasta la ip 110, para el gateway hemos utilizado la 192.168.1.254. 
+
+Cuando hemos terminado de hacer esto hemos guardado los cambios y para comprobar que funcionaba correctamente hemos abierto otra máquina virtual que estaba en modo red interna y efectivamente funcionaba correctamente.
+
 
 </details>
 </details>
