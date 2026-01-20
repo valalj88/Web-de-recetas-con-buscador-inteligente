@@ -1015,7 +1015,7 @@ En este paso tuvimos problemas ya que al poner la ip ponemos una cualquiera y no
 
 En el siguiente paso se eligió el servidor DNS externo que Pi-hole utilizaría para resolver las consultas que no se bloquean. En este caso se seleccionó Google, que utiliza las direcciones 8.8.8.8 ya que es un servidor DNS muy conocido y fiable una vez hecho esto durante la instalación se generó una contraseña para el acceso de administrador, la cual se guardó porque es necesaria para entrar al panel de control.
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/FotoA1.png" alt="Página Tareas" width="700">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/PiHoleSolucion.png" alt="Página Tareas" width="700">
 
 <br>
 
