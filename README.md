@@ -1362,6 +1362,8 @@ https://github.com/user-attachments/assets/284d87e3-51cc-4833-aa10-a21d4093001c
 
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/2/IMG_1893.jpg" alt="Página Tareas" width="700">
 
+</details>
+
 <details>
 <summary>Actividad_2</summary>
 <br>
@@ -1599,7 +1601,6 @@ Valores bajos → más brillo (ánodo común)
 Valores altos → menos brillo
 
 
-</details>
 </details>
 </details>
 
