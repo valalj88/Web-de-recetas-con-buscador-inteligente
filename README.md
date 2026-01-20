@@ -1365,7 +1365,7 @@ https://github.com/user-attachments/assets/284d87e3-51cc-4833-aa10-a21d4093001c
 </details>
 
 <details>
-<summary>Actividad_2</summary>
+<summary>Actividad_3</summary>
 <br>
 	
 ## A3-led_RGB
@@ -1516,7 +1516,7 @@ https://github.com/user-attachments/assets/d3f503d3-ed57-47f2-aca4-5ad668606159
 
 **(6) Imagen para la entrada del blog o proyecto**
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/2/IMG_1893.jpg" alt="Página Tareas" width="700">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/3/CircuitoA3.jpeg" alt="Página Tareas" width="700">
 
 **(7) Preguntas**
 
