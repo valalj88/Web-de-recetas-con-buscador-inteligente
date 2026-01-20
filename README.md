@@ -996,7 +996,7 @@ Directiva routes en lugar de gateway4
 Las versiones actuales desaconsejan el uso de la directiva gateway4. En su lugar se aconseja el uso de la directiva routes que permite añadir la ruta por defecto o cualquier otra ruta.
 En este caso, la configuración anterior podría ser:
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/1/FotoA1.png" alt="Página Tareas" width="700">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Netplanconfig.png" alt="Página Tareas" width="700">
 
 Cuando se haya editado de configuración de Netplan se puede:
 Utilizar el comando netplan apply para aplicar la configuración. Si se detecta algún error en el fichero se indicará.
