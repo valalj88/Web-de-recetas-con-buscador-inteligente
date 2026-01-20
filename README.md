@@ -1362,6 +1362,244 @@ https://github.com/user-attachments/assets/284d87e3-51cc-4833-aa10-a21d4093001c
 
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/2/IMG_1893.jpg" alt="Página Tareas" width="700">
 
+<details>
+<summary>Actividad_2</summary>
+<br>
+	
+## A3-led_RGB
+
+**(1) Objetivo de la práctica**
+
+En esta Actividad aprenderemos cómo controlar un LED RGB y observaran que puede emitir diferentes colores de luz (usaremos LED RGB para crear una luz multicolor). También podrán entender la función random así como el concepto de gradiente y su aplicación en la actividad.
+
+
+**(2) Material y explicación de cada componente**
+- 4 Jumpers
+- 3 Resistencias
+- 1 Led RGB
+
+**(3) Esquema del circuito como se muestra mas abajo**
+
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/2/image.png" alt="Página Tareas" width="700">
+
+**Parte 1**
+**(4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
+
+**Boton Parte 1:**
+
+const byte ledPins[] = {4, 0, 2};   // Pines RGB
+const byte chns[] = {0, 1, 2};      // Canales PWM
+
+void setup() {
+  for (int i = 0; i < 3; i++) {
+    // Asocia pin + canal + frecuencia + resolución
+    ledcAttach(ledPins[i], 1000, 8);
+  }
+}
+
+void loop() {
+  for (int i = 0; i < 256; i++) {
+    setColor(wheel(i));
+    delay(30);
+  }
+}
+
+void setColor(long rgb) {
+  ledcWrite(ledPins[0], 255 - ((rgb >> 16) & 0xFF)); // Rojo
+  ledcWrite(ledPins[1], 255 - ((rgb >> 8) & 0xFF));  // Verde
+  ledcWrite(ledPins[2], 255 - (rgb & 0xFF));         // Azul
+}
+
+long wheel(int pos) {
+  pos = pos % 256;
+
+  if (pos < 85) {
+    return ((255 - pos * 3) << 16) | ((pos * 3) << 8);
+  } 
+  else if (pos < 170) {
+    pos -= 85;
+    return ((255 - pos * 3) << 8) | (pos * 3);
+  } 
+  else {
+    pos -= 170;
+    return ((pos * 3) << 16) | (255 - pos * 3);
+  }
+}
+
+**Lampara parte 2:**
+
+const uint8_t PIN_R = 4;
+const uint8_t PIN_G = 0;
+const uint8_t PIN_B = 2;
+
+void setup() {
+  ledcAttach(PIN_R, 1000, 8);
+  ledcAttach(PIN_G, 1000, 8);
+  ledcAttach(PIN_B, 1000, 8);
+}
+
+void loop() {
+  // Color 1: Azul dominante
+  setRGB(50, 50, 255);
+  delay(3000);
+
+  // Color 2: Verde amarillento
+  setRGB(180, 255, 50);
+  delay(3000);
+}
+
+void setRGB(uint8_t r, uint8_t g, uint8_t b) {
+  // Ánodo común → valores invertidos
+  ledcWrite(PIN_R, 255 - r);
+  ledcWrite(PIN_G, 255 - g);
+  ledcWrite(PIN_B, 255 - b);
+}
+
+}
+
+**Parte 3**
+
+const byte ledPins[] = {2, 0, 4}; // Pinos RGB GPIO2, GPIO0, GPI04 
+const byte chns[] = {0, 1, 2}; // Canales PWM
+
+void setup() {
+	for (int i = 0; i < 3; i++) {
+ledcAttach (ledPins[i], 1000, 8);
+	}
+}
+
+void loop() {
+	for (int i = 0; i < 256; i++) {
+		setColor(wheel(i));
+		delay(20);
+	}
+}
+
+void setColor(long rgb) {
+	int red = (rgb >> 16) & 0xFF; 
+	int green (rgb >> 8) & 0xFF; int blue rgb & 0xFF;
+
+	ledcwrite(ledPins[0], red); // Rojo 
+	ledcWrite(ledPins [1], green); // Verde 
+	ledcWrite(ledPins [2], blue); // Azul
+
+}
+
+long wheel (int pos) {
+	pos = pos % 256;
+	
+	if (pos85) {
+		// Rojo -> Verde
+		return ((255 - pos * 3) << 16) | ((pos * 3 ) << 8);
+	}else if (pos < 170) {
+		// Verde -> Azul
+		pos- 85;
+		return ((pos * 3) << 16) | ((255 - pos * 3) << 8) | (pos * 3);
+	} else {
+		// Azul -> Rojo
+		pos = 170;
+		return ((pos* 3) << 16) (255 - pos 3);
+	}
+}
+
+--
+
+**(5) Video de la practica**
+
+
+
+https://github.com/user-attachments/assets/d3f503d3-ed57-47f2-aca4-5ad668606159
+
+
+
+**(6) Imagen para la entrada del blog o proyecto**
+
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/2/IMG_1893.jpg" alt="Página Tareas" width="700">
+
+**(7) Preguntas**
+
+**Que observa tras cargar y correr el código del programa con respecto a lo que vimos antes. Explique la diferencia y argumente que es el gradiente y que es lo que hace (En el código) que en este ejercicio se pueda observar.**
+
+Al cargar y ejecutar este programa se observa que el LED RGB cambia de color de manera suave y continua, pasando gradualmente por diferentes tonalidades (rojo, verde, azul y combinaciones intermedias).
+Diferencia con lo visto antes
+Antes, normalmente:
+Los LEDs cambiaban bruscamente de un color a otro
+
+O se encendían/apagaban en valores fijos
+
+En este ejercicio:
+El cambio de color es progresivo
+
+No se perciben saltos entre colores
+
+Se genera un efecto visual continuo
+
+Esto ocurre porque ahora se usan valores intermedios de PWM y no solo encendido/apagado.
+
+<br>
+
+**¿Que es un gradiente?**
+
+Un gradiente es una transición gradual entre valores, en este caso, entre colores.
+En un LED RGB:
+Cada color (R, G, B) puede variar su intensidad
+
+Al cambiar esas intensidades poco a poco, se crea un gradiente de color
+
+Explique que es el tipo de dato long y su diferencia con el int y porque se utiliza en el ejercicio.
+
+¿Qué es el tipo de dato long? ¿Diferencia con int y por qué se usa?
+Tipo de dato int
+Tamaño: 16 bits en Arduino clásico
+
+Rango: -32,768 a 32,767
+Tipo de dato long
+Tamaño: 32 bits
+Rango: -2,147,483,648 a 2,147,483,647
+
+<br>
+
+**Explique el funcionamiento de la función wheel de manera general.**
+
+Funcionamiento general de la función wheel
+La función wheel(int pos):
+Recibe un valor entre 0 y 255
+
+Devuelve un color RGB codificado en un long
+
+Funcionamiento general
+Divide el rango 0–255 en tres secciones
+
+En cada sección:
+
+Un color baja su intensidad
+
+Otro color la aumenta
+
+<br>
+
+**Busque en las referencias para que se utiliza la función ledcWrite() además indique cual es la salida de esta función y qué significado tiene en el código.
+Buscar información de cada función del script en: https://www.arduino.cc/reference/en/ ?
+¿Para qué sirve?
+Escribe un valor PWM en un pin**
+
+Controla la intensidad de una señal
+
+Salida de la función
+No devuelve ningún valor
+
+Su efecto es físico: modifica la señal del pin
+
+Significado en el código
+En este ejercicio:
+Controla la intensidad de cada color del LED RGB
+
+Valores bajos → más brillo (ánodo común)
+
+Valores altos → menos brillo
+
+
+</details>
 </details>
 </details>
 
