@@ -973,6 +973,47 @@ Antes teníamos un modelo más básico y poco organizado. Después lo reestructu
   <summary>a. DNS</summary>
 <br>
 El DNS es un servicio que se encarga de traducir los nombres de las páginas web, como ejemplo.com, a direcciones numéricas que los ordenadores entienden. Es útil para un proyecto porque permite que los usuarios accedan fácilmente a tu página o aplicación usando un nombre sencillo en lugar de una dirección difícil de recordar. Gracias al DNS, el acceso es más rápido, más claro y más profesional.
+
+<details>
+	
+  <summary>Pi-hole</summary>
+	
+## Pi-hole
+
+Para empezar a realizar la instalación de nuestro pi-hole en ubuntu deberemos tener un ubuntu server instalado previamente.
+
+Si ya esta instalado empezaremos a introducir comandos.
+
+El primer paso es introducir el comando “sudo nano /etc/netplan/00-installet-config.yaml” para ver la configuración de la red de la maquina.
+
+Ubuntu 20.04 utiliza Netplan para configurar la red en el sistema operativo. Netplan configura los parámetros de red del host a partir de ficheros de configuración YAML.
+El directorio de configuración de Netplan es: /etc/netplan
+En su interior el instalador de Ubuntu habrá dejado el fichero de configuración diferente según se trate de la versión de escritorio o de servidor.
+
+Directiva routes en lugar de gateway4
+Las versiones actuales desaconsejan el uso de la directiva gateway4. En su lugar se aconseja el uso de la directiva routes que permite añadir la ruta por defecto o cualquier otra ruta.
+En este caso, la configuración anterior podría ser:
+
+SSSSSSSSSSS
+
+Cuando se haya editado de configuración de Netplan se puede:
+Utilizar el comando netplan apply para aplicar la configuración. Si se detecta algún error en el fichero se indicará.
+Reiniciar la máquina para que arranque con la nueva configuración. Si hay algún error en la configuración de Netplan la máquina arrancará sin configurar la red.
+
+Después hemos ejecutado netplan try para comprobar que todo funcione bien y haremos un ping a google.com.
+Y una vez hecho todo esto, es la verificación de que podemos continuar a la siguiente fase:
+
+## INSTALACIÓN DE PI-HOLE
+
+Para realizar la instalación de Pi-hole, lo primero que se hizo fue ejecutar con el  comando curl -sSL https://install.pi-hole.net | bash desde la terminal del sistema. Este comando sirve para descargar e iniciar el instalador oficial de Pi-hole de forma automática. Al ejecutarlo, se abre una ventana que guía paso a paso durante toda la instalación.
+
+Durante el inicio del instalación skypeamos todo hasta llegar a la interfaz de red que se iba a utilizar, eligiendo la interfaz llamada enp0s3, que es la que conecta el equipo con la red local. Después de esto, el instalador mostró la dirección IP que se iba a asignar al servidor, que en este caso era 192.168.135.254. Esta IP se aceptó porque es importante que el servidor DNS tenga siempre la misma dirección para que funcione correctamente.
+
+En este paso tuvimos problemas ya que al poner la ip ponemos una cualquiera y no la ip del aula.
+
+En el siguiente paso se eligió el servidor DNS externo que Pi-hole utilizaría para resolver las consultas que no se bloquean. En este caso se seleccionó Google, que utiliza las direcciones 8.8.8.8 ya que es un servidor DNS muy conocido y fiable una vez hecho esto durante la instalación se generó una contraseña para el acceso de administrador, la cual se guardó porque es necesaria para entrar al panel de control.
+
+</details>
 </details>
 <br>
 <details>
