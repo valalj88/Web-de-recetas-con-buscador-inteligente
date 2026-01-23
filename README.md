@@ -1594,7 +1594,7 @@ En esta Actividad aprenderemos cómo poner en funcionamiento una barra de leds, 
 
 **(3) Esquema del circuito como se muestra mas abajo**
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/2/image.png" alt="Página Tareas" width="700">
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/4/EsquemaCircuitoA4.jpg" alt="Página Tareas" width="700">
 
 **(4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
 
