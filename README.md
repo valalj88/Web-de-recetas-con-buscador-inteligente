@@ -1401,7 +1401,7 @@ long wheel(int pos) {
   }
 }
 
-**Lampara parte 2:**
+**Parte 2:**
 
 const uint8_t PIN_R = 4;
 const uint8_t PIN_G = 0;
@@ -1573,6 +1573,49 @@ Valores bajos → más brillo (ánodo común)
 
 Valores altos → menos brillo
 
+
+</details>
+
+<details>
+<summary>Actividad_3</summary>
+<br>
+	
+## A4-led_bar
+
+**(1) Objetivo de la práctica**
+
+En esta Actividad aprenderemos cómo poner en funcionamiento una barra de leds, en la que probaremos el efecto de “Kitt” del coche fantástico, iluminando los leds con efecto movimiento de izquierda a derecha con rebote en bucle.
+
+
+**(2) Material y explicación de cada componente**
+- 10 Jumpers
+- 10 Resistencias
+- 1 Barra de leds
+
+**(3) Esquema del circuito como se muestra mas abajo**
+
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/2/image.png" alt="Página Tareas" width="700">
+
+**Parte 1**
+**(4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
+
+**Circuito:**
+
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/2/image.png" alt="Página Tareas" width="700">
+
+--
+
+**(5) Video de la practica**
+
+
+
+https://github.com/user-attachments/assets/d3f503d3-ed57-47f2-aca4-5ad668606159
+
+
+
+**(6) Imagen para la entrada del blog o proyecto**
+
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/3/CircuitoA3.jpeg" alt="Página Tareas" width="700">
 
 </details>
 </details>
