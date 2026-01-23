@@ -1577,7 +1577,7 @@ Valores altos → menos brillo
 </details>
 
 <details>
-<summary>Actividad_3</summary>
+<summary>Actividad_4</summary>
 <br>
 	
 ## A4-led_bar
@@ -1596,10 +1596,8 @@ En esta Actividad aprenderemos cómo poner en funcionamiento una barra de leds, 
 
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/2/image.png" alt="Página Tareas" width="700">
 
-**Parte 1**
 **(4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
 
-**Circuito:**
 
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/2/image.png" alt="Página Tareas" width="700">
 
