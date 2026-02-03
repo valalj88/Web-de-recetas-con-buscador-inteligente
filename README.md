@@ -1044,6 +1044,70 @@ Apache es un programa que funciona como servidor web, se encarga de entregar las
 
 [Instalación de servidor Apache en Debian - Hector Abad y Alejandro Valero.pdf](https://github.com/user-attachments/files/25045002/Instalacion.de.servidor.Apache.en.Debian.-.Hector.Abad.y.Alejandro.Valero.pdf)
 
+
+## Configurar hosts virtuales (recomendado)
+
+Al emplear el servidor web Apache, puede utilizar _hosts virtuales _(similares a bloques de servidor de Nginx) para encapsular detalles de configuración y alojar más de un dominio desde un único servidor. Configuraremos un dominio llamado example.com, pero debería cambiarlo por su propio nombre de dominio. Consulte nuestra Introducción a DNS de DigitalOcean para hallar más información sobre la configuración de un nombre de dominio con DigitalOcean.
+
+Por defecto, Apache en Debian 9 tiene habilitado un bloque de servidor que está configurado para proporcionar documentos del directorio /var/www/html. Si bien esto funciona bien para un solo sitio, puede ser difícil de manejar si aloja varios. En vez de modificar /var/www/html, crearemos una estructura de directorio dentro de /var/www para nuestro sitio example.com y dejaremos /var/www/html como directorio predeterminado que se abastecerá si una solicitud de cliente no coincide con otros sitios.
+
+Cree el directorio para example.com, utilizando el indicador -p para crear cualquier directorio principal necesario:
+
+**sudo mkdir -p /var/www/webDelicIA's.com/html**
+
+A continuación, asigne la propiedad del directorio con la variable de entorno $USER:
+
+**sudo chown -R www-data:www-data /var/www/webDelicIA's.com/html**
+
+Los permisos de sus root web deberían ser correctos si no modificó su valor unmask, pero puede comprobarlo escribiendo lo siguiente:
+
+**sudo chmod -R 755 /var/www/DelicIA's.com**
+
+A continuación, cree una página de ejemplo index.html utilizando nano o su editor favorito:
+
+**nano /var/www/DelicIA's.com/html/index.html**
+
+Dentro de ella, agregue el siguiente ejemplo de HTML:
+
+<img width="595" height="191" alt="Captura de pantalla 2026-02-03 131806" src="https://github.com/user-attachments/assets/d09f000a-a544-4ac1-a78f-17e76a26d34c" />
+
+Guarde y cierre el archivo cuando termine.
+
+Para que Apache proporcione este contenido, es necesario crear un archivo de host virtual con las directivas correctas. En lugar de modificar el archivo de configuración predeterminado situado en /etc/apache2/sites-available/000-default.conf directamente, crearemos uno nuevo en /etc/apache2/sites-available/example.com.conf:
+
+Péguelo en el siguiente bloque de configuración, similar al predeterminado, pero actualizado para nuestro nuevo directorio y nombre de dominio:
+
+<img width="480" height="182" alt="image" src="https://github.com/user-attachments/assets/071108f5-5320-4262-add9-d3f111a5a6d8" />
+
+Tenga en cuenta que cambiamos DocumentRoot por nuestro nuevo directorio y ServerAdmin por un correo electrónico al que pueda acceder el administrador del sitio example.com. También agregamos dos directivas: ServerName, que establece el dominio de base que debería coincidir para esta definición de host virtual, y ServerAlias, que define más nombres que deberían coincidir como si fuesen el nombre de base.
+
+Guarde y cierre el archivo cuando termine.
+
+Habilitaremos el archivo con la herramienta a2ensite:
+
+**sudo a2ensite DelicIA's.com.conf**
+
+Deshabilite el sitio predeterminado definido en 000-default.conf:
+
+**sudo a2dissite 000-default.conf**
+
+A continuación, realizaremos una prueba para ver que no haya errores de configuración:
+
+**sudo apache2ctl configtest**
+
+Debería ver el siguiente resultado:
+
+**Output
+Syntax OK**	
+
+Reinicie Apache para implementar sus cambios:
+
+**sudo systemctl restart apache2**
+
+Con esto, Apache debería ser el servidor de su nombre de dominio. Puede probar esto visitando http://example.com. Allí, debería ver algo como lo siguiente:
+
+Y ya nos mostraría el HTML que hemos hecho.
+
 </details>
 <br>
 <details>
