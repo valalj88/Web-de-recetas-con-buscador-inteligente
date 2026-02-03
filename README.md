@@ -1039,6 +1039,11 @@ El DHCP es un servicio que asigna automáticamente direcciones IP y otros datos 
   <summary>c. Apache</summary>
 	<br> 
 Apache es un programa que funciona como servidor web, se encarga de entregar las páginas y recursos de un sitio cuando un usuario los solicita desde su navegador. Es útil para un proyecto porque permite publicar una web o aplicación de forma segura y estable, gestionar el acceso de los usuarios y asegurar que el contenido se cargue correctamente. Con Apache, tu proyecto puede estar disponible para cualquiera que necesite acceder a él desde internet o desde una red local.
+
+<br>
+
+[Instalación de servidor Apache en Debian - Hector Abad y Alejandro Valero.pdf](https://github.com/user-attachments/files/25045002/Instalacion.de.servidor.Apache.en.Debian.-.Hector.Abad.y.Alejandro.Valero.pdf)
+
 </details>
 <br>
 <details>
