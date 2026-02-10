@@ -1048,7 +1048,8 @@ Apache es un programa que funciona como servidor web, se encarga de entregar las
 
 ## PHP
 
-PHP en Debian sirve principalmente para ejecutar aplicaciones web dinámicas del lado del servidor. Es decir, permite que una página web haga cosas “inteligentes” y no sea solo HTML estático.
+PHP es un lenguaje de programación del lado del servidor que se usa principalmente para crear páginas web dinámicas. Se ejecuta en el servidor y genera contenido HTML que luego se envía al navegador. 
+Es muy común para manejar formularios, bases de datos y sistemas web como WordPress.  
 
 ---
 
