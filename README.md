@@ -1039,17 +1039,34 @@ El DHCP es un servicio que asigna automáticamente direcciones IP y otros datos 
   <summary>c. Apache y PHP</summary>
 	<br> 
 
-# APACHE
+## APACHE
 Apache es un programa que funciona como servidor web, se encarga de entregar las páginas y recursos de un sitio cuando un usuario los solicita desde su navegador. Es útil para un proyecto porque permite publicar una web o aplicación de forma segura y estable, gestionar el acceso de los usuarios y asegurar que el contenido se cargue correctamente. Con Apache, tu proyecto puede estar disponible para cualquiera que necesite acceder a él desde internet o desde una red local.
 
 <br>
 
 [Instalación de servidor Apache en Debian - Hector Abad y Alejandro Valero.pdf](https://github.com/user-attachments/files/25045002/Instalacion.de.servidor.Apache.en.Debian.-.Hector.Abad.y.Alejandro.Valero.pdf)
 
+## PHP
+
+PHP en Debian sirve principalmente para ejecutar aplicaciones web dinámicas del lado del servidor. Es decir, permite que una página web haga cosas “inteligentes” y no sea solo HTML estático.
+
+---
+
+Una vez hecho el html procederemos a instalar PHP
+
+Hemos instalado Apache para presentar su contenido y MySQL para almacenar y gestionar sus datos. PHP es el componente de nuestra configuración que procesará el código para mostrar contenido dinámico al usuario final, con el siguiente comando:
+
+**sudo apt install php libapache2-mod-php php-mysql**
+
+Una vez que la instalación se complete, hemos ejecutado el siguiente comando para confirmar tanto la versión de PHP como si se ha instalado correctamente:
+
+**php -v**
+
+<img width="543" height="123" alt="Captura de pantalla 2026-02-10 105635" src="https://github.com/user-attachments/assets/c4e31970-2f8a-44af-8bfb-0401dc9fb60d" />
 
 ## Configurar hosts virtuales (recomendado)
 
-Al emplear el servidor web Apache, puede utilizar _hosts virtuales _(similares a bloques de servidor de Nginx) para encapsular detalles de configuración y alojar más de un dominio desde un único servidor. Configuraremos un dominio llamado example.com, pero debería cambiarlo por su propio nombre de dominio. Consulte nuestra Introducción a DNS de DigitalOcean para hallar más información sobre la configuración de un nombre de dominio con DigitalOcean.
+Al emplear el servidor web Apache, puede utilizar _hosts virtuales _(similares a bloques de servidor de Nginx) para encapsular detalles de configuración y alojar más de un dominio desde un único servidor. Configuraremos un dominio llamado example.com, pero debería cambiarlo por su propio nombre de dominio.
 
 Por defecto, Apache en Debian 9 tiene habilitado un bloque de servidor que está configurado para proporcionar documentos del directorio /var/www/html. Si bien esto funciona bien para un solo sitio, puede ser difícil de manejar si aloja varios. En vez de modificar /var/www/html, crearemos una estructura de directorio dentro de /var/www para nuestro sitio example.com y dejaremos /var/www/html como directorio predeterminado que se abastecerá si una solicitud de cliente no coincide con otros sitios.
 
@@ -1057,13 +1074,9 @@ Cree el directorio para example.com, utilizando el indicador -p para crear cualq
 
 **sudo mkdir -p /var/www/webDelicIA's.com/html**
 
-A continuación, asigne la propiedad del directorio con la variable de entorno $USER:
+A continuación, asigne la propiedad del directorio con la variable de entorno data:
 
 **sudo chown -R www-data:www-data /var/www/webDelicIA's.com/html**
-
-Los permisos de sus root web deberían ser correctos si no modificó su valor unmask, pero puede comprobarlo escribiendo lo siguiente:
-
-**sudo chmod -R 755 /var/www/DelicIA's.com**
 
 A continuación, cree una página de ejemplo index.html utilizando nano o su editor favorito:
 
@@ -1110,20 +1123,29 @@ Con esto, Apache debería ser el servidor de su nombre de dominio. Puede probar 
 
 Y ya nos mostraría el HTML que hemos hecho.
 
-# PHP
+Si vemos esta página, nuestro host virtual de Apache está funcionando según lo previsto.
 
-Una vez hecho el html procederemos a instalar PHP
+Dejaremos este archivo establecido como página de destino temporal de la aplicación hasta que configuremos un archivo index.php que lo sustituya. Cuando lo haga, eliminaremos el archivo index.html de su root de documentos, o cambiarle el nombre, ya que tendría precedencia sobre un archivo index.php por defecto.
 
-Hemos instalado Apache para presentar su contenido y MySQL para almacenar y gestionar sus datos. PHP es el componente de nuestra configuración que procesará el código para mostrar contenido dinámico al usuario final, con el siguiente comando:
+En nuestro caso que queremos cambiar este comportamiento, editaremos el archivo /etc/apache2/mods-enabled/dir.conf y modificar el orden en el que el archivo index.php se enumera en la directiva DirectoryIndex:
 
-**sudo apt install php libapache2-mod-php php-mysql**
+<img width="1664" height="982" alt="image" src="https://github.com/user-attachments/assets/0e0aa188-0d90-4cbd-9904-512446152be5" />
 
-Una vez que la instalación se complete, hemos ejecutado el siguiente comando para confirmar tanto la versión de PHP como si se ha instalado correctamente:
 
-**php -v**
+## INCIDENCIAS
 
-<img width="543" height="123" alt="Captura de pantalla 2026-02-10 105635" src="https://github.com/user-attachments/assets/c4e31970-2f8a-44af-8bfb-0401dc9fb60d" />
+Durante el proceso hemos tenido un par de incidencias:
+### 1
 
+---
+
+En la instalación de PHP no conseguiamos cambiar la interfaz cuando entrabamos en el navegador, esto nos estaba pasando por que DEBIAN antepone el "index.html" que hicimos de prueba al "index.php" que habiamos editado recientemente.
+
+### 2
+
+---
+
+Pero aun cambiando esto tuvimos otra incidencia y fue nada más y nada menos que el orden el el que escribimos dentro de la configuración, DEBIAN tiene muy en cuenta el orden por lo que al poner infophp cuando era **phpinfo**.
 
 </details>
 <br>
