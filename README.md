@@ -1036,8 +1036,10 @@ El DHCP es un servicio que asigna automáticamente direcciones IP y otros datos 
 </details>
 <br>
 <details>
-  <summary>c. Apache</summary>
+  <summary>c. Apache y PHP</summary>
 	<br> 
+
+# APACHE
 Apache es un programa que funciona como servidor web, se encarga de entregar las páginas y recursos de un sitio cuando un usuario los solicita desde su navegador. Es útil para un proyecto porque permite publicar una web o aplicación de forma segura y estable, gestionar el acceso de los usuarios y asegurar que el contenido se cargue correctamente. Con Apache, tu proyecto puede estar disponible para cualquiera que necesite acceder a él desde internet o desde una red local.
 
 <br>
@@ -1107,6 +1109,21 @@ Reinicie Apache para implementar sus cambios:
 Con esto, Apache debería ser el servidor de su nombre de dominio. Puede probar esto visitando http://example.com. Allí, debería ver algo como lo siguiente:
 
 Y ya nos mostraría el HTML que hemos hecho.
+
+# PHP
+
+Una vez hecho el html procederemos a instalar PHP
+
+Hemos instalado Apache para presentar su contenido y MySQL para almacenar y gestionar sus datos. PHP es el componente de nuestra configuración que procesará el código para mostrar contenido dinámico al usuario final, con el siguiente comando:
+
+**sudo apt install php libapache2-mod-php php-mysql**
+
+Una vez que la instalación se complete, hemos ejecutado el siguiente comando para confirmar tanto la versión de PHP como si se ha instalado correctamente:
+
+**php -v**
+
+<img width="543" height="123" alt="Captura de pantalla 2026-02-10 105635" src="https://github.com/user-attachments/assets/c4e31970-2f8a-44af-8bfb-0401dc9fb60d" />
+
 
 </details>
 <br>
