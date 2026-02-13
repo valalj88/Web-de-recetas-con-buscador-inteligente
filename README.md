@@ -1721,5 +1721,79 @@ https://github.com/user-attachments/assets/f37fa5d1-2595-4d97-8c5e-56573ac8b5ab
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/4/ImagenCircuitoA4.jpeg" alt="Página Tareas" width="700">
 
 </details>
+
+<details>
+<summary>Actividad_5</summary>
+<br>
+	
+## A5-Serial-IO
+
+**(1) Objetivo de la práctica**
+
+En esta Actividad aprenderemos cómo poner en funcionamiento una barra de leds, en la que probaremos el efecto de “Kitt” del coche fantástico, iluminando los leds con efecto movimiento de izquierda a derecha con rebote en bucle.
+
+
+**(2) Material y explicación de cada componente**
+- 10 Jumpers
+- 10 Resistencias
+- 1 Barra de leds
+
+**(3) Esquema del circuito como se muestra mas abajo**
+
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/4/EsquemaCircuitoA4.jpg" alt="Página Tareas" width="700">
+
+**(4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
+
+
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/4/C%C3%B3digoA4.png" alt="Página Tareas" width="700">
+
+--
+
+**(5) Video de la practica**
+
+https://github.com/user-attachments/assets/f37fa5d1-2595-4d97-8c5e-56573ac8b5ab
+
+**(6) Imagen para la entrada del blog o proyecto**
+
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/4/ImagenCircuitoA4.jpeg" alt="Página Tareas" width="700">
+
+</details>
+
+<details>
+<summary>Actividad_6</summary>
+<br>
+	
+## A6-WIFI
+
+**(1) Objetivo de la práctica**
+
+En esta Actividad aprenderemos cómo poner en funcionamiento una barra de leds, en la que probaremos el efecto de “Kitt” del coche fantástico, iluminando los leds con efecto movimiento de izquierda a derecha con rebote en bucle.
+
+
+**(2) Material y explicación de cada componente**
+- 10 Jumpers
+- 10 Resistencias
+- 1 Barra de leds
+
+**(3) Esquema del circuito como se muestra mas abajo**
+
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/4/EsquemaCircuitoA4.jpg" alt="Página Tareas" width="700">
+
+**(4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
+
+
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/4/C%C3%B3digoA4.png" alt="Página Tareas" width="700">
+
+--
+
+**(5) Video de la practica**
+
+https://github.com/user-attachments/assets/f37fa5d1-2595-4d97-8c5e-56573ac8b5ab
+
+**(6) Imagen para la entrada del blog o proyecto**
+
+<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/4/ImagenCircuitoA4.jpeg" alt="Página Tareas" width="700">
+
+</details>
 </details>
 
