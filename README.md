@@ -1730,8 +1730,25 @@ https://github.com/user-attachments/assets/f37fa5d1-2595-4d97-8c5e-56573ac8b5ab
 
 **(1) Objetivo de la práctica**
 
-En esta Actividad aprenderemos cómo poner en funcionamiento una barra de leds, en la que probaremos el efecto de “Kitt” del coche fantástico, iluminando los leds con efecto movimiento de izquierda a derecha con rebote en bucle.
+La comunicación serial es un método de transferencia de datos en el que la información se envía de manera secuencial, un bit a la vez, a través de un solo conductor o un par de conductores.
 
+En otras actividades hemos visto como la comunicación serial nos permitía subir información a la placa ESP32. Hay varios conceptos que tenemos que tener claros para esta comunicación: tramas, baud rate y la sincronización.
+
+La información se organiza en tramas. Cada trama suele comenzar con un bit de inicio y terminar con uno o más bits de parada. Estos bits ayudan al receptor a sincronizarse y a saber dónde comienza y termina cada trama.
+
+La velocidad a la que se transmiten los bits se mide en baudios (baud rate). Representa la cantidad de cambios de estado (de 0 a 1 o de 1 a 0) por segundo. En Arduino se llama “Upload speed” y lo cneontramos en “Herramientas”. Por ejemplo, a una velocidad de 9600 baudios, se transmiten 9600 bits por segundo.
+
+La sincronización es crucial en la comunicación serial, los dispositivos deben estar configurados para interpretar los bits en el momento correcto. La secuencia de bits y la velocidad deben ser conocidas y acordadas entre el transmisor y el receptor mediante protocolos. Algunos ejemplos son UART (Universal Asynchronous Receiver/Transmitter) y SPI (Serial Peripheral Interface).
+
+**PARTE 1**
+
+Para esta práctica vamos simplemente a probar como funciona la comunicación de la placa con el ordenador para, en próximas prácticas, explotar esta funcionalidad. 
+
+**PARTE 2**
+
+Una pantalla LCD1602 típica puede mostrar 2 líneas de caracteres en 16 columnas y es capaz de mostrar números, letras, símbolos, código ASCII, etc. A continuación, puedes ver los pines de los que dispone:
+Como puedes ver son muchos pines para tener controlados así que se simplifica en la versión I2C, que conecta la entrada en serie y la salida en paralelo, lo cual nos permite usar solo 4 líneas para operar la pantalla:
+El chip IC de serie a paralelo utilizado en este módulo es PCF8574T (PCF8574AT), y su dirección I2C predeterminada es 0x27(0x3F).
 
 **(2) Material y explicación de cada componente**
 - 10 Jumpers
