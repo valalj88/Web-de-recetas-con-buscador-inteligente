@@ -1836,6 +1836,20 @@ Print: Muestra texto o números en la pantalla LCD.
 
 lcd.setCursor(columna, fila); →  (0,0)
 
+---
+
+**(3) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
+
+![IMG_4096](https://github.com/user-attachments/assets/e151ca5a-6804-4411-8e1f-2a84a261569c)
+
+
+---
+
+**(4) Imagen para la entrada del blog o proyecto**
+
+![IMG_4097](https://github.com/user-attachments/assets/560cd874-8285-4490-b55a-38453728319b)
+
+---
 
 ## PARTE 3
 
