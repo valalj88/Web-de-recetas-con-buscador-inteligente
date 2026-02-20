@@ -1731,48 +1731,163 @@ https://github.com/user-attachments/assets/f37fa5d1-2595-4d97-8c5e-56573ac8b5ab
 **(1) Objetivo de la práctica**
 
 La comunicación serial es un método de transferencia de datos en el que la información se envía de manera secuencial, un bit a la vez, a través de un solo conductor o un par de conductores.
-
 En otras actividades hemos visto como la comunicación serial nos permitía subir información a la placa ESP32. Hay varios conceptos que tenemos que tener claros para esta comunicación: tramas, baud rate y la sincronización.
-
 La información se organiza en tramas. Cada trama suele comenzar con un bit de inicio y terminar con uno o más bits de parada. Estos bits ayudan al receptor a sincronizarse y a saber dónde comienza y termina cada trama.
 
 La velocidad a la que se transmiten los bits se mide en baudios (baud rate). Representa la cantidad de cambios de estado (de 0 a 1 o de 1 a 0) por segundo. En Arduino se llama “Upload speed” y lo cneontramos en “Herramientas”. Por ejemplo, a una velocidad de 9600 baudios, se transmiten 9600 bits por segundo.
 
 La sincronización es crucial en la comunicación serial, los dispositivos deben estar configurados para interpretar los bits en el momento correcto. La secuencia de bits y la velocidad deben ser conocidas y acordadas entre el transmisor y el receptor mediante protocolos. Algunos ejemplos son UART (Universal Asynchronous Receiver/Transmitter) y SPI (Serial Peripheral Interface).
 
-**PARTE 1**
+## PARTE 1
 
 Para esta práctica vamos simplemente a probar como funciona la comunicación de la placa con el ordenador para, en próximas prácticas, explotar esta funcionalidad. 
 
-**PARTE 2**
+**(2) Material y explicación de cada componente**
+
+- Placa conectada a PC vacía
+
+**¿Que debemos hacer?**
+
+Para poder observar la salida de información, debemos acudir a herramientas > Monitor serie y aparecerá una pestaña extra junto a la de “salida” por la que siempre leemos las incidencias con la placa.
+Pon el monitor serial en “115200 baud” para que funcione.
+
+**PREGUNTAS**
+
+**1 ¿Que aparece en serial monitor?**
+
+Texto configurado en el programa
+
+Tiempo en segundos
+
+Mensajes repetitivos si están dentro del loop()
+
+
+**2 Pulsa los botones de boot+EN que hay en la placa de Arduino, ¿qué ocurre? Ahora pulsa solo EN, ¿qué ha ocurrido? ¿para qué nos puede servir esto?**
+
+BOOT + EN → La placa entra en modo programación (modo carga).
+
+Solo EN → La placa se reinicia (reset).
+
+**2.1¿Para qué sirve?**
+
+Reiniciar el programa cuando hay errores.
+
+Forzar el modo carga si el ordenador no detecta bien la placa.
+
+**3 ¿Qué indica la linea de código “Serial.begin(115200);”?**
+
+Indica que se inicia la comunicación serial a una velocidad de 115200 baudios.
+Serial.begin() → Inicia la comunicación.
+
+115200 → Velocidad de transmisión en bits por segundo.
+
+**4 Averigua que significa “%.1f s\n“.**
+
+% : Indicador de formato
+
+
+.1f : Número decimal con 1 cifra después del punto
+
+
+s : Se añade la letra “s” (segundos)
+
+
+\n :  Salto de línea
+
+
+## PARTE 2
 
 Una pantalla LCD1602 típica puede mostrar 2 líneas de caracteres en 16 columnas y es capaz de mostrar números, letras, símbolos, código ASCII, etc. A continuación, puedes ver los pines de los que dispone:
 Como puedes ver son muchos pines para tener controlados así que se simplifica en la versión I2C, que conecta la entrada en serie y la salida en paralelo, lo cual nos permite usar solo 4 líneas para operar la pantalla:
 El chip IC de serie a paralelo utilizado en este módulo es PCF8574T (PCF8574AT), y su dirección I2C predeterminada es 0x27(0x3F).
 
 **(2) Material y explicación de cada componente**
-- 10 Jumpers
-- 10 Resistencias
-- 1 Barra de leds
+
+- 4 jumpers de tipo hembra-macho
+- La pantalla LCD
+
+
+**¿Que debemos hacer?**
+
+Revisa la información del capítulo 20 del libro:
+Conecta la pantalla tal y como se muestra en el circuito anterior
+En el Arduino IDE incluye la librería que puedes encontrar en Github, busca el paquete de LiquidCrystal_I2C.zip y añádelo al IDE para que funcione.
+Pon el “Upload speed” de “Herramientas>Upload speed” a 115200
+NO utilices el puerto 12 de la GPIO 
+Usa el código que encuentres en el capítulo.
+
+
+**PREGUNTAS**
+
+**1 Revisa las conexiones en el circuito eléctrico:**
+
+SCL			13
+SDA			14
+VCC			Positivo
+GND			Negativo
+
+
+**2 ¿Que hace la función “lcd.print()”? ¿Y “lcd.clear”?**
+
+Clear: Borra completamente la pantalla.
+Print: Muestra texto o números en la pantalla LCD.
+
+**3 Por último, busca como conseguir que el mensaje de la primera fila se desplace de izquierda a derecha o a la inversa.**
+
+lcd.setCursor(columna, fila); →  (0,0)
+
+
+## PARTE 3
+
+Un higrotermógrafo es un instrumento de medición utilizado para registrar y monitorizar las variaciones de temperatura y humedad relativa en el tiempo. 
+
+Su diseño combina las funciones de un termógrafo (para medir la temperatura) y un higrógrafo (para medir la humedad relativa).
+En nuestro proyecto utilizaremos el dispositivo DHT11 que tiene 4 pines de los cuales el SDA es el que registra los datos por el pin, el VCC y el GND son los que le ofrecen la energía y cierran el circuito.
+
+**PREGUNTAS**
+
+**1 Primero prueba que el código funciona por monitor serial. Prueba a soplar sobre el sensor para modificar los valores de humedad.**
+
+Aumenta la humedad relativa
+
+Puede variar ligeramente la temperatura
+
+**2 Busca que hace esta linea “DHTesp dht; “ al principio del código. ¿Que es un objeto en programación y que es lo que hace?**
+
+Es una instancia de una clase.
+
+Permite usar funciones asociadas al sensor.
+
+**3 Prueba a codificar los valores para que muestre en la primera fila la temperatura en grados Kelvin y en la segunda fila en grados Farenheit.**
+
+Programalo de tal forma que se muestre algo así:
+Temp: 303,15ºK
+Temp: 86ºF
+
+![IMG_4100](https://github.com/user-attachments/assets/72f4873f-d5ca-4519-ad0f-16c7a8d7c1b6)
+
 
 **(3) Esquema del circuito como se muestra mas abajo**
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/4/EsquemaCircuitoA4.jpg" alt="Página Tareas" width="700">
+<img width="521" height="376" alt="Captura de pantalla 2026-02-20 125136" src="https://github.com/user-attachments/assets/0800ce39-9887-4042-90f0-b48cf460ad66" />
+
 
 **(4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
 
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/4/C%C3%B3digoA4.png" alt="Página Tareas" width="700">
+![IMG_4099](https://github.com/user-attachments/assets/8a8c7e0b-c0af-43f1-b6ec-191ef4b2fb51)
 
 --
 
 **(5) Video de la practica**
 
-https://github.com/user-attachments/assets/f37fa5d1-2595-4d97-8c5e-56573ac8b5ab
+
+https://github.com/user-attachments/assets/3ae8ab58-ef58-4ff9-9a7f-d11ce1928cf6
+
 
 **(6) Imagen para la entrada del blog o proyecto**
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/4/ImagenCircuitoA4.jpeg" alt="Página Tareas" width="700">
+![IMG_4100](https://github.com/user-attachments/assets/57bcbda4-c379-429e-b5b5-933865f0b885)
 
 </details>
 
