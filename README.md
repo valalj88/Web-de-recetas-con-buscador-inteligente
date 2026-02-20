@@ -1913,32 +1913,196 @@ https://github.com/user-attachments/assets/3ae8ab58-ef58-4ff9-9a7f-d11ce1928cf6
 
 **(1) Objetivo de la práctica**
 
-En esta Actividad aprenderemos cómo poner en funcionamiento una barra de leds, en la que probaremos el efecto de “Kitt” del coche fantástico, iluminando los leds con efecto movimiento de izquierda a derecha con rebote en bucle.
+El objetivo principal de esta práctica es aprender a configurar y utilizar la conectividad WiFi del ESP32 en distintos modos de funcionamiento, comprendiendo cómo se comunica un dispositivo IoT dentro de una red.
 
+---
+
+## PARTE 1
+
+El objetivo del modo Station es aprender a configurar el ESP32 como cliente WiFi, conectándolo a una red inalámbrica existente (router), obteniendo una dirección IP automática mediante DHCP y verificando la comunicación con otros dispositivos de la red.
 
 **(2) Material y explicación de cada componente**
-- 10 Jumpers
-- 10 Resistencias
-- 1 Barra de leds
 
-**(3) Esquema del circuito como se muestra mas abajo**
+- Placa conectada a PC vacía
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/4/EsquemaCircuitoA4.jpg" alt="Página Tareas" width="700">
+**¿Que debemos hacer?**
 
-**(4) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
+Tienes que poner el SSID y la PASSWORD de una red WiFi. A continuación, abre el serial monitor y lo pones a 115200 baudios. Una vez hecho esto, compilas el script previamente escrito.
 
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/4/C%C3%B3digoA4.png" alt="Página Tareas" width="700">
+**PREGUNTAS**
+
+**¿A qué red te has podido conectar? Es 5G, 2.4G? Explica.**
+
+El ESP32-S3 solo es compatible con redes 2.4 GHz, no con 5 GHz.
+Por tanto, la conexión debe realizarse a una red 2.4G.
+
+La diferencia principal:
+2.4 GHz → Mayor alcance, menor velocidad.
+5 GHz → Mayor velocidad, menor alcance.
+ESP32 trabaja únicamente en banda 2.4 GHz.
+
+**Verifica el uso de las librerías que aparecen en el código. ¿Son necesarias las tres: WiFi.h, WiFiClient.h, WiFiClientSecure.h)?**
+
+Para este ejemplo básico solo es necesaria WiFi.h.
+Las otras dos no son imprescindibles si no realizamos conexiones TCP o HTTPS.
+
+**¿En qué casos utilizaría las librerías de arduino WiFiClient.h y WiFiClientSecure.h?**
+
+WiFiClient.h → Cuando queremos que el ESP32 actúe como cliente y se conecte a un servidor (por ejemplo enviar datos a una API REST).
+
+WiFiClientSecure.h → Cuando la conexión es HTTPS (segura con certificado SSL).
+
+**¿Es posible seleccionar el canal de comunicación de la WiFi? Argumenta.?**
+	
+En modo Station no directamente (lo gestiona el router).
+En modo Access Point sí podemos hacerlo con:
+WiFi.softAP(ssid, password, channel);
+En 2.4 GHz los canales van del 1 al 13.
+
+**Prueba la conectividad entre un dispositivo como e PC o el móvil a la IP que te brinda el ESP32.**
+
+Una vez obtenida la IP del ESP32:
+
+- Abrimos navegador.
+
+- Escribimos la IP mostrada en el Monitor Serie.
+
+- Si hay servidor web cargado, accederemos correctamente.
+
+<img width="1919" height="1037" alt="image (4)" src="https://github.com/user-attachments/assets/eff79e49-aa16-4369-bfd9-af4c55c12f43" />
+
+---
+
+## PARTE 2
+
+El objetivo del modo Access Point (AP) es aprender a configurar el ESP32 como punto de acceso WiFi, creando su propia red inalámbrica independiente del router.
+
+**(2) Material y explicación de cada componente**
+
+- Placa conectada a PC vacía
+
+**¿Que debemos hacer?**
+
+En este caso vamos a configurar nuestro ESP32 pero esta vez como un Access Point. Cuando el ESP32-S3 selecciona el modo AP, crea una red de punto de acceso que está separada de Internet y espera para que se conecten otros dispositivos WiFi. 
+
+
+**PREGUNTAS**
+
+**¿Cuál es el uso de softAPConfig? Argumenta**
+
+WiFi.softAPConfig(local_IP, gateway, subnet);
+
+- IP estática del ESP32
+
+- Gateway
+
+- Máscara de subred
+
+
+Sirve para controlar la red creada por el ESP32.
+
+**¿Cómo puedo conocer la cantidad de dispositivos conectados a mi AP? Para ello investiga el uso de WiFi.softAPgetStationNum() y añade las líneas necesarias al código.**
+
+WiFi.softAPgetStationNum();
+
+
+**¿Qué método me permite visualizar la dirección IP de la interfaz de red del punto de acceso?**
+
+WiFi.softAPIP()
+
+**¿Qué nos permite la opción c_str() en el código?**
+
+WiFi.softAPmacAddress().c_str();
+
+
+---
+
+**(3) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
+
+<img width="1919" height="1033" alt="image (5)" src="https://github.com/user-attachments/assets/a8dae836-14fb-42f7-a956-7d45d5bb3b30" />
+
+---
+
+
+## PARTE 3
+
+**(1) Objetivo de la práctica**
+
+El objetivo del modo AP + Station es aprender a combinar ambos modos de funcionamiento simultáneamente, permitiendo que el ESP32:
+
+Se conecte a Internet a través del router.
+
+Cree su propia red WiFi para otros dispositivos.
+
+Actúe como puente de comunicación entre redes.
+
+**(2) Material y explicación de cada componente**
+
+- Placa conectada a PC vacía
+
+**PREGUNTAS**
+
+Compila y testea la conexión.
+Añade el código correspondiente para acceder a la página web
+
+**(3) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
+
+<img width="1919" height="1017" alt="image (6)" src="https://github.com/user-attachments/assets/9df2ce3a-97ab-4243-9f6e-1d143d41cb63" />
 
 --
 
-**(5) Video de la practica**
 
-https://github.com/user-attachments/assets/f37fa5d1-2595-4d97-8c5e-56573ac8b5ab
+## PARTE 4
+
+**(1) Objetivo de la práctica**
+
+El objetivo de este apartado es implementar un servidor web en el ESP32, comprendiendo el funcionamiento básico del protocolo HTTP y la creación de páginas web dinámicas desde el microcontrolador.
+
+Cuando alguien se conecta a nuestro servidor se invoca una función y otra cuando se genera un error. Estas funciones las podemos llamar como queramos pero mejor si utilizamos la denominación estándar. Por supuesto, que las tenemos que crear y agregar como otras funciones que ya hemos utilizado.
+
+
+**(2) Material y explicación de cada componente**
+
+- Placa conectada a PC vacía
+
+**PREGUNTAS**
+
+**Explica brevemente los diferentes parámetros que se envían en las líneas siguientes: 
+server.send(200, "text/html", SendHTML("Hola a todos")); 
+server.send(404,"text/plain", "No hay respuesta");**
+
+server.send(200, "text/html", SendHTML("Hola a todos"));
+
+- 200 → Código HTTP correcto (OK)
+
+- text/html → Tipo de contenido
+
+- SendHTML("Hola a todos") → Contenido enviado
+
+
+server.send(404,"text/plain", "No hay respuesta");
+
+- 404 → Error, página no encontrada
+
+- text/plain → Texto simple
+
+- "No hay respuesta" → Mensaje mostrado
+
+**Añade las líneas de código correspondientes al servidor web. Cambia el puerto de comunicación de la página web.**
+
+
+**(3) How To + Codigo explicado: uso de las variables, funciones y demas componentes del codigo**
+
+<img width="1919" height="1010" alt="image (7)" src="https://github.com/user-attachments/assets/da2da2f4-5b4f-4267-a08a-8e032dbb58cb" />
+
+--
+
 
 **(6) Imagen para la entrada del blog o proyecto**
 
-<img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Actividades/4/ImagenCircuitoA4.jpeg" alt="Página Tareas" width="700">
+![IMG_4173](https://github.com/user-attachments/assets/8c7457c7-f19e-4d28-9e9d-a97222a2cd94)
+
 
 </details>
 </details>
