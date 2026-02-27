@@ -2190,6 +2190,8 @@ server.send(404,"text/plain", "No hay respuesta");
 
 ![IMG_4173](https://github.com/user-attachments/assets/8c7457c7-f19e-4d28-9e9d-a97222a2cd94)
 
+</details>
+
 <details>
 	<summary>PROYECTO</summary>
 	
@@ -2197,7 +2199,6 @@ https://es.aliexpress.com/item/1005008005112441.html?spm=a2g0o.productlist.main.
 
 https://youtu.be/FvsWhVsc19c
 
-</details>
 </details>
 </details>
 
