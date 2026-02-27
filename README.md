@@ -1161,6 +1161,93 @@ Un firewall es un sistema que controla qué tráfico puede entrar o salir de una
 <br>
 Las copias de seguridad son duplicados de los archivos y datos importantes que se guardan en otro lugar para no perderlos si ocurre un fallo, un borrado accidental o un ataque informático. Son útiles para un proyecto porque garantizan que, pase lo que pase, siempre podrás recuperar la información necesaria y continuar trabajando sin perder tiempo ni contenido.
 </details>
+
+<br>
+
+<details>
+  <summary>d. API</summary>
+<br>	
+
+# PROCESO DE ENTRENO DE API IA (DELICIA'S ASSISTANT)
+
+Estamos configurando y entrenando una API de inteligencia artificial utilizando Google AI Studio.
+
+<img width="1340" height="695" alt="Captura de pantalla 2026-02-27 103253" src="https://github.com/user-attachments/assets/bb511dd7-1e5f-4287-a086-3936c6d24b2f" />
+
+<br>
+
+El objetivo no es “programarla desde cero”, sino definir su comportamiento mediante instrucciones claras, estableciendo:
+
+ - Qué debe hacer
+
+ - Qué debe responder
+
+ - Cómo debe responder
+
+ - Con qué tono y estilo debe comunicarse
+
+ - Qué estructura deben tener sus respuestas
+
+Investigando sobre como hacer el proceso se lo conoce como:
+
+**Ingeniería de Prompt**
+
+Consiste en darle instrucciones detalladas a la IA para moldear su comportamiento.
+En nuestro caso estamos definiendo el "Rol de la IA"
+Le indicamos que actúe como un generador profesional de recetas y asistente gastronómico inteligente
+
+## ¿Qué debe generar?
+
+ - Título del plato que quiere el usuario
+ - Para cuantas personas es ideal el plato
+ - Tiempo estimado
+ - Lista de ingredientes
+ - Pasos detallados
+
+Esto garantiza que la respuesta sea estructurada y usable directamente en la web.
+
+## Tono y lenguaje
+
+Definimos:
+
+ - Lenguaje claro y profesional
+ - Descripciones atractivas
+ - Estilo gastronómico
+ - Sin respuestas técnicas innecesarias
+ - Sin salirse del contexto culinario
+
+Esto es clave para que la experiencia del usuario sea coherente con nuestra plataforma.
+
+## Restricciones
+
+ - También le indicamos lo que NO debe hacer:
+ - No inventar información incoherente
+ - No salirse del tema de cocina
+ - No responder preguntas fuera del ámbito gastronómico
+ - No generar contenido inapropiado
+
+---
+
+# ¿Por qué usamos una API?
+
+Porque después conectaremos esta IA a nuestra web mediante:
+
+Backend (probablemente con PHP) para la seguridad de nuestra clave de la IA, ya que no dijo Quim que nos la podrían robar.
+Servidor Apache
+Base de datos MySQL
+
+Así, cuando un usuario pida una receta, la web enviará una petición a la API y recibirá la receta ya estructurada.
+
+</details>
+
+<br>
+
+<details>
+  <summary>e. Copias De Seguridad</summary>
+<br>
+Las copias de seguridad son duplicados de los archivos y datos importantes que se guardan en otro lugar para no perderlos si ocurre un fallo, un borrado accidental o un ataque informático. Son útiles para un proyecto porque garantizan que, pase lo que pase, siempre podrás recuperar la información necesaria y continuar trabajando sin perder tiempo ni contenido.
+</details>
+
 </details>
 
 ---
