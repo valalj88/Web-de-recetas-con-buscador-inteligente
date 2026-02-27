@@ -2190,7 +2190,14 @@ server.send(404,"text/plain", "No hay respuesta");
 
 ![IMG_4173](https://github.com/user-attachments/assets/8c7457c7-f19e-4d28-9e9d-a97222a2cd94)
 
+<details>
+	<summary>PROYECTO</summary>
+	
+https://es.aliexpress.com/item/1005008005112441.html?spm=a2g0o.productlist.main.3.49815PYP5PYPU4&algo_pvid=c9df27e4-4ec3-462e-a19c-4d10c06e8dc6&algo_exp_id=c9df27e4-4ec3-462e-a19c-4d10c06e8dc6-		2&pdp_ext_f=%7B%22order%22%3A%225285%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%2114.16%210.99%21%21%21111.74%217.80%21%40211b6a7a17721932195753311ea003%2112000043231311504%21sea%21ES%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3Aa26c3c1%3Bm03_new_user%3A-29895%3BpisId%3A5000000197846831&curPageLogUid=MiK9wu0n3W2F&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005008005112441%7C_p_origin_prod%3A
 
+https://youtu.be/FvsWhVsc19c
+
+</details>
 </details>
 </details>
 
