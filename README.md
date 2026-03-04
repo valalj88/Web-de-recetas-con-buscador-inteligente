@@ -2200,5 +2200,22 @@ https://es.aliexpress.com/item/1005008005112441.html?spm=a2g0o.productlist.main.
 https://youtu.be/FvsWhVsc19c
 
 </details>
+
+<details>
+	<summary>Plan De Trabajo</summary>
+	
+	<table>
+  <tr>
+    <th style="width: 200px;">FASE</th>
+    <th style="width: 100px;">10-16 Mar</th>
+	<th style="width: 200px;">17-23 Mar</th>
+    <th style="width: 100px;">24-30 Mar</th>
+	<th style="width: 100px;">31 Mar-6 Abr</th>
+	<th style="width: 200px;">7-13 Abr</th>
+    <th style="width: 100px;">14-20 Abr</th>
+	<th style="width: 200px;">21-27 Abr</th>
+    <th style="width: 100px;">28-30 Abr</th>
+	<th style="width: 100px;">1-3 May</th>
+  </tr>
 </details>
 
