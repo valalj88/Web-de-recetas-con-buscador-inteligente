@@ -489,7 +489,7 @@ Un usuario puede tener muchas recetas favoritas, y una receta puede ser favorita
 </table>
 
 
-### 6. Reflexiones, dificultades y dudas que tienes sobre la base de datos
+### 6. Reflexiones sobre la base de datos
 
 **Decisión sobre recetas IA:**
  Guardar la receta generada para no perder resultados buenos, en vez de generarla en vivo cada vez, asi a la API le costara menos procesar información y crear una receta solicitada por un usuario.
