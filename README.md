@@ -523,13 +523,13 @@ Gestiona el DNS para que el nombre delicias.tallerdekirby.es se traduzca a una I
 ### DHCP:
 El DHCP reparte las direcciones IP automáticamente a todos los dispositivos de la red. Esto evita errores de configuración manual.
 
-##Implementación y Configuración de Servidor DHCP en Pi-hole
-###1. Introducción y Propósito
+##  Implementación y Configuración de Servidor DHCP en Pi-hole
+### 1. Introducción y Propósito
 En este proyecto, se ha optado por delegar la gestión de red al servidor Pi-hole, convirtiéndolo no solo en un bloqueador de publicidad y rastreadores, sino en el servidor DHCP (Dynamic Host Configuration Protocol) principal de la infraestructura local.
 
 Esta decisión técnica busca centralizar la administración de la red y garantizar que todos los dispositivos conectados utilicen automáticamente los filtros DNS de Pi-hole sin necesidad de configuración manual individual.
 
-###2. Procedimiento de Configuración
+### 2. Procedimiento de Configuración
 Para implementar esta funcionalidad, se siguieron estos pasos críticos:
 
 Desactivación en el Gateway: Se accedió a la configuración del router de la operadora para desactivar su servidor DHCP. Esto es vital para evitar el conflicto de dos servidores asignando IPs en el mismo segmento.
@@ -540,7 +540,7 @@ Configuración del Pool de IPs: Se definió un rango de direcciones (ej. 192.168
 
 Asignación de DNS: Al activar esta opción, Pi-hole se anuncia a sí mismo como la puerta de enlace DNS para todos los clientes mediante el proceso de negociación DHCP.
 
-###3. Justificación Técnica y Ventajas
+### 3. Justificación Técnica y Ventajas
 La migración del DHCP del router hacia Pi-hole se justifica por los siguientes puntos clave:
 
 A. Visibilidad y Auditoría de Red
