@@ -492,11 +492,9 @@ Un usuario puede tener muchas recetas favoritas, y una receta puede ser favorita
 ### 6. Reflexiones, dificultades y dudas que tienes sobre la base de datos
 
 **Decisión sobre recetas IA:**
- Guardar la receta generada para no perder resultados buenos, en vez de generarla en vivo cada vez.
-**Imágenes:**
+ Guardar la receta generada para no perder resultados buenos, en vez de generarla en vivo cada vez, asi a la API le costara menos procesar información y crear una receta solicitada por un usuario.
+ Poniendo un ejemplo digamos que ya hay una receta de macarrones a la carbonara, un cliente genera con el asistente de DelicIA's otros macarrones a la carbonara y ahora hay dos platos de macarrones a la carbonara procesados solo porque la descripción es diferente una de la otra. Intentaremos evitar este duplicado de datos mediante las peticiones del usuario.
 
-Explicación 
-Tabla correspondiente
   
 </details>
 </details>
