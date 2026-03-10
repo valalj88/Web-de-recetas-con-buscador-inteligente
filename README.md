@@ -2569,3 +2569,10 @@ https://youtu.be/FvsWhVsc19c
   </tr>
 </details>
 
+ordenar puntos
+Explicar porque PIhole
+ - Todos los servicios igual (mirar guia manual)
+Apache tambien
+PHP e "incidencias de PHP explicar  y solución"
+API explicar las opciones que teniamos y porque
+Mayus minus "Diagrama de red"
