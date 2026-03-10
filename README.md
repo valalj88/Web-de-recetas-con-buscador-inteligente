@@ -507,42 +507,191 @@ Un usuario puede tener muchas recetas favoritas, y una receta puede ser favorita
 	
 <details>
   <summary> Servicios y tecnologias implementadas</summary>
-	  
-## Seguridad y Conectividad
 
-### pfSense:
+<br>
 
- Es el router y el firewall principal. Vigila todo el tráfico que viene de Internet y decide qué entra a nuestra red interna. Ofrece protección perimetral, hace la traducción de direcciones (NAT) y permite crear túneles seguros (VPN).
+<table>
+  <tr>
+    <th>Tecnología</th>
+    <th>Función en el Proyecto</th>
+    <th>Requisitos Mínimos (Aproximados)</th>
+  </tr>
 
-### Cloudflare:
+  <tr>
+    <td>pfSense</td>
+    <td>
+      Funciona como el firewall y router principal, controlando el tráfico que entra y sale de la red.
+      Proporciona protección perimetral, gestiona el NAT (Traducción de Direcciones de Red)
+      y puede ofrecer VPNs.
+    </td>
+    <td>
+      CPU: Procesador compatible de 64 bits (x86-64). <br>
+      RAM: 1 GB o más (se recomienda 2 GB para mejor rendimiento). <br>
+      Almacenamiento: 8 GB de disco duro/SSD. <br>
+      Red: Mínimo dos tarjetas de red (WAN y LAN).
+    </td>
+  </tr>
 
-Gestiona el DNS para que el nombre delicias.tallerdekirby.es se traduzca a una IP, actúa como CDN hace que la web cargue más rápido y nos protege de ataques grandes de denegación de servicio DDoS.
+  <tr>
+    <td>Cloudflare</td>
+    <td>
+      Se infiere que gestiona el DNS externo y posiblemente la CDN (Red de Distribución
+      de Contenidos) y la protección contra ataques DDoS para el dominio
+      delicias.tallerdekirby.es.
+    </td>
+    <td>
+      No tiene requisitos de hardware propios, solo requiere el registro del dominio
+      en su plataforma y la configuración de los Nameservers.
+    </td>
+  </tr>
 
-### DHCP:
-El DHCP reparte las direcciones IP automáticamente a todos los dispositivos de la red. Esto evita errores de configuración manual.
+  <tr>
+    <td>DHCP</td>
+    <td>
+      Protocolo de configuración dinámica de hosts. Se encarga de asignar direcciones
+      IP y otros parámetros de red (máscara, puerta de enlace, DNS) automáticamente
+      a los dispositivos de la red.
+    </td>
+    <td>
+      Normalmente, se implementa como un servicio dentro de pfSense o en un
+      servidor ligero dedicado. Los requisitos son mínimos (baja CPU y RAM).
+    </td>
+  </tr>
 
-##  Implementación y Configuración de Servidor DHCP en Pi-hole
-  <br>
-  
-## Servicios Web y Servidores
-<br> 
-Estos son los equipos que hacen que la web funcione y guardan los datos:
+  <tr>
+    <td>Apache HTTP Server</td>
+    <td>
+      Es el servidor web que atiende las peticiones del navegador, procesa las
+      solicitudes HTTP y sirve el contenido de la página web al cliente (navegador).
+    </td>
+    <td>
+      CPU/RAM: Mínimos para la instalación, pero dependen de la carga esperada
+      (usuarios concurrentes, complejidad del sitio). <br>
+      Se requieren unos 50 MB de espacio para la instalación base.
+    </td>
+  </tr>
 
-### Servidor Web (Apache con PHP/HTML/CSS):
-- Apache se encarga de servir las páginas.
-- PHP ejecuta la lógica dinámica 
-- HTML/CSS son el esqueleto y el diseño de la web.
+  <tr>
+    <td>PHP</td>
+    <td>
+      Lenguaje de programación de scripting del lado del servidor utilizado para
+      generar contenido web dinámico. Esencial para la lógica del sitio web.
+    </td>
+    <td>
+      Funciona como un módulo o FPM de Apache/Nginx. <br>
+      Los requisitos de hardware son bajos, pero aumentan según la complejidad del
+      código y el número de solicitudes concurrentes.
+    </td>
+  </tr>
 
-### Servidor de Base de Datos (MySQL):
-- Es el archivador central. Guarda todos los datos dinámicos de la web.
+  <tr>
+    <td>CSS</td>
+    <td>
+      Lenguaje de Hojas de Estilo en Cascada que define la presentación visual
+      del sitio web (diseño, colores, fuentes).
+    </td>
+    <td>
+      No tiene requisitos de servidor, ya que son archivos servidos
+      directamente por Apache.
+    </td>
+  </tr>
 
-### TrueNAS:
-- Es un servidor NAS . Su función es proporcionar una solución centralizada de almacenamiento para backups y archivos importantes.
+  <tr>
+    <td>HTML5</td>
+    <td>
+      Lenguaje de Marcado de Hipertexto, la estructura fundamental del contenido
+      del sitio web (texto, imágenes, enlaces).
+    </td>
+    <td>
+      No tiene requisitos de servidor, ya que son archivos servidos
+      directamente por Apache.
+    </td>
+  </tr>
 
-### Pi-hole:
-- Funciona como un servidor DNS interno que tiene una lista negra. Su objetivo es bloquear toda la publicidad y rastreadores antes de que lleguen a los dispositivos, mejorando la velocidad y la privacidad de la navegación.
+  <tr>
+    <td>MySQL (o MariaDB)</td>
+    <td>
+      Sistema de Gestión de Bases de Datos Relacionales (SGBDR).
+      Almacena todos los datos dinámicos del sitio web (usuarios,
+      contenido, pedidos, etc.).
+    </td>
+    <td>
+      RAM: Mínimo 512 MB, se recomienda 1 GB o más. <br>
+      Almacenamiento: Mínimo 500 MB para la instalación base,
+      más el espacio necesario para los datos.
+    </td>
+  </tr>
 
-[Tecnologias A Utilizar](https://docs.google.com/spreadsheets/d/1jvCkxkATXNUpnb44VIDi7ZuNaSH9dxMkMCZxkB0eU-Q/edit?usp=sharing)
+  <tr>
+    <td>PhpMyAdmin</td>
+    <td>
+      Herramienta de gestión de bases de datos basada en web para
+      MySQL/MariaDB. Permite a los administradores interactuar con la
+      base de datos de forma gráfica.
+    </td>
+    <td>
+      Funciona como una aplicación PHP, con requisitos de hosting
+      muy bajos. Depende de PHP y Apache/Nginx.
+    </td>
+  </tr>
+
+  <tr>
+    <td>TrueNAS</td>
+    <td>
+      Sistema operativo Network Attached Storage (NAS) para almacenamiento
+      centralizado de datos. En este esquema, guarda la información en un
+      disco duro (HDD) externo y puede proveer copias de seguridad,
+      almacenamiento compartido y servicios de ficheros.
+    </td>
+    <td>
+      CPU: Procesador de 64 bits. <br>
+      RAM: 8 GB (fundamental para ZFS). <br>
+      Almacenamiento: 8 GB de dispositivo de arranque + al menos
+      1 disco adicional para datos.
+    </td>
+  </tr>
+
+  <tr>
+    <td>HDD (Disco Duro)</td>
+    <td>
+      Unidad física de almacenamiento de datos conectada a TrueNAS,
+      donde se guarda la información a largo plazo.
+    </td>
+    <td>
+      Capacidad determinada por las necesidades del proyecto.
+    </td>
+  </tr>
+
+  <tr>
+    <td>Pi-hole</td>
+    <td>
+      Actúa como un servidor DNS de la red local con capacidad de
+      bloqueo de publicidad y rastreadores a nivel de red,
+      mejorando el rendimiento y la privacidad. Se ejecuta
+      sobre un dispositivo Raspberry Pi.
+    </td>
+    <td>
+      RAM: 512 MB. <br>
+      Almacenamiento: 2 GB de espacio libre en la tarjeta SD.
+    </td>
+  </tr>
+
+  <tr>
+    <td>DNS (General)</td>
+    <td>
+      Protocolo de resolución de nombres de dominio. Convierte
+      nombres de dominio (como delicias.tallerdekirby.es)
+      en direcciones IP para que los dispositivos puedan comunicarse.
+    </td>
+    <td>
+      En este esquema, es manejado por Cloudflare (externo)
+      y Pi-hole (interno), con requisitos mínimos si se ejecuta
+      en hardware dedicado.
+    </td>
+  </tr>
+
+</table>
+
 </details>
 
 <details>
