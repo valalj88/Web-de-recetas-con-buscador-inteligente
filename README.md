@@ -786,9 +786,11 @@ Un usuario puede tener muchas recetas favoritas, y una receta puede ser favorita
 <details>
   <summary>🌐 Red</summary>
   <br>
-<details>
-  <summary>Diagrama De La Red</summary>
+
+# Diagrama De La Red
 	<br>
+
+---
 
 El diagrama representamos la **arquitectura de red e infraestructura del proyecto web** con el dominio **delicias.tallerdekirby.es**. En él se encuentran los diferentes servicios, servidores y tecnologías que permiten que nuestra página web funcione, desde el acceso del usuario en Internet hasta el almacenamiento de los datos.
 
@@ -971,7 +973,6 @@ Mientras tanto:
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Organigrama.png" alt="Página Tareas" width="1000">
 </p>
 
-</details>
 </details>
 
 ---
