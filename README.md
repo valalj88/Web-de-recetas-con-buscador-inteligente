@@ -695,7 +695,7 @@ Un usuario puede tener muchas recetas favoritas, y una receta puede ser favorita
 </details>
 
 <details>
-	<summary>Tecnologias y apps a utilizar</summary>
+	<summary>Tecnologias, puertos y apps a utilizar</summary>
 	<br>
 	
 <table>
