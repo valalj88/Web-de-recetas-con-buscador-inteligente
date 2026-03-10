@@ -789,20 +789,188 @@ Un usuario puede tener muchas recetas favoritas, y una receta puede ser favorita
 <details>
   <summary>Diagrama De La Red</summary>
 	<br>
-Un diagrama de red es un dibujo que muestra cómo están conectadas todas las partes de un proyecto, como tareas, actividades y el orden en que deben hacerse. Es importante porque ayuda a ver claramente qué depende de qué, permite organizar mejor el trabajo, identificar posibles retrasos y planificar el tiempo de manera más realista. Con este diagrama es más fácil entender el proyecto completo y tomar decisiones para que todo avance sin problemas.
+
+El diagrama representamos la **arquitectura de red e infraestructura del proyecto web** con el dominio **delicias.tallerdekirby.es**. En él se encuentran los diferentes servicios, servidores y tecnologías que permiten que nuestra página web funcione, desde el acceso del usuario en Internet hasta el almacenamiento de los datos.
+
+---
+
+# 1. Acceso al dominio y gestión externa
+
+Nuestro punto de entrada al sistema es el **dominio web delicias.tallerdekirby.es**.
+
+Cuando un usuario introduzca este dominio en su navegador pasa lo siguiente:
+
+1.1 El navegador consulta el **DNS público gestionado por Cloudflare**.
+
+1.2 Cloudflare traduce el nombre de dominio a la **dirección IP pública del servidor**.
+
+1.3 Además, Cloudflare puede proporcionar:
+
+   - **Protección contra ataques DDoS**
+   - **CDN para optimizar la carga**
+   - **Gestión segura del tráfico HTTPS**
+
+Una vez resuelta la dirección IP, el tráfico se dirige hacia la red del servidor.
+
+---
+
+# 2. Firewall y control de red (pfSense)
+
+Antes de llegar a los servidores internos, el tráfico pasa por el **pfSense** que se encarga de:
+
+- Filtrar el tráfico entrante y saliente.
+- Permitir solo conexiones necesarias (por ejemplo HTTP y HTTPS).
+- Proteger la red interna de accesos no autorizados.
+
+De esta manera, ningún servidor interno queda expuesto directamente a Internet.
+
+---
+
+# 3. Servicio de red interno (DHCP)
+
+Dentro de la red local, **pfSense también gestiona el servicio DHCP**.
+
+El **DHCP** se encarga de:
+
+- Asignar direcciones IP automáticamente a los dispositivos de la red.
+- Configurar parámetros como:
+
+  - Puerta de enlace
+  - DNS
+  - Máscara de red
+
+Esto permite que los servidores y dispositivos se conecten automáticamente a la red interna.
+
+---
+
+# 4. Servidor web y aplicación
+
+Una vez que el tráfico atraviesa el firewall, llega al **servidor web principal**, donde se ejecuta la aplicación web.
+
+Este servidor utiliza varias tecnologías:
+
+### Apache HTTP Server
+
+Es el **servidor web** encargado de:
+
+- Recibir peticiones HTTP/HTTPS del navegador.
+- Procesar solicitudes del cliente.
+- Servir el contenido de la página web.
+
+### PHP
+
+PHP funciona dentro de Apache como **lenguaje de programación del lado del servidor**.
+
+Se encarga de:
+
+- Procesar la lógica de la aplicación.
+- Generar páginas dinámicas.
+- Gestionar la comunicación con la base de datos.
+
+### HTML5 y CSS
+
+Son las tecnologías utilizadas para la **estructura y diseño de la página web**.
+
+- **HTML5** define el contenido.
+- **CSS** controla la apariencia visual.
+
+Estas páginas son generadas por PHP y enviadas al navegador del usuario.
+
+---
+
+# 5. Servidor de base de datos
+
+La aplicación web se conecta a un **servidor de base de datos MySQL (o MariaDB)**.
+
+La base de datos almacena información dinámica como:
+
+- Usuarios
+- Contenido del sitio
+- Pedidos o registros
+- Datos de configuración
+
+El flujo es el siguiente:
+
+1. El usuario realiza una acción en la web.
+2. Apache recibe la petición.
+3. PHP procesa la lógica.
+4. PHP consulta o modifica datos en **MySQL**.
+5. MySQL devuelve los datos al servidor web.
+6. El servidor genera la página final.
+
+---
+
+# 6. Administración de la base de datos
+
+Para gestionar la base de datos se utiliza **phpMyAdmin**.
+
+phpMyAdmin es una **interfaz web de administración** que permite:
+
+- Crear tablas
+- Modificar registros
+- Realizar consultas SQL
+- Administrar usuarios de base de datos
+
+Normalmente solo es accesible **desde la red interna por seguridad**.
+
+---
+
+# 7. DNS interno y filtrado (Pi-hole)
+
+Dentro de la red también existe un servidor **Pi-hole** que funciona como:
+
+- **Servidor DNS local**
+- **Bloqueador de publicidad y rastreadores**
+
+Sus funciones principales son:
+
+- Resolver nombres de dominio dentro de la red.
+- Filtrar dominios maliciosos o publicitarios.
+- Mejorar la privacidad y el rendimiento.
+
+Los dispositivos de la red consultan primero a Pi-hole antes de acceder a DNS externos.
+
+---
+
+# 8. Almacenamiento de datos (TrueNAS)
+
+El sistema también incluye un servidor **TrueNAS**, que proporciona almacenamiento centralizado.
+
+TrueNAS permite:
+
+- Guardar archivos del sistema o copias de seguridad.
+- Compartir almacenamiento entre servidores.
+- Gestionar volúmenes de almacenamiento con el sistema **ZFS**.
+
+El almacenamiento físico se realiza en un **disco duro (HDD)** conectado al servidor NAS.
+
+---
+
+# 9. Flujo completo de funcionamiento
+
+El funcionamiento completo del sistema sería el siguiente:
+
+1. El usuario accede a **delicias.tallerdekirby.es** desde su navegador.
+2. **Cloudflare** resuelve el dominio y dirige la conexión hacia el servidor.
+3. La conexión llega al **firewall pfSense**.
+4. pfSense verifica las reglas de seguridad y permite el tráfico.
+5. La petición llega al **servidor Apache**.
+6. Apache ejecuta **PHP** para procesar la lógica del sitio.
+7. PHP consulta datos en **MySQL** si es necesario.
+8. La respuesta se genera en **HTML y CSS**.
+9. El navegador del usuario recibe y muestra la página web.
+
+Mientras tanto:
+
+- **Pi-hole** gestiona el DNS interno.
+- **TrueNAS** almacena archivos y copias de seguridad.
+- **phpMyAdmin** permite administrar la base de datos.
+	<br>
 	<br>
 <p align="center">
 <img src="https://github.com/valalj88/Web-de-recetas-con-buscador-inteligente/blob/main/Archivos/Organigrama.png" alt="Página Tareas" width="1000">
 </p>
 
-</details>
-<br>
-<details>
-  <summary>Mapa Físico</summary>
-</details>
-<br>
-<details>
-  <summary>Mapa Lógico</summary>
 </details>
 </details>
 
