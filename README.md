@@ -523,6 +523,7 @@ El DHCP reparte las direcciones IP automáticamente a todos los dispositivos de 
 
 ##  Implementación y Configuración de Servidor DHCP en Pi-hole
   <br>
+  
 ## Servicios Web y Servidores
 <br> 
 Estos son los equipos que hacen que la web funcione y guardan los datos:
