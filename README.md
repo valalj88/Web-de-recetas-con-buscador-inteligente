@@ -524,37 +524,6 @@ Gestiona el DNS para que el nombre delicias.tallerdekirby.es se traduzca a una I
 El DHCP reparte las direcciones IP automáticamente a todos los dispositivos de la red. Esto evita errores de configuración manual.
 
 ##  Implementación y Configuración de Servidor DHCP en Pi-hole
-### 1. Introducción y Propósito
-En este proyecto, se ha optado por delegar la gestión de red al servidor Pi-hole, convirtiéndolo no solo en un bloqueador de publicidad y rastreadores, sino en el servidor DHCP (Dynamic Host Configuration Protocol) principal de la infraestructura local.
-
-Esta decisión técnica busca centralizar la administración de la red y garantizar que todos los dispositivos conectados utilicen automáticamente los filtros DNS de Pi-hole sin necesidad de configuración manual individual.
-
-### 2. Procedimiento de Configuración
-Para implementar esta funcionalidad, se siguieron estos pasos críticos:
-
-Desactivación en el Gateway: Se accedió a la configuración del router de la operadora para desactivar su servidor DHCP. Esto es vital para evitar el conflicto de dos servidores asignando IPs en el mismo segmento.
-
-Activación en Pi-hole: En la interfaz de administración (Settings > DHCP), se habilitó el "DHCP Server".
-
-Configuración del Pool de IPs: Se definió un rango de direcciones (ej. 192.168.1.50 a 192.168.1.150) y el tiempo de concesión (lease time).
-
-Asignación de DNS: Al activar esta opción, Pi-hole se anuncia a sí mismo como la puerta de enlace DNS para todos los clientes mediante el proceso de negociación DHCP.
-
-### 3. Justificación Técnica y Ventajas
-La migración del DHCP del router hacia Pi-hole se justifica por los siguientes puntos clave:
-
-A. Visibilidad y Auditoría de Red
-Por defecto, muchos routers realizan una función de NAT que oculta el origen de las peticiones DNS, haciendo que en los registros de Pi-hole solo aparezca la IP del router. Al gestionar el DHCP, Pi-hole puede:
-
-Identificar dispositivos por nombre: Asocia cada consulta DNS a un hostname específico (ej. "iPhone-de-Juan" en lugar de 192.168.1.15).
-
-Generar estadísticas granulares: Permite saber con precisión qué dispositivo en la red está generando tráfico sospechoso o bloqueado.
-
-B. Control de Asignaciones Estáticas
-La interfaz de Pi-hole es significativamente más intuitiva y estable que la de la mayoría de los routers comerciales. Permite fijar direcciones IP a direcciones MAC específicas de forma rápida, asegurando que servidores o impresoras mantengan siempre la misma ubicación.
-
-C. Bypass de Restricciones del Router
-Muchos routers de proveedores de internet (ISP) bloquean la posibilidad de cambiar los DNS. Al asumir el rol de servidor DHCP, Pi-hole "fuerza" a los dispositivos a usar su filtrado, saltándose las limitaciones impuestas por el hardware del ISP.
   <br>
 ## Servicios Web y Servidores
 <br> 
@@ -1066,6 +1035,38 @@ Cuando hemos terminado de hacer esto hemos guardado los cambios y para comprobar
   <summary>b. DHCP</summary>
 <br>
 El DHCP es un servicio que asigna automáticamente direcciones IP y otros datos de red a los dispositivos cuando se conectan. Es útil para un proyecto porque evita tener que configurar cada equipo a mano, reduce errores y hace que la red funcione de forma rápida y ordenada. Gracias al DHCP, todos los dispositivos pueden conectarse y comunicarse sin complicaciones.
+
+### 1. Introducción y Propósito
+En este proyecto, hemos utilizado el servidor Pi-hole, convirtiéndolo no solo en un bloqueador de publicidad y rastreadores, sino en el DHCP principal de la infraestructura.
+
+Esta decisión técnica busca centralizar la administración de la red y garantizar que todos los dispositivos conectados utilicen automáticamente los filtros DNS de Pi-hole sin necesidad de configuración manual individual.
+
+### 2. Procedimiento de Configuración
+Para implementar esta funcionalidad, se siguieron estos pasos críticos:
+
+Desactivación en el Gateway: Se accedió a la configuración del router de la operadora para desactivar su servidor DHCP. Esto es vital para evitar el conflicto de dos servidores asignando IPs en el mismo segmento.
+
+Activación en Pi-hole: En la interfaz de administración (Settings > DHCP), se habilitó el "DHCP Server".
+
+Configuración del Pool de IPs: Se definió un rango de direcciones (ej. 192.168.1.50 a 192.168.1.150) y el tiempo de concesión (lease time).
+
+Asignación de DNS: Al activar esta opción, Pi-hole se anuncia a sí mismo como la puerta de enlace DNS para todos los clientes mediante el proceso de negociación DHCP.
+
+### 3. Justificación Técnica y Ventajas
+La migración del DHCP del router hacia Pi-hole se justifica por los siguientes puntos clave:
+
+A. Visibilidad y Auditoría de Red
+Por defecto, muchos routers realizan una función de NAT que oculta el origen de las peticiones DNS, haciendo que en los registros de Pi-hole solo aparezca la IP del router. Al gestionar el DHCP, Pi-hole puede:
+
+Identificar dispositivos por nombre: Asocia cada consulta DNS a un hostname específico (ej. "iPhone-de-Juan" en lugar de 192.168.1.15).
+
+Generar estadísticas granulares: Permite saber con precisión qué dispositivo en la red está generando tráfico sospechoso o bloqueado.
+
+B. Control de Asignaciones Estáticas
+La interfaz de Pi-hole es significativamente más intuitiva y estable que la de la mayoría de los routers comerciales. Permite fijar direcciones IP a direcciones MAC específicas de forma rápida, asegurando que servidores o impresoras mantengan siempre la misma ubicación.
+
+C. Bypass de Restricciones del Router
+Muchos routers de proveedores de internet (ISP) bloquean la posibilidad de cambiar los DNS. Al asumir el rol de servidor DHCP, Pi-hole "fuerza" a los dispositivos a usar su filtrado, saltándose las limitaciones impuestas por el hardware del ISP.
 </details>
 <br>
 <details>
