@@ -785,10 +785,9 @@ Un usuario puede tener muchas recetas favoritas, y una receta puede ser favorita
 
 <details>
   <summary>🌐 Red</summary>
-  <br>
-
+<br>
+	
 # Diagrama De La Red
-	<br>
 
 ---
 
