@@ -846,13 +846,13 @@ Esto permite que los servidores y dispositivos se conecten automáticamente a la
 
 # 4. Servidor web y aplicación
 
-Una vez que el tráfico atraviesa el firewall, llega al **servidor web principal**, donde se ejecuta la aplicación web.
+Una vez que el tráfico atraviesa el firewall, llegaremos al servidor web principal, donde se ejecuta la aplicación web.
 
 Este servidor utiliza varias tecnologías:
 
 ### Apache HTTP Server
 
-Es el **servidor web** encargado de:
+Es el servidor web encargado de:
 
 - Recibir peticiones HTTP/HTTPS del navegador.
 - Procesar solicitudes del cliente.
@@ -860,7 +860,7 @@ Es el **servidor web** encargado de:
 
 ### PHP
 
-PHP funciona dentro de Apache como **lenguaje de programación del lado del servidor**.
+PHP funciona dentro de Apache como lenguaje de programación del lado del servidor.
 
 Se encarga de:
 
@@ -872,8 +872,8 @@ Se encarga de:
 
 Son las tecnologías utilizadas para la **estructura y diseño de la página web**.
 
-- **HTML5** define el contenido.
-- **CSS** controla la apariencia visual.
+- HTML5 define el contenido.
+- CSS controla la apariencia visual.
 
 Estas páginas son generadas por PHP y enviadas al navegador del usuario.
 
@@ -881,21 +881,23 @@ Estas páginas son generadas por PHP y enviadas al navegador del usuario.
 
 # 5. Servidor de base de datos
 
-La aplicación web se conecta a un **servidor de base de datos MySQL (o MariaDB)**.
+Seguido, la aplicación web se conecta a un servidor de base de datos MySQL.
 
 La base de datos almacena información dinámica como:
 
 - Usuarios
-- Contenido del sitio
-- Pedidos o registros
-- Datos de configuración
+- Recetas
+- Ingredientes
+- Favoritos
+
+  etc.
 
 El flujo es el siguiente:
 
 1. El usuario realiza una acción en la web.
 2. Apache recibe la petición.
 3. PHP procesa la lógica.
-4. PHP consulta o modifica datos en **MySQL**.
+4. PHP consulta o modifica datos en MySQL.
 5. MySQL devuelve los datos al servidor web.
 6. El servidor genera la página final.
 
@@ -903,16 +905,16 @@ El flujo es el siguiente:
 
 # 6. Administración de la base de datos
 
-Para gestionar la base de datos se utiliza **phpMyAdmin**.
+Para gestionar la base de datos se utilizaremos PHP.
 
-phpMyAdmin es una **interfaz web de administración** que permite:
+PHP es una interfaz web que permite:
 
 - Crear tablas
 - Modificar registros
 - Realizar consultas SQL
 - Administrar usuarios de base de datos
 
-Normalmente solo es accesible **desde la red interna por seguridad**.
+Normalmente solo es accesible desde la red interna por seguridad.
 
 ---
 
@@ -935,15 +937,12 @@ Los dispositivos de la red consultan primero a Pi-hole antes de acceder a DNS ex
 
 # 8. Almacenamiento de datos (TrueNAS)
 
-El sistema también incluye un servidor **TrueNAS**, que proporciona almacenamiento centralizado.
+El sistema también incluye un servidor TrueNAS.
 
 TrueNAS permite:
 
 - Guardar archivos del sistema o copias de seguridad.
 - Compartir almacenamiento entre servidores.
-- Gestionar volúmenes de almacenamiento con el sistema **ZFS**.
-
-El almacenamiento físico se realiza en un **disco duro (HDD)** conectado al servidor NAS.
 
 ---
 
@@ -951,14 +950,14 @@ El almacenamiento físico se realiza en un **disco duro (HDD)** conectado al ser
 
 El funcionamiento completo del sistema sería el siguiente:
 
-1. El usuario accede a **delicias.tallerdekirby.es** desde su navegador.
+1. El usuario accede al dominio **delicias.tallerdekirby.es** desde su navegador.
 2. **Cloudflare** resuelve el dominio y dirige la conexión hacia el servidor.
 3. La conexión llega al **firewall pfSense**.
 4. pfSense verifica las reglas de seguridad y permite el tráfico.
 5. La petición llega al **servidor Apache**.
 6. Apache ejecuta **PHP** para procesar la lógica del sitio.
 7. PHP consulta datos en **MySQL** si es necesario.
-8. La respuesta se genera en **HTML y CSS**.
+8. La respuesta se genera en **HTML y CSS** accesible para el usuario.
 9. El navegador del usuario recibe y muestra la página web.
 
 Mientras tanto:
