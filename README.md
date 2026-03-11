@@ -1292,7 +1292,9 @@ Antes teníamos un modelo más básico y poco organizado. Después lo reestructu
 El DNS es un servicio que se encarga de traducir los nombres de las páginas web, como ejemplo.com, a direcciones numéricas que los ordenadores entienden. Es útil para un proyecto porque permite que los usuarios accedan fácilmente a tu página o aplicación usando un nombre sencillo en lugar de una dirección difícil de recordar. Gracias al DNS, el acceso es más rápido, más claro y más profesional.
 <br>
 <br>
-	
+
+</details>
+
 <details>
 	
   <summary>Pi-hole</summary>
@@ -1343,7 +1345,6 @@ Una vez hecho esto nos a dejado entrar y hemos configurado el DHCP con el Rango 
 Cuando hemos terminado de hacer esto hemos guardado los cambios y para comprobar que funcionaba correctamente hemos abierto otra máquina virtual que estaba en modo red interna y efectivamente funcionaba correctamente.
 
 
-</details>
 </details>
 <br>
 <details>
