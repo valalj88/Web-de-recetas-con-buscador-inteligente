@@ -1732,15 +1732,6 @@ Base de datos MySQL
 Así, cuando un usuario pida una receta, la web enviará una petición a la API y recibirá la receta ya estructurada.
 
 </details>
-
-<br>
-
-<details>
-  <summary>e. Copias De Seguridad</summary>
-<br>
-Las copias de seguridad son duplicados de los archivos y datos importantes que se guardan en otro lugar para no perderlos si ocurre un fallo, un borrado accidental o un ataque informático. Son útiles para un proyecto porque garantizan que, pase lo que pase, siempre podrás recuperar la información necesaria y continuar trabajando sin perder tiempo ni contenido.
-</details>
-
 </details>
 
 ---
