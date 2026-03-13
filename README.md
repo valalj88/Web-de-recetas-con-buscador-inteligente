@@ -1511,6 +1511,91 @@ Un firewall es un sistema que controla qué tráfico puede entrar o salir de una
 <br>
 Las copias de seguridad son duplicados de los archivos y datos importantes que se guardan en otro lugar para no perderlos si ocurre un fallo, un borrado accidental o un ataque informático. Son útiles para un proyecto porque garantizan que, pase lo que pase, siempre podrás recuperar la información necesaria y continuar trabajando sin perder tiempo ni contenido.
 </details>
+<details>
+  <summary>TrueNAS</summary>
+<br>
+# Servicio: TrueNAS
+
+## ¿Qué función cumple exactamente este servicio dentro de la red?
+
+TrueNAS es un sistema operativo especializado en almacenamiento en red y copias de seguridad.
+Su función dentro de la red es centralizar el almacenamiento de datos y permitir que otros servidores o equipos puedan guardar, compartir y acceder a archivos.
+En nuestro proyecto, TrueNAS se utiliza para:
+
+- Almacenar copias de seguridad del servidor web y la base de datos.
+- Guardar archivos del proyecto.
+- Permitir acceso a archivos desde otros servidores de la red.
+- Mantener los datos organizados y protegidos.
+
+El problema que resuelvemos con TrueNAS es evitar que nuestros datos estén repartidos en distintos equipos, permitiendo gestionar todo el almacenamiento desde un único servidor centralizado.
+
+---
+
+## ¿En qué equipo se instala y qué requisitos necesita?
+
+Instalamos nuestro servidor de TrueNAS en VirtualBox
+
+### Sistema operativo
+
+TrueNAS CORE
+
+### IP del servidor
+
+
+
+### Recursos mínimos
+
+- CPU: 2 núcleos
+- RAM: 8 GB (recomendado para ZFS)
+- Disco:
+  - 16 GB para el sistema
+  - Discos adicionales para almacenamiento
+
+---
+
+## ¿Qué parámetros básicos debo configurar?
+
+### Puertos
+
+- 80 / 443 → acceso a interfaz web
+- 445 → SMB
+- 2049 → NFS
+- 21 → FTP
+
+### Directorios de trabajo
+
+Los datos se almacenan dentro de pools ZFS.
+
+Ejemplo:
+
+/mnt/pool_datos/backups  
+/mnt/pool_datos/proyecto
+
+### Configuración
+
+Se configura desde la interfaz web:
+
+- Pools de almacenamiento
+- Datasets
+- Permisos
+- Recursos compartidos
+
+---
+
+## ¿Cómo verifico que funciona correctamente?
+
+### Acceso a la interfaz web
+
+http://192.168.1.20
+
+### Comprobación de red
+
+ping 192.168.1.20
+
+### Acceso a recursos compartidos
+
+showmount -e 192.168.1.20
+</details>
 
 <br>
 
