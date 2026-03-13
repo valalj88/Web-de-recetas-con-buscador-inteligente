@@ -1389,114 +1389,172 @@ Muchos routers de proveedores de internet (ISP) bloquean la posibilidad de cambi
   <summary>c. Apache y PHP</summary>
 	<br> 
 
-## APACHE
+# APACHE
 Apache es un programa que funciona como servidor web, se encarga de entregar las páginas y recursos de un sitio cuando un usuario los solicita desde su navegador. Es útil para un proyecto porque permite publicar una web o aplicación de forma segura y estable, gestionar el acceso de los usuarios y asegurar que el contenido se cargue correctamente. Con Apache, tu proyecto puede estar disponible para cualquiera que necesite acceder a él desde internet o desde una red local.
+Apache se encarga de:
+
+- Gestionar peticiones HTTP y HTTPS
+- Servir archivos HTML, CSS, JavaScript y PHP
+- Conectar la web con PHP y la base de datos
+
+---
+
+## ¿En qué equipo se instala y qué requisitos necesita?
+
+### Sistema operativo
+
+Debian
+
+### IP del servidor
+
+192.168.1.10
+
+??
+
+### Recursos utilizados
+
+- CPU: 1 núcleo
+- RAM: 1 GB
+- Disco: 10 GB
+
+  ??
+
+### Dependencias necesarias
+
+- PHP
+- Módulo mod_php
+- Acceso a MySQL
+
+---
+
+## ¿Qué parámetros básicos debo configurar?
+
+### Puertos
+
+- 80 → HTTP
+- 443 → HTTPS
+
+### Directorio principal
+
+/var/www/html
+
+??
+
+### Archivos de configuración
+
+/etc/apache2/apache2.conf  
+/etc/apache2/sites-available/000-default.conf
+
+??
+
+### Virtual Hosts
+
+Permiten alojar diferentes webs en el mismo servidor.
+
+---
+
+## ¿Cómo verifico que funciona correctamente?
+
+### Comprobar estado del servicio
+
+systemctl status apache2
+
+### Probar desde navegador
+
+http://192.168.1.10
+
+??
+
+### Ver logs
+
+/var/log/apache2/access.log  
+/var/log/apache2/error.log
 
 <br>
 
 [Instalación de servidor Apache en Debian - Hector Abad y Alejandro Valero.pdf](https://github.com/user-attachments/files/25045002/Instalacion.de.servidor.Apache.en.Debian.-.Hector.Abad.y.Alejandro.Valero.pdf)
 
-## PHP
+# PHP
 
 PHP es un lenguaje de programación del lado del servidor que se usa principalmente para crear páginas web dinámicas. Se ejecuta en el servidor y genera contenido HTML que luego se envía al navegador. 
 Es muy común para manejar formularios, bases de datos y sistemas web como WordPress.  
+En nuestro proyecto PHP se utiliza para:
+
+- Procesar formularios de la web
+- Conectar con la base de datos MySQL
+- Gestionar usuarios y recetas
+- Ejecutar la API que genera recetas
 
 ---
 
-Una vez hecho el html procederemos a instalar PHP
+## ¿En qué equipo se instala y qué requisitos necesita?
 
-Hemos instalado Apache para presentar su contenido y MySQL para almacenar y gestionar sus datos. PHP es el componente de nuestra configuración que procesará el código para mostrar contenido dinámico al usuario final, con el siguiente comando:
+### Sistema operativo
 
-**sudo apt install php libapache2-mod-php php-mysql**
+Debian
 
-Una vez que la instalación se complete, hemos ejecutado el siguiente comando para confirmar tanto la versión de PHP como si se ha instalado correctamente:
+### IP del servidor
 
-**php -v**
+192.168.1.10
 
-<img width="543" height="123" alt="Captura de pantalla 2026-02-10 105635" src="https://github.com/user-attachments/assets/c4e31970-2f8a-44af-8bfb-0401dc9fb60d" />
+??
 
-## Configurar hosts virtuales (recomendado)
+### Recursos mínimos
 
-Al emplear el servidor web Apache, puede utilizar _hosts virtuales _(similares a bloques de servidor de Nginx) para encapsular detalles de configuración y alojar más de un dominio desde un único servidor. Configuraremos un dominio llamado example.com, pero debería cambiarlo por su propio nombre de dominio.
+- CPU: 1 núcleo
+- RAM: 1 GB
+- Disco: 10 GB
 
-Por defecto, Apache en Debian 9 tiene habilitado un bloque de servidor que está configurado para proporcionar documentos del directorio /var/www/html. Si bien esto funciona bien para un solo sitio, puede ser difícil de manejar si aloja varios. En vez de modificar /var/www/html, crearemos una estructura de directorio dentro de /var/www para nuestro sitio example.com y dejaremos /var/www/html como directorio predeterminado que se abastecerá si una solicitud de cliente no coincide con otros sitios.
+  ??
 
-Cree el directorio para example.com, utilizando el indicador -p para crear cualquier directorio principal necesario:
+### Dependencias necesarias
 
-**sudo mkdir -p /var/www/webDelicIA's.com/html**
-
-A continuación, asigne la propiedad del directorio con la variable de entorno data:
-
-**sudo chown -R www-data:www-data /var/www/webDelicIA's.com/html**
-
-A continuación, cree una página de ejemplo index.html utilizando nano o su editor favorito:
-
-**nano /var/www/DelicIA's.com/html/index.html**
-
-Dentro de ella, agregue el siguiente ejemplo de HTML:
-
-<img width="595" height="191" alt="Captura de pantalla 2026-02-03 131806" src="https://github.com/user-attachments/assets/d09f000a-a544-4ac1-a78f-17e76a26d34c" />
-
-Guarde y cierre el archivo cuando termine.
-
-Para que Apache proporcione este contenido, es necesario crear un archivo de host virtual con las directivas correctas. En lugar de modificar el archivo de configuración predeterminado situado en /etc/apache2/sites-available/000-default.conf directamente, crearemos uno nuevo en /etc/apache2/sites-available/example.com.conf:
-
-Péguelo en el siguiente bloque de configuración, similar al predeterminado, pero actualizado para nuestro nuevo directorio y nombre de dominio:
-
-<img width="480" height="182" alt="image" src="https://github.com/user-attachments/assets/071108f5-5320-4262-add9-d3f111a5a6d8" />
-
-Tenga en cuenta que cambiamos DocumentRoot por nuestro nuevo directorio y ServerAdmin por un correo electrónico al que pueda acceder el administrador del sitio example.com. También agregamos dos directivas: ServerName, que establece el dominio de base que debería coincidir para esta definición de host virtual, y ServerAlias, que define más nombres que deberían coincidir como si fuesen el nombre de base.
-
-Guarde y cierre el archivo cuando termine.
-
-Habilitaremos el archivo con la herramienta a2ensite:
-
-**sudo a2ensite DelicIA's.com.conf**
-
-Deshabilite el sitio predeterminado definido en 000-default.conf:
-
-**sudo a2dissite 000-default.conf**
-
-A continuación, realizaremos una prueba para ver que no haya errores de configuración:
-
-**sudo apache2ctl configtest**
-
-Debería ver el siguiente resultado:
-
-**Output
-Syntax OK**	
-
-Reinicie Apache para implementar sus cambios:
-
-**sudo systemctl restart apache2**
-
-Con esto, Apache debería ser el servidor de su nombre de dominio. Puede probar esto visitando http://example.com. Allí, debería ver algo como lo siguiente:
-
-Y ya nos mostraría el HTML que hemos hecho.
-
-Si vemos esta página, nuestro host virtual de Apache está funcionando según lo previsto.
-
-Dejaremos este archivo establecido como página de destino temporal de la aplicación hasta que configuremos un archivo index.php que lo sustituya. Cuando lo haga, eliminaremos el archivo index.html de su root de documentos, o cambiarle el nombre, ya que tendría precedencia sobre un archivo index.php por defecto.
-
-En nuestro caso que queremos cambiar este comportamiento, editaremos el archivo /etc/apache2/mods-enabled/dir.conf y modificar el orden en el que el archivo index.php se enumera en la directiva DirectoryIndex:
-
-<img width="1664" height="982" alt="image" src="https://github.com/user-attachments/assets/0e0aa188-0d90-4cbd-9904-512446152be5" />
-
-
-## INCIDENCIAS
-
-Durante el proceso hemos tenido un par de incidencias:
-### 1
+- Apache
+- Módulo php para Apache
+- Extensión php-mysql
 
 ---
 
-En la instalación de PHP no conseguiamos cambiar la interfaz cuando entrabamos en el navegador, esto nos estaba pasando por que DEBIAN antepone el "index.html" que hicimos de prueba al "index.php" que habiamos editado recientemente.
+## ¿Qué parámetros básicos debo configurar?
 
-### 2
+### Archivos principales
+
+/etc/php/*/apache2/php.ini
+
+??
+
+### Directorio de scripts
+
+/var/www/html
+
+??
+
+### Extensiones necesarias
+
+php-mysql  
+php-curl  
+php-json
 
 ---
 
-Pero aun cambiando esto tuvimos otra incidencia y fue nada más y nada menos que el orden el el que escribimos dentro de la configuración, DEBIAN tiene muy en cuenta el orden por lo que al poner infophp cuando era **phpinfo**.
+## ¿Cómo verifico que funciona correctamente?
+
+### Comprobar versión
+
+php -v
+
+### Crear archivo de prueba
+
+info.php
+
+Contenido:
+
+<?php phpinfo(); ?>
+
+Acceder desde navegador:
+
+http://192.168.1.10/info.php
+??
 
 </details>
 <br>
