@@ -1446,6 +1446,18 @@ showmount -e 192.168.1.20
 
 # Servicio: API de inteligencia artificial
 
+# ¿Por qué usamos una API?
+
+Porque después conectaremos esta IA a nuestra web mediante:
+
+Backend (probablemente con PHP) para la seguridad de nuestra clave de la IA, ya que no dijo Quim que nos la podrían robar.
+Servidor Apache
+Base de datos MySQL
+
+Así, cuando un usuario pida una receta, la web enviará una petición a la API y recibirá la receta ya estructurada.
+
+---
+
 ## ¿Qué función cumple exactamente este servicio dentro de la red?
 
 La API de Inteligencia Artificial haremos que se encargue de generar recetas automáticamente utilizando un modelo de IA. Este servicio permite que los usuarios de la web puedan obtener recetas completas generadas dinámicamente.
@@ -1547,18 +1559,6 @@ Esto es clave para que la experiencia del usuario sea coherente con nuestra plat
  - No salirse del tema de cocina
  - No responder preguntas fuera del ámbito gastronómico
  - No generar contenido inapropiado
-
----
-
-# ¿Por qué usamos una API?
-
-Porque después conectaremos esta IA a nuestra web mediante:
-
-Backend (probablemente con PHP) para la seguridad de nuestra clave de la IA, ya que no dijo Quim que nos la podrían robar.
-Servidor Apache
-Base de datos MySQL
-
-Así, cuando un usuario pida una receta, la web enviará una petición a la API y recibirá la receta ya estructurada.
 
 </details>
 </details>
