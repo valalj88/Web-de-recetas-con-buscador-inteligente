@@ -1636,6 +1636,52 @@ showmount -e 192.168.1.20
   <summary>d. API</summary>
 <br>	
 
+# Servicio: API de Inteligencia Artificial
+
+## ¿Qué función cumple exactamente este servicio dentro de la red?
+
+La API de Inteligencia Artificial haremos que se encargue de generar recetas automáticamente utilizando un modelo de IA. Este servicio permite que los usuarios de la web puedan obtener recetas completas generadas dinámicamente.
+
+Las recetas generadas incluyen:
+
+- Título del plato
+- Descripción del plato
+- Lista de ingredientes
+- Pasos de preparación
+- Tiempo estimado de elaboración
+
+Cuando un usuario solicita una receta desde la página web, el servidor envía una petición a la API de IA y esta devuelve una receta generada en formato estructurado.
+
+Este servicio da soporte a:
+
+- Usuarios de la página web
+- Backend de la aplicación web
+- Sistema de generación de contenido dinámico
+
+El problema que resuelve es evitar tener que crear manualmente todas las recetas, permitiendo generar nuevas recetas automáticamente.
+
+---
+
+## ¿Cuál hemos elegido?
+
+Para implementar la generación de recetas se analizaron varias APIs de inteligencia artificial disponibles actualmente.
+
+Las alternativas fueron:
+
+- API de OpenAI (ChatGPT)
+- API de Meta (Llama)
+- API de Google Gemini (Gemini Studio)
+
+Finalmente se decidió utilizar **Gemini Studio** por varios motivos:
+
+- Ofrece una cuota gratuita más amplia, lo que permite realizar más peticiones sin consumir tokens rápidamente.
+- Permite entrenar el comportamiento de la IA desde la propia plataforma, definiendo cómo debe responder, el formato de salida y el tipo de contenido generado.
+- Nos facilita la creación de prompts personalizados sin tener que programarlos completamente desde cero.
+
+En otras APIs como OpenAI o Meta era necesario diseñar manualmente todos los prompts y el control del formato de salida, lo que complicaba el desarrollo inicial del proyecto.
+
+---
+
 # PROCESO DE ENTRENO DE API IA (DELICIA'S ASSISTANT)
 
 Estamos configurando y entrenando una API de inteligencia artificial utilizando Google AI Studio.
