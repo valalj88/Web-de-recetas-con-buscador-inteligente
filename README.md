@@ -1775,12 +1775,12 @@ Mientras tanto:
 
 ## PLAN DE CONTINGENCIA DEL SISTEMA
 
-1. INTRODUCCIÓN
+**1. INTRODUCCIÓN**
 
 Este plan de contingencia tiene como objetivo garantizar la continuidad del servicio del sistema desarrollado, basado en una infraestructura con servidores Linux, servicios web (Apache, PHP), base de datos MySQL, sistema de filtrado Pi-hole y almacenamiento en TrueNAS.
 Se definen los procedimientos a seguir ante posibles incidencias, así como las medidas preventivas y de recuperación necesarias para minimizar el impacto de fallos.
 
-2. OBJETIVOS DEL PLAN
+**2. OBJETIVOS DEL PLAN**
 
 • Garantizar la disponibilidad del sistema en todo momento
 • Minimizar el tiempo de inactividad
@@ -1788,7 +1788,7 @@ Se definen los procedimientos a seguir ante posibles incidencias, así como las 
 • Establecer procedimientos claros ante incidencias
 • Asegurar una recuperación rápida y eficiente del proyecto
 
-3. ALCANCE
+**3. ALCANCE**
 
 Este plan cubre:
 
@@ -1798,7 +1798,7 @@ Este plan cubre:
 • Sistema de almacenamiento TrueNAS
 • Copias de seguridad y restauración
 
-4. IDENTIFICACIÓN DE RIESGOS
+**4. IDENTIFICACIÓN DE RIESGOS**
 
 Principales riesgos del sistema:
 
