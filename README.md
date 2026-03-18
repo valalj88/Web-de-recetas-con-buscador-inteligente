@@ -1771,6 +1771,161 @@ Mientras tanto:
 ---
 
 <details>
+  <summary>🗞️ Plan de contingencia</summary>
+
+## PLAN DE CONTINGENCIA DEL SISTEMA
+
+1. INTRODUCCIÓN
+
+Este plan de contingencia tiene como objetivo garantizar la continuidad del servicio del sistema desarrollado, basado en una infraestructura con servidores Linux, servicios web (Apache, PHP), base de datos MySQL, sistema de filtrado Pi-hole y almacenamiento en TrueNAS.
+Se definen los procedimientos a seguir ante posibles incidencias, así como las medidas preventivas y de recuperación necesarias para minimizar el impacto de fallos.
+
+2. OBJETIVOS DEL PLAN
+
+• Garantizar la disponibilidad del sistema en todo momento
+• Minimizar el tiempo de inactividad
+• Proteger la información y configuraciones críticas del sistema y la red
+• Establecer procedimientos claros ante incidencias
+• Asegurar una recuperación rápida y eficiente del proyecto
+
+3. ALCANCE
+
+Este plan cubre:
+
+• Máquinas virtuales del sistema (ova's)
+• Servidores Ubuntu y Debian
+• Servicios: Apache, PHP, MySQL y Pi-hole
+• Sistema de almacenamiento TrueNAS
+• Copias de seguridad y restauración
+
+4. IDENTIFICACIÓN DE RIESGOS
+
+Principales riesgos del sistema:
+
+• Caída del servidor
+• Fallos en alguna máquina virtual
+• Pérdida de datos
+• Errores de configuración
+• Ataques externos o malware
+• Fallos de hardware (discos duros que tenemos y pendrive)
+
+**5. ANÁLISIS DE IMPACTO**
+   
+| Riesgo                 | Impacto                                   | Nivel |
+|------------------------|-------------------------------------------|-------|
+| Caída del servidor     | Interrupción total del servicio web       | Alto  |
+| Fallo de base de datos | Pérdida de acceso a la información        | Alto  |
+| Error de configuración | Fallos en servicios                       | Medio |
+| Ataque externo         | Compromiso de seguridad                   | Alto  |
+| Fallo de hardware      | Pérdida de datos                          | Alto  |
+
+
+**6. RECURSOS CRÍTICOS**
+
+| Servidor | Servicio | Directorio + Archivo de configuración |
+|----------|----------|---------------------------------------|
+| Ubuntu Server | Pi-hole | /etc/pihole/ |
+| Ubuntu Server | Pi-hole | /etc/dnsmasq.d/ |
+| Debian | Apache2 | /etc/apache2/apache2.conf |
+| Debian | PHP | /etc/php/ |
+| Ubuntu Server | MySQL | /etc/mysql/mysql.conf.d/mysqld.cnf |
+| TrueNAS | NAS | Configuración desde la interfaz web |
+
+**7. PLAN DE RESPUESTA ANTE INCIDENCIAS**
+**Ejemplo:** Se nos cae del servidor
+
+• Detectar el problema mediante monitorización o fallo de acceso
+• Reiniciar los servicios afectados
+• Restaurar desde copia de seguridad si es necesario
+
+**8. PLAN DE RECUPERACIÓN**
+Cómo volveremos a la normalidad:
+
+• Restauración de la máquina virtual desde copia de seguridad
+• Reconfiguración o reinicio de los servicios (Apache, PHP, MySQL, Pi-hole)
+• Verificación de que el sistema esté funcionando correctamente despsués de ejecutar los pasos anteriores.
+
+Tiempos:
+
+• Tiempo máximo de recuperación (RTO): 2 – 4 horas
+• Pérdida de datos aceptable (RPO): 24 horas
+
+**9. COPIAS DE SEGURIDAD**
+Tipo de backup:
+
+• Copias completas de las máquinas virtuales
+• Copias de archivos de la configuración de los servicios
+
+Frecuencia:
+
+• Copia manual semanal
+• Copias antes de cambios importantes
+
+Ubicación:
+
+• 2 discos duros externos
+• 1 memoria USB
+• TrueNAS
+
+Herramientas utilizadas:
+
+• TrueNAS
+• Exportación manual de máquinas virtuales
+• Copia directa de archivos
+
+**10. MEDIDAS PREVENTIVAS**
+- Firewall / Seguridad
+- Configuración de red segura para evitar accesos no autorizados.
+- Actualización periódica de sistema y servicios.
+- Control de accesos
+- Usuarios con permisos limitados.
+- Revisión periódica del estado del sistema.
+- Pi-hole
+- Bloqueo de dominios maliciosos mediante filtrado DNS.
+
+**11. RESPONSABLES**
+
+| Rol              | Persona | Función                      |
+|------------------|--------|-----------------------------|
+| Administrador    | Alumno | Gestión del sistema         |
+| Técnico soporte  | Alumno | Resolución de incidencias   |
+| Seguridad        | Alumno | Control de accesos          |
+
+**12. PLAN DE COMUNICACIÓN**
+
+• Avisar al administrador del sistema sobre esta incidéncia
+• Tiempo de respuesta: máximo 1 hora
+
+**13. PRUEBAS DEL PLAN**
+
+• Simulación de caída del servidor que nos hará hacer Alina
+• Restauración desde copia de seguridad
+• Verificación del sistema al completo
+
+Expectativa de resultados: recuperación del sistema con éxito
+Mejoras: optimizar tiempos de restauración
+
+**14. MANTENIMIENTO DEL PLAN**
+
+• Revisión periódica
+• Actualización por el administrador del sistema
+
+**15. MEJORAS FUTURAS**
+
+• Automatización de copias de seguridad
+• Mejora de nuestras medidas de seguridad
+
+**16. CONCLUSIÓN DEL PLAN DE CONTINGENCIA**
+
+Este plan de contingencia es fundamental para garantizar la continuidad del sistema ante fallos que podamos tener.
+Nos permite actuar de forma rápida y organizada, reduciendo el impacto de incidencias.
+Además, nos ha permitido comprender la importancia de la seguridad de un servicio, las copias de seguridad de una empresa y la planificación que se debe hacer en entornos reales.
+
+</details>
+
+---
+
+<details>
   <summary>📄 Conclusiones</summary>
 </details>
 
