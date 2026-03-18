@@ -1344,20 +1344,6 @@ http://192.168.1.10/info.php
 <details>
   <summary>d. Firewall</summary>
 <br>
-
-## ¿Que vamos a guardar?
-
-| Servidor | Servicio | Directorio + Archivo de configuración |
-|----------|----------|---------------------------------------|
-| Ubuntu Server | Pi-hole | /etc/pihole/ |
-| Ubuntu Server | Pi-hole | /etc/dnsmasq.d/ |
-| Debian | Apache2 | /etc/apache2/apache2.conf |
-| Debian | PHP | /etc/php/ |
-| Ubuntu Server | MySQL | /etc/mysql/mysql.conf.d/mysqld.cnf |
-| TrueNAS | NAS | Configuración desde la interfaz web |
-
----
-
 Un firewall es un sistema que controla qué tráfico puede entrar o salir de una red, actuando como una especie de “muro de seguridad” que bloquea accesos no autorizados. Es útil para un proyecto porque protege los equipos y datos de ataques, virus y conexiones sospechosas, asegurando que solo pasen las comunicaciones permitidas. Gracias al firewall, el proyecto funciona de forma más segura y estable.
 </details>
 <br>
@@ -1370,6 +1356,19 @@ Las copias de seguridad son duplicados de los archivos y datos importantes que s
   <summary>TrueNAS</summary>
 <br>
 # Servicio: TrueNAS
+
+
+## ¿Que vamos a guardar?
+
+| Servidor | Servicio | Directorio + Archivo de configuración |
+|----------|----------|---------------------------------------|
+| Ubuntu Server | Pi-hole | /etc/pihole/ |
+| Ubuntu Server | Pi-hole | /etc/dnsmasq.d/ |
+| Debian | Apache2 | /etc/apache2/apache2.conf |
+| Debian | PHP | /etc/php/ |
+| Ubuntu Server | MySQL | /etc/mysql/mysql.conf.d/mysqld.cnf |
+| TrueNAS | NAS | Configuración desde la interfaz web |
+
 
 ## ¿Qué función cumple exactamente este servicio dentro de la red?
 
