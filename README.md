@@ -1915,7 +1915,9 @@ Herramientas utilizadas:
 ### 13. PRUEBAS DEL PLAN
 
 • Simulación de caída del servidor que nos hará hacer Alina
+
 • Restauración desde copia de seguridad
+
 • Verificación del sistema al completo
 
 Expectativa de resultados: recuperación del sistema con éxito
@@ -1924,11 +1926,13 @@ Mejoras: optimizar tiempos de restauración
 ### 14. MANTENIMIENTO DEL PLAN
 
 • Revisión periódica
+
 • Actualización por el administrador del sistema
 
 ### 15. MEJORAS FUTURAS
 
 • Automatización de copias de seguridad
+
 • Mejora de nuestras medidas de seguridad
 
 ### 16. CONCLUSIÓN DEL PLAN DE CONTINGENCIA
