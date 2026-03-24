@@ -1780,7 +1780,7 @@ Mientras tanto:
 Este plan de contingencia tiene como objetivo garantizar la continuidad del servicio del sistema desarrollado, basado en una infraestructura con servidores Linux, servicios web (Apache, PHP), base de datos MySQL, sistema de filtrado Pi-hole y almacenamiento en TrueNAS.
 Se definen los procedimientos a seguir ante posibles incidencias, así como las medidas preventivas y de recuperación necesarias para minimizar el impacto de fallos.
 
-2. OBJETIVOS DEL PLAN
+### 2. OBJETIVOS DEL PLAN
 
 • Garantizar la disponibilidad del sistema en todo momento
 
