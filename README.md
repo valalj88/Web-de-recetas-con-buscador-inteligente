@@ -1095,23 +1095,6 @@ Antes teníamos un modelo más básico y poco organizado. Después lo reestructu
   <summary>⚙️ Servicios</summary>
 <br>
 <details>
-  <summary>a. DNS</summary>
-<br>
-El DNS es un servicio que se encarga de traducir los nombres de las páginas web, como ejemplo.com, a direcciones numéricas que los ordenadores entienden. Es útil para un proyecto porque permite que los usuarios accedan fácilmente a tu página o aplicación usando un nombre sencillo en lugar de una dirección difícil de recordar. Gracias al DNS, el acceso es más rápido, más claro y más profesional.
-<br>
-<br>
-
-</details>
-
-<details>
-  <summary>b. DHCP</summary>
-<br>
-El DHCP es un servicio que asigna automáticamente direcciones IP y otros datos de red a los dispositivos cuando se conectan. Es útil para un proyecto porque evita tener que configurar cada equipo a mano, reduce errores y hace que la red funcione de forma rápida y ordenada. Gracias al DHCP, todos los dispositivos pueden conectarse y comunicarse sin complicaciones.
-
-
-</details>
-<br>
-<details>
 	
   <summary>Pi-hole</summary>
 	
@@ -1348,27 +1331,10 @@ Un firewall es un sistema que controla qué tráfico puede entrar o salir de una
 </details>
 <br>
 <details>
-  <summary>e. Copias de seguridad</summary>
-<br>
-Las copias de seguridad son duplicados de los archivos y datos importantes que se guardan en otro lugar para no perderlos si ocurre un fallo, un borrado accidental o un ataque informático. Son útiles para un proyecto porque garantizan que, pase lo que pase, siempre podrás recuperar la información necesaria y continuar trabajando sin perder tiempo ni contenido.
-</details>
-<details>
   <summary>TrueNAS</summary>
 <br>
+	
 # Servicio: TrueNAS
-
-
-## ¿Que vamos a guardar?
-
-| Servidor | Servicio | Directorio + Archivo de configuración |
-|----------|----------|---------------------------------------|
-| Ubuntu Server | Pi-hole | /etc/pihole/ |
-| Ubuntu Server | Pi-hole | /etc/dnsmasq.d/ |
-| Debian | Apache2 | /etc/apache2/apache2.conf |
-| Debian | PHP | /etc/php/ |
-| Ubuntu Server | MySQL | /etc/mysql/mysql.conf.d/mysqld.cnf |
-| TrueNAS | NAS | Configuración desde la interfaz web |
-
 
 ## ¿Qué función cumple exactamente este servicio dentro de la red?
 
@@ -1382,6 +1348,17 @@ En nuestro proyecto, TrueNAS se utiliza para:
 - Mantener los datos organizados y protegidos.
 
 El problema que resuelvemos con TrueNAS es evitar que nuestros datos estén repartidos en distintos equipos, permitiendo gestionar todo el almacenamiento desde un único servidor centralizado.
+
+## ¿Que vamos a guardar?
+
+| Servidor | Servicio | Directorio + Archivo de configuración |
+|----------|----------|---------------------------------------|
+| Ubuntu Server | Pi-hole | /etc/pihole/ |
+| Ubuntu Server | Pi-hole | /etc/dnsmasq.d/ |
+| Debian | Apache2 | /etc/apache2/apache2.conf |
+| Debian | PHP | /etc/php/ |
+| Ubuntu Server | MySQL | /etc/mysql/mysql.conf.d/mysqld.cnf |
+| TrueNAS | NAS | Configuración desde la interfaz web |
 
 ---
 
