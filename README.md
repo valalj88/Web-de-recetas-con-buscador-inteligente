@@ -1351,6 +1351,8 @@ El problema que resuelvemos con TrueNAS es evitar que nuestros datos estén repa
 
 ## ¿Que vamos a guardar?
 
+La siguiente tabla recoge los servicios principales del sistema junto con sus servidores y las rutas donde se almacenan sus archivos de configuración. Esta información es esencial para realizar copias de seguridad y poder restaurar los servicios en caso de fallo.
+
 | Servidor | Servicio | Directorio + Archivo de configuración |
 |----------|----------|---------------------------------------|
 | Ubuntu Server | Pi-hole | /etc/pihole/ |
