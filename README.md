@@ -1106,7 +1106,7 @@ Si ya esta instalado empezaremos a introducir comandos.
 
 El primer paso es introducir el comando “sudo nano /etc/netplan/00-installet-config.yaml” para ver la configuración de la red de la maquina.
 
-Ubuntu 20.04 utiliza Netplan para configurar la red en el sistema operativo. Netplan configura los parámetros de red del host a partir de ficheros de configuración YAML.
+**Ubuntu 20.04** utiliza Netplan para configurar la red en el sistema operativo. Netplan configura los parámetros de red del host a partir de ficheros de configuración YAML.
 El directorio de configuración de Netplan es: /etc/netplan
 En su interior el instalador de Ubuntu habrá dejado el fichero de configuración diferente según se trate de la versión de escritorio o de servidor.
 
@@ -1364,23 +1364,27 @@ El problema que resuelvemos con TrueNAS es evitar que nuestros datos estén repa
 
 ## ¿En qué equipo se instala y qué requisitos necesita?
 
-Instalamos nuestro servidor de TrueNAS en VirtualBox
+Necesitamos que sea virtualizado por tanto instalamos nuestro servidor de TrueNAS en VirtualBox
 
 ### Sistema operativo
 
-TrueNAS CORE
+TrueNAS CORE ¿POR QUÉ?
+
+TrueNAS CORE es preferido por nuestra parte ante TrueNAS SCALE ya que tiene más estabilidad. Con esto nos referimos a que históricamente es más maduro y estable para almacenamiento puro (NAS tradicional).
+Y en cuanto al rendimiento a veces es más eficiente que SCALE. Aunque SCALE sea el nuevo CORE es el clásico y más cómodo.
 
 ### IP del servidor
 
-
+?? Pendiente
 
 ### Recursos mínimos
 
 - CPU: 2 núcleos
 - RAM: 8 GB (recomendado para ZFS)
-- Disco:
+- Discos:
   - 16 GB para el sistema
-  - Discos adicionales para almacenamiento
+  - 50 GB
+  - 50 GB
 
 ---
 
@@ -1390,8 +1394,8 @@ TrueNAS CORE
 
 - 80 / 443 → acceso a interfaz web
 - 445 → SMB
-- 2049 → NFS
-- 21 → FTP
+
+**SMB** es un protocolo de red cliente-servidor que permite compartir archivos, impresoras y puertos serie entre computadoras
 
 ### Directorios de trabajo
 
@@ -1401,6 +1405,8 @@ Ejemplo:
 
 /mnt/pool_datos/backups  
 /mnt/pool_datos/proyecto
+??
+Pendiente de confirmar
 
 ### Configuración
 
