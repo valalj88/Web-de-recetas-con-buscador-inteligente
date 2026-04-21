@@ -1240,6 +1240,7 @@ http://192.168.1.10
 <details>
   <summary>PHP</summary>
 	<br> 
+	
 # PHP
 
 PHP es un lenguaje de programación del lado del servidor que se usa principalmente para crear páginas web dinámicas. Se ejecuta en el servidor y genera contenido HTML que luego se envía al navegador. 
@@ -1334,7 +1335,7 @@ Un firewall es un sistema que controla qué tráfico puede entrar o salir de una
   <summary>TrueNAS</summary>
 <br>
 	
-# Servicio: TrueNAS
+# Servicio TrueNAS
 
 ## ¿Qué función cumple exactamente este servicio dentro de la red?
 
