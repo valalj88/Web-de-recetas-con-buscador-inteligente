@@ -1092,7 +1092,7 @@ Antes teníamos un modelo más básico y poco organizado. Después lo reestructu
 ---
 
 <details>
-  <summary>⚙️ Servicios</summary>
+  <summary>⚙️ Servicios implementados (MV, Softwares etc)</summary>
 <br>
 <details>
 	
