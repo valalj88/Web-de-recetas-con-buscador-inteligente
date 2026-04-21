@@ -1443,7 +1443,7 @@ showmount -e 192.168.1.20
   <summary>d. API</summary>
 <br>	
 
-# Servicio: API de inteligencia artificial
+# Servicio API de inteligencia artificial
 
 # ¿Por qué usamos una API?
 
