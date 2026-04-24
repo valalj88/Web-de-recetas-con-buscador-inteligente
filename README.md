@@ -47,7 +47,7 @@ Para poder desarrollar nuestro proyecto principalmente vamos a necesitar una pla
   <summary>📋 Tareas</summary>
 <br>
 	
-## 1_ Organización del proyecto
+## 1.Organización del proyecto
  
 **Creación y configuración del tablero de Trello con las primeras tarjetas.**
 <br>
@@ -64,7 +64,7 @@ Se ha preparado el entorno de trabajo colaborativo.
 Se han definido los objetivos generales de la aplicación.
 <br>
 
-## 2_ Lluvia de ideas
+## 2.Lluvia de ideas
 
 **Propuesta inicial de funcionalidades y estructura general.**
 <br>
@@ -76,7 +76,7 @@ Se han recopilado las primeras ideas del proyecto, y hemos investigado cual ser�
 Se ha organizado la información en categorías según prioridad.
 <br>
 
-## 3_ Mapa de navegabilidad
+## 3.Mapa de navegabilidad
 
 **Creación del esquema visual con las secciones principales del sitio.**
 <br>
@@ -88,7 +88,7 @@ Se ha diseñado el recorrido principal del usuario.
 Se ha validado la estructura general del sitio web.
 <br>
 
-## 4_ Diseño inicial de la web
+## 4.Diseño inicial de la web
 
 **Diseño del primer boceto visual de la página principal.**
 <br>
@@ -100,7 +100,7 @@ Se ha elaborado un prototipo básico de la interfaz.
 Se ha colaborado en la definición del estilo visual.
 <br>
 
-## 5_ Preparación de la siguiente fase
+## 5.Preparación de la siguiente fase
 
 ### - Trello
 **Revisión de materiales y tareas en Trello.**
@@ -139,14 +139,14 @@ Se definirá el flujo necesario para recuperar la contraseña: petición del cor
 Se programará el sistema que permita al usuario restablecer su contraseña, incluyendo el re-cifrado con "password_hash()"
 <br>
 
-## 6_ Instalación y configuración del servidor web en Debian
+## 6.Instalación y configuración del servidor web en Debian
 
 **Preparación del entorno con sistema operativo Debian.**
 <br>
 Se realizará la instalación inicial del sistema operativo Debian y la configuración básica necesaria para alojar el servidor web.
 <br>
 
-## 7_ Instalación y configuración de Apache
+## 7.Instalación y configuración de Apache
 
 - **Instalación del servidor Apache.**
 Se instalará y configurará Apache en Debian para permitir la ejecución de páginas web y archivos PHP.
@@ -156,31 +156,31 @@ Se instalará y configurará Apache en Debian para permitir la ejecución de pá
 Se configurará Apache para que interprete correctamente los archivos PHP y se validará su funcionamiento mediante pruebas básicas de acceso al servidor.
 <br>
 
-## 8_ Creación de la Estructura Básica de la Página Web
+## 8.Creación de la Estructura Básica de la Página Web
 **Creación del archivo HTML base.**
 <br>
 Se generará un archivo HTML inicial que definirá la estructura y el contenido principal que verán los usuarios al entrar en la página.
 <br>
 
-## 9_ Implementación del campo de consulta del usuario
+## 9.Implementación del campo de consulta del usuario
 **Añadir un campo de texto para consultas.**
 <br>
 Se agregará un cuadro de texto (input o textarea) para que el usuario pueda escribir su consulta, como ingredientes o el tipo de receta que desea obtener.
 <br>
 
-## 10_ Creación del botón para enviar la consulta
+## 10.Creación del botón para enviar la consulta
 **Incorporación del botón de envío.**
 <br>
 Se implementará un botón que permitirá al usuario enviar la información escrita, enviando la consulta al sistema para que la IA pueda procesarla.
 <br>
 
-## 11_ Integración con la IA para generar respuestas
+## 11.Integración con la IA para generar respuestas
 **Conexión del formulario con la IA entrenada.**
 <br>
 Se configurará el sistema para que, una vez enviada la consulta, la IA procese el texto introducido por el usuario y genere automáticamente una receta basada en su prompt.
 <br>
 
-## 12_ Acceso a los menús y secciones de la web
+## 12.Acceso a los menús y secciones de la web
 **Diseño de los accesos a las categorías de la web.**
 <br>
 Se añadirán enlaces o botones en la página principal para acceder a diferentes categorías como valoraciones, fotos de recetas, platos destacados, etc.
