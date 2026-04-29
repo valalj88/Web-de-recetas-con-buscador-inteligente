@@ -1955,7 +1955,15 @@ Además, nos ha permitido comprender la importancia de la seguridad de un servic
 	<a href="https://kinsta.com/es/blog/contorno-texto-css/"> Comandos CSS </a>
 	<br>
 	<a href="https://startbootstrap.com/themes#google_vignette"> Plantillas Webs </a>
-
-
+	<br>
+	<a href="https://gemini.google.com/"> Gemini </a>
+	<br>
+	<a href="https://chatgpt.com/"> ChatGPT </a>
+	<br>
+	<a href="https://www.youtube.com/watch?v=9sLdA__lPnM&t=388s&pp=ygUrdHJ1ZW5hcyBjb3BpYXMgZGUgc2VndXJpZGFkIHkgY29uZmlndXJhY2lvbg%3D%3D"> Video de ayuda TrueNAS </a>
+	<br>
+	<a href="https://punkymo.gitbook.io"> Guias de Alina</a>
+	<br>
+	<a href="https://docs.digitalocean.com/products/databases/mysql/"> MySQL</a>
 </details>
 
