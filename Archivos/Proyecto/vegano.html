@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas Veganas — DelicIA&#x27;s</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --yellow-main: #f5c518;
+            --yellow-soft: #fce891;
+            --yellow-pale: #fff9e6;
+            --yellow-deep: #e6a800;
+            --cream: #fdf8ee;
+            --dark: #1a1200;
+            --dark-mid: #3d2e00;
+            --brown: #6b4f12;
+            --text-body: #3a3020;
+            --white: #ffffff;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-body);
+            overflow-x: hidden;
+        }
+
+        /* ═══════════════════════════════
+           NAVBAR
+        ═══════════════════════════════ */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 60px;
+            background: rgba(253, 248, 238, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(245, 197, 24, 0.2);
+            transition: box-shadow 0.3s;
+        }
+        .navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .nav-logo img { width: 44px; height: 44px; object-fit: contain; }
+        .nav-logo span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--brown);
+            padding: 10px 22px;
+            border: 1.5px solid var(--yellow-main);
+            border-radius: 100px;
+            transition: all 0.25s;
+        }
+        .nav-back:hover {
+            background: var(--yellow-main);
+            color: var(--dark);
+        }
+
+        /* ═══════════════════════════════
+           HERO
+        ═══════════════════════════════ */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 60px 80px 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--brown);
+            margin-bottom: 28px;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1.5px;
+            background: var(--yellow-main);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 5vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.0;
+            color: var(--dark);
+            margin-bottom: 28px;
+        }
+        .hero-title em {
+            font-style: italic;
+            color: var(--yellow-deep);
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--brown);
+            max-width: 400px;
+            margin-bottom: 48px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+        }
+        .stat-item { display: flex; flex-direction: column; gap: 4px; }
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--brown);
+        }
+
+        .hero-right {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-right::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--yellow-soft) 0%, var(--yellow-main) 100%);
+            z-index: 0;
+        }
+
+        .hero-img-grid {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 4px;
+            z-index: 1;
+        }
+        .hero-img-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: brightness(0.88) saturate(1.1);
+        }
+        .hero-img-grid img:hover { transform: scale(1.05); filter: brightness(0.95) saturate(1.2); }
+        .hero-img-grid .img-large {
+            grid-row: 1 / 3;
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: 48px;
+            left: -28px;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 20px 28px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .hero-badge-icon { font-size: 2rem; }
+        .hero-badge-text { display: flex; flex-direction: column; gap: 2px; }
+        .hero-badge-main { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; color: var(--dark); }
+        .hero-badge-sub { font-size: 0.75rem; color: var(--brown); }
+
+        /* ═══════════════════════════════
+           FEATURED STRIP
+        ═══════════════════════════════ */
+        .featured-strip {
+            background: var(--yellow-main);
+            padding: 20px 80px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            overflow: hidden;
+        }
+        .strip-label {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--dark-mid);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .strip-scroll {
+            display: flex;
+            gap: 60px;
+            animation: scrollStrip 20s linear infinite;
+            white-space: nowrap;
+        }
+        .strip-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--dark);
+        }
+        .strip-item span { color: var(--dark-mid); font-style: normal; font-size: 1rem; }
+        @keyframes scrollStrip {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* ═══════════════════════════════
+           SECTION HEADER
+        ═══════════════════════════════ */
+        .section-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 80px 80px 50px;
+        }
+        .section-header-left 
+        .section-tag {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--brown);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .section-tag::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 1.5px;
+            background: var(--yellow-main);
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--dark);
+        }
+        .section-title em {
+            font-style: italic;
+            color: var(--yellow-deep);
+        }
+        .section-count {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            color: rgba(245, 197, 24, 0.2);
+            line-height: 1;
+            user-select: none;
+        }
+
+        /* ═══════════════════════════════
+           RECIPE GRID — MAIN
+        ═══════════════════════════════ */
+        .recipes-grid {
+            padding: 0 80px 80px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .recipe-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        .recipe-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .recipe-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 30px 70px rgba(26, 18, 0, 0.12);
+        }
+
+        /* Card grande — ocupa 2 columnas */
+        .recipe-card.featured {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .recipe-card.featured .card-img-wrap { height: 100%; min-height: 340px; }
+
+        .card-img-wrap {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+        }
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .recipe-card:hover .card-img-wrap img { transform: scale(1.08); }
+
+        .card-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--yellow-main);
+            color: var(--dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 100px;
+        }
+
+        .card-time {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(26,18,0,0.7);
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-body {
+            padding: 26px 28px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .featured .card-body {
+            justify-content: center;
+            padding: 40px 44px;
+        }
+
+        .card-difficulty {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--brown);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .diff-dots { display: flex; gap: 3px; }
+        .diff-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--yellow-soft);
+            border: 1.5px solid var(--yellow-main);
+        }
+        .diff-dot.filled { background: var(--yellow-main); }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+        .featured .card-title { font-size: 1.9rem; }
+
+        .card-desc {
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: var(--brown);
+            display: -webkit-box; 
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 6px;
+        }
+
+        .card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--yellow-main);
+            color: var(--dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 11px 22px;
+            border-radius: 100px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-decoration: none;
+        }
+        .card-btn:hover {
+            background: var(--dark);
+            color: var(--yellow-main);
+            transform: translateX(4px);
+        }
+        .card-btn svg { transition: transform 0.25s; }
+        .card-btn:hover svg { transform: translateX(3px); }
+
+        .card-save {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            border: 1.5px solid #e8e8e8;
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            transition: all 0.25s;
+        }
+        .card-save:hover, .card-save.saved { border-color: var(--yellow-main); color: var(--yellow-main); }
+        .card-save.saved svg { fill: var(--yellow-main); }
+
+        /* ═══════════════════════════════
+           HIGHLIGHT BAND
+        ═══════════════════════════════ */
+        .highlight-band {
+            margin: 0 80px 80px;
+            background: var(--dark);
+            border-radius: 28px;
+            padding: 60px 80px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .highlight-band::before {
+            content: '🍽️';
+            position: absolute;
+            right: -20px;
+            top: -20px;
+            font-size: 180px;
+            opacity: 0.04;
+            line-height: 1;
+        }
+        .highlight-band-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--yellow-main);
+            margin-bottom: 16px;
+        }
+        .highlight-band-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .highlight-band-title em { font-style: italic; color: var(--yellow-main); }
+        .highlight-band-desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+            max-width: 500px;
+        }
+        .highlight-band-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+        .cta-main {
+            background: var(--yellow-main);
+            color: var(--dark);
+            font-size: 0.875rem;
+            font-weight: 700;
+            padding: 16px 32px;
+            border-radius: 100px;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.25s;
+            text-decoration: none;
+            text-align: center;
+        }
+        .cta-main:hover { background: var(--white); transform: scale(1.04); }
+        .cta-sub {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.75rem;
+            text-align: center;
+        }
+
+        /* ═══════════════════════════════
+           SECOND GRID (más recetas)
+        ═══════════════════════════════ */
+        .section-header-2 {
+            padding: 20px 80px 50px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+        .recipes-grid-2 {
+            padding: 0 80px 100px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+        .recipe-card-sm {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .recipe-card-sm.visible { opacity: 1; transform: translateY(0); }
+        .recipe-card-sm:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 50px rgba(26,18,0,0.1);
+        }
+        .card-sm-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .card-sm-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .recipe-card-sm:hover .card-sm-img img { transform: scale(1.1); }
+        .card-sm-body { padding: 20px 22px 24px; }
+        .card-sm-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+            line-height: 1.25;
+        }
+        .card-sm-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 14px;
+        }
+        .card-sm-time {
+            font-size: 0.75rem;
+            color: var(--brown);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .card-sm-btn {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            background: var(--yellow-soft);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            transition: all 0.25s;
+        }
+        .card-sm-btn:hover { background: var(--yellow-main); }
+
+        /* ═══════════════════════════════
+           MODAL
+        ═══════════════════════════════ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(26,18,0,0.7);
+            backdrop-filter: blur(6px);
+            z-index: 999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            animation: fadeIn 0.25s ease;
+        }
+        .modal-overlay.open { display: flex; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .modal {
+            background: var(--white);
+            border-radius: 28px;
+            width: 100%;
+            max-width: 860px;
+            max-height: 90vh;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            animation: slideUp 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(60px) scale(0.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .modal-img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 28px 0 0 28px;
+        }
+        .modal-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .modal-close {
+            position: absolute;
+            top: 18px; right: 18px;
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            z-index: 10;
+        }
+        .modal-close:hover { background: var(--white); transform: scale(1.1); }
+
+        .modal-body {
+            padding: 44px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow-y: auto;
+        }
+
+        .modal-tag {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--brown);
+        }
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.15;
+        }
+        .modal-desc {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--brown);
+        }
+
+        .modal-meta {
+            display: flex;
+            gap: 20px;
+            padding: 16px 20px;
+            background: var(--yellow-pale);
+            border-radius: 14px;
+        }
+        .modal-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            font-size: 0.75rem;
+        }
+        .modal-meta-item strong {
+            font-size: 0.95rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--dark);
+        }
+        .modal-meta-item span { color: var(--brown); }
+
+        .modal-section-title {
+            font-size: 0.7rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--dark);
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--yellow-main);
+        }
+        .modal-ingredients {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+        .modal-ingredients li {
+            font-size: 0.875rem;
+            color: var(--text-body);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .modal-ingredients li::before {
+            content: '';
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--yellow-main);
+            flex-shrink: 0;
+        }
+        .modal-steps {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .modal-step {
+            display: flex;
+            gap: 14px;
+            font-size: 0.875rem;
+            color: var(--text-body);
+            line-height: 1.6;
+        }
+        .step-circle {
+            width: 26px; height: 26px;
+            border-radius: 50%;
+            background: var(--yellow-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            color: var(--dark);
+            margin-top: 2px;
+        }
+
+        /* ═══════════════════════════════
+           FOOTER
+        ═══════════════════════════════ */
+        .footer {
+            background: var(--dark);
+            padding: 50px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+        }
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--yellow-main);
+        }
+
+        /* ═══════════════════════════════
+           RESPONSIVE
+        ═══════════════════════════════ */
+        @media (max-width: 1100px) {
+            .recipes-grid { grid-template-columns: repeat(2, 1fr); padding: 0 40px 60px; }
+            .recipe-card.featured { grid-column: span 2; }
+            .recipes-grid-2 { grid-template-columns: repeat(2, 1fr); padding: 0 40px 80px; }
+            .section-header, .section-header-2 { padding: 60px 40px 40px; }
+            .highlight-band { margin: 0 40px 60px; padding: 50px 50px; }
+        }
+        @media (max-width: 768px) {
+            .navbar { padding: 16px 24px; }
+            .hero { grid-template-columns: 1fr; }
+            .hero-left { padding: 60px 24px 40px; }
+            .hero-right { height: 50vw; }
+            .hero-badge { display: none; }
+            .recipes-grid { grid-template-columns: 1fr; padding: 0 24px 60px; }
+            .recipe-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+            .recipe-card.featured .card-img-wrap { height: 260px; }
+            .recipes-grid-2 { grid-template-columns: 1fr 1fr; padding: 0 24px 60px; }
+            .highlight-band { margin: 0 24px 60px; padding: 40px 32px; grid-template-columns: 1fr; }
+            .section-header, .section-header-2 { padding: 50px 24px 30px; flex-direction: column; align-items: flex-start; gap: 10px; }
+            .footer { padding: 40px 24px; flex-direction: column; gap: 16px; text-align: center; }
+            .modal { grid-template-columns: 1fr; }
+            .modal-img { border-radius: 28px 28px 0 0; height: 260px; }
+            .modal-body { padding: 30px 26px; }
+            .featured-strip { padding: 16px 24px; }
+        }
+
+        /* Transiciones stagger */
+        .recipe-card { transition-delay: 0s; }
+        .recipe-card:nth-child(2) { transition-delay: 0.08s; }
+        .recipe-card:nth-child(3) { transition-delay: 0.16s; }
+        .recipe-card:nth-child(4) { transition-delay: 0.08s; }
+        .recipe-card:nth-child(5) { transition-delay: 0.16s; }
+        .recipe-card:nth-child(6) { transition-delay: 0.24s; }
+        .recipe-card-sm:nth-child(2) { transition-delay: 0.07s; }
+        .recipe-card-sm:nth-child(3) { transition-delay: 0.14s; }
+        .recipe-card-sm:nth-child(4) { transition-delay: 0.21s; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <a href="index.php" class="nav-logo">
+            <img src="assets/img/Logo.png" alt="DelicIA's" onerror="this.style.display='none'">
+            <span>DelicIA's</span>
+        </a>
+        <a href="index.php" class="nav-back">← Volver al inicio</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-left">
+            <span class="hero-eyebrow">Categoría especial</span>
+            <h1 class="hero-title">Cocina<br><em>Vegana</em></h1>
+            <p class="hero-desc">Recetas 100% vegetales, llenas de sabor y nutrientes. Demuestran que comer vegano es delicioso.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num">9</span>
+                    <span class="stat-label">Recetas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">≤45'</span>
+                    <span class="stat-label">Tiempo medio</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">★ 4.8</span>
+                    <span class="stat-label">Valoración</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-img-grid">
+                <img class="img-large" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=700&q=80" alt="">
+                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&q=80" alt="">
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&q=80" alt="">
+            </div>
+            <div class="hero-badge">
+                <span class="hero-badge-icon">🌱</span>
+                <div class="hero-badge-text">
+                    <span class="hero-badge-main">Lo más popular</span>
+                    <span class="hero-badge-sub">Buddha Bowl</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STRIP -->
+    <div class="featured-strip">
+        <div class="strip-scroll">
+            <span class="strip-item"><span>🥙</span> Buddha Bowl</span>
+            <span class="strip-item"><span>🍔</span> Hamburguesa Quinoa</span>
+            <span class="strip-item"><span>🍛</span> Tofu Curry</span>
+            <span class="strip-item"><span>🍝</span> Pesto Nueces</span>
+            <span class="strip-item"><span>🍝</span> Boloñesa Lentejas</span>
+            <span class="strip-item"><span>🌮</span> Jackfruit Tacos</span>
+            <span class="strip-item"><span>🥙</span> Buddha Bowl</span>
+            <span class="strip-item"><span>🍔</span> Hamburguesa Quinoa</span>
+            <span class="strip-item"><span>🍛</span> Tofu Curry</span>
+            <span class="strip-item"><span>🍝</span> Pesto Nueces</span>
+            <span class="strip-item"><span>🍝</span> Boloñesa Lentejas</span>
+            <span class="strip-item"><span>🌮</span> Jackfruit Tacos</span>
+            
+        </div>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="section-header">
+        <div class="section-header-left">
+            <div class="section-tag">Los más populares</div>
+            <h2 class="section-title">Recetas <em>veganas</em></h2>
+        </div>
+        <div class="section-count">06</div>
+    </div>
+
+    <div class="recipes-grid" id="mainGrid">
+        
+        <div class="recipe-card featured" data-id="0">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=80" alt="Buddha Bowl de Garbanzos">
+                <span class="card-badge">Bowl</span>
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 15 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div></div>
+                    Fácil
+                </div>
+                <h3 class="card-title">Buddha Bowl de Garbanzos</h3>
+                <p class="card-desc">Un bol nutricionalmente completo con garbanzos especiados, quinoa, verduras frescas y una cremosa salsa de tahini y limón.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(0)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card" data-id="1">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=900&q=80" alt="Hamburguesa de Quinoa">
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 25 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot filled"></div><div class="diff-dot"></div></div>
+                    Media
+                </div>
+                <h3 class="card-title">Hamburguesa de Quinoa</h3>
+                <p class="card-desc">Hamburguesa vegetal rica en proteína con una textura increíble. No envidia nada a las de carne.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(1)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card" data-id="2">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1565299715199-866c917206bb?w=900&q=80" alt="Tofu al Curry con Coco">
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 20 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div></div>
+                    Fácil
+                </div>
+                <h3 class="card-title">Tofu al Curry con Coco</h3>
+                <p class="card-desc">Plato aromático de inspiración asiática, cremoso y reconfortante. El tofu absorbe todos los sabores del curry y la leche de coco.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(2)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card" data-id="3">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=900&q=80" alt="Pasta con Pesto de Nueces">
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 12 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div></div>
+                    Fácil
+                </div>
+                <h3 class="card-title">Pasta con Pesto de Nueces</h3>
+                <p class="card-desc">Una versión vegana del clásico pesto sustituyendo el queso por nueces. Cremoso, aromático e irresistible.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(3)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card" data-id="4">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=900&q=80" alt="Boloñesa de Lentejas">
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 30 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div></div>
+                    Fácil
+                </div>
+                <h3 class="card-title">Boloñesa de Lentejas</h3>
+                <p class="card-desc">La alternativa perfecta a la carne: rica en hierro y fibra, llena de sabor y con textura muy similar al ragú tradicional.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(4)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card" data-id="5">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1551248429-40975aa4de74?w=900&q=80" alt="Tacos de Jackfruit Adobado">
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 20 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div></div>
+                    Fácil
+                </div>
+                <h3 class="card-title">Tacos de Jackfruit Adobado</h3>
+                <p class="card-desc">Tacos con jackfruit adobado cuya textura recuerda a la carne desmechada. Spicy, jugoso y totalmente adictivo.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(5)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HIGHLIGHT BAND -->
+    <div class="highlight-band">
+        <div>
+            <div class="highlight-band-eyebrow">Consejo DelicIA's</div>
+            <h2 class="highlight-band-title">El secreto de la cocina <em>vegana</em></h2>
+            <p class="highlight-band-desc">Las especias son tu mejor aliado. Dan profundidad y personalidad a los ingredientes más simples sin necesidad de proteína animal.</p>
+        </div>
+        <div class="highlight-band-cta">
+            <a href="Api.html?q=hazme una receta vegana con lo que tengo en casa" class="cta-main">🍳 Hablar con el Chef IA</a>
+            <span class="cta-sub">Responde al instante</span>
+        </div>
+    </div>
+    
+    <!-- SECOND GRID -->
+    <div class="section-header-2">
+        <div>
+            <div class="section-tag">Más recetas veganas</div>
+            <h2 class="section-title" style="font-size: clamp(1.8rem, 2.8vw, 2.4rem);">Proteínas <em>vegetales</em></h2>
+        </div>
+    </div>
+    <div class="recipes-grid-2" id="secondGrid">
+        
+        <div class="recipe-card-sm" data-id="6">
+            <div class="card-sm-img">
+                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=900&q=80" alt="Curry de Garbanzos y Espinacas">
+            </div>
+            <div class="card-sm-body">
+                <h4 class="card-sm-title">Curry de Garbanzos y Espinacas</h4>
+                <p style="font-size:0.8rem; color: var(--brown); line-height:1.5;">Chana saag vegano: garbanzos en salsa especiada de tomate con espinacas y leche de co…</p>
+                <div class="card-sm-meta">
+                    <span class="card-sm-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 30 min</span>
+                    <button class="card-sm-btn" onclick="openModal(6)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card-sm" data-id="7">
+            <div class="card-sm-img">
+                <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=900&q=80" alt="Sushi de Coliflor">
+            </div>
+            <div class="card-sm-body">
+                <h4 class="card-sm-title">Sushi de Coliflor</h4>
+                <p style="font-size:0.8rem; color: var(--brown); line-height:1.5;">Rolls de sushi con arroz de coliflor, aguacate, pepino y zanahoria. Una versión liger…</p>
+                <div class="card-sm-meta">
+                    <span class="card-sm-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 35 min</span>
+                    <button class="card-sm-btn" onclick="openModal(7)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card-sm" data-id="8">
+            <div class="card-sm-img">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=80" alt="Albóndigas de Lentejas y Avena">
+            </div>
+            <div class="card-sm-body">
+                <h4 class="card-sm-title">Albóndigas de Lentejas y Avena</h4>
+                <p style="font-size:0.8rem; color: var(--brown); line-height:1.5;">Albóndigas veganas con lentejas rojas, avena y especias mediterráneas en salsa de tom…</p>
+                <div class="card-sm-meta">
+                    <span class="card-sm-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 40 min</span>
+                    <button class="card-sm-btn" onclick="openModal(8)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <span class="footer-logo">DelicIA's</span>
+        <span>© 2025 DelicIA's · Recetas Veganas</span>
+        <a href="index.php" style="color: var(--yellow-main); text-decoration:none; font-size:0.85rem;">← Volver al inicio</a>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+        <div class="modal" id="modal">
+            <div class="modal-img">
+                <button class="modal-close" onclick="closeModal()">✕</button>
+                <img id="modal-img" src="" alt="">
+            </div>
+            <div class="modal-body">
+                <div class="modal-tag" id="modal-tag"></div>
+                <h2 class="modal-title" id="modal-title"></h2>
+                <p class="modal-desc" id="modal-desc"></p>
+                <div class="modal-meta">
+                    <div class="modal-meta-item"><strong id="modal-time"></strong><span>Tiempo</span></div>
+                    <div class="modal-meta-item"><strong id="modal-diff"></strong><span>Dificultad</span></div>
+                    <div class="modal-meta-item"><strong id="modal-serves"></strong><span>Personas</span></div>
+                </div>
+                <div class="modal-section-title">Ingredientes</div>
+                <ul class="modal-ingredients" id="modal-ingredients"></ul>
+                <div class="modal-section-title">Preparación</div>
+                <ol class="modal-steps" id="modal-steps"></ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const recipes = [
+            {
+                title: "Buddha Bowl de Garbanzos", tag: "Bowl · Vegano",
+                img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=80",
+                desc: "Un bol nutricionalmente completo con garbanzos especiados, quinoa, verduras frescas y una cremosa salsa de tahini y limón.",
+                time: "15 min", diff: "Fácil", serves: "2",
+                ingredients: ["200g garbanzos cocidos", "Espinacas frescas", "100g quinoa cocida", "1 aguacate", "3 cdas tahini", "Zumo de 1 limón", "Sal y especias"],
+                steps: ["Cocer la quinoa 15 min/100°C/giro inverso.", "Saltear los garbanzos con comino y pimentón hasta que estén crujientes.", "Preparar la salsa tahini mezclando tahini, limón, ajo y agua.", "Montar el bol con espinacas de base, quinoa, garbanzos y aguacate.", "Aliñar con la salsa de tahini y servir."]
+            },
+            {
+                title: "Hamburguesa de Quinoa", tag: "Burger · Vegano",
+                img: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=900&q=80",
+                desc: "Hamburguesa vegetal rica en proteína con una textura increíble. No envidia nada a las de carne.",
+                time: "25 min", diff: "Media", serves: "4",
+                ingredients: ["150g quinoa cocida", "50g harina de avena", "1 zanahoria rallada", "1 cebolla", "Comino, pimentón y sal"],
+                steps: ["Triturar la zanahoria y cebolla 5 seg/vel 5.", "Mezclar con la quinoa cocida, harina y especias.", "Formar hamburguesas y refrigerar 20 min.", "Cocinar a la plancha con aceite 4 min por lado.", "Servir en pan brioche con lechuga, tomate y aguacate."]
+            },
+            {
+                title: "Tofu al Curry con Coco", tag: "Asiático · Vegano",
+                img: "https://images.unsplash.com/photo-1565299715199-866c917206bb?w=900&q=80",
+                desc: "Plato aromático de inspiración asiática, cremoso y reconfortante. El tofu absorbe todos los sabores del curry y la leche de coco.",
+                time: "20 min", diff: "Fácil", serves: "3",
+                ingredients: ["250g tofu firme", "400ml leche de coco", "2 cdas curry en polvo", "1 pimiento rojo", "1 cebolla", "Jengibre fresco"],
+                steps: ["Escurrir y trocear el tofu en dados de 2cm.", "Trocear las verduras 4 seg/vel 4.", "Sofreír cebolla y pimiento 5 min/120°C.", "Añadir tofu, leche de coco, curry y jengibre.", "Programar 10 min/100°C/giro inverso. Servir con arroz basmati."]
+            },
+            {
+                title: "Pasta con Pesto de Nueces", tag: "Pasta · Vegano",
+                img: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=900&q=80",
+                desc: "Una versión vegana del clásico pesto sustituyendo el queso por nueces. Cremoso, aromático e irresistible.",
+                time: "12 min", diff: "Fácil", serves: "4",
+                ingredients: ["400g pasta", "50g nueces", "Albahaca fresca abundante", "3 cdas aceite de oliva", "1 diente de ajo", "Sal y limón"],
+                steps: ["Cocer la pasta según instrucciones.", "Poner nueces, albahaca, ajo y aceite en el vaso.", "Triturar 20 seg/vel 7.", "Añadir zumo de limón y rectificar de sal.", "Mezclar con la pasta caliente y servir."]
+            },
+            {
+                title: "Boloñesa de Lentejas", tag: "Pasta · Vegano",
+                img: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=900&q=80",
+                desc: "La alternativa perfecta a la carne: rica en hierro y fibra, llena de sabor y con textura muy similar al ragú tradicional.",
+                time: "30 min", diff: "Fácil", serves: "4",
+                ingredients: ["250g lentejas cocidas", "400g tomate triturado", "1 zanahoria", "1 rama apio", "1 cebolla", "Sal, ajo y hierbas"],
+                steps: ["Picar las verduras 5 seg/vel 5.", "Sofreír 7 min/120°C con aceite.", "Añadir el tomate y cocinar 10 min.", "Añadir las lentejas escurridas.", "Cocinar 15 min/100°C/giro inverso. Servir con pasta."]
+            },
+            {
+                title: "Tacos de Jackfruit Adobado", tag: "Mexicano · Vegano",
+                img: "https://images.unsplash.com/photo-1551248429-40975aa4de74?w=900&q=80",
+                desc: "Tacos con jackfruit adobado cuya textura recuerda a la carne desmechada. Spicy, jugoso y totalmente adictivo.",
+                time: "20 min", diff: "Fácil", serves: "4",
+                ingredients: ["1 lata de jackfruit joven en agua", "Tortillas de maíz", "Cebolla morada", "Cilantro fresco", "Salsa picante", "Especias mexicanas"],
+                steps: ["Escurrir y desmenuzar el jackfruit con las manos.", "Sofreír con aceite y especias mexicanas 10 min.", "Añadir un chorrito de zumo de naranja para caramelizar.", "Calentar las tortillas en sartén seca.", "Rellenar y decorar con cebolla, cilantro y salsa picante."]
+            },
+            {
+                title: "Curry de Garbanzos y Espinacas", tag: "Indio · Vegano",
+                img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=900&q=80",
+                desc: "Chana saag vegano: garbanzos en salsa especiada de tomate con espinacas y leche de coco. Aromático, nutritivo y reconfortante.",
+                time: "30 min", diff: "Fácil", serves: "4",
+                ingredients: ["2 botes de garbanzos cocidos", "200g espinacas frescas", "400ml leche de coco", "1 cebolla", "3 dientes de ajo", "1 cucharada curry, 1 cucharadita cúrcuma", "Jengibre fresco, sal y aceite"],
+                steps: ["Sofreír la cebolla y el ajo con aceite 5 minutos.", "Añadir el jengibre, curry y cúrcuma. Rehogar 1 minuto.", "Incorporar los garbanzos escurridos y la leche de coco.", "Cocer 15 minutos a fuego medio removiendo a menudo.", "Añadir las espinacas y cocer 3 minutos más. Servir con arroz basmati."]
+            },
+            {
+                title: "Sushi de Coliflor", tag: "Asiático · Vegano",
+                img: "https://images.unsplash.com/photo-1553621042-f6e147245754?w=900&q=80",
+                desc: "Rolls de sushi con arroz de coliflor, aguacate, pepino y zanahoria. Una versión ligera y creativa del clásico japonés.",
+                time: "35 min", diff: "Media", serves: "4",
+                ingredients: ["1 coliflor grande", "4 láminas de alga nori", "1 aguacate", "1 pepino", "2 zanahorias", "Salsa de soja, jengibre y wasabi"],
+                steps: ["Triturar la coliflor hasta obtener textura de arroz.", "Saltear 5 min en sartén seca hasta que esté seca y suelta.", "Extender sobre el alga nori formando una capa fina.", "Colocar tiras de aguacate, pepino y zanahoria en el centro.", "Enrollar firmemente con esterilla. Humedecer el borde y cortar."]
+            },
+            {
+                title: "Albóndigas de Lentejas y Avena", tag: "Proteínas · Vegano",
+                img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=80",
+                desc: "Albóndigas veganas con lentejas rojas, avena y especias mediterráneas en salsa de tomate casera. Llenas de proteínas vegetales.",
+                time: "40 min", diff: "Media", serves: "4",
+                ingredients: ["250g lentejas rojas cocidas", "100g avena en copos", "1 cebolla", "2 dientes de ajo", "Perejil, comino y pimentón", "400g tomate triturado para la salsa", "Sal y aceite"],
+                steps: ["Picar la cebolla y el ajo. Sofreír 5 minutos.", "Mezclar con las lentejas, avena y especias. Triturar parcialmente.", "Formar bolitas de unos 3 cm. Refrigerar 20 minutos.", "Dorar las albóndigas en sartén con aceite por todos lados.", "Cubrir con la salsa de tomate y cocer 15 minutos a fuego lento."]
+            },
+        ];
+
+        // ── Modal ────────────────────────────────────────────────────
+        function openModal(id) {
+            const r = recipes[id];
+            if (!r) return;
+            document.getElementById('modal-img').src = r.img;
+            document.getElementById('modal-tag').textContent = r.tag;
+            document.getElementById('modal-title').textContent = r.title;
+            document.getElementById('modal-desc').textContent = r.desc;
+            document.getElementById('modal-time').textContent = r.time;
+            document.getElementById('modal-diff').textContent = r.diff;
+            document.getElementById('modal-serves').textContent = r.serves;
+            document.getElementById('modal-ingredients').innerHTML = r.ingredients.map(i => `<li>${i}</li>`).join('');
+            document.getElementById('modal-steps').innerHTML = r.steps.map((s, i) => `
+                <li class="modal-step"><span class="step-circle">${i+1}</span><span>${s}</span></li>
+            `).join('');
+            document.getElementById('modalOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        function closeModalOutside(e) {
+            if (e.target === document.getElementById('modalOverlay')) closeModal();
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        // ── Guardar ──────────────────────────────────────────────────
+        function toggleSave(btn) { btn.classList.toggle('saved'); }
+
+        // ── Scroll reveal ────────────────────────────────────────────
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.recipe-card, .recipe-card-sm').forEach(card => observer.observe(card));
+
+        // ── Navbar scroll ────────────────────────────────────────────
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+    </script>
+
+</body>
+</html>

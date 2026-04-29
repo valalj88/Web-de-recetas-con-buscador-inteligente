@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plato del Mes - DelicIA's</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        body { 
+            background-color: #fce891; 
+            font-family: 'Lato', sans-serif; 
+            margin: 0; padding: 0;
+        }
+        nav {
+            background-color: #ffc1075c;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .container-recetas { padding: 40px 20px; text-align: center; }
+        
+        .grid-recetas { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 30px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+
+        .plato {
+            background: white;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .plato:hover { transform: translateY(-5px); }
+
+        .plato img {
+            width: 100%; height: 200px;
+            object-fit: cover; border-radius: 15px; margin-bottom: 15px;
+        }
+
+        /* Quitamos subrayado de los títulos de las tarjetas */
+        .plato h3 {
+            text-decoration: none;
+            margin-bottom: 15px;
+        }
+
+        .btn-ver {
+            background-color: #ffc107;
+            color: black;
+            border: 2px solid black;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* --- MODAL ESTILO DELICIA'S --- */
+        .modal {
+            display: none; position: fixed; z-index: 1000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            justify-content: center; align-items: center;
+        }
+
+        .modal-content {
+            background-color: white; 
+            border: 4px solid black; 
+            border-radius: 30px; 
+            width: 90%; max-width: 900px;
+            padding: 30px; position: relative;
+            max-height: 85vh; overflow-y: auto;
+            text-align: left;
+        }
+
+        .close-btn {
+            position: absolute; top: 10px; right: 20px;
+            font-size: 40px; cursor: pointer;
+        }
+
+        .receta-header { display: flex; gap: 25px; margin-bottom: 25px; }
+        .receta-header img { 
+            width: 300px; height: 250px;
+            border: 3px solid black; 
+            border-radius: 15px; 
+            object-fit: cover;
+        }
+
+        .receta-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 30px; border-top: 3px solid black; padding-top: 20px;
+        }
+
+        /* Quitamos subrayados generales */
+        h3 { text-decoration: none; margin-top: 0; }
+        a { text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">
+            <img src="assets/img/Logo.png" alt="Volver al inicio" style="width: 75px;">
+        </a>
+    </nav>
+
+    <div class="container-recetas">
+        <h1>Selección del Mes</h1>
+        <p>Las recetas más valoradas y exclusivas de esta temporada.</p>
+        <div class="grid-recetas" id="gridMensual"></div>
+    </div>
+
+    <div id="modalMensual" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModal()">&times;</span>
+            <div class="receta-header">
+                <img id="mImg" src="" alt="">
+                <div>
+                    <h2 id="mTitulo" style="margin-top:0;"></h2>
+                    <p id="mTiempo" style="font-weight:bold;"></p>
+                    <p id="mDesc"></p>
+                </div>
+            </div>
+            <div class="receta-grid">
+                <div><h3>INGREDIENTES:</h3><ul id="mIngredientes" style="line-height: 1.6;"></ul></div>
+                <div><h3>PASOS:</h3><ol id="mPasos" style="line-height: 1.6;"></ol></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const recetasMes = [
+            {
+                titulo: "Costillar al Horno",
+                img: "assets/img/costillar.jpg",
+                tiempo: "1 hora 15 minutos",
+                desc: "Costillar tierno y jugoso, cocinado lentamente para conseguir una carne melosa con acabado dorado.",
+                ingredientes: ["1 costillar de cerdo", "2 dientes de ajo", "40 g de aceite de oliva", "1 cda de miel", "1 cda de mostaza", "Sal y pimienta", "200 g de agua"],
+                pasos: ["Picar ajos 5 seg / vel 5.", "Mezclar aceite, miel, mostaza y especias 10 seg / vel 3.", "Untar el costillar y colocarlo en el Varoma.", "Poner agua en el vaso y cocinar 45 min / Varoma / vel 1.", "Hornear 15 min a 220°C para dorar."]
+            },
+            {
+                titulo: "Risotto de trufa negra",
+                img: "assets/img/risoto.jpg",
+                tiempo: "30 minutos",
+                desc: "Risotto elegante y muy aromático, con el inconfundible sabor de la trufa negra.",
+                ingredientes: ["300 g de arroz arborio", "1 chalota", "30 g de aceite", "700 g de caldo de verduras", "30 g de mantequilla", "40 g de parmesano", "Aceite o pasta de trufa"],
+                pasos: ["Picar chalota 5 seg / vel 5.", "Sofreír con aceite 5 min / 120°C / vel 1.", "Añadir arroz y rehogar 2 min / 120°C / giro inverso.", "Añadir caldo y cocinar 18 min / 100°C.", "Incorporar mantequilla, parmesano y trufa. Reposar 2 min."]
+            },
+            {
+                titulo: "Burger premium BBQ",
+                img: "assets/img/bbq.jpg",
+                tiempo: "20 minutos",
+                desc: "Hamburguesa gourmet jugosa y sabrosa, con un toque ahumado de salsa BBQ.",
+                ingredientes: ["500 g de carne de ternera", "1 huevo", "1 diente de ajo", "30 g de salsa BBQ", "Sal y pimienta"],
+                pasos: ["Picar el ajo 5 seg / vel 5.", "Añadir carne, huevo, salsa BBQ y especias.", "Mezclar 20 seg / vel 3.", "Formar hamburguesas y cocinar a la plancha o parrilla."]
+            },
+            {
+                titulo: "Salmón en salsa teriyaki",
+                img: "assets/img/teriyaki.jpg",
+                tiempo: "25 minutos",
+                desc: "Salmón jugoso con una salsa teriyaki equilibrada entre dulce y salado.",
+                ingredientes: ["2 lomos de salmón", "60 g de salsa teriyaki", "1 cdta de miel", "500 g de agua"],
+                pasos: ["Mezclar salsa teriyaki con miel.", "Colocar salmón en el Varoma y cubrir con la salsa.", "Poner agua en el vaso.", "Cocinar 20 min / Varoma / vel 1."]
+            },
+            {
+                titulo: "Tarta de manzana real",
+                img: "assets/img/manzana.jpg",
+                tiempo: "50 minutos",
+                desc: "Tarta clásica y elegante, con manzana jugosa y aroma a canela.",
+                ingredientes: ["3 manzanas", "3 huevos", "150 g de azúcar", "100 g de mantequilla", "200 g de harina", "1 sobre de levadura", "Canela"],
+                pasos: ["Batir huevos y azúcar 2 min / vel 4.", "Añadir mantequilla 30 seg / vel 3.", "Incorporar harina, levadura y canela 30 seg / vel 4.", "Añadir manzana laminada y hornear 40 min a 180°C."]
+            },
+            {
+                titulo: "Lasaña de boletus",
+                img: "assets/img/¡lasañas.jpg",
+                tiempo: "60 minutos",
+                desc: "Lasaña cremosa y muy aromática, perfecta para los amantes de las setas.",
+                ingredientes: ["300 g de boletus", "1 cebolla", "40 g de aceite", "500 g de bechamel", "Placas de lasaña", "Queso rallado"],
+                pasos: ["Picar cebolla 5 seg / vel 5.", "Sofreír con aceite 5 min / 120°C.", "Añadir boletus y cocinar 8 min / 120°C.", "Montar capas de lasaña y hornear 30 min a 180°C."]
+            },
+            {
+                titulo: "Pollo al horno Varoma",
+                img: "assets/img/pollo2.jpg",
+                tiempo: "1 hora",
+                desc: "Pollo asado jugoso por dentro y dorado por fuera, con especias tradicionales.",
+                ingredientes: ["1 pollo troceado", "3 dientes de ajo", "40 g de aceite", "Hierbas provenzales", "500 g de agua", "Sal y pimienta"],
+                pasos: ["Picar ajos y mezclar con aceite y especias.", "Untar el pollo y colocarlo en el Varoma.", "Poner agua en el vaso y cocinar 45 min / Varoma / vel 1.", "Dorar al horno 15 min a 220°C."]
+            },
+            {
+                titulo: "Ramen de cerdo miso",
+                img: "assets/img/ramen.jpg",
+                tiempo: "40 minutos",
+                desc: "Ramen japonés intenso y reconfortante, con caldo sabroso y cerdo tierno.",
+                ingredientes: ["300 g de panceta", "1 litro de caldo", "2 cdas de pasta miso", "Fideos ramen", "1 huevo"],
+                pasos: ["Cocinar la panceta 25 min / 100°C / giro inverso.", "Añadir el miso y mezclar 10 seg / vel 3.", "Cocer los fideos aparte.", "Servir con huevo cocido y panceta."]
+            },
+            {
+                titulo: "Coulant de caramelo",
+                img: "assets/img/coulant.jpg",
+                tiempo: "25 minutos",
+                desc: "Postre delicado con exterior suave y corazón fundente de caramelo.",
+                ingredientes: ["150 g de caramelo líquido", "150 g de mantequilla", "3 huevos", "120 g de azúcar", "100 g de harina"],
+                pasos: ["Fundir mantequilla y caramelo 3 min / 50°C / vel 2.", "Añadir huevos y azúcar 30 seg / vel 4.", "Incorporar harina 20 seg / vel 3.", "Hornear 12 min a 200°C."]
+            }
+        ];
+
+        const grid = document.getElementById('gridMensual');
+        recetasMes.forEach((r, i) => {
+            grid.innerHTML += `
+                <div class="plato">
+                    <img src="${r.img}" alt="${r.titulo}">
+                    <h3>${r.titulo}</h3>
+                    <button class="btn-ver" onclick="abrirReceta(${i})">Ver receta</button>
+                </div>`;
+        });
+
+        function abrirReceta(index) {
+            const data = recetasMes[index];
+            document.getElementById('mTitulo').innerText = data.titulo;
+            document.getElementById('mImg').src = data.img;
+            document.getElementById('mTiempo').innerText = "🕒 Preparación: " + data.tiempo;
+            document.getElementById('mDesc').innerText = data.desc;
+            document.getElementById('mIngredientes').innerHTML = data.ingredientes.map(ing => `<li>${ing}</li>`).join('');
+            document.getElementById('mPasos').innerHTML = data.pasos.map(p => `<li>${p}</li>`).join('');
+            document.getElementById('modalMensual').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function cerrarModal() { 
+            document.getElementById('modalMensual').style.display = 'none'; 
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>

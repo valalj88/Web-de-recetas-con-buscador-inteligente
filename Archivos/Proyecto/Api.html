@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente de DelicIA's</title>
+    <link href="css/api.css" rel="stylesheet" />
+    <style>
+        /* Indicador de escritura */
+        .typing-bubble {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 14px 20px !important;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: #aaa;
+            border-radius: 50%;
+            animation: bounce 1.2s infinite ease-in-out;
+        }
+        .dot:nth-child(2) { animation-delay: 0.2s; }
+        .dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes bounce {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-8px); }
+        }
+        /* Botón volver */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: #555;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: #f0f0f0;
+            transition: background 0.2s;
+            margin-bottom: 10px;
+        }
+        .back-btn:hover { background: #e0e0e0; color: #222; }
+        .main-header { position: relative; }
+        /* Pasos numerados */
+        .bubble ol, .bubble ul { padding-left: 22px; margin: 8px 0; }
+        .bubble li { margin-bottom: 5px; line-height: 1.5; }
+        .step-num {
+            display: inline-block;
+            background: #f5c518;
+            color: #000;
+            font-weight: 700;
+            font-size: 11px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.php" class="back-btn">← Volver a DelicIA's</a>
+        <h1>Asistente de DelicIA's</h1>
+        <p>Tu compañero culinario para recetas deliciosas.</p>
+    </header>
+
+    <main class="chat-container">
+        <div class="chat-window">
+            <div class="message assistant">
+                <div class="avatar">🍳</div>
+                <div class="bubble">
+                    ¡Hola! ¿Qué te apetece cocinar hoy? Puedes pedirme una receta, darme una lista de ingredientes o incluso subir una foto de un plato que te guste.
+                </div>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <div class="input-wrapper">
+                <input type="text" placeholder="Escribe tu mensaje o sube una imagen...">
+                <div class="actions">
+                    <span class="attachment-icon">📎</span>
+                    <button class="send-btn">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/api.js"></script>  
+</body>
+</html>
+

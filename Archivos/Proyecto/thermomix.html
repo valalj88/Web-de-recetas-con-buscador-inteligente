@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aperitivos y Picoteo — DelicIA's</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --yellow-main: #f5c518;
+            --yellow-soft: #fce891;
+            --yellow-pale: #fff9e6;
+            --yellow-deep: #e6a800;
+            --cream: #fdf8ee;
+            --dark: #1a1200;
+            --dark-mid: #3d2e00;
+            --brown: #6b4f12;
+            --text-body: #3a3020;
+            --white: #ffffff;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-body);
+            overflow-x: hidden;
+        }
+
+        /* ═══════════════════════════════
+           NAVBAR
+        ═══════════════════════════════ */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 60px;
+            background: rgba(253, 248, 238, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(245, 197, 24, 0.2);
+            transition: box-shadow 0.3s;
+        }
+        .navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .nav-logo img { width: 44px; height: 44px; object-fit: contain; }
+        .nav-logo span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--brown);
+            padding: 10px 22px;
+            border: 1.5px solid var(--yellow-main);
+            border-radius: 100px;
+            transition: all 0.25s;
+        }
+        .nav-back:hover {
+            background: var(--yellow-main);
+            color: var(--dark);
+        }
+
+        /* ═══════════════════════════════
+           HERO
+        ═══════════════════════════════ */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 60px 80px 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--brown);
+            margin-bottom: 28px;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1.5px;
+            background: var(--yellow-main);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 5vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.0;
+            color: var(--dark);
+            margin-bottom: 28px;
+        }
+        .hero-title em {
+            font-style: italic;
+            color: var(--yellow-deep);
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--brown);
+            max-width: 400px;
+            margin-bottom: 48px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+        }
+        .stat-item { display: flex; flex-direction: column; gap: 4px; }
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--brown);
+        }
+
+        .hero-right {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-right::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--yellow-soft) 0%, var(--yellow-main) 100%);
+            z-index: 0;
+        }
+
+        .hero-img-grid {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 4px;
+            z-index: 1;
+        }
+        .hero-img-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: brightness(0.88) saturate(1.1);
+        }
+        .hero-img-grid img:hover { transform: scale(1.05); filter: brightness(0.95) saturate(1.2); }
+        .hero-img-grid .img-large {
+            grid-row: 1 / 3;
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: 48px;
+            left: -28px;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 20px 28px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .hero-badge-icon { font-size: 2rem; }
+        .hero-badge-text { display: flex; flex-direction: column; gap: 2px; }
+        .hero-badge-main { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; color: var(--dark); }
+        .hero-badge-sub { font-size: 0.75rem; color: var(--brown); }
+
+        /* ═══════════════════════════════
+           FEATURED STRIP
+        ═══════════════════════════════ */
+        .featured-strip {
+            background: var(--yellow-main);
+            padding: 20px 80px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            overflow: hidden;
+        }
+        .strip-label {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--dark-mid);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .strip-scroll {
+            display: flex;
+            gap: 60px;
+            animation: scrollStrip 20s linear infinite;
+            white-space: nowrap;
+        }
+        .strip-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--dark);
+        }
+        .strip-item span { color: var(--dark-mid); font-style: normal; font-size: 1rem; }
+        @keyframes scrollStrip {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* ═══════════════════════════════
+           SECTION HEADER
+        ═══════════════════════════════ */
+        .section-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 80px 80px 50px;
+        }
+        .section-header-left 
+        .section-tag {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--brown);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .section-tag::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 1.5px;
+            background: var(--yellow-main);
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--dark);
+        }
+        .section-title em {
+            font-style: italic;
+            color: var(--yellow-deep);
+        }
+        .section-count {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            color: rgba(245, 197, 24, 0.2);
+            line-height: 1;
+            user-select: none;
+        }
+
+        /* ═══════════════════════════════
+           RECIPE GRID — MAIN
+        ═══════════════════════════════ */
+        .recipes-grid {
+            padding: 0 80px 80px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .recipe-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        .recipe-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .recipe-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 30px 70px rgba(26, 18, 0, 0.12);
+        }
+
+        /* Card grande — ocupa 2 columnas */
+        .recipe-card.featured {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .recipe-card.featured .card-img-wrap { height: 100%; min-height: 340px; }
+
+        .card-img-wrap {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+        }
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .recipe-card:hover .card-img-wrap img { transform: scale(1.08); }
+
+        .card-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--yellow-main);
+            color: var(--dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 100px;
+        }
+
+        .card-time {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(26,18,0,0.7);
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-body {
+            padding: 26px 28px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .featured .card-body {
+            justify-content: center;
+            padding: 40px 44px;
+        }
+
+        .card-difficulty {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--brown);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .diff-dots { display: flex; gap: 3px; }
+        .diff-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--yellow-soft);
+            border: 1.5px solid var(--yellow-main);
+        }
+        .diff-dot.filled { background: var(--yellow-main); }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+        .featured .card-title { font-size: 1.9rem; }
+
+        .card-desc {
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: var(--brown);
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 6px;
+        }
+
+        .card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--yellow-main);
+            color: var(--dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 11px 22px;
+            border-radius: 100px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-decoration: none;
+        }
+        .card-btn:hover {
+            background: var(--dark);
+            color: var(--yellow-main);
+            transform: translateX(4px);
+        }
+        .card-btn svg { transition: transform 0.25s; }
+        .card-btn:hover svg { transform: translateX(3px); }
+
+        .card-save {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            border: 1.5px solid #e8e8e8;
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            transition: all 0.25s;
+        }
+        .card-save:hover, .card-save.saved { border-color: var(--yellow-main); color: var(--yellow-main); }
+        .card-save.saved svg { fill: var(--yellow-main); }
+
+        /* ═══════════════════════════════
+           HIGHLIGHT BAND
+        ═══════════════════════════════ */
+        .highlight-band {
+            margin: 0 80px 80px;
+            background: var(--dark);
+            border-radius: 28px;
+            padding: 60px 80px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .highlight-band::before {
+            content: '🍽️';
+            position: absolute;
+            right: -20px;
+            top: -20px;
+            font-size: 180px;
+            opacity: 0.04;
+            line-height: 1;
+        }
+        .highlight-band-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--yellow-main);
+            margin-bottom: 16px;
+        }
+        .highlight-band-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .highlight-band-title em { font-style: italic; color: var(--yellow-main); }
+        .highlight-band-desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+            max-width: 500px;
+        }
+        .highlight-band-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+        .cta-main {
+            background: var(--yellow-main);
+            color: var(--dark);
+            font-size: 0.875rem;
+            font-weight: 700;
+            padding: 16px 32px;
+            border-radius: 100px;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.25s;
+            text-decoration: none;
+            text-align: center;
+        }
+        .cta-main:hover { background: var(--white); transform: scale(1.04); }
+        .cta-sub {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.75rem;
+            text-align: center;
+        }
+
+        /* ═══════════════════════════════
+           SECOND GRID (más recetas)
+        ═══════════════════════════════ */
+        .section-header-2 {
+            padding: 20px 80px 50px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+        .recipes-grid-2 {
+            padding: 0 80px 100px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+        .recipe-card-sm {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .recipe-card-sm.visible { opacity: 1; transform: translateY(0); }
+        .recipe-card-sm:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 50px rgba(26,18,0,0.1);
+        }
+        .card-sm-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .card-sm-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .recipe-card-sm:hover .card-sm-img img { transform: scale(1.1); }
+        .card-sm-body { padding: 20px 22px 24px; }
+        .card-sm-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+            line-height: 1.25;
+        }
+        .card-sm-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 14px;
+        }
+        .card-sm-time {
+            font-size: 0.75rem;
+            color: var(--brown);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .card-sm-btn {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            background: var(--yellow-soft);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            transition: all 0.25s;
+        }
+        .card-sm-btn:hover { background: var(--yellow-main); }
+
+        /* ═══════════════════════════════
+           MODAL
+        ═══════════════════════════════ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(26,18,0,0.7);
+            backdrop-filter: blur(6px);
+            z-index: 999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            animation: fadeIn 0.25s ease;
+        }
+        .modal-overlay.open { display: flex; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .modal {
+            background: var(--white);
+            border-radius: 28px;
+            width: 100%;
+            max-width: 860px;
+            max-height: 90vh;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            animation: slideUp 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(60px) scale(0.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .modal-img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 28px 0 0 28px;
+        }
+        .modal-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .modal-close {
+            position: absolute;
+            top: 18px; right: 18px;
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            z-index: 10;
+        }
+        .modal-close:hover { background: var(--white); transform: scale(1.1); }
+
+        .modal-body {
+            padding: 44px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow-y: auto;
+        }
+
+        .modal-tag {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--brown);
+        }
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.15;
+        }
+        .modal-desc {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--brown);
+        }
+
+        .modal-meta {
+            display: flex;
+            gap: 20px;
+            padding: 16px 20px;
+            background: var(--yellow-pale);
+            border-radius: 14px;
+        }
+        .modal-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            font-size: 0.75rem;
+        }
+        .modal-meta-item strong {
+            font-size: 0.95rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--dark);
+        }
+        .modal-meta-item span { color: var(--brown); }
+
+        .modal-section-title {
+            font-size: 0.7rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--dark);
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--yellow-main);
+        }
+        .modal-ingredients {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+        .modal-ingredients li {
+            font-size: 0.875rem;
+            color: var(--text-body);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .modal-ingredients li::before {
+            content: '';
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--yellow-main);
+            flex-shrink: 0;
+        }
+        .modal-steps {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .modal-step {
+            display: flex;
+            gap: 14px;
+            font-size: 0.875rem;
+            color: var(--text-body);
+            line-height: 1.6;
+        }
+        .step-circle {
+            width: 26px; height: 26px;
+            border-radius: 50%;
+            background: var(--yellow-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            color: var(--dark);
+            margin-top: 2px;
+        }
+
+        /* ═══════════════════════════════
+           FOOTER
+        ═══════════════════════════════ */
+        .footer {
+            background: var(--dark);
+            padding: 50px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+        }
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--yellow-main);
+        }
+
+        /* ═══════════════════════════════
+           RESPONSIVE
+        ═══════════════════════════════ */
+        @media (max-width: 1100px) {
+            .recipes-grid { grid-template-columns: repeat(2, 1fr); padding: 0 40px 60px; }
+            .recipe-card.featured { grid-column: span 2; }
+            .recipes-grid-2 { grid-template-columns: repeat(2, 1fr); padding: 0 40px 80px; }
+            .section-header, .section-header-2 { padding: 60px 40px 40px; }
+            .highlight-band { margin: 0 40px 60px; padding: 50px 50px; }
+        }
+        @media (max-width: 768px) {
+            .navbar { padding: 16px 24px; }
+            .hero { grid-template-columns: 1fr; }
+            .hero-left { padding: 60px 24px 40px; }
+            .hero-right { height: 50vw; }
+            .hero-badge { display: none; }
+            .recipes-grid { grid-template-columns: 1fr; padding: 0 24px 60px; }
+            .recipe-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+            .recipe-card.featured .card-img-wrap { height: 260px; }
+            .recipes-grid-2 { grid-template-columns: 1fr 1fr; padding: 0 24px 60px; }
+            .highlight-band { margin: 0 24px 60px; padding: 40px 32px; grid-template-columns: 1fr; }
+            .section-header, .section-header-2 { padding: 50px 24px 30px; flex-direction: column; align-items: flex-start; gap: 10px; }
+            .footer { padding: 40px 24px; flex-direction: column; gap: 16px; text-align: center; }
+            .modal { grid-template-columns: 1fr; }
+            .modal-img { border-radius: 28px 28px 0 0; height: 260px; }
+            .modal-body { padding: 30px 26px; }
+            .featured-strip { padding: 16px 24px; }
+        }
+
+        /* Transiciones stagger */
+        .recipe-card { transition-delay: 0s; }
+        .recipe-card:nth-child(2) { transition-delay: 0.08s; }
+        .recipe-card:nth-child(3) { transition-delay: 0.16s; }
+        .recipe-card:nth-child(4) { transition-delay: 0.08s; }
+        .recipe-card:nth-child(5) { transition-delay: 0.16s; }
+        .recipe-card:nth-child(6) { transition-delay: 0.24s; }
+        .recipe-card-sm:nth-child(2) { transition-delay: 0.07s; }
+        .recipe-card-sm:nth-child(3) { transition-delay: 0.14s; }
+        .recipe-card-sm:nth-child(4) { transition-delay: 0.21s; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <a href="index.php" class="nav-logo">
+            <img src="assets/img/Logo.png" alt="DelicIA's" onerror="this.style.display='none'">
+            <span>DelicIA's</span>
+        </a>
+        <a href="index.php" class="nav-back">
+            ← Volver al inicio
+        </a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-left">
+            <span class="hero-eyebrow">Categoría especial</span>
+            <h1 class="hero-title">
+                Aperitivos<br>& <em>Picoteo</em>
+            </h1>
+            <p class="hero-desc">
+                Bocados irresistibles para abrir el apetito en cualquier ocasión. Desde clásicos de siempre hasta creaciones gourmet que sorprenden.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num">12</span>
+                    <span class="stat-label">Recetas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">≤30'</span>
+                    <span class="stat-label">Tiempo medio</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">★ 4.8</span>
+                    <span class="stat-label">Valoración</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-img-grid">
+                <img class="img-large" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=700&q=80" alt="Aperitivos">
+                <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&q=80" alt="Nachos">
+                <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80" alt="Gambas">
+            </div>
+            <div class="hero-badge">
+                <span class="hero-badge-icon">🏆</span>
+                <div class="hero-badge-text">
+                    <span class="hero-badge-main">Más visitado</span>
+                    <span class="hero-badge-sub">Patatas Bravas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STRIP -->
+    <div class="featured-strip">
+        <div class="strip-scroll" id="stripScroll">
+            <span class="strip-item"><span>🥔</span> Patatas Bravas Crujientes</span>
+            <span class="strip-item"><span>🫑</span> Nachos con Guacamole Real</span>
+            <span class="strip-item"><span>🦐</span> Gambas al Ajillo Gourmet</span>
+            <span class="strip-item"><span>🥕</span> Hummus Artesanal</span>
+            <span class="strip-item"><span>🍞</span> Tostas de Tomate</span>
+            <span class="strip-item"><span>🧆</span> Croquetas Caseras</span>
+            <span class="strip-item"><span>🥔</span> Patatas Bravas Crujientes</span>
+            <span class="strip-item"><span>🫑</span> Nachos con Guacamole Real</span>
+            <span class="strip-item"><span>🦐</span> Gambas al Ajillo Gourmet</span>
+            <span class="strip-item"><span>🥕</span> Hummus Artesanal</span>
+            <span class="strip-item"><span>🍞</span> Tostas de Tomate</span>
+            <span class="strip-item"><span>🧆</span> Croquetas Caseras</span>
+        </div>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="section-header">
+        <div class="section-header-left">
+            <div class="section-tag">Las más populares</div>
+            <h2 class="section-title">Recetas <em>estrella</em><br>de la categoría</h2>
+        </div>
+        <div class="section-count">06</div>
+    </div>
+
+    <div class="recipes-grid" id="mainGrid">
+
+        <!-- FEATURED -->
+        <div class="recipe-card featured" data-id="0">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1598679253544-2c97992403ea?w=700&q=80" alt="Patatas Bravas">
+                <span class="card-badge">⭐ Top 1</span>
+                <span class="card-time">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    25 min
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots">
+                        <div class="diff-dot filled"></div>
+                        <div class="diff-dot"></div>
+                        <div class="diff-dot"></div>
+                    </div>
+                    Fácil
+                </div>
+                <h3 class="card-title">Patatas Bravas Crujientes</h3>
+                <p class="card-desc">Patatas fritas dos veces hasta conseguir ese crujiente perfecto, bañadas en una salsa brava picante casera y alioli suave. El aperitivo rey de cualquier bar.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(0)">
+                        Ver receta
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-id="1">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=600&q=80" alt="Nachos Guacamole">
+                <span class="card-time">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    15 min
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots">
+                        <div class="diff-dot filled"></div>
+                        <div class="diff-dot"></div>
+                        <div class="diff-dot"></div>
+                    </div>
+                    Fácil
+                </div>
+                <h3 class="card-title">Nachos con Guacamole Real</h3>
+                <p class="card-desc">Nachos horneados con queso derretido, jalapeños y un guacamole casero de aguacate maduro.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(1)">
+                        Ver receta
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-id="2">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80" alt="Gambas ajillo">
+                <span class="card-time">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    20 min
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots">
+                        <div class="diff-dot filled"></div>
+                        <div class="diff-dot filled"></div>
+                        <div class="diff-dot"></div>
+                    </div>
+                    Media
+                </div>
+                <h3 class="card-title">Gambas al Ajillo Gourmet</h3>
+                <p class="card-desc">Gambas salteadas en aceite de oliva virgen con ajo laminado, guindilla y perejil fresco.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(2)">
+                        Ver receta
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-id="3">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1576506295286-5cda18df43e7?w=600&q=80" alt="Hummus">
+                <span class="card-time">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    10 min
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots">
+                        <div class="diff-dot filled"></div>
+                        <div class="diff-dot"></div>
+                        <div class="diff-dot"></div>
+                    </div>
+                    Fácil
+                </div>
+                <h3 class="card-title">Hummus Artesanal con Crudités</h3>
+                <p class="card-desc">Hummus cremoso de garbanzos con tahini, limón y un chorrito de aceite de oliva. Con palitos de verduras.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(3)">
+                        Ver receta
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-id="4">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=600&q=80" alt="Tostas">
+                <span class="card-time">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    10 min
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots">
+                        <div class="diff-dot filled"></div>
+                        <div class="diff-dot"></div>
+                        <div class="diff-dot"></div>
+                    </div>
+                    Fácil
+                </div>
+                <h3 class="card-title">Tostas de Tomate y Queso</h3>
+                <p class="card-desc">Pan artesano tostado, tomate maduro rallado, aceite de oliva virgen y queso de cabra gratinado.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(4)">
+                        Ver receta
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-card" data-id="5">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=600&q=80" alt="Croquetas">
+                <span class="card-badge">Nuevo</span>
+                <span class="card-time">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    45 min
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots">
+                        <div class="diff-dot filled"></div>
+                        <div class="diff-dot filled"></div>
+                        <div class="diff-dot filled"></div>
+                    </div>
+                    Difícil
+                </div>
+                <h3 class="card-title">Croquetas Caseras de Jamón</h3>
+                <p class="card-desc">Croquetas con bechamel sedosa, jamón ibérico picado y rebozado crujiente. Receta de la abuela.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(5)">
+                        Ver receta
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- HIGHLIGHT BAND -->
+    <div class="highlight-band">
+        <div>
+            <div class="highlight-band-eyebrow">Chef DelicIA's recomienda</div>
+            <h2 class="highlight-band-title">¿No sabes qué hacer<br>con lo que tienes? <em>Pregúntale<br>al Chef IA.</em></h2>
+            <p class="highlight-band-desc">Cuéntale qué ingredientes tienes en casa y el Chef DelicIA's te creará una receta de aperitivo personalizada en segundos.</p>
+        </div>
+        <div class="highlight-band-cta">
+            <a href="Api.html?q=hazme una receta de aperitivo con lo que tengo en casa" class="cta-main">
+                🍳 Hablar con el Chef IA
+            </a>
+            <span class="cta-sub">Responde al instante</span>
+        </div>
+    </div>
+
+    <!-- SECOND GRID -->
+    <div class="section-header-2">
+        <div>
+            <div class="section-tag">Para completar la mesa</div>
+            <h2 class="section-title" style="font-size: clamp(1.8rem, 2.8vw, 2.4rem);">Más ideas <em>rápidas</em></h2>
+        </div>
+    </div>
+
+    <div class="recipes-grid-2" id="secondGrid">
+        <div class="recipe-card-sm" data-id="6">
+            <div class="card-sm-img">
+                <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=500&q=80" alt="Bruschetta">
+            </div>
+            <div class="card-sm-body">
+                <h4 class="card-sm-title">Bruschetta Italiana Clásica</h4>
+                <p style="font-size:0.8rem; color: var(--brown); line-height:1.5;">Tomate, albahaca y aceite sobre pan tostado al ajo.</p>
+                <div class="card-sm-meta">
+                    <span class="card-sm-time">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        10 min
+                    </span>
+                    <button class="card-sm-btn" onclick="openModal(6)">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-card-sm" data-id="7">
+            <div class="card-sm-img">
+                <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=500&q=80" alt="Calamares">
+            </div>
+            <div class="card-sm-body">
+                <h4 class="card-sm-title">Calamares a la Romana</h4>
+                <p style="font-size:0.8rem; color: var(--brown); line-height:1.5;">Anillas de calamar rebozadas en tempura ligera y dorada.</p>
+                <div class="card-sm-meta">
+                    <span class="card-sm-time">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        20 min
+                    </span>
+                    <button class="card-sm-btn" onclick="openModal(7)">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-card-sm" data-id="8">
+            <div class="card-sm-img">
+                <img src="https://images.unsplash.com/photo-1610614819513-58e34989848b?w=500&q=80" alt="Pimientos">
+            </div>
+            <div class="card-sm-body">
+                <h4 class="card-sm-title">Pimientos del Padrón</h4>
+                <p style="font-size:0.8rem; color: var(--brown); line-height:1.5;">Fritos en aceite de oliva y rematados con sal gruesa Maldon.</p>
+                <div class="card-sm-meta">
+                    <span class="card-sm-time">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        8 min
+                    </span>
+                    <button class="card-sm-btn" onclick="openModal(8)">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-card-sm" data-id="9">
+            <div class="card-sm-img">
+                <img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?w=500&q=80" alt="Tabla embutidos">
+            </div>
+            <div class="card-sm-body">
+                <h4 class="card-sm-title">Tabla Ibérica Perfecta</h4>
+                <p style="font-size:0.8rem; color: var(--brown); line-height:1.5;">Selección de embutidos ibéricos con quesos curados y frutos secos.</p>
+                <div class="card-sm-meta">
+                    <span class="card-sm-time">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        5 min
+                    </span>
+                    <button class="card-sm-btn" onclick="openModal(9)">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <span class="footer-logo">DelicIA's</span>
+        <span>© 2025 DelicIA's · Aperitivos y Picoteo</span>
+        <a href="index.php" style="color: var(--yellow-main); text-decoration:none; font-size:0.85rem;">← Volver al inicio</a>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+        <div class="modal" id="modal">
+            <div class="modal-img">
+                <button class="modal-close" onclick="closeModal()">✕</button>
+                <img id="modal-img" src="" alt="">
+            </div>
+            <div class="modal-body">
+                <div class="modal-tag" id="modal-tag"></div>
+                <h2 class="modal-title" id="modal-title"></h2>
+                <p class="modal-desc" id="modal-desc"></p>
+                <div class="modal-meta">
+                    <div class="modal-meta-item">
+                        <strong id="modal-time"></strong>
+                        <span>Tiempo</span>
+                    </div>
+                    <div class="modal-meta-item">
+                        <strong id="modal-diff"></strong>
+                        <span>Dificultad</span>
+                    </div>
+                    <div class="modal-meta-item">
+                        <strong id="modal-serves"></strong>
+                        <span>Personas</span>
+                    </div>
+                </div>
+                <div class="modal-section-title">Ingredientes</div>
+                <ul class="modal-ingredients" id="modal-ingredients"></ul>
+                <div class="modal-section-title">Preparación</div>
+                <ol class="modal-steps" id="modal-steps"></ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ── Datos de recetas ──────────────────────────────────────────
+        const recipes = [
+            {
+                title: "Patatas Bravas Crujientes",
+                tag: "⭐ Top 1 · Aperitivos",
+                img: "https://images.unsplash.com/photo-1598679253544-2c97992403ea?w=900&q=80",
+                desc: "Patatas fritas dos veces hasta conseguir ese crujiente perfecto, bañadas en una salsa brava picante casera y alioli suave. El aperitivo rey de cualquier bar.",
+                time: "25 min", diff: "Fácil", serves: "3-4",
+                ingredients: ["500g de patatas harinosas", "Aceite de girasol para freír", "Para la salsa brava: 200ml tomate triturado", "1 cucharadita de pimentón picante", "1/2 cucharadita de cayena", "2 dientes de ajo", "Sal y vinagre de vino"],
+                steps: ["Pela y corta las patatas en cubos de 3cm. Enjuaga y seca muy bien.", "Fríe a 150°C durante 8 min hasta que estén tiernas pero sin dorar. Escurre.", "Sube el aceite a 190°C y vuelve a freír 3-4 min hasta que estén doradas y crujientes.", "Para la salsa: sofríe el ajo, añade el tomate y las especias. Cuece 10 min.", "Sirve las patatas calientes bañadas en salsa brava y un hilo de alioli."]
+            },
+            {
+                title: "Nachos con Guacamole Real",
+                tag: "Snack · Aperitivos",
+                img: "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=900&q=80",
+                desc: "Nachos horneados con queso cheddar derretido, jalapeños en rodajas y un guacamole casero de aguacate maduro con lima, cebolla y cilantro fresco.",
+                time: "15 min", diff: "Fácil", serves: "4",
+                ingredients: ["200g de nachos de maíz", "150g de queso cheddar rallado", "1 jalapeño en rodajas", "2 aguacates maduros", "1/2 cebolla roja picada", "Zumo de 1 lima", "Cilantro fresco", "Sal y pimienta"],
+                steps: ["Precalienta el horno a 200°C. Extiende los nachos en bandeja de horno.", "Cubre con el queso rallado y los jalapeños. Hornea 5-7 min hasta que el queso burbujee.", "Aplasta los aguacates con un tenedor. Mezcla con cebolla, lima y cilantro.", "Salpimienta el guacamole al gusto.", "Sirve los nachos calientes con el guacamole al lado."]
+            },
+            {
+                title: "Gambas al Ajillo Gourmet",
+                tag: "Marisco · Aperitivos",
+                img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=900&q=80",
+                desc: "Gambas jumbo salteadas en aceite de oliva virgen extra con ajo laminado, guindilla cayena, un chorro de vino blanco y perejil fresco recién picado.",
+                time: "20 min", diff: "Media", serves: "2-3",
+                ingredients: ["400g de gambas peladas grandes", "6 dientes de ajo laminados", "2 guindillas secas", "100ml de vino blanco seco", "80ml de aceite de oliva virgen extra", "Perejil fresco picado", "Sal y pan para acompañar"],
+                steps: ["Calienta el aceite en cazuela de barro a fuego medio.", "Añade el ajo laminado y la guindilla. Sofríe 1 min sin que se queme.", "Sube el fuego y añade las gambas. Saltea 1 min por cada lado.", "Vierte el vino blanco y deja evaporar el alcohol 1 minuto.", "Espolvorea perejil picado y sirve en la misma cazuela con pan crujiente."]
+            },
+            {
+                title: "Hummus Artesanal con Crudités",
+                tag: "Vegano · Aperitivos",
+                img: "https://images.unsplash.com/photo-1576506295286-5cda18df43e7?w=900&q=80",
+                desc: "Hummus cremoso elaborado con garbanzos cocidos, pasta de sésamo tahini, limón, ajo y aceite de oliva. Servido con bastoncillos de verduras frescas y pan de pita.",
+                time: "10 min", diff: "Fácil", serves: "4",
+                ingredients: ["400g de garbanzos cocidos", "3 cucharadas de tahini", "Zumo de 1 limón", "1 diente de ajo", "3 cucharadas de aceite de oliva", "Sal, comino y pimentón", "Zanahorias, pepino y apio para acompañar"],
+                steps: ["Escurre los garbanzos reservando el líquido. Guarda unos pocos para decorar.", "Tritura los garbanzos con el tahini, limón y ajo hasta obtener una pasta fina.", "Añade el aceite y un chorrito del líquido reservado. Tritura hasta que quede muy cremoso.", "Ajusta de sal, limón y comino según gusto.", "Sirve en bol, con un hilo de aceite, pimentón y los garbanzos reservados encima."]
+            },
+            {
+                title: "Tostas de Tomate y Queso",
+                tag: "Rápido · Aperitivos",
+                img: "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=900&q=80",
+                desc: "Pan de masa madre tostado al ajo, tomate maduro rallado, aceite de oliva virgen extra y queso de cabra gratinado con tomillo fresco. Listo en diez minutos.",
+                time: "10 min", diff: "Fácil", serves: "4",
+                ingredients: ["8 rebanadas de pan artesano", "2 tomates maduros grandes", "1 diente de ajo", "4 cucharadas de aceite de oliva", "150g de queso de cabra en rodajas", "Tomillo fresco", "Sal en escamas y pimienta"],
+                steps: ["Tuesta el pan en la tostadora o a la plancha hasta que esté bien dorado.", "Frota cada rebanada con el diente de ajo cortado por la mitad.", "Ralla el tomate maduro y extiéndelo sobre el pan. Añade aceite y sal.", "Coloca una rodaja de queso de cabra encima y espolvorea tomillo.", "Gratina bajo el grill del horno 2-3 min hasta que el queso burbujee y se dore."]
+            },
+            {
+                title: "Croquetas Caseras de Jamón",
+                tag: "Clásico · Aperitivos",
+                img: "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=900&q=80",
+                desc: "Croquetas con bechamel sedosa y cremosa, jamón ibérico finamente picado y rebozado crujiente dorado. La receta clásica de la abuela, perfeccionada.",
+                time: "45 min", diff: "Difícil", serves: "4",
+                ingredients: ["150g de jamón ibérico picado", "80g de mantequilla", "100g de harina", "700ml de leche entera caliente", "2 huevos para rebozar", "Pan rallado fino", "Nuez moscada, sal y aceite para freír"],
+                steps: ["Funde la mantequilla en cazo, añade la harina y cocina 2 min removiendo hasta que dore.", "Vierte la leche caliente poco a poco sin dejar de remover a fuego medio.", "Cocina 15 min hasta obtener una bechamel muy espesa. Añade el jamón y nuez moscada.", "Extiende en bandeja, cubre con film a piel y refrigera mínimo 2 horas.", "Forma las croquetas, pásalas por huevo batido y pan rallado.", "Fríe en aceite abundante a 180°C hasta que estén bien doradas. Escurre sobre papel."]
+            },
+            {
+                title: "Bruschetta Italiana Clásica",
+                tag: "Italiano · Aperitivos",
+                img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=900&q=80",
+                desc: "Pan tostado al ajo con tomate maduro, aceite de oliva y hojas de albahaca fresca. El aperitivo italiano más sencillo y delicioso.",
+                time: "10 min", diff: "Fácil", serves: "4",
+                ingredients: ["8 rebanadas de ciabatta", "4 tomates pera maduros", "2 dientes de ajo", "Albahaca fresca", "Aceite de oliva virgen extra", "Sal en escamas y pimienta negra"],
+                steps: ["Tuesta el pan a la plancha o en horno hasta que esté crujiente.", "Frota cada tosta con el ajo cortado por la mitad.", "Pica el tomate en dados pequeños y escurre el exceso de agua.", "Aliña el tomate con aceite, sal y pimienta. Mezcla bien.", "Coloca el tomate sobre el pan y termina con hojas de albahaca fresca."]
+            },
+            {
+                title: "Calamares a la Romana",
+                tag: "Fritos · Aperitivos",
+                img: "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=900&q=80",
+                desc: "Anillas de calamar fresco rebozadas en una tempura ligera y crujiente, fritas hasta dorar. Con mayonesa de lima para mojar.",
+                time: "20 min", diff: "Media", serves: "3",
+                ingredients: ["500g de calamares limpios en anillas", "150g de harina", "1 huevo", "150ml de agua fría con gas", "Sal, pimienta y pimentón", "Aceite de girasol para freír", "Limón para servir"],
+                steps: ["Seca muy bien las anillas de calamar con papel de cocina. Sazona.", "Mezcla harina, huevo, agua fría con gas y pimentón hasta obtener una masa ligera.", "Calienta el aceite a 180°C en sartén honda.", "Pasa las anillas por la tempura y fríe 2-3 min hasta que estén doradas.", "Escurre sobre papel absorbente y sirve inmediatamente con gajos de limón."]
+            },
+            {
+                title: "Pimientos del Padrón",
+                tag: "Gallego · Aperitivos",
+                img: "https://images.unsplash.com/photo-1610614819513-58e34989848b?w=900&q=80",
+                desc: "Pimientos del Padrón fritos en abundante aceite de oliva a fuego alto hasta que estén arrugados y con manchas tostadas. Acabados con sal gruesa Maldon.",
+                time: "8 min", diff: "Fácil", serves: "2-3",
+                ingredients: ["300g de pimientos del Padrón", "Aceite de oliva virgen extra (generoso)", "Sal Maldon o sal gruesa en escamas"],
+                steps: ["Lava y seca bien los pimientos. Es importante que estén completamente secos.", "Calienta abundante aceite en sartén grande a fuego fuerte.", "Añade los pimientos y fríe 3-4 min sin remover demasiado, hasta que se arruguen.", "Voltea y cocina 2 min más. Deben tener manchas negras por fuera.", "Escurre el exceso de aceite y sirve inmediatamente con mucha sal Maldon por encima."]
+            },
+            {
+                title: "Tabla Ibérica Perfecta",
+                tag: "Sin cocción · Aperitivos",
+                img: "https://images.unsplash.com/photo-1541014741259-de529411b96a?w=900&q=80",
+                desc: "Selección de embutidos ibéricos — jamón, chorizo y salchichón — con quesos curados, aceitunas, frutos secos y pan artesano. El aperitivo sin esfuerzo.",
+                time: "5 min", diff: "Fácil", serves: "4",
+                ingredients: ["100g de jamón ibérico", "80g de chorizo ibérico", "80g de salchichón ibérico", "200g de queso manchego curado", "Aceitunas variadas", "Frutos secos tostados (almendras, nueces)", "Pan artesano y picos"],
+                steps: ["Saca los embutidos de la nevera 20 min antes para que estén a temperatura ambiente.", "Corta el jamón en lonchas finas y el chorizo y salchichón en rodajas.", "Trocea el queso manchego en tacos irregulares.", "Coloca todo en una tabla de madera de forma artística, mezclando colores y texturas.", "Rellena los huecos con aceitunas, frutos secos y pequeños panes."]
+            }
+        ];
+
+        // ── Modal ────────────────────────────────────────────────────
+        function openModal(id) {
+            const r = recipes[id];
+            if (!r) return;
+            document.getElementById('modal-img').src = r.img;
+            document.getElementById('modal-tag').textContent = r.tag;
+            document.getElementById('modal-title').textContent = r.title;
+            document.getElementById('modal-desc').textContent = r.desc;
+            document.getElementById('modal-time').textContent = r.time;
+            document.getElementById('modal-diff').textContent = r.diff;
+            document.getElementById('modal-serves').textContent = r.serves;
+            document.getElementById('modal-ingredients').innerHTML = r.ingredients.map(i => `<li>${i}</li>`).join('');
+            document.getElementById('modal-steps').innerHTML = r.steps.map((s, i) => `
+                <li class="modal-step"><span class="step-circle">${i+1}</span><span>${s}</span></li>
+            `).join('');
+            document.getElementById('modalOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        function closeModalOutside(e) {
+            if (e.target === document.getElementById('modalOverlay')) closeModal();
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        // ── Guardar ──────────────────────────────────────────────────
+        function toggleSave(btn) {
+            btn.classList.toggle('saved');
+        }
+
+        // ── Scroll reveal ────────────────────────────────────────────
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.recipe-card, .recipe-card-sm').forEach(card => observer.observe(card));
+
+        // ── Navbar scroll ────────────────────────────────────────────
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+
+</body>
+</html>

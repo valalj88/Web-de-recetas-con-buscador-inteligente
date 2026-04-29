@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cremas y Sopas — DelicIA&#x27;s</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --yellow-main: #f5c518;
+            --yellow-soft: #fce891;
+            --yellow-pale: #fff9e6;
+            --yellow-deep: #e6a800;
+            --cream: #fdf8ee;
+            --dark: #1a1200;
+            --dark-mid: #3d2e00;
+            --brown: #6b4f12;
+            --text-body: #3a3020;
+            --white: #ffffff;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-body);
+            overflow-x: hidden;
+        }
+
+        /* ═══════════════════════════════
+           NAVBAR
+        ═══════════════════════════════ */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 60px;
+            background: rgba(253, 248, 238, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(245, 197, 24, 0.2);
+            transition: box-shadow 0.3s;
+        }
+        .navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .nav-logo img { width: 44px; height: 44px; object-fit: contain; }
+        .nav-logo span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--brown);
+            padding: 10px 22px;
+            border: 1.5px solid var(--yellow-main);
+            border-radius: 100px;
+            transition: all 0.25s;
+        }
+        .nav-back:hover {
+            background: var(--yellow-main);
+            color: var(--dark);
+        }
+
+        /* ═══════════════════════════════
+           HERO
+        ═══════════════════════════════ */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 60px 80px 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--brown);
+            margin-bottom: 28px;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1.5px;
+            background: var(--yellow-main);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 5vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.0;
+            color: var(--dark);
+            margin-bottom: 28px;
+        }
+        .hero-title em {
+            font-style: italic;
+            color: var(--yellow-deep);
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--brown);
+            max-width: 400px;
+            margin-bottom: 48px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+        }
+        .stat-item { display: flex; flex-direction: column; gap: 4px; }
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--brown);
+        }
+
+        .hero-right {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-right::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--yellow-soft) 0%, var(--yellow-main) 100%);
+            z-index: 0;
+        }
+
+        .hero-img-grid {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 4px;
+            z-index: 1;
+        }
+        .hero-img-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: brightness(0.88) saturate(1.1);
+        }
+        .hero-img-grid img:hover { transform: scale(1.05); filter: brightness(0.95) saturate(1.2); }
+        .hero-img-grid .img-large {
+            grid-row: 1 / 3;
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: 48px;
+            left: -28px;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 20px 28px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .hero-badge-icon { font-size: 2rem; }
+        .hero-badge-text { display: flex; flex-direction: column; gap: 2px; }
+        .hero-badge-main { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; color: var(--dark); }
+        .hero-badge-sub { font-size: 0.75rem; color: var(--brown); }
+
+        /* ═══════════════════════════════
+           FEATURED STRIP
+        ═══════════════════════════════ */
+        .featured-strip {
+            background: var(--yellow-main);
+            padding: 20px 80px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            overflow: hidden;
+        }
+        .strip-label {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--dark-mid);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .strip-scroll {
+            display: flex;
+            gap: 60px;
+            animation: scrollStrip 20s linear infinite;
+            white-space: nowrap;
+        }
+        .strip-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--dark);
+        }
+        .strip-item span { color: var(--dark-mid); font-style: normal; font-size: 1rem; }
+        @keyframes scrollStrip {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* ═══════════════════════════════
+           SECTION HEADER
+        ═══════════════════════════════ */
+        .section-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 80px 80px 50px;
+        }
+        .section-tag {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--brown);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .section-tag::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 1.5px;
+            background: var(--yellow-main);
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--dark);
+        }
+        .section-title em {
+            font-style: italic;
+            color: var(--yellow-deep);
+        }
+        .section-count {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            color: rgba(245, 197, 24, 0.2);
+            line-height: 1;
+            user-select: none;
+        }
+
+        /* ═══════════════════════════════
+           RECIPE GRID — MAIN
+        ═══════════════════════════════ */
+        .recipes-grid {
+            padding: 0 80px 80px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .recipe-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        .recipe-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .recipe-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 30px 70px rgba(26, 18, 0, 0.12);
+        }
+
+        /* Card grande — ocupa 2 columnas */
+        .recipe-card.featured {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .recipe-card.featured .card-img-wrap { height: 100%; min-height: 340px; }
+
+        .card-img-wrap {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+        }
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .recipe-card:hover .card-img-wrap img { transform: scale(1.08); }
+
+        .card-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--yellow-main);
+            color: var(--dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 100px;
+        }
+
+        .card-time {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(26,18,0,0.7);
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-body {
+            padding: 26px 28px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .featured .card-body {
+            justify-content: center;
+            padding: 40px 44px;
+        }
+
+        .card-difficulty {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--brown);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .diff-dots { display: flex; gap: 3px; }
+        .diff-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--yellow-soft);
+            border: 1.5px solid var(--yellow-main);
+        }
+        .diff-dot.filled { background: var(--yellow-main); }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+        .featured .card-title { font-size: 1.9rem; }
+
+        .card-desc {
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: var(--brown);
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 6px;
+        }
+
+        .card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--yellow-main);
+            color: var(--dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 11px 22px;
+            border-radius: 100px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-decoration: none;
+        }
+        .card-btn:hover {
+            background: var(--dark);
+            color: var(--yellow-main);
+            transform: translateX(4px);
+        }
+        .card-btn svg { transition: transform 0.25s; }
+        .card-btn:hover svg { transform: translateX(3px); }
+
+        .card-save {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            border: 1.5px solid #e8e8e8;
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            transition: all 0.25s;
+        }
+        .card-save:hover, .card-save.saved { border-color: var(--yellow-main); color: var(--yellow-main); }
+        .card-save.saved svg { fill: var(--yellow-main); }
+
+        /* ═══════════════════════════════
+           HIGHLIGHT BAND
+        ═══════════════════════════════ */
+        .highlight-band {
+            margin: 0 80px 80px;
+            background: var(--dark);
+            border-radius: 28px;
+            padding: 60px 80px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .highlight-band::before {
+            content: '🍽️';
+            position: absolute;
+            right: -20px;
+            top: -20px;
+            font-size: 180px;
+            opacity: 0.04;
+            line-height: 1;
+        }
+        .highlight-band-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--yellow-main);
+            margin-bottom: 16px;
+        }
+        .highlight-band-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .highlight-band-title em { font-style: italic; color: var(--yellow-main); }
+        .highlight-band-desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+            max-width: 500px;
+        }
+        .highlight-band-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+        .cta-main {
+            background: var(--yellow-main);
+            color: var(--dark);
+            font-size: 0.875rem;
+            font-weight: 700;
+            padding: 16px 32px;
+            border-radius: 100px;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.25s;
+            text-decoration: none;
+            text-align: center;
+        }
+        .cta-main:hover { background: var(--white); transform: scale(1.04); }
+        .cta-sub {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.75rem;
+            text-align: center;
+        }
+
+        /* ═══════════════════════════════
+           SECOND GRID (más recetas)
+        ═══════════════════════════════ */
+        .section-header-2 {
+            padding: 20px 80px 50px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+        .recipes-grid-2 {
+            padding: 0 80px 100px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+        .recipe-card-sm {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .recipe-card-sm.visible { opacity: 1; transform: translateY(0); }
+        .recipe-card-sm:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 50px rgba(26,18,0,0.1);
+        }
+        .card-sm-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .card-sm-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .recipe-card-sm:hover .card-sm-img img { transform: scale(1.1); }
+        .card-sm-body { padding: 20px 22px 24px; }
+        .card-sm-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+            line-height: 1.25;
+        }
+        .card-sm-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 14px;
+        }
+        .card-sm-time {
+            font-size: 0.75rem;
+            color: var(--brown);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .card-sm-btn {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            background: var(--yellow-soft);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            transition: all 0.25s;
+        }
+        .card-sm-btn:hover { background: var(--yellow-main); }
+
+        /* ═══════════════════════════════
+           MODAL
+        ═══════════════════════════════ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(26,18,0,0.7);
+            backdrop-filter: blur(6px);
+            z-index: 999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            animation: fadeIn 0.25s ease;
+        }
+        .modal-overlay.open { display: flex; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .modal {
+            background: var(--white);
+            border-radius: 28px;
+            width: 100%;
+            max-width: 860px;
+            max-height: 90vh;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            animation: slideUp 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(60px) scale(0.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .modal-img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 28px 0 0 28px;
+        }
+        .modal-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .modal-close {
+            position: absolute;
+            top: 18px; right: 18px;
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            z-index: 10;
+        }
+        .modal-close:hover { background: var(--white); transform: scale(1.1); }
+
+        .modal-body {
+            padding: 44px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow-y: auto;
+        }
+
+        .modal-tag {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--brown);
+        }
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.15;
+        }
+        .modal-desc {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--brown);
+        }
+
+        .modal-meta {
+            display: flex;
+            gap: 20px;
+            padding: 16px 20px;
+            background: var(--yellow-pale);
+            border-radius: 14px;
+        }
+        .modal-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            font-size: 0.75rem;
+        }
+        .modal-meta-item strong {
+            font-size: 0.95rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--dark);
+        }
+        .modal-meta-item span { color: var(--brown); }
+
+        .modal-section-title {
+            font-size: 0.7rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--dark);
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--yellow-main);
+        }
+        .modal-ingredients {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+        .modal-ingredients li {
+            font-size: 0.875rem;
+            color: var(--text-body);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .modal-ingredients li::before {
+            content: '';
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--yellow-main);
+            flex-shrink: 0;
+        }
+        .modal-steps {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .modal-step {
+            display: flex;
+            gap: 14px;
+            font-size: 0.875rem;
+            color: var(--text-body);
+            line-height: 1.6;
+        }
+        .step-circle {
+            width: 26px; height: 26px;
+            border-radius: 50%;
+            background: var(--yellow-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            color: var(--dark);
+            margin-top: 2px;
+        }
+
+        /* ═══════════════════════════════
+           FOOTER
+        ═══════════════════════════════ */
+        .footer {
+            background: var(--dark);
+            padding: 50px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+        }
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--yellow-main);
+        }
+
+        /* ═══════════════════════════════
+           RESPONSIVE
+        ═══════════════════════════════ */
+        @media (max-width: 1100px) {
+            .recipes-grid { grid-template-columns: repeat(2, 1fr); padding: 0 40px 60px; }
+            .recipe-card.featured { grid-column: span 2; }
+            .recipes-grid-2 { grid-template-columns: repeat(2, 1fr); padding: 0 40px 80px; }
+            .section-header, .section-header-2 { padding: 60px 40px 40px; }
+            .highlight-band { margin: 0 40px 60px; padding: 50px 50px; }
+        }
+        @media (max-width: 768px) {
+            .navbar { padding: 16px 24px; }
+            .hero { grid-template-columns: 1fr; }
+            .hero-left { padding: 60px 24px 40px; }
+            .hero-right { height: 50vw; }
+            .hero-badge { display: none; }
+            .recipes-grid { grid-template-columns: 1fr; padding: 0 24px 60px; }
+            .recipe-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+            .recipe-card.featured .card-img-wrap { height: 260px; }
+            .recipes-grid-2 { grid-template-columns: 1fr 1fr; padding: 0 24px 60px; }
+            .highlight-band { margin: 0 24px 60px; padding: 40px 32px; grid-template-columns: 1fr; }
+            .section-header, .section-header-2 { padding: 50px 24px 30px; flex-direction: column; align-items: flex-start; gap: 10px; }
+            .footer { padding: 40px 24px; flex-direction: column; gap: 16px; text-align: center; }
+            .modal { grid-template-columns: 1fr; }
+            .modal-img { border-radius: 28px 28px 0 0; height: 260px; }
+            .modal-body { padding: 30px 26px; }
+            .featured-strip { padding: 16px 24px; }
+        }
+
+        /* Transiciones stagger */
+        .recipe-card { transition-delay: 0s; }
+        .recipe-card:nth-child(2) { transition-delay: 0.08s; }
+        .recipe-card:nth-child(3) { transition-delay: 0.16s; }
+        .recipe-card:nth-child(4) { transition-delay: 0.08s; }
+        .recipe-card:nth-child(5) { transition-delay: 0.16s; }
+        .recipe-card:nth-child(6) { transition-delay: 0.24s; }
+        .recipe-card-sm:nth-child(2) { transition-delay: 0.07s; }
+        .recipe-card-sm:nth-child(3) { transition-delay: 0.14s; }
+        .recipe-card-sm:nth-child(4) { transition-delay: 0.21s; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <a href="index.php" class="nav-logo">
+            <img src="assets/img/Logo.png" alt="DelicIA's" onerror="this.style.display='none'">
+            <span>DelicIA's</span>
+        </a>
+        <a href="index.php" class="nav-back">← Volver al inicio</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-left">
+            <span class="hero-eyebrow">Categoría especial</span>
+            <h1 class="hero-title">Cremas<br><em>y Sopas</em></h1>
+            <p class="hero-desc">Texturas suaves y sabores intensos para cualquier época del año. Del calor reconfortante al frescor del verano.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num">9</span>
+                    <span class="stat-label">Recetas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">≤45'</span>
+                    <span class="stat-label">Tiempo medio</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">★ 4.8</span>
+                    <span class="stat-label">Valoración</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-img-grid">
+                <img class="img-large" src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=700&q=80" alt="">
+                <img src="https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=400&q=80" alt="">
+                <img src="https://images.unsplash.com/photo-1604152135912-04a022e23696?w=400&q=80" alt="">
+            </div>
+            <div class="hero-badge">
+                <span class="hero-badge-icon">🥣</span>
+                <div class="hero-badge-text">
+                    <span class="hero-badge-main">La favorita</span>
+                    <span class="hero-badge-sub">Crema de Calabaza</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STRIP -->
+    <div class="featured-strip">
+        <div class="strip-scroll">
+            <span class="strip-item"><span>🥣</span> Calabaza Asada</span>
+            <span class="strip-item"><span>🍅</span> Tomate y Albahaca</span>
+            <span class="strip-item"><span>🍄</span> Champiñones</span>
+            <span class="strip-item"><span>🥒</span> Calabacín</span>
+            <span class="strip-item"><span>🧅</span> Crema Puerros</span>
+            <span class="strip-item"><span>🌿</span> Espárragos</span>
+            <span class="strip-item"><span>🥣</span> Calabaza Asada</span>
+            <span class="strip-item"><span>🍅</span> Tomate y Albahaca</span>
+            <span class="strip-item"><span>🍄</span> Champiñones</span>
+            <span class="strip-item"><span>🥒</span> Calabacín</span>
+            <span class="strip-item"><span>🧅</span> Crema Puerros</span>
+            <span class="strip-item"><span>🌿</span> Espárragos</span>
+            
+        </div>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="section-header">
+        <div class="section-header-left">
+            <div class="section-tag">Nuestras recetas</div>
+            <h2 class="section-title">Cremas <em>que reconfortan</em></h2>
+        </div>
+        <div class="section-count">06</div>
+    </div>
+
+    <div class="recipes-grid" id="mainGrid">
+        
+        <div class="recipe-card featured" data-id="0">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=900&q=80" alt="Crema de Calabaza Asada">
+                <span class="card-badge">Otoño</span>
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 30 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div></div>
+                    Fácil
+                </div>
+                <h3 class="card-title">Crema de Calabaza Asada</h3>
+                <p class="card-desc">Una crema dulce y aterciopelada con calabaza asada que concentra todo su sabor. La nata la hace irresistiblemente sedosa.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(0)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card" data-id="1">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=900&q=80" alt="Sopa de Tomate y Albahaca">
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 25 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div></div>
+                    Fácil
+                </div>
+                <h3 class="card-title">Sopa de Tomate y Albahaca</h3>
+                <p class="card-desc">Famosa receta mediterránea, muy ligera y aromática. Tomates maduros con albahaca fresca.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(1)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card" data-id="2">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1604152135912-04a022e23696?w=900&q=80" alt="Crema de Champiñones">
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 25 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div></div>
+                    Fácil
+                </div>
+                <h3 class="card-title">Crema de Champiñones</h3>
+                <p class="card-desc">Sabor intenso a bosque con una textura muy cremosa. El puerro le da un fondo dulce perfecto.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(2)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card" data-id="3">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=900&q=80" alt="Crema de Calabacín y Quesitos">
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 20 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div></div>
+                    Fácil
+                </div>
+                <h3 class="card-title">Crema de Calabacín y Quesitos</h3>
+                <p class="card-desc">La favorita de los niños. Suave, nutritiva y muy fácil. Los quesitos le dan una cremosidad increíble.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(3)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card" data-id="4">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=900&q=80" alt="Crema de Puerros">
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 30 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot filled"></div><div class="diff-dot"></div></div>
+                    Media
+                </div>
+                <h3 class="card-title">Crema de Puerros</h3>
+                <p class="card-desc">Conocida como Vichyssoise si se toma fría. Elegante, suave y versátil para cualquier estación.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(4)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card" data-id="5">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1415978397405-cba426a14ce9?w=900&q=80" alt="Crema de Espárragos Trigueros">
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 25 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot filled"></div><div class="diff-dot"></div></div>
+                    Media
+                </div>
+                <h3 class="card-title">Crema de Espárragos Trigueros</h3>
+                <p class="card-desc">Un clásico elegante con espárragos frescos de temporada. Intenso, delicado y perfecto para una cena especial.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(5)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HIGHLIGHT BAND -->
+    <div class="highlight-band">
+        <div>
+            <div class="highlight-band-eyebrow">Consejo DelicIA's</div>
+            <h2 class="highlight-band-title">El secreto de una crema <em>perfecta</em></h2>
+            <p class="highlight-band-desc">La clave está en sofreír bien las verduras antes de añadir el caldo. Ese paso de caramelización es lo que da profundidad y dulzor natural a cualquier crema casera.</p>
+        </div>
+        <div class="highlight-band-cta">
+            <a href="Api.html?q=hazme una receta de crema o sopa con lo que tengo en casa" class="cta-main">🍳 Hablar con el Chef IA</a>
+            <span class="cta-sub">Responde al instante</span>
+        </div>
+    </div>
+    
+    <!-- SECOND GRID -->
+    <div class="section-header-2">
+        <div>
+            <div class="section-tag">También te gustará</div>
+            <h2 class="section-title" style="font-size: clamp(1.8rem, 2.8vw, 2.4rem);">Más <em>sopas y cremas</em></h2>
+        </div>
+    </div>
+    <div class="recipes-grid-2" id="secondGrid">
+        
+        <div class="recipe-card-sm" data-id="6">
+            <div class="card-sm-img">
+                <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=900&q=80" alt="Gazpacho Andaluz">
+            </div>
+            <div class="card-sm-body">
+                <h4 class="card-sm-title">Gazpacho Andaluz</h4>
+                <p style="font-size:0.8rem; color: var(--brown); line-height:1.5;">La sopa fría más icónica de España. Tomates maduros, pepino y pimiento batidos en frí…</p>
+                <div class="card-sm-meta">
+                    <span class="card-sm-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 15 min + 2h frío</span>
+                    <button class="card-sm-btn" onclick="openModal(6)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card-sm" data-id="7">
+            <div class="card-sm-img">
+                <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=900&q=80" alt="Crema de Lentejas Rojas con Curry">
+            </div>
+            <div class="card-sm-body">
+                <h4 class="card-sm-title">Crema de Lentejas Rojas con Curry</h4>
+                <p style="font-size:0.8rem; color: var(--brown); line-height:1.5;">Cremosa y especiada, esta crema de lentejas rojas con leche de coco y curry es nutrit…</p>
+                <div class="card-sm-meta">
+                    <span class="card-sm-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 30 min</span>
+                    <button class="card-sm-btn" onclick="openModal(7)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card-sm" data-id="8">
+            <div class="card-sm-img">
+                <img src="https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=900&q=80" alt="Sopa Minestrone Italiana">
+            </div>
+            <div class="card-sm-body">
+                <h4 class="card-sm-title">Sopa Minestrone Italiana</h4>
+                <p style="font-size:0.8rem; color: var(--brown); line-height:1.5;">Sopa italiana con verduras de temporada, pasta y judías blancas. Contundente, saludab…</p>
+                <div class="card-sm-meta">
+                    <span class="card-sm-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 40 min</span>
+                    <button class="card-sm-btn" onclick="openModal(8)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <span class="footer-logo">DelicIA's</span>
+        <span>© 2025 DelicIA's · Cremas y Sopas</span>
+        <a href="index.php" style="color: var(--yellow-main); text-decoration:none; font-size:0.85rem;">← Volver al inicio</a>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+        <div class="modal" id="modal">
+            <div class="modal-img">
+                <button class="modal-close" onclick="closeModal()">✕</button>
+                <img id="modal-img" src="" alt="">
+            </div>
+            <div class="modal-body">
+                <div class="modal-tag" id="modal-tag"></div>
+                <h2 class="modal-title" id="modal-title"></h2>
+                <p class="modal-desc" id="modal-desc"></p>
+                <div class="modal-meta">
+                    <div class="modal-meta-item"><strong id="modal-time"></strong><span>Tiempo</span></div>
+                    <div class="modal-meta-item"><strong id="modal-diff"></strong><span>Dificultad</span></div>
+                    <div class="modal-meta-item"><strong id="modal-serves"></strong><span>Personas</span></div>
+                </div>
+                <div class="modal-section-title">Ingredientes</div>
+                <ul class="modal-ingredients" id="modal-ingredients"></ul>
+                <div class="modal-section-title">Preparación</div>
+                <ol class="modal-steps" id="modal-steps"></ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const recipes = [
+            {
+                title: "Crema de Calabaza Asada", tag: "Otoño · Cremas",
+                img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=900&q=80",
+                desc: "Una crema dulce y aterciopelada con calabaza asada que concentra todo su sabor. La nata la hace irresistiblemente sedosa.",
+                time: "30 min", diff: "Fácil", serves: "4",
+                ingredients: ["600g calabaza", "1 cebolla", "400g caldo de verduras", "50g nata", "Sal, pimienta y nuez moscada", "Aceite de oliva"],
+                steps: ["Trocear la cebolla 5 seg/vel 5.", "Sofreír con aceite 5 min/120°C/vel 1.", "Añadir la calabaza troceada y el caldo. Cocer 20 min/100°C/vel 1.", "Triturar 1 min/vel 10 hasta textura muy fina.", "Incorporar la nata, salpimentar y servir con un hilo de aceite."]
+            },
+            {
+                title: "Sopa de Tomate y Albahaca", tag: "Mediterráneo · Sopas",
+                img: "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=900&q=80",
+                desc: "Famosa receta mediterránea, muy ligera y aromática. Tomates maduros con albahaca fresca.",
+                time: "25 min", diff: "Fácil", serves: "4",
+                ingredients: ["800g tomates maduros", "2 dientes de ajo", "Albahaca fresca", "30g aceite de oliva", "Sal"],
+                steps: ["Triturar tomates y ajo 30 seg/vel 7.", "Añadir aceite y sal. Cocinar 20 min/100°C/vel 1.", "Añadir albahaca fresca al final.", "Servir templada o fría según temporada."]
+            },
+            {
+                title: "Crema de Champiñones", tag: "Bosque · Cremas",
+                img: "https://images.unsplash.com/photo-1604152135912-04a022e23696?w=900&q=80",
+                desc: "Sabor intenso a bosque con una textura muy cremosa. El puerro le da un fondo dulce perfecto.",
+                time: "25 min", diff: "Fácil", serves: "4",
+                ingredients: ["500g champiñones frescos", "1 puerro", "500g leche o caldo", "40g mantequilla", "Sal y pimienta"],
+                steps: ["Picar el puerro 5 seg/vel 5.", "Sofreír con mantequilla 5 min/120°C.", "Añadir champiñones troceados y el líquido. Cocer 15 min/100°C.", "Triturar 1 min/vel 10 hasta textura muy suave."]
+            },
+            {
+                title: "Crema de Calabacín y Quesitos", tag: "Niños · Cremas",
+                img: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=900&q=80",
+                desc: "La favorita de los niños. Suave, nutritiva y muy fácil. Los quesitos le dan una cremosidad increíble.",
+                time: "20 min", diff: "Fácil", serves: "4",
+                ingredients: ["2 calabacines medianos", "1 patata", "4 quesitos triangulares", "Sal y aceite"],
+                steps: ["Trocear el calabacín y la patata 5 seg/vel 4.", "Añadir agua hasta cubrir y sal.", "Cocer 15 min/100°C/vel 1.", "Añadir los quesitos y triturar 1 min/vel 10."]
+            },
+            {
+                title: "Crema de Puerros", tag: "Clásico · Cremas",
+                img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=900&q=80",
+                desc: "Conocida como Vichyssoise si se toma fría. Elegante, suave y versátil para cualquier estación.",
+                time: "30 min", diff: "Media", serves: "4",
+                ingredients: ["3 puerros (solo blanco)", "1 patata grande", "500g agua o caldo", "30g aceite", "Sal y pimienta blanca"],
+                steps: ["Limpiar y trocear los puerros.", "Rehogar con aceite 7 min/120°C/vel 1.", "Añadir la patata troceada y el caldo. Cocer 20 min/100°C.", "Triturar 1 min/vel 10 hasta textura muy fina."]
+            },
+            {
+                title: "Crema de Espárragos Trigueros", tag: "Temporada · Cremas",
+                img: "https://images.unsplash.com/photo-1415978397405-cba426a14ce9?w=900&q=80",
+                desc: "Un clásico elegante con espárragos frescos de temporada. Intenso, delicado y perfecto para una cena especial.",
+                time: "25 min", diff: "Media", serves: "4",
+                ingredients: ["2 manojos espárragos verdes", "1 cebolleta", "500g caldo de verduras", "Aceite de oliva", "Sal"],
+                steps: ["Reservar las puntas de los espárragos para decorar.", "Picar la cebolleta y saltear con aceite 3 min.", "Añadir los espárragos troceados y el caldo. Cocinar 20 min/100°C.", "Triturar fino. Saltear las puntas reservadas y colocar encima al servir."]
+            },
+            {
+                title: "Gazpacho Andaluz", tag: "Verano · Sopas",
+                img: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=900&q=80",
+                desc: "La sopa fría más icónica de España. Tomates maduros, pepino y pimiento batidos en frío. Refrescante y llena de vitaminas.",
+                time: "15 min + 2h frío", diff: "Fácil", serves: "4",
+                ingredients: ["1 kg de tomates maduros", "1/2 pepino", "1/2 pimiento verde", "1 diente de ajo", "50ml de aceite de oliva virgen", "20ml de vinagre de Jerez", "Sal y agua fría"],
+                steps: ["Trocear todos los vegetales en trozos gruesos.", "Triturar todo junto con el aceite, vinagre y sal a máxima velocidad 2 min.", "Colar por un chino para obtener una textura muy fina.", "Ajustar de sal y vinagre. Añadir agua si está muy espeso.", "Refrigerar mínimo 2 horas. Servir muy frío con un hilo de aceite."]
+            },
+            {
+                title: "Crema de Lentejas Rojas con Curry", tag: "Oriental · Cremas",
+                img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=900&q=80",
+                desc: "Cremosa y especiada, esta crema de lentejas rojas con leche de coco y curry es nutritiva y reconfortante.",
+                time: "30 min", diff: "Fácil", serves: "4",
+                ingredients: ["200g lentejas rojas", "1 cebolla", "2 dientes de ajo", "1 cucharada de curry en polvo", "400ml leche de coco", "500ml caldo de verduras", "Jengibre fresco rallado", "Aceite y sal"],
+                steps: ["Sofreír la cebolla y el ajo con aceite 5 min/120°C.", "Añadir el curry y el jengibre. Rehogar 1 minuto.", "Incorporar las lentejas, la leche de coco y el caldo.", "Cocer 20 min/100°C hasta que las lentejas estén muy tiernas.", "Triturar hasta textura fina. Rectificar de sal y servir con cilantro fresco."]
+            },
+            {
+                title: "Sopa Minestrone Italiana", tag: "Italiano · Sopas",
+                img: "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=900&q=80",
+                desc: "Sopa italiana con verduras de temporada, pasta y judías blancas. Contundente, saludable y llena de color.",
+                time: "40 min", diff: "Media", serves: "6",
+                ingredients: ["2 zanahorias", "2 tallos de apio", "1 cebolla", "1 bote judías blancas", "200g pasta pequeña", "1 lata tomate triturado", "1 litro caldo de verduras", "Albahaca y parmesano"],
+                steps: ["Picar en dados pequeños la cebolla, zanahoria y apio.", "Sofreír con aceite en olla grande 8 minutos.", "Añadir el tomate, las judías y el caldo. Cocer 20 min.", "Agregar la pasta y cocer el tiempo indicado en el paquete.", "Servir caliente con albahaca fresca y parmesano rallado."]
+            },
+        ];
+
+        // ── Modal ────────────────────────────────────────────────────
+        function openModal(id) {
+            const r = recipes[id];
+            if (!r) return;
+            document.getElementById('modal-img').src = r.img;
+            document.getElementById('modal-tag').textContent = r.tag;
+            document.getElementById('modal-title').textContent = r.title;
+            document.getElementById('modal-desc').textContent = r.desc;
+            document.getElementById('modal-time').textContent = r.time;
+            document.getElementById('modal-diff').textContent = r.diff;
+            document.getElementById('modal-serves').textContent = r.serves;
+            document.getElementById('modal-ingredients').innerHTML = r.ingredients.map(i => `<li>${i}</li>`).join('');
+            document.getElementById('modal-steps').innerHTML = r.steps.map((s, i) => `
+                <li class="modal-step"><span class="step-circle">${i+1}</span><span>${s}</span></li>
+            `).join('');
+            document.getElementById('modalOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        function closeModalOutside(e) {
+            if (e.target === document.getElementById('modalOverlay')) closeModal();
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        // ── Guardar ──────────────────────────────────────────────────
+        function toggleSave(btn) { btn.classList.toggle('saved'); }
+
+        // ── Scroll reveal ────────────────────────────────────────────
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.recipe-card, .recipe-card-sm').forEach(card => observer.observe(card));
+
+        // ── Navbar scroll ────────────────────────────────────────────
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+    </script>
+
+</body>
+</html>

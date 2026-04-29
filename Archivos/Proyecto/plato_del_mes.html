@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plato del Mes — DelicIA&#x27;s</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --yellow-main: #f5c518;
+            --yellow-soft: #fce891;
+            --yellow-pale: #fff9e6;
+            --yellow-deep: #e6a800;
+            --cream: #fdf8ee;
+            --dark: #1a1200;
+            --dark-mid: #3d2e00;
+            --brown: #6b4f12;
+            --text-body: #3a3020;
+            --white: #ffffff;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-body);
+            overflow-x: hidden;
+        }
+
+        /* ═══════════════════════════════
+           NAVBAR
+        ═══════════════════════════════ */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 60px;
+            background: rgba(253, 248, 238, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(245, 197, 24, 0.2);
+            transition: box-shadow 0.3s;
+        }
+        .navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .nav-logo img { width: 44px; height: 44px; object-fit: contain; }
+        .nav-logo span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--brown);
+            padding: 10px 22px;
+            border: 1.5px solid var(--yellow-main);
+            border-radius: 100px;
+            transition: all 0.25s;
+        }
+        .nav-back:hover {
+            background: var(--yellow-main);
+            color: var(--dark);
+        }
+
+        /* ═══════════════════════════════
+           HERO
+        ═══════════════════════════════ */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 60px 80px 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--brown);
+            margin-bottom: 28px;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1.5px;
+            background: var(--yellow-main);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 5vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.0;
+            color: var(--dark);
+            margin-bottom: 28px;
+        }
+        .hero-title em {
+            font-style: italic;
+            color: var(--yellow-deep);
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--brown);
+            max-width: 400px;
+            margin-bottom: 48px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+        }
+        .stat-item { display: flex; flex-direction: column; gap: 4px; }
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--brown);
+        }
+
+        .hero-right {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-right::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--yellow-soft) 0%, var(--yellow-main) 100%);
+            z-index: 0;
+        }
+
+        .hero-img-grid {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 4px;
+            z-index: 1;
+        }
+        .hero-img-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: brightness(0.88) saturate(1.1);
+        }
+        .hero-img-grid img:hover { transform: scale(1.05); filter: brightness(0.95) saturate(1.2); }
+        .hero-img-grid .img-large {
+            grid-row: 1 / 3;
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: 48px;
+            left: -28px;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 20px 28px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .hero-badge-icon { font-size: 2rem; }
+        .hero-badge-text { display: flex; flex-direction: column; gap: 2px; }
+        .hero-badge-main { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; color: var(--dark); }
+        .hero-badge-sub { font-size: 0.75rem; color: var(--brown); }
+
+        /* ═══════════════════════════════
+           FEATURED STRIP
+        ═══════════════════════════════ */
+        .featured-strip {
+            background: var(--yellow-main);
+            padding: 20px 80px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            overflow: hidden;
+        }
+        .strip-label {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--dark-mid);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .strip-scroll {
+            display: flex;
+            gap: 60px;
+            animation: scrollStrip 20s linear infinite;
+            white-space: nowrap;
+        }
+        .strip-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--dark);
+        }
+        .strip-item span { color: var(--dark-mid); font-style: normal; font-size: 1rem; }
+        @keyframes scrollStrip {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* ═══════════════════════════════
+           SECTION HEADER
+        ═══════════════════════════════ */
+        .section-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 80px 80px 50px;
+        }
+        .section-header-left 
+        .section-tag {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--brown);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .section-tag::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 1.5px;
+            background: var(--yellow-main);
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--dark);
+        }
+        .section-title em {
+            font-style: italic;
+            color: var(--yellow-deep);
+        }
+        .section-count {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            color: rgba(245, 197, 24, 0.2);
+            line-height: 1;
+            user-select: none;
+        }
+
+        /* ═══════════════════════════════
+           RECIPE GRID — MAIN
+        ═══════════════════════════════ */
+        .recipes-grid {
+            padding: 0 80px 80px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .recipe-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        .recipe-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .recipe-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 30px 70px rgba(26, 18, 0, 0.12);
+        }
+
+        /* Card grande — ocupa 2 columnas */
+        .recipe-card.featured {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .recipe-card.featured .card-img-wrap { height: 100%; min-height: 340px; }
+
+        .card-img-wrap {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+        }
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .recipe-card:hover .card-img-wrap img { transform: scale(1.08); }
+
+        .card-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--yellow-main);
+            color: var(--dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 100px;
+        }
+
+        .card-time {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(26,18,0,0.7);
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-body {
+            padding: 26px 28px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .featured .card-body {
+            justify-content: center;
+            padding: 40px 44px;
+        }
+
+        .card-difficulty {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--brown);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .diff-dots { display: flex; gap: 3px; }
+        .diff-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--yellow-soft);
+            border: 1.5px solid var(--yellow-main);
+        }
+        .diff-dot.filled { background: var(--yellow-main); }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+        .featured .card-title { font-size: 1.9rem; }
+
+        .card-desc {
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: var(--brown);
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 6px;
+        }
+
+        .card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--yellow-main);
+            color: var(--dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 11px 22px;
+            border-radius: 100px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-decoration: none;
+        }
+        .card-btn:hover {
+            background: var(--dark);
+            color: var(--yellow-main);
+            transform: translateX(4px);
+        }
+        .card-btn svg { transition: transform 0.25s; }
+        .card-btn:hover svg { transform: translateX(3px); }
+
+        .card-save {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            border: 1.5px solid #e8e8e8;
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            transition: all 0.25s;
+        }
+        .card-save:hover, .card-save.saved { border-color: var(--yellow-main); color: var(--yellow-main); }
+        .card-save.saved svg { fill: var(--yellow-main); }
+
+        /* ═══════════════════════════════
+           HIGHLIGHT BAND
+        ═══════════════════════════════ */
+        .highlight-band {
+            margin: 0 80px 80px;
+            background: var(--dark);
+            border-radius: 28px;
+            padding: 60px 80px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .highlight-band::before {
+            content: '🍽️';
+            position: absolute;
+            right: -20px;
+            top: -20px;
+            font-size: 180px;
+            opacity: 0.04;
+            line-height: 1;
+        }
+        .highlight-band-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--yellow-main);
+            margin-bottom: 16px;
+        }
+        .highlight-band-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .highlight-band-title em { font-style: italic; color: var(--yellow-main); }
+        .highlight-band-desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+            max-width: 500px;
+        }
+        .highlight-band-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+        .cta-main {
+            background: var(--yellow-main);
+            color: var(--dark);
+            font-size: 0.875rem;
+            font-weight: 700;
+            padding: 16px 32px;
+            border-radius: 100px;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.25s;
+            text-decoration: none;
+            text-align: center;
+        }
+        .cta-main:hover { background: var(--white); transform: scale(1.04); }
+        .cta-sub {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.75rem;
+            text-align: center;
+        }
+
+        /* ═══════════════════════════════
+           SECOND GRID (más recetas)
+        ═══════════════════════════════ */
+        .section-header-2 {
+            padding: 20px 80px 50px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+        .recipes-grid-2 {
+            padding: 0 80px 100px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+        .recipe-card-sm {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .recipe-card-sm.visible { opacity: 1; transform: translateY(0); }
+        .recipe-card-sm:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 50px rgba(26,18,0,0.1);
+        }
+        .card-sm-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .card-sm-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .recipe-card-sm:hover .card-sm-img img { transform: scale(1.1); }
+        .card-sm-body { padding: 20px 22px 24px; }
+        .card-sm-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+            line-height: 1.25;
+        }
+        .card-sm-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 14px;
+        }
+        .card-sm-time {
+            font-size: 0.75rem;
+            color: var(--brown);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .card-sm-btn {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            background: var(--yellow-soft);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            transition: all 0.25s;
+        }
+        .card-sm-btn:hover { background: var(--yellow-main); }
+
+        /* ═══════════════════════════════
+           MODAL
+        ═══════════════════════════════ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(26,18,0,0.7);
+            backdrop-filter: blur(6px);
+            z-index: 999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            animation: fadeIn 0.25s ease;
+        }
+        .modal-overlay.open { display: flex; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .modal {
+            background: var(--white);
+            border-radius: 28px;
+            width: 100%;
+            max-width: 860px;
+            max-height: 90vh;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            animation: slideUp 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(60px) scale(0.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .modal-img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 28px 0 0 28px;
+        }
+        .modal-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .modal-close {
+            position: absolute;
+            top: 18px; right: 18px;
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            z-index: 10;
+        }
+        .modal-close:hover { background: var(--white); transform: scale(1.1); }
+
+        .modal-body {
+            padding: 44px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow-y: auto;
+        }
+
+        .modal-tag {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--brown);
+        }
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.15;
+        }
+        .modal-desc {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--brown);
+        }
+
+        .modal-meta {
+            display: flex;
+            gap: 20px;
+            padding: 16px 20px;
+            background: var(--yellow-pale);
+            border-radius: 14px;
+        }
+        .modal-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            font-size: 0.75rem;
+        }
+        .modal-meta-item strong {
+            font-size: 0.95rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--dark);
+        }
+        .modal-meta-item span { color: var(--brown); }
+
+        .modal-section-title {
+            font-size: 0.7rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--dark);
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--yellow-main);
+        }
+        .modal-ingredients {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+        .modal-ingredients li {
+            font-size: 0.875rem;
+            color: var(--text-body);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .modal-ingredients li::before {
+            content: '';
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--yellow-main);
+            flex-shrink: 0;
+        }
+        .modal-steps {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .modal-step {
+            display: flex;
+            gap: 14px;
+            font-size: 0.875rem;
+            color: var(--text-body);
+            line-height: 1.6;
+        }
+        .step-circle {
+            width: 26px; height: 26px;
+            border-radius: 50%;
+            background: var(--yellow-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            color: var(--dark);
+            margin-top: 2px;
+        }
+
+        /* ═══════════════════════════════
+           FOOTER
+        ═══════════════════════════════ */
+        .footer {
+            background: var(--dark);
+            padding: 50px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+        }
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--yellow-main);
+        }
+
+        /* ═══════════════════════════════
+           RESPONSIVE
+        ═══════════════════════════════ */
+        @media (max-width: 1100px) {
+            .recipes-grid { grid-template-columns: repeat(2, 1fr); padding: 0 40px 60px; }
+            .recipe-card.featured { grid-column: span 2; }
+            .recipes-grid-2 { grid-template-columns: repeat(2, 1fr); padding: 0 40px 80px; }
+            .section-header, .section-header-2 { padding: 60px 40px 40px; }
+            .highlight-band { margin: 0 40px 60px; padding: 50px 50px; }
+        }
+        @media (max-width: 768px) {
+            .navbar { padding: 16px 24px; }
+            .hero { grid-template-columns: 1fr; }
+            .hero-left { padding: 60px 24px 40px; }
+            .hero-right { height: 50vw; }
+            .hero-badge { display: none; }
+            .recipes-grid { grid-template-columns: 1fr; padding: 0 24px 60px; }
+            .recipe-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+            .recipe-card.featured .card-img-wrap { height: 260px; }
+            .recipes-grid-2 { grid-template-columns: 1fr 1fr; padding: 0 24px 60px; }
+            .highlight-band { margin: 0 24px 60px; padding: 40px 32px; grid-template-columns: 1fr; }
+            .section-header, .section-header-2 { padding: 50px 24px 30px; flex-direction: column; align-items: flex-start; gap: 10px; }
+            .footer { padding: 40px 24px; flex-direction: column; gap: 16px; text-align: center; }
+            .modal { grid-template-columns: 1fr; }
+            .modal-img { border-radius: 28px 28px 0 0; height: 260px; }
+            .modal-body { padding: 30px 26px; }
+            .featured-strip { padding: 16px 24px; }
+        }
+
+        /* Transiciones stagger */
+        .recipe-card { transition-delay: 0s; }
+        .recipe-card:nth-child(2) { transition-delay: 0.08s; }
+        .recipe-card:nth-child(3) { transition-delay: 0.16s; }
+        .recipe-card:nth-child(4) { transition-delay: 0.08s; }
+        .recipe-card:nth-child(5) { transition-delay: 0.16s; }
+        .recipe-card:nth-child(6) { transition-delay: 0.24s; }
+        .recipe-card-sm:nth-child(2) { transition-delay: 0.07s; }
+        .recipe-card-sm:nth-child(3) { transition-delay: 0.14s; }
+        .recipe-card-sm:nth-child(4) { transition-delay: 0.21s; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <a href="index.php" class="nav-logo">
+            <img src="assets/img/Logo.png" alt="DelicIA's" onerror="this.style.display='none'">
+            <span>DelicIA's</span>
+        </a>
+        <a href="index.php" class="nav-back">← Volver al inicio</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-left">
+            <span class="hero-eyebrow">Selección especial</span>
+            <h1 class="hero-title">Plato<br><em>del Mes</em></h1>
+            <p class="hero-desc">Las recetas más especiales, seleccionadas cada mes por nuestro equipo para sorprender en la mesa.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num">12</span>
+                    <span class="stat-label">Recetas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">≤45'</span>
+                    <span class="stat-label">Tiempo medio</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">★ 4.8</span>
+                    <span class="stat-label">Valoración</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-img-grid">
+                <img class="img-large" src="https://images.unsplash.com/photo-1544025162-d76694265947?w=700&q=80" alt="">
+                <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=400&q=80" alt="">
+                <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&q=80" alt="">
+            </div>
+            <div class="hero-badge">
+                <span class="hero-badge-icon">⭐</span>
+                <div class="hero-badge-text">
+                    <span class="hero-badge-main">Selección del mes</span>
+                    <span class="hero-badge-sub">Costillar al Horno</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STRIP -->
+    <div class="featured-strip">
+        <div class="strip-scroll">
+            <span class="strip-item"><span>⭐</span> Costillar Horno</span>
+            <span class="strip-item"><span>🍚</span> Risotto Trufa</span>
+            <span class="strip-item"><span>🍔</span> Burger BBQ</span>
+            <span class="strip-item"><span>🐟</span> Salmón Teriyaki</span>
+            <span class="strip-item"><span>🍰</span> Tarta Manzana</span>
+            <span class="strip-item"><span>🍄</span> Lasaña Boletus</span>
+            <span class="strip-item"><span>⭐</span> Costillar Horno</span>
+            <span class="strip-item"><span>🍚</span> Risotto Trufa</span>
+            <span class="strip-item"><span>🍔</span> Burger BBQ</span>
+            <span class="strip-item"><span>🐟</span> Salmón Teriyaki</span>
+            <span class="strip-item"><span>🍰</span> Tarta Manzana</span>
+            <span class="strip-item"><span>🍄</span> Lasaña Boletus</span>
+            
+        </div>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="section-header">
+        <div class="section-header-left">
+            <div class="section-tag">Selección del mes</div>
+            <h2 class="section-title">Las recetas <em>más especiales</em></h2>
+        </div>
+        <div class="section-count">06</div>
+    </div>
+
+    <div class="recipes-grid" id="mainGrid">
+        
+        <div class="recipe-card featured" data-id="0">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=900&q=80" alt="Costillar al Horno">
+                <span class="card-badge">Carne</span>
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 1h 15min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div></div>
+                    Fácil
+                </div>
+                <h3 class="card-title">Costillar al Horno</h3>
+                <p class="card-desc">Costillar tierno y jugoso, cocinado lentamente para conseguir una carne melosa con glaseado de miel y mostaza. La receta más demandada del mes.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(0)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card" data-id="1">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1633964913295-ceb43826e30f?w=900&q=80" alt="Risotto de Trufa Negra">
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 30 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot filled"></div><div class="diff-dot"></div></div>
+                    Media
+                </div>
+                <h3 class="card-title">Risotto de Trufa Negra</h3>
+                <p class="card-desc">Risotto elegante y muy aromático, con el inconfundible sabor de la trufa negra. Perfecto para una velada especial.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(1)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card" data-id="2">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&q=80" alt="Burger Premium BBQ">
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 20 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div></div>
+                    Fácil
+                </div>
+                <h3 class="card-title">Burger Premium BBQ</h3>
+                <p class="card-desc">Hamburguesa gourmet jugosa y sabrosa con un toque ahumado de salsa BBQ casera.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(2)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card" data-id="3">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=900&q=80" alt="Salmón en Salsa Teriyaki">
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 25 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div></div>
+                    Fácil
+                </div>
+                <h3 class="card-title">Salmón en Salsa Teriyaki</h3>
+                <p class="card-desc">Salmón jugoso con una salsa teriyaki casera equilibrada entre dulce y salado. Saludable y lleno de sabor oriental.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(3)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card" data-id="4">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=900&q=80" alt="Tarta de Manzana Real">
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 50 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot filled"></div><div class="diff-dot"></div></div>
+                    Media
+                </div>
+                <h3 class="card-title">Tarta de Manzana Real</h3>
+                <p class="card-desc">Tarta clásica y elegante con manzana jugosa y aroma a canela. La versión definitiva de este clásico.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(4)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card" data-id="5">
+            <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=900&q=80" alt="Lasaña de Boletus">
+                <span class="card-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 60 min</span>
+            </div>
+            <div class="card-body">
+                <div class="card-difficulty">
+                    <div class="diff-dots"><div class="diff-dot filled"></div><div class="diff-dot filled"></div><div class="diff-dot"></div></div>
+                    Media
+                </div>
+                <h3 class="card-title">Lasaña de Boletus</h3>
+                <p class="card-desc">Lasaña cremosa y muy aromática, perfecta para los amantes de las setas. Un lujo asequible.</p>
+                <div class="card-footer">
+                    <button class="card-btn" onclick="openModal(5)">
+                        Ver receta <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
+                    <button class="card-save" onclick="toggleSave(this)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HIGHLIGHT BAND -->
+    <div class="highlight-band">
+        <div>
+            <div class="highlight-band-eyebrow">Chef DelicIA's recomienda</div>
+            <h2 class="highlight-band-title">Recetas que <em>impresionan</em></h2>
+            <p class="highlight-band-desc">Cada mes seleccionamos las recetas más innovadoras y deliciosas para inspirarte a cocinar algo especial.</p>
+        </div>
+        <div class="highlight-band-cta">
+            <a href="Api.html?q=hazme una receta especial con lo que tengo en casa" class="cta-main">🍳 Hablar con el Chef IA</a>
+            <span class="cta-sub">Responde al instante</span>
+        </div>
+    </div>
+    
+    <!-- SECOND GRID -->
+    <div class="section-header-2">
+        <div>
+            <div class="section-tag">Completa la selección</div>
+            <h2 class="section-title" style="font-size: clamp(1.8rem, 2.8vw, 2.4rem);">Más platos <em>del mes</em></h2>
+        </div>
+    </div>
+    <div class="recipes-grid-2" id="secondGrid">
+        
+        <div class="recipe-card-sm" data-id="6">
+            <div class="card-sm-img">
+                <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=900&q=80" alt="Pollo al Varoma con Especias">
+            </div>
+            <div class="card-sm-body">
+                <h4 class="card-sm-title">Pollo al Varoma con Especias</h4>
+                <p style="font-size:0.8rem; color: var(--brown); line-height:1.5;">Pollo jugoso por dentro y dorado por fuera, con especias mediterráneas y acabado al h…</p>
+                <div class="card-sm-meta">
+                    <span class="card-sm-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 1 hora</span>
+                    <button class="card-sm-btn" onclick="openModal(6)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card-sm" data-id="7">
+            <div class="card-sm-img">
+                <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=900&q=80" alt="Ramen de Cerdo Miso">
+            </div>
+            <div class="card-sm-body">
+                <h4 class="card-sm-title">Ramen de Cerdo Miso</h4>
+                <p style="font-size:0.8rem; color: var(--brown); line-height:1.5;">Ramen japonés intenso y reconfortante, con caldo sabroso de miso y cerdo tierno desme…</p>
+                <div class="card-sm-meta">
+                    <span class="card-sm-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 40 min</span>
+                    <button class="card-sm-btn" onclick="openModal(7)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card-sm" data-id="8">
+            <div class="card-sm-img">
+                <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=900&q=80" alt="Coulant de Caramelo">
+            </div>
+            <div class="card-sm-body">
+                <h4 class="card-sm-title">Coulant de Caramelo</h4>
+                <p style="font-size:0.8rem; color: var(--brown); line-height:1.5;">Postre delicado con exterior suave y corazón fundente de caramelo. El acabado perfect…</p>
+                <div class="card-sm-meta">
+                    <span class="card-sm-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 25 min</span>
+                    <button class="card-sm-btn" onclick="openModal(8)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card-sm" data-id="9">
+            <div class="card-sm-img">
+                <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=900&q=80" alt="Bacalao a la Vizcaína">
+            </div>
+            <div class="card-sm-body">
+                <h4 class="card-sm-title">Bacalao a la Vizcaína</h4>
+                <p style="font-size:0.8rem; color: var(--brown); line-height:1.5;">Lomo de bacalao desalado con la icónica salsa vizcaína de pimientos choriceros y cebo…</p>
+                <div class="card-sm-meta">
+                    <span class="card-sm-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 50 min</span>
+                    <button class="card-sm-btn" onclick="openModal(9)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card-sm" data-id="10">
+            <div class="card-sm-img">
+                <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=900&q=80" alt="Cochinillo Asado Segoviano">
+            </div>
+            <div class="card-sm-body">
+                <h4 class="card-sm-title">Cochinillo Asado Segoviano</h4>
+                <p style="font-size:0.8rem; color: var(--brown); line-height:1.5;">Cochinillo lechal asado lentamente en horno con agua, manteca y laurel hasta consegui…</p>
+                <div class="card-sm-meta">
+                    <span class="card-sm-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 180 min</span>
+                    <button class="card-sm-btn" onclick="openModal(10)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+                </div>
+            </div>
+        </div>
+        <div class="recipe-card-sm" data-id="11">
+            <div class="card-sm-img">
+                <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=900&q=80" alt="Tataki de Atún Rojo">
+            </div>
+            <div class="card-sm-body">
+                <h4 class="card-sm-title">Tataki de Atún Rojo</h4>
+                <p style="font-size:0.8rem; color: var(--brown); line-height:1.5;">Lomo de atún rojo sellado a la plancha, marinado en salsa de soja, jengibre y sésamo.…</p>
+                <div class="card-sm-meta">
+                    <span class="card-sm-time"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 15 min + 2h marinado</span>
+                    <button class="card-sm-btn" onclick="openModal(11)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <span class="footer-logo">DelicIA's</span>
+        <span>© 2025 DelicIA's · Plato del Mes</span>
+        <a href="index.php" style="color: var(--yellow-main); text-decoration:none; font-size:0.85rem;">← Volver al inicio</a>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+        <div class="modal" id="modal">
+            <div class="modal-img">
+                <button class="modal-close" onclick="closeModal()">✕</button>
+                <img id="modal-img" src="" alt="">
+            </div>
+            <div class="modal-body">
+                <div class="modal-tag" id="modal-tag"></div>
+                <h2 class="modal-title" id="modal-title"></h2>
+                <p class="modal-desc" id="modal-desc"></p>
+                <div class="modal-meta">
+                    <div class="modal-meta-item"><strong id="modal-time"></strong><span>Tiempo</span></div>
+                    <div class="modal-meta-item"><strong id="modal-diff"></strong><span>Dificultad</span></div>
+                    <div class="modal-meta-item"><strong id="modal-serves"></strong><span>Personas</span></div>
+                </div>
+                <div class="modal-section-title">Ingredientes</div>
+                <ul class="modal-ingredients" id="modal-ingredients"></ul>
+                <div class="modal-section-title">Preparación</div>
+                <ol class="modal-steps" id="modal-steps"></ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const recipes = [
+            {
+                title: "Costillar al Horno", tag: "Carne · Del Mes",
+                img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=900&q=80",
+                desc: "Costillar tierno y jugoso, cocinado lentamente para conseguir una carne melosa con glaseado de miel y mostaza. La receta más demandada del mes.",
+                time: "1h 15min", diff: "Fácil", serves: "4",
+                ingredients: ["1 costillar de cerdo", "2 dientes de ajo", "40g aceite de oliva", "1 cda de miel", "1 cda de mostaza", "Sal y pimienta", "200g agua"],
+                steps: ["Picar ajos 5 seg/vel 5.", "Mezclar aceite, miel, mostaza y especias 10 seg/vel 3.", "Untar el costillar y colocarlo en el Varoma.", "Poner agua en el vaso y cocinar 45 min/Varoma/vel 1.", "Hornear 15 min a 220°C para dorar."]
+            },
+            {
+                title: "Risotto de Trufa Negra", tag: "Gourmet · Del Mes",
+                img: "https://images.unsplash.com/photo-1633964913295-ceb43826e30f?w=900&q=80",
+                desc: "Risotto elegante y muy aromático, con el inconfundible sabor de la trufa negra. Perfecto para una velada especial.",
+                time: "30 min", diff: "Media", serves: "4",
+                ingredients: ["300g arroz arborio", "1 chalota", "30g aceite", "700g caldo de verduras caliente", "30g mantequilla", "40g parmesano", "Aceite o pasta de trufa"],
+                steps: ["Picar la chalota 5 seg/vel 5.", "Sofreír con aceite 5 min/120°C.", "Añadir el arroz y rehogar 2 min/120°C.", "Añadir el caldo caliente y cocinar 18 min/100°C/giro inverso.", "Incorporar mantequilla, parmesano y trufa. Reposar 2 min tapado."]
+            },
+            {
+                title: "Burger Premium BBQ", tag: "Carne · Del Mes",
+                img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&q=80",
+                desc: "Hamburguesa gourmet jugosa y sabrosa con un toque ahumado de salsa BBQ casera.",
+                time: "20 min", diff: "Fácil", serves: "4",
+                ingredients: ["500g carne de ternera picada", "1 huevo", "1 diente de ajo", "30g salsa BBQ", "Sal y pimienta", "Brioche y toppings"],
+                steps: ["Picar el ajo 5 seg/vel 5.", "Añadir la carne, huevo, salsa BBQ y especias.", "Mezclar 20 seg/vel 3.", "Formar hamburguesas de 125g y refrigerar 30 min.", "Cocinar a la plancha o parrilla 3-4 min por lado."]
+            },
+            {
+                title: "Salmón en Salsa Teriyaki", tag: "Oriental · Del Mes",
+                img: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=900&q=80",
+                desc: "Salmón jugoso con una salsa teriyaki casera equilibrada entre dulce y salado. Saludable y lleno de sabor oriental.",
+                time: "25 min", diff: "Fácil", serves: "2",
+                ingredients: ["2 lomos de salmón", "60g salsa de soja", "2 cdas azúcar moreno", "1 cdta miel", "1 cdta maizena", "Jengibre y sésamo"],
+                steps: ["Mezclar soja, azúcar, miel y jengibre. Hervir hasta que espese.", "Marinar el salmón 30 min en la salsa.", "Colocarlo en el Varoma con la marinada.", "Poner agua en el vaso y cocinar 20 min/Varoma/vel 1.", "Servir con arroz y sésamo tostado."]
+            },
+            {
+                title: "Tarta de Manzana Real", tag: "Postre · Del Mes",
+                img: "https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=900&q=80",
+                desc: "Tarta clásica y elegante con manzana jugosa y aroma a canela. La versión definitiva de este clásico.",
+                time: "50 min", diff: "Media", serves: "8",
+                ingredients: ["3 manzanas golden", "3 huevos", "150g azúcar", "100g mantequilla", "200g harina", "1 sobre levadura", "Canela y azúcar glas"],
+                steps: ["Batir huevos y azúcar 2 min/vel 4.", "Añadir mantequilla derretida 30 seg/vel 3.", "Incorporar harina, levadura y canela 30 seg/vel 4.", "Verter en molde, añadir manzana laminada y espolvorear azúcar.", "Hornear 40 min a 180°C. Enfriar antes de desmoldar."]
+            },
+            {
+                title: "Lasaña de Boletus", tag: "Setas · Del Mes",
+                img: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=900&q=80",
+                desc: "Lasaña cremosa y muy aromática, perfecta para los amantes de las setas. Un lujo asequible.",
+                time: "60 min", diff: "Media", serves: "6",
+                ingredients: ["300g boletus", "1 cebolla", "40g aceite", "500g bechamel", "Placas de lasaña", "Queso rallado"],
+                steps: ["Picar cebolla 5 seg/vel 5.", "Sofreír con aceite 5 min/120°C.", "Añadir boletus y cocinar 8 min/120°C.", "Montar capas de lasaña con la mezcla de boletus y bechamel.", "Cubrir con queso rallado y hornear 30 min a 180°C."]
+            },
+            {
+                title: "Pollo al Varoma con Especias", tag: "Aves · Del Mes",
+                img: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=900&q=80",
+                desc: "Pollo jugoso por dentro y dorado por fuera, con especias mediterráneas y acabado al horno.",
+                time: "1 hora", diff: "Fácil", serves: "4",
+                ingredients: ["1 pollo troceado", "3 dientes de ajo", "40g aceite", "Hierbas provenzales", "500g agua", "Sal y pimienta"],
+                steps: ["Picar ajos y mezclar con aceite y especias.", "Untar el pollo y colocarlo en el Varoma.", "Poner agua en el vaso y cocinar 45 min/Varoma/vel 1.", "Dorar al horno 15 min a 220°C."]
+            },
+            {
+                title: "Ramen de Cerdo Miso", tag: "Japonés · Del Mes",
+                img: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=900&q=80",
+                desc: "Ramen japonés intenso y reconfortante, con caldo sabroso de miso y cerdo tierno desmechado.",
+                time: "40 min", diff: "Media", serves: "2",
+                ingredients: ["300g panceta", "1 litro de caldo", "2 cdas pasta miso", "Fideos ramen", "1 huevo", "Nori y cebolleta"],
+                steps: ["Cocinar la panceta 25 min/100°C/giro inverso.", "Añadir el miso y mezclar 10 seg/vel 3.", "Cocer los fideos aparte según instrucciones.", "Servir el caldo con los fideos, la panceta, huevo cocido y nori."]
+            },
+            {
+                title: "Coulant de Caramelo", tag: "Postre · Del Mes",
+                img: "https://images.unsplash.com/photo-1587314168485-3236d6710814?w=900&q=80",
+                desc: "Postre delicado con exterior suave y corazón fundente de caramelo. El acabado perfecto para cualquier cena especial.",
+                time: "25 min", diff: "Media", serves: "6",
+                ingredients: ["150g caramelo líquido", "150g mantequilla", "3 huevos", "120g azúcar", "100g harina"],
+                steps: ["Fundir mantequilla y caramelo 3 min/50°C/vel 2.", "Añadir huevos y azúcar 30 seg/vel 4.", "Incorporar harina 20 seg/vel 3.", "Verter en moldes individuales. Refrigerar 30 min.", "Hornear 12 min exactos a 200°C. Desmoldar y servir de inmediato."]
+            },
+            {
+                title: "Bacalao a la Vizcaína", tag: "Vasco · Plato del Mes",
+                img: "https://images.unsplash.com/photo-1559847844-5315695dadae?w=900&q=80",
+                desc: "Lomo de bacalao desalado con la icónica salsa vizcaína de pimientos choriceros y cebolla. Un clásico de la cocina vasca con mayúsculas.",
+                time: "50 min", diff: "Media", serves: "4",
+                ingredients: ["800g lomos de bacalao desalado", "4 pimientos choriceros secos", "2 cebollas grandes", "4 dientes de ajo", "100ml vino blanco", "Aceite de oliva y sal"],
+                steps: ["Hidratar los pimientos choriceros en agua caliente 30 min. Raspar la pulpa.", "Sofreír la cebolla y el ajo en aceite a fuego muy lento 20 min hasta que caramelice.", "Añadir la pulpa de los choriceros y el vino. Cocer 10 minutos.", "Triturar la salsa y colar. Rectificar de sal.", "Marcar el bacalao por la piel 3 min. Cocer en la salsa 5 min y servir."]
+            },
+            {
+                title: "Cochinillo Asado Segoviano", tag: "Castilla · Plato del Mes",
+                img: "https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=900&q=80",
+                desc: "Cochinillo lechal asado lentamente en horno con agua, manteca y laurel hasta conseguir piel crujiente y carne que se deshace.",
+                time: "180 min", diff: "Difícil", serves: "6",
+                ingredients: ["1 cochinillo de 4-5 kg", "100g manteca de cerdo", "200ml agua", "Laurel, romero y tomillo", "Sal gorda"],
+                steps: ["Precalentar el horno a 150°C. Untar el cochinillo con manteca.", "Colocar en bandeja con el agua, el laurel y las hierbas.", "Hornear con la piel hacia abajo 90 minutos, rociando cada 30 min.", "Dar la vuelta con la piel hacia arriba. Hornear otros 60 min.", "Subir a 220°C los últimos 20 min para que la piel quede crujiente."]
+            },
+            {
+                title: "Tataki de Atún Rojo", tag: "Japonés · Plato del Mes",
+                img: "https://images.unsplash.com/photo-1559847844-5315695dadae?w=900&q=80",
+                desc: "Lomo de atún rojo sellado a la plancha, marinado en salsa de soja, jengibre y sésamo. Crudo por dentro y dorado por fuera.",
+                time: "15 min + 2h marinado", diff: "Media", serves: "4",
+                ingredients: ["600g lomo de atún rojo", "4 cucharadas salsa de soja", "2 cucharadas aceite de sésamo", "Jengibre fresco rallado", "Semillas de sésamo negro y blanco", "Cebollino fresco"],
+                steps: ["Mezclar la soja, el aceite de sésamo y el jengibre.", "Marinar el lomo de atún 2 horas en frío.", "Cubrir el lomo con las semillas de sésamo presionando.", "Sellar en plancha muy caliente 30 segundos por cada lado.", "Dejar reposar 1 minuto y cortar en lonchas finas. Decorar con cebollino."]
+            },
+        ];
+
+        // ── Modal ────────────────────────────────────────────────────
+        function openModal(id) {
+            const r = recipes[id];
+            if (!r) return;
+            document.getElementById('modal-img').src = r.img;
+            document.getElementById('modal-tag').textContent = r.tag;
+            document.getElementById('modal-title').textContent = r.title;
+            document.getElementById('modal-desc').textContent = r.desc;
+            document.getElementById('modal-time').textContent = r.time;
+            document.getElementById('modal-diff').textContent = r.diff;
+            document.getElementById('modal-serves').textContent = r.serves;
+            document.getElementById('modal-ingredients').innerHTML = r.ingredients.map(i => `<li>${i}</li>`).join('');
+            document.getElementById('modal-steps').innerHTML = r.steps.map((s, i) => `
+                <li class="modal-step"><span class="step-circle">${i+1}</span><span>${s}</span></li>
+            `).join('');
+            document.getElementById('modalOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        function closeModalOutside(e) {
+            if (e.target === document.getElementById('modalOverlay')) closeModal();
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        // ── Guardar ──────────────────────────────────────────────────
+        function toggleSave(btn) { btn.classList.toggle('saved'); }
+
+        // ── Scroll reveal ────────────────────────────────────────────
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.recipe-card, .recipe-card-sm').forEach(card => observer.observe(card));
+
+        // ── Navbar scroll ────────────────────────────────────────────
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+    </script>
+
+</body>
+</html>
