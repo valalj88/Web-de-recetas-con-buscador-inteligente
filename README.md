@@ -1301,6 +1301,165 @@ http://ip_de_APACHE/info.php
   <summary>d. Firewall</summary>
 <br>
 Un firewall es un sistema que controla qué tráfico puede entrar o salir de una red, actuando como una especie de “muro de seguridad” que bloquea accesos no autorizados. Es útil para un proyecto porque protege los equipos y datos de ataques, virus y conexiones sospechosas, asegurando que solo pasen las comunicaciones permitidas. Gracias al firewall, el proyecto funciona de forma más segura y estable.
+
+Se han configurado con 2 adaptadores de red, uno WAN y otro LAN para la red interna en un sistema operativo de FreeBSD
+
+# FIREWALL
+Un firewall es un sistema que controla qué tráfico puede entrar o salir de una red, actuando como una especie de “muro de seguridad” que bloquea accesos no autorizados. Es útil para un proyecto porque protege los equipos y datos de ataques, virus y conexiones sospechosas, asegurando que solo pasen las comunicaciones permitidas. Gracias al firewall, el proyecto funciona de forma más segura y estable.
+Se han configurado con 2 adaptadores de red, uno WAN y otro LAN para la red interna
+Firewall se encarga de:
+
+- Gestionar el tráfico
+- Proteger nuestra red
+
+---
+
+## ¿En qué equipo se instala y qué requisitos necesita?
+
+### Sistema operativo
+
+Debian
+
+### IP del servidor
+
+WAN: 192.168.135.28 (no está fija, cada dia ira cambiando por tanto = 192.168.135.X)
+LAN: 10.10.10.1 (la que nosotros hemos establecido)
+
+### Recursos utilizados
+
+- CPU: 2 núcleo
+- RAM: 4 GB
+- Disco: 25 GB
+- Sistema operativo: FreeBSD
+
+### Dependencias necesarias
+
+- PHP
+- Módulo mod_php
+- Acceso a MySQL
+
+---
+
+## ¿Qué parámetros básicos debo configurar?
+
+### Puertos
+
+- 80 = HTTP
+- 443 = HTTPS
+- 22 = SSH
+
+### Archivos de configuración
+
+En la interfaz de configuración de un cliente Ubuntu
+
+---
+
+## ¿Cómo verifico que funciona correctamente?
+
+### Comprobar estado del servicio
+
+Introducir la ip dela red interna (10.10.10.1) en un cliente de Ubuntu para verificar que se vea la interfaz
+
+<br>
+
+## PASOS
+
+**Direccionamiento IP**
+Es importante destacar que la IP de la WAN es dinámica. Esto significa que el proveedor de internet la cambia automáticamente cada cierto tiempo , por lo que debemos verificar si perdemos la conexión.
+
+| Interfaz | Tipo de IP | Configuración | Rango DHCP |
+|----------|----------|---------------------------------------| -----|
+| WAN | Dinámica | 192.168.135.X | Asignada por el router principal |
+| LAN | Estática | 10.10.10.1 | 10.10.10.10 - 10.10.10.20 |
+
+Para esto haremos lo siguiente:
+
+Nos dirigiremos al cliente de Ubuntu, introducimos la ip de la red interna de Pfsense y pondremos el usuario y la contraseña
+Una vez dentro podremos emprezar a configurar las IP que reparte, los puertos que escucha, etc.
+
+Los apartados que hemos configurado son:
+
+**Firewall/Rules/WAN**
+
+Añadiremos una regla que es exactamente igual que la que ya tenemos con el puerto 80 pero con el puerto 22 para SSH
+
+**Firewall/Rules/LAN**
+
+<img width="874" height="519" alt="image" src="https://github.com/user-attachments/assets/8a0c56ff-7fed-4c96-93a2-73b9f594a016" />
+
+En las reglas de la foto, en el apartado de Descripción podremos ver para que sirve cada regla que hemos añadido
+
+
+
+
+[Instalación de servidor Apache en Debian - Hector Abad y Alejandro Valero.pdf](https://github.com/user-attachments/files/25045002/Instalacion.de.servidor.Apache.en.Debian.-.Hector.Abad.y.Alejandro.Valero.pdf)
+
+</details>
+<br>
+<details>
+  <summary>PHP</summary>
+	<br> 
+	
+# PHP
+
+PHP es un lenguaje de programación del lado del servidor que se usa principalmente para crear páginas web dinámicas. Se ejecuta en el servidor y genera contenido HTML que luego se envía al navegador. 
+Es muy común para manejar formularios, bases de datos y sistemas web como WordPress.  
+En nuestro proyecto PHP se utiliza para:
+
+- Procesar formularios de la web
+- Conectar con la base de datos MySQL
+- Gestionar usuarios y recetas
+- Ejecutar la API que genera recetas
+
+---
+
+## ¿En qué equipo se instala y qué requisitos necesita?
+
+### Sistema operativo
+
+Debian (Dentro de APACHE)
+
+### IP del servidor
+
+La ip de APACHE
+
+### Dependencias necesarias
+
+- Apache
+- Módulo php para Apache
+- Extensión php-mysql
+
+---
+
+### Directorio de scripts
+
+/var/www/webdeliciasmidifi
+
+### Extensiones necesarias
+
+php-mysql  
+php-curl  
+php-json
+
+---
+
+## ¿Cómo verifico que funciona correctamente?
+
+### Comprobar versión
+
+php -v
+
+### Crear archivo de prueba
+
+test.php
+
+Contenido:
+
+<?php phpinfo(); ?>
+
+Acceder desde navegador:
+
+http://ip_de_APACHE/info.php
 </details>
 <br>
 <details>
@@ -1566,6 +1725,14 @@ Definimos:
  - Sin salirse del contexto culinario
 
 Esto es clave para que la experiencia del usuario sea coherente con nuestra plataforma.
+
+## Incidencias
+
+¿Qué ha pasado? Al pedirle una receta al asistente, nos ha saltado un mensaje de error largo y en inglés. Básicamente, la IA nos ha dicho que hemos superado el límite de uso.
+
+Explicación: Google, que es quien nos presta la inteligencia para el asistente, nos deja usar su tecnología de forma gratuita pero con condiciones. Es como si tuviéramos una tarjeta prepago que se recarga sola cada cierto tiempo y nosotros hemos excedido el límite, buscando información hemos encontrado información de que esto se recarga mensualmente.
+
+Lo que nos ha pasado es que hemos gastado todo el "saldo" de mensajes que teníamos disponibles para ese momento. No es que el programa esté roto o hayamos escrito algo mal, es simplemente que Google nos ha cortado el grifo temporalmente por haberle hecho demasiadas consultas seguidas.
 
 ## Restricciones
 
