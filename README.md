@@ -1168,9 +1168,7 @@ Debian
 
 ### IP del servidor
 
-192.168.1.10
-
-??
+La ip que salga en Apache una vez hayamos introducido la web dendro de (var/www/"nombre_directorio")
 
 ### Recursos utilizados
 
@@ -1178,7 +1176,6 @@ Debian
 - RAM: 1 GB
 - Disco: 10 GB
 
-  ??
 
 ### Dependencias necesarias
 
@@ -1192,21 +1189,18 @@ Debian
 
 ### Puertos
 
-- 80 → HTTP
-- 443 → HTTPS
+- 80 = HTTP
+- 443 = HTTPS
+- 22 = SSH
 
 ### Directorio principal
 
-/var/www/html
-
-??
+/var/www/"nombre_directorio" en nuestro caso webdeliciasmidifi
 
 ### Archivos de configuración
 
 /etc/apache2/apache2.conf  
 /etc/apache2/sites-available/000-default.conf
-
-??
 
 ### Virtual Hosts
 
@@ -1222,9 +1216,7 @@ systemctl status apache2
 
 ### Probar desde navegador
 
-http://192.168.1.10
-
-??
+http://ip de APACHE
 
 ### Ver logs
 
@@ -1258,21 +1250,11 @@ En nuestro proyecto PHP se utiliza para:
 
 ### Sistema operativo
 
-Debian
+Debian (Dentro de APACHE)
 
 ### IP del servidor
 
-192.168.1.10
-
-??
-
-### Recursos mínimos
-
-- CPU: 1 núcleo
-- RAM: 1 GB
-- Disco: 10 GB
-
-  ??
+La ip de APACHE
 
 ### Dependencias necesarias
 
@@ -1282,19 +1264,9 @@ Debian
 
 ---
 
-## ¿Qué parámetros básicos debo configurar?
-
-### Archivos principales
-
-/etc/php/*/apache2/php.ini
-
-??
-
 ### Directorio de scripts
 
-/var/www/html
-
-??
+/var/www/"nombre_directorio"
 
 ### Extensiones necesarias
 
@@ -1312,7 +1284,7 @@ php -v
 
 ### Crear archivo de prueba
 
-info.php
+test.php
 
 Contenido:
 
@@ -1320,8 +1292,7 @@ Contenido:
 
 Acceder desde navegador:
 
-http://192.168.1.10/info.php
-??
+http://ip_de_APACHE/info.php
 
 </details>
 <br>
@@ -1357,9 +1328,9 @@ La siguiente tabla recoge los servicios principales del sistema junto con sus se
 | Servidor | Servicio | Directorio + Archivo de configuración |
 |----------|----------|---------------------------------------|
 | Ubuntu Server | Pi-hole | /etc/pihole/ |
-| Ubuntu Server | Pi-hole | /etc/dnsmasq.d/ |
 | Debian | Apache2 | /etc/apache2/apache2.conf |
-| Debian | PHP | /etc/php/ |
+| Debian | Apache2 | /etc/apache2/sites-available/webdeliciasmidifi.conf.|
+| Debian | WEB | /var/www/webdeliciasmidifi/ |
 | Ubuntu Server | MySQL | /etc/mysql/mysql.conf.d/mysqld.cnf |
 | TrueNAS | NAS | Configuración desde la interfaz web |
 
@@ -1378,7 +1349,7 @@ Y en cuanto al rendimiento a veces es más eficiente que SCALE. Aunque SCALE sea
 
 ### IP del servidor
 
-?? Pendiente
+192.168.135.38
 
 ### Recursos mínimos
 
@@ -1397,8 +1368,11 @@ Y en cuanto al rendimiento a veces es más eficiente que SCALE. Aunque SCALE sea
 
 - 80 / 443 → acceso a interfaz web
 - 445 → SMB
+- NFS
+- RSYNC
+- SSH
 
-**SMB** es un protocolo de red cliente-servidor que permite compartir archivos, impresoras y puertos serie entre computadoras
+**SMB** es un protocolo de red cliente-servidor que permite compartir archivos, impresoras y puertos serie entre dispositivos
 
 ### Directorios de trabajo
 
@@ -1406,10 +1380,9 @@ Los datos se almacenan dentro de pools ZFS.
 
 Ejemplo:
 
-/mnt/pool_datos/backups  
-/mnt/pool_datos/proyecto
-??
-Pendiente de confirmar
+/mnt/pool_datos/Backup_apache
+/mnt/pool_datos/Backup_mysql
+/mnt/pool_datos/Backup_pfsenseFW
 
 ### Configuración
 
@@ -1426,18 +1399,60 @@ Se configura desde la interfaz web:
 
 ### Acceso a la interfaz web
 
-http://192.168.1.20
+http://192.168.135.38
 
 ### Comprobación de red
 
-ping 192.168.1.20
+ping 192.168.135.38
 
-### Acceso a recursos compartidos
+---
 
-showmount -e 192.168.1.20
-</details>
+### Paso 1 Localización de los elementos clave
 
-<br>
+Identificar los dos componentes críticos:
+Directorio Web: Ubicado en /home/debianapacheproyecto/web.
+Configuración de Apache: El archivo virtual host en /etc/apache2/sites-available/webdeliciasmidifi.conf.
+
+### Paso 2 Creación del Script de Backup
+
+Creamos un script en Bash para automatizar la copia de archivos y la asignación de permisos.
+
+Comando utilizado:
+
+nano ~/hacer_backup.sh
+
+Contenido del script:
+#!/bin/bash
+
+**1. Crear carpeta de destino si no existe**
+mkdir -p /tmp/backup_web
+
+**2. Copiar archivos del sitio y configuración (Modo recursivo para carpetas)**
+ 
+cp -r /home/debianapacheproyecto/web /tmp/backup_web/
+cp /etc/apache2/sites-available/webdeliciasmidifi.conf /tmp/backup_web/
+
+**3. Ajustar permisos para que el servicio de backup (TrueNAS) pueda leerlos**
+
+chmod -R 755 /tmp/backup_web
+echo "Copia temporal lista en /tmp/backup_web"
+
+<img width="1020" height="284" alt="image" src="https://github.com/user-attachments/assets/10ced886-5f5e-47d8-a27f-84e10a124e25" />
+
+### Paso 3 Automatización con Crontab
+
+Para no tener que ejecutar el backup manualmente, programamos una tarea en el sistema para que se ejecute todos los días a las 10:00 AM.
+
+Comando para editar el cron: crontab -e
+Línea añadida: 0 10 * * * /home/debianapacheproyecto/hacer_backup.sh
+
+<img width="862" height="536" alt="image" src="https://github.com/user-attachments/assets/ede48314-e89a-4ca8-afc3-37d2f267ed8e" />
+
+<img width="745" height="597" alt="image" src="https://github.com/user-attachments/assets/ac40df3a-ae3a-44ef-ab5d-acb98bd48b78" />
+
+
+**Conclusiones**
+Con esta configuración, el servidor Apache expone sus datos críticos en un punto de montaje temporal. El servidor TrueNAS ahora puede conectarse mediante Rsync o SSH para llevarse la copia de seguridad de forma segura y consistente.
 
 <details>
   <summary>d. API</summary>
