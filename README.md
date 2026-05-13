@@ -1168,7 +1168,8 @@ Debian
 
 ### IP del servidor
 
-La ip que salga en Apache una vez hayamos introducido la web dendro de (var/www/"nombre_directorio")
+La ip que salga en Apache una vez hayamos introducido la web dentro de (var/www/"nombre_directorio")
+(En nuestro caso 10.10.10.11 configurado con pfsense pero no buscará nada porque está en la red interna)
 
 ### Recursos utilizados
 
@@ -1216,7 +1217,7 @@ systemctl status apache2
 
 ### Probar desde navegador
 
-http://ip de APACHE
+http://ip de APACHE (En nuestro caso 10.10.10.11 configurado con pfsense pero no buscará nada porque está en la red interna)
 
 ### Ver logs
 
@@ -1266,7 +1267,7 @@ La ip de APACHE
 
 ### Directorio de scripts
 
-/var/www/"nombre_directorio"
+/var/www/webdeliciasmidifi
 
 ### Extensiones necesarias
 
@@ -1574,6 +1575,7 @@ Esto es clave para que la experiencia del usuario sea coherente con nuestra plat
  - No responder preguntas fuera del ámbito gastronómico
  - No generar contenido inapropiado
 
+</details>
 </details>
 </details>
 
