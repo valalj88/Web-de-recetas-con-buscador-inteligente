@@ -1397,17 +1397,17 @@ En las reglas de la foto, en el apartado de Descripción podremos ver para que s
 </details>
 <br>
 <details>
-  <summary>PHP</summary>
+  <summary>MySQL</summary>
 	<br> 
 	
-# PHP
+# MySQL
 
 PHP es un lenguaje de programación del lado del servidor que se usa principalmente para crear páginas web dinámicas. Se ejecuta en el servidor y genera contenido HTML que luego se envía al navegador. 
 Es muy común para manejar formularios, bases de datos y sistemas web como WordPress.  
 En nuestro proyecto PHP se utiliza para:
 
 - Procesar formularios de la web
-- Conectar con la base de datos MySQL
+- Conectar base de datos con Apache
 - Gestionar usuarios y recetas
 - Ejecutar la API que genera recetas
 
@@ -1449,17 +1449,7 @@ php-json
 
 php -v
 
-### Crear archivo de prueba
 
-test.php
-
-Contenido:
-
-<?php phpinfo(); ?>
-
-Acceder desde navegador:
-
-http://ip_de_APACHE/info.php
 </details>
 <br>
 <details>
