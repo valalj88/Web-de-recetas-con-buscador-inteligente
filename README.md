@@ -1402,53 +1402,44 @@ En las reglas de la foto, en el apartado de Descripción podremos ver para que s
 	
 # MySQL
 
-PHP es un lenguaje de programación del lado del servidor que se usa principalmente para crear páginas web dinámicas. Se ejecuta en el servidor y genera contenido HTML que luego se envía al navegador. 
-Es muy común para manejar formularios, bases de datos y sistemas web como WordPress.  
-En nuestro proyecto PHP se utiliza para:
-
-- Procesar formularios de la web
-- Conectar base de datos con Apache
-- Gestionar usuarios y recetas
-- Ejecutar la API que genera recetas
-
----
+## ¿Qué función cumple exactamente este servicio dentro de la red?
+Este servicio funciona como un gran almacén donde se guarda absolutamente todo lo que pasa en la web. Su trabajo consiste en organizar la información en tablas conectadas entre sí para que podamos meter, ordenar y sacar datos de forma muy rápida y sin errores. Gracias a este servicio, la información no se borra al cerrar el navegador, permitiendo que los usuarios sigan registrados, que las recetas creadas por la IA se queden guardadas para siempre y que la plataforma recuerde los favoritos de cada persona.
 
 ## ¿En qué equipo se instala y qué requisitos necesita?
+Para que todo funcione de manera estable, tenemos instalado este servicio dentro de nuestro servidor con el sistema operativo Ubuntu Server. Le hemos asignado una dirección IP fija 10.10.10.12 desde Pfsense dentro de nuestra red para que la web sepa exactamente a dónde ir a buscar la información sin perderse.
 
-### Sistema operativo
+<img width="589" height="374" alt="image" src="https://github.com/user-attachments/assets/776a0577-f90a-436d-b168-d5400d588260" />
+<img width="591" height="370" alt="image" src="https://github.com/user-attachments/assets/735a53d8-6f5c-4143-943e-cce0e523863d" />
 
-Debian (Dentro de APACHE)
+## ¿Qué parámetros básicos debo configurar?
 
-### IP del servidor
+- **Puertos** 3306
+- **Directorios de trabajo** /var/lib/mysql, archivos de configuración: /etc/mysql/
+- **Archivos de configuración principales** /etc/mysql/mysql.conf.d/mysqld.cnf
+- **Configuración básica:** bind-address: 0.0.0.0
+- **Creación de bases de datos y usuarios (comandos básicos SQL)**:
 
-La ip de APACHE
+mysql -u root -p 
 
-### Dependencias necesarias
+CREATE DATABASE nombre_de_tu_db; 
 
-- Apache
-- Módulo php para Apache
-- Extensión php-mysql
-
----
-
-### Directorio de scripts
-
-/var/www/webdeliciasmidifi
-
-### Extensiones necesarias
-
-php-mysql  
-php-curl  
-php-json
-
----
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
 
 ## ¿Cómo verifico que funciona correctamente?
 
-### Comprobar versión
+sudo systemctl status mysql
 
-php -v
+sudo netstat -tulpn | grep 3306
 
+## ¿Qué aspectos de seguridad debo revisar?
+
+Primero, configuramos el Pfsense para que solo se pueda acceder a través del canal de la base de datos y de las páginas de gestión visual, cerrando cualquier otra entrada.
+Hashear las contraseñas de cada usuario que se registra y se introduce en la DB en la tabla de usuarios
+Ocultación en el PHP de las variables de entorno para la conexión con la web (Nombre DB, usuario y contraseña de DB y la IP)
 
 </details>
 <br>
